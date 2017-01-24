@@ -1,0 +1,201 @@
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{iccv}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[UTF8]{ctex}
+
+
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+% \iccvfinalcopy % *** Uncomment this line for the final submission
+
+\def\iccvPaperID{****} % *** Enter the ICCV Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+\ificcvfinal\pagestyle{empty}\fi
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{\LaTeX\ Author Guidelines for ICCV Proceedings}
+
+\author{First Author\\
+Institution1\\
+Institution1 address\\
+{\tt\small firstauthor@i1.org}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+\and
+Second Author\\
+Institution2\\
+First line of institution2 address\\
+{\tt\small secondauthor@i2.org}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+   The ABSTRACT is to be in fully-justified italicized text, at the top
+   of the left-hand column, below the author and affiliation
+   information. Use the word ``Abstract'' as the title, in 12-point
+   Times, boldface type, centered relative to the column, initially
+   capitalized. The abstract is to be in 10-point, single-spaced type.
+   Leave two blank lines after the Abstract, then begin the main text.
+   Look at previous ICCV abstracts to get a feel for style and length.
+	 Please note that the title can be up to 512 characters in length. 
+	 The maximum size of the abstract is 4000 characters.
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\section{Introduction}
+我们的模型主体是这样的：
+\begin{equation}
+\min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
++
+\lambda\|\mathbf{C}\|_{1,s}
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
+\end{equation}
+其中$\|\mathbf{C}\|_{1,s}$表示用的是加权L1范数。
+\\
+\\
+a. 初始化:
+\\
+$\mathbf{D}^{(0)}$由$\mathbf{Y}=\mathbf{D}\mathbf{\Sigma}^{(0)}\mathbf{V}^{\top}$做SVD分解得到;
+\\
+$\mathbf{s}^{(0)}=\text{diag}(\mathbf{\Sigma}^{(0)})$是weighted sparse coding的权重，每一行的值不同；
+\\
+$\mathbf{W}^{(0)}$是对角矩阵，初始化为恒等矩阵，原因是一开始就平等对待；或者对每个$\mathbf{Y}$的每一列（图像块）估计一个噪声水平$\sigma$，作为$\mathbf{W}^{(0)}$对角上的相应元素。
+\\
+\\
+\\
+b. 进入迭代求解$\mathbf{D}$,$\mathbf{C}$,并更新$\mathbf{W}$ ($k=0,1,2,...$):
+\\
+\subsection{update $\mathbf{C}$}
+\begin{equation}
+\mathbf{C}^{(k+1)}
+=
+\arg\min_{\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}^{(k)}\mathbf{C})\mathbf{W}^{(k)}\|_{F}^{2}
++
+\lambda\|\mathbf{C}\|_{1,s}.
+\end{equation}
+有闭合解，每一列单独求解：
+\begin{equation}
+\mathbf{c}_{i}^{(k+1)}
+=
+\arg\min_{\mathbf{c}_{i}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}^{(k)}\mathbf{c}_{i})\mathbf{W}_{ii}^{(k)}\|_{2}^{2}
++
+\lambda\|\mathbf{s}^{T}\mathbf{c}_{i}\|_{1}.
+\end{equation}
+闭合解为：
+\begin{equation}
+\mathbf{c}_{i}^{(k+1)} 
+=
+\text{sgn}(\mathbf{D^{\top}y}) 
+\odot 
+\text{max}(|\mathbf{D^{\top}y}|-\frac{\lambda}{(\mathbf{W}_{ii}^{(k)})^{2}}\mathbf{s},0),
+\end{equation}
+
+
+
+\subsection{update $\mathbf{D}$}
+\begin{equation}
+\begin{split}
+\mathbf{D}^{(k+1)}
+&
+=
+\arg\min_{\mathbf{D}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C}^{(k+1)})\mathbf{W}^{(k)}\|_{F}^{2}
+\\
+&
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
+\end{split}
+\end{equation}
+闭合解为：
+\begin{equation}
+\mathbf{D}^{(k+1)}
+=
+\mathbf{U}\mathbf{V}^{\top}
+\end{equation}
+其中，
+$\mathbf{U}$和$\mathbf{V}$由$\mathbf{C}^{(k+1)}(\mathbf{W}^{(k)})^{2}\mathbf{Y}^{\top}=\mathbf{U}\mathbf{\Sigma}^{(k+1)}\mathbf{V}^{\top}
+$
+做SVD分解得到。
+
+\subsection{update $\mathbf{s}$}
+$\mathbf{s}^{k+1}=\mathbf{\Sigma}^{(k+1)}$
+
+\subsection{update $\mathbf{W}$}
+$\mathbf{W}$是对角矩阵，只需要更新迭代对角元即可,：
+\begin{equation}
+\mathbf{W}_{ii}^{k+1}=\exp(-\lambda_{2}\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\mathbf{c}_{i}^{(k+1)}\|_{2})
+\end{equation}
+$\lambda_{2}$是参数。
+
+待解决问题：
+需要探讨收敛性，收敛速率等问题，收敛值的上下界等问题。
+实际中，我没有多次迭代，因为多次迭代速度太慢，权重的设计与效果也值得深入探讨。
+
+
+\section{孟老师的模型以及区别}
+孟老师的模型：
+\begin{equation}
+\min_{\mathbf{U},\mathbf{V}}\|\mathbf{W}\odot(\mathbf{X}-\mathbf{U}\mathbf{V}^{\top})\|_{1}
+\end{equation}
+孟老师的模型是coordinate-wise的迭代，其不断迭代$\mathbf{U},\mathbf{V}$直到收敛。
+这个模型应用再Low-Rank Matrix Factorization with Missing Entries这个问题里。
+
+区别：
+\begin{itemize}
+\item 模型不同；
+\item 应用不同；
+\item 权重的设计和迭代方式不同，物理含义不一样。孟老师的模型里的权重主要是指矩阵的元素是否是missing entry，也就是$\mathbf{W}$里只有0或1.
+\end{itemize}
+
+\section{杨猛的模型以及区别}
+杨猛的模型：
+\begin{equation}
+\min_{\mathbf{c}}\|\mathbf{W}^{\frac{1}{2}}(\mathbf{y}-\mathbf{D}\mathbf{c})\|_{2}^{2}
+\quad
+\text{s.t.}
+\quad
+\|\mathbf{c}\|_{1}<\sigma
+\end{equation}
+
+区别：
+\begin{itemize}
+\item 具体到加权，我的方法里，F范数的权重是加在列（sample）上，但是杨猛是加在F范数的每一行（variable）上；而且设计出发点不同（我的模型是从weighted orthogonal Procrustes problem里的模型里演化过来的），权重迭代方式不同；
+\item 我的模型里，字典是正交的，是通过数据学到的，有闭合解，杨的方法是训练集里的sample直接做字典；
+\item 我的模型里系数1范的权重是加在每一行上，所以，相当于我的模型里，每行每列的每个元素都带权重；而且系数有闭合解。
+\end{itemize}
+
+
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{egbib}
+}
+
+\end{document}
