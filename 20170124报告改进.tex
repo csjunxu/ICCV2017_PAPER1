@@ -1,0 +1,213 @@
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{iccv}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[UTF8]{ctex}
+
+
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+% \iccvfinalcopy % *** Uncomment this line for the final submission
+
+\def\iccvPaperID{****} % *** Enter the ICCV Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+\ificcvfinal\pagestyle{empty}\fi
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{\LaTeX\ Author Guidelines for ICCV Proceedings}
+
+\author{First Author\\
+Institution1\\
+Institution1 address\\
+{\tt\small firstauthor@i1.org}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+\and
+Second Author\\
+Institution2\\
+First line of institution2 address\\
+{\tt\small secondauthor@i2.org}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+我们从Weighted Orthogonal Procrustes Problem出发，设计出一个weighted Frobenious norm作为data term，用weighted sparse coding作为regularization term。这个新的模型用alternative updating方式求解，可以证明其对于每个变量都有闭合解，并且收敛到一个stationary point。这个模型用在了真实去噪问题里，对之前咱提出的guided的方法在60张真实噪声图上的去噪效果更好，PSNR提升了0.7dB左右。
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\section{模型Introduction}
+现有一个图像块，假设是8x8($d=64$)的维度，拉成列向量$\mathbf{y}\in\mathbb{R}^{d}$，那么我们在其周围找$m$个相似块，得到相似块矩阵$\mathbf{Y}\in\mathbb{R}^{d\times m}$。我们希望在这个数据里学习到一个正交字典，同时利用稀疏表达这个工具。很自然，我想到了K-SVD这个模型，给定数据矩阵$\mathbf{Y}$,KSVD不断迭代更新，从而得到最适合表达数据的字典和稀疏。但是与KSVD不同的是，我希望我的模型里，字典是正交的并且有闭合解，系数也可以有闭合解。从而，我们想到的模型主体是这样的：
+\begin{equation}
+\min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|\mathbf{Y}-\mathbf{D}\mathbf{C}\mathbf{W}\|_{F}^{2}
++
+\lambda\|\mathbf{C}\|_{1,\mathbf{s}}
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
+\end{equation}
+或者
+\begin{equation}
+\min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
++
+\lambda\|\mathbf{C}\|_{1,\mathbf{s}}
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
+\end{equation}
+其中$\|\mathbf{C}\|_{1,\mathbf{s}}$表示用的是加权L1范数(对每一行加不同的权值)。
+\\
+\\
+这两个模型是类似的解法，但是物理意义稍有不同。我们先对模型进行初始化：
+
+
+\section{初始化}
+\begin{itemize}
+\item 正交字典$\mathbf{D}^{(0)}$由$\mathbf{Y}=\mathbf{D}\mathbf{\Sigma}^{(0)}\mathbf{V}^{\top}$做SVD分解得到;
+\item 稀疏系数$\mathbf{C}$的行方向上的权值$\mathbf{s}^{(0)}=\text{diag}(\mathbf{\Sigma}^{(0)})$是weighted sparse coding的权重。$\mathbf{C}$每一行的权值不同，意味着正交字典$\mathbf{D}$的每一列对$\mathbf{C}$的重要性不同；
+\item $\mathbf{W}^{(0)}$是对角矩阵，初始化为恒等矩阵$\mathbf{I}_{m\times m}$(原因是一开始把所有块平等对待，视为受到相同的高斯噪声的影响)。或者初始化为一个对角矩阵，对角线上的每个元素对应于$\mathbf{Y}$的每一列（图像块）上的噪声水平$\sigma$，这个噪声水平可以用现有估计高斯噪声水平的方法估计出来)；
+\end{itemize}
+
+
+\section{反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛,更新$\mathbf{W}$ }
+\subsection{反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛}
+$k=0,1,2,...$:
+
+a. update $\mathbf{C}$
+\begin{equation}
+\mathbf{C}^{(k+1)}
+=
+\arg\min_{\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}^{(k)}\mathbf{C})\mathbf{W}^{(k)}\|_{F}^{2}
++
+\lambda\|\mathbf{C}\|_{1,\mathbf{s}}.
+\end{equation}
+有闭合解，每一列单独求解：
+\begin{equation}
+\mathbf{c}_{i}^{(k+1)}
+=
+\arg\min_{\mathbf{c}_{i}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}^{(k)}\mathbf{c}_{i})\mathbf{W}_{ii}^{(k)}\|_{2}^{2}
++
+\lambda\|\mathbf{s}^{T}\mathbf{c}_{i}\|_{1}.
+\end{equation}
+闭合解为：
+\begin{equation}
+\mathbf{c}_{i}^{(k+1)} 
+=
+\text{sgn}(\mathbf{D^{\top}y}) 
+\odot 
+\text{max}(|\mathbf{D^{\top}y}|-\frac{\lambda}{(\mathbf{W}_{ii}^{(k)})^{2}}\mathbf{s},0),
+\end{equation}
+
+b. update $\mathbf{D}$
+\begin{equation}
+\begin{split}
+\mathbf{D}^{(k+1)}
+&
+=
+\arg\min_{\mathbf{D}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C}^{(k+1)})\mathbf{W}^{(k)}\|_{F}^{2}
+\\
+&
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
+\end{split}
+\end{equation}
+闭合解为：
+\begin{equation}
+\mathbf{D}^{(k+1)}
+=
+\mathbf{U}\mathbf{V}^{\top}
+\end{equation}
+其中，
+$\mathbf{U}$和$\mathbf{V}$由$\mathbf{C}^{(k+1)}(\mathbf{W}^{(k)})^{2}\mathbf{Y}^{\top}=\mathbf{U}\mathbf{\Sigma}^{(k+1)}\mathbf{V}^{\top}
+$
+做SVD分解得到。$(\mathbf{W}^{(k)})^{2}$是指$\mathbf{W}$的对角线上的元素分别平方后得到的对角矩阵。
+
+c. update $\mathbf{s}$
+
+$\mathbf{s}^{k+1}=\mathbf{\Sigma}^{(k+1)}$
+
+\subsection{(3),(6)收敛后，更新$\mathbf{W}$}
+d. update $\mathbf{W}$
+
+$\mathbf{W}$是对角矩阵，只需要更新迭代对角元即可：
+\begin{equation}
+\mathbf{W}_{ii}^{new}=\exp(-\lambda_{2}\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\mathbf{c}_{i}^{(k+1)}\|_{2})
+\end{equation}
+$\lambda_{2}$是参数；
+
+或
+\begin{equation}
+\mathbf{W}_{ii}^{new}=\lambda_{2}(\sigma_{i}-\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\mathbf{c}_{i}^{(k+1)}\|_{2})
+\end{equation}
+或者其它可能性。
+
+待说明问题：
+模型(1)或(2)的收敛性，收敛速率等问题，收敛值的上下界等问题。
+
+实际中，我采用模型(2)，没有多次迭代（因为多次迭代速度太慢），权重的设计采用(8)，权重的物理意义，设计与效果值得探讨。
+
+\section{孟老师的模型以及区别}
+孟老师的模型：
+\begin{equation}
+\min_{\mathbf{U},\mathbf{V}}\|\mathbf{W}\odot(\mathbf{X}-\mathbf{U}\mathbf{V}^{\top})\|_{1}
+\end{equation}
+孟老师的模型是coordinate-wise的迭代，其不断迭代$\mathbf{U},\mathbf{V}$直到收敛。
+这个模型应用在Low-Rank Matrix Factorization with Missing Entries这个问题里，$\mathbf{W}$指矩阵的元素是否是missing entry，其元素只有0或1。
+
+区别：
+\begin{itemize}
+\item 权重的设计和迭代方式不同，物理含义不一样。孟老师的模型里的权重主要是指矩阵的元素是否是missing entry，也就是$\mathbf{W}$里只有0或1；
+\item 模型不同；
+\item 应用不同；
+\end{itemize}
+
+\section{杨猛的模型以及区别}
+杨猛的模型：
+\begin{equation}
+\min_{\mathbf{c}}\|\mathbf{W}^{\frac{1}{2}}(\mathbf{y}-\mathbf{D}\mathbf{c})\|_{2}^{2}
+\quad
+\text{s.t.}
+\quad
+\|\mathbf{c}\|_{1}<\sigma
+\end{equation}
+
+区别：
+\begin{itemize}
+\item 关于加权，我的方法里，F范数的权重是加在列（sample）上，但是杨猛是加在向量2范的每一行（variable）上；设计出发点不同（我的模型是从weighted orthogonal Procrustes problem里的模型里演化过来的）；权重迭代方式不同；
+\item 我的模型里，字典是正交的，是通过数据学到的，有闭合解；杨的方法是训练集里的sample直接做字典；
+\item 我的模型里系数1范的权重是加在每一行上，所以，相当于我的模型里，每行每列的每个元素都带权重；而且系数有闭合解。
+\end{itemize}
+
+
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{egbib}
+}
+
+\end{document}
