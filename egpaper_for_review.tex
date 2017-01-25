@@ -29,7 +29,7 @@
 \begin{document}
 
 %%%%%%%%% TITLE
-\title{\LaTeX\ Author Guidelines for ICCV Proceedings}
+\title{A Double Weighted Model for Real Noisy Image Denoising}
 
 \author{First Author\\
 Institution1\\
@@ -53,11 +53,11 @@ First line of institution2 address\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-我们从Weighted Orthogonal Procrustes Problem出发，设计出一个weighted Frobenious norm作为data term，用weighted sparse coding作为regularization term。这个新的模型用alternative updating方式求解，可以证明其对于每个变量都有闭合解，并且收敛到一个stationary point。这个模型用在了真实去噪问题里，对之前咱提出的guided的方法在60张真实噪声图上的去噪效果更好，PSNR提升了0.7dB左右。
+Motivated by the weighted Orthogonal Procrustes Problem, we propose a noval weighted Frobenious norm based weighted sparse coding model for non-Gaussian error modeling. We solve this model in an alternative manner. Updating of each variable has closed-form solutions and the overall model converges to a stationary point. The proposed model is applied in real image denoising problem and extensive experiments demonstrate that the proposed model can much better performance (over 1.0dB improvement on PSNR) than state-of-the-art image denoising methods, including some excellant commercial software. The noval weighted Frobeniius norm can perfectly fit the non-Gaussian property of real noise.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
-\section{模型Introduction}
+\section{Introduction}
 现有一个图像块，假设是8x8($d=64$)的维度，拉成列向量$\mathbf{y}\in\mathbb{R}^{d}$，那么我们在其周围找$m$个相似块，得到相似块矩阵$\mathbf{Y}\in\mathbb{R}^{d\times m}$。我们希望在这个数据里学习到一个正交字典，同时利用稀疏表达这个工具。很自然，我想到了K-SVD这个模型，给定数据矩阵$\mathbf{Y}$,KSVD不断迭代更新，从而得到最适合表达数据的字典和稀疏。但是与KSVD不同的是，我希望我的模型里，字典是正交的并且有闭合解，系数也可以有闭合解。从而，我们想到的模型主体是这样的：
 \begin{equation}
 \min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|\mathbf{Y}-\mathbf{D}\mathbf{C}\mathbf{W}\|_{F}^{2}
