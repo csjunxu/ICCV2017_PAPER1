@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  26 JAN 2017 15:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  26 JAN 2017 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1229,7 +1229,7 @@ File: c70rm.fd 2015/07/01 v2.2 Chinese font definition (CTEX)
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
 quanjiao) on input line 61.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2856) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 80--85
@@ -1284,10 +1284,10 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 213.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
  ) 
 Here is how much of TeX's memory you used:
- 20476 strings out of 493091
- 345412 string characters out of 6134517
+ 20474 strings out of 493091
+ 345389 string characters out of 6134517
  374908 words of memory out of 5000000
- 23496 multiletter control sequences out of 15000+600000
+ 23494 multiletter control sequences out of 15000+600000
  49770 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,17n,45p,10426b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1299,9 +1299,9 @@ imhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows
 s/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Wind
 ows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf>
 <c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/sim
-sun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/f
-onts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/W
-indows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.t
+sun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/f
+onts/simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/W
+indows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.t
 tc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/
 simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Window
 s/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c
@@ -1336,7 +1336,7 @@ helvetic/uhvb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/helvet
 ic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a
 .pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/
 Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_for_review.pdf (2 pages, 336662 bytes).
+Output written on egpaper_for_review.pdf (2 pages, 336679 bytes).
 PDF statistics:
  469 PDF objects out of 1000 (max. 8388607)
  311 compressed objects within 4 object streams
