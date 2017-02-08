@@ -74,12 +74,15 @@ First line of institution2 address\\
 \quad
 \|\mathbf{c}\|_{1}<\sigma
 \end{equation}
-用权重矩阵左乘redidual 向量，其物理含义是对residual 向量的每个variable加权，这是因为这个模型主要用在人脸识别上，当人脸有遮挡时，这个权重可以把遮挡部分的像素值的权重变小，使得模型对于有遮挡的人脸识别依然有效。这个加权方式不适合用于对真实噪声加权。原因是1，在真实噪声去噪问题里，如果把一些相似块堆起来组成一个矩阵，每一行是没有任何空间位置关系的点，要求这些点上的噪声符合高斯分布是没有依据的（相当于在图像中放一个网格，要求网格上的所有交叉点所对应的像素上的噪声符合高斯分布是不合理的)。2，
+用权重矩阵左乘redidual 向量，其物理含义是对residual 向量的每个variable加权，这是因为这个模型主要用在人脸识别上，当人脸有遮挡时，这个权重可以把遮挡部分的像素值的权重变小，使得模型对于有遮挡的人脸识别依然有效。这个加权方式不适合用于对真实噪声加权。原因是1，在真实噪声去噪问题里，如果把一些相似块堆起来组成一个矩阵，每一行是没有任何空间位置关系的点，要求这些点上的噪声符合高斯分布是没有依据的（相当于在图像中放一个网格，要求网格上的所有交叉点所对应的像素上的噪声符合高斯分布是不合理的)。
 
 我们把对角的权重矩阵右乘residual矩阵，注意是矩阵，而不是向量。相当于假设真实噪声图的每个局部的噪声都可以近似于一个高斯，不同的局部的噪声水平不同，对应的权重不同。
 
-\section{Weighted Orthogonal Dictionary Learning}
-现有一个图像块，假设是8x8($d=64$)的维度，拉成列向量$\mathbf{y}\in\mathbb{R}^{d}$，那么我们在其周围找$m$个相似块，得到相似块矩阵$\mathbf{Y}\in\mathbb{R}^{d\times m}$。我们希望在这个数据里学习到一个正交字典，同时利用稀疏表达这个工具。很自然，我想到了K-SVD这个模型，给定数据矩阵$\mathbf{Y}$,KSVD不断迭代更新，从而得到最适合表达数据的字典和稀疏。但是与KSVD不同的是，我希望我的模型里，字典是正交的并且有闭合解，系数也可以有闭合解。从而，我们想到的模型主体是这样的：
+\section{Weighted Orthonormal Dictionary Learning}
+现有一个图像块，假设是8x8($d=64$)的维度，拉成列向量$\mathbf{y}\in\mathbb{R}^{d}$，那么我们在其周围找$m$个相似块，得到相似块矩阵$\mathbf{Y}\in\mathbb{R}^{d\times m}$。我们希望利用稀疏表达这个工具。很自然，我想到了K-SVD这个模型，给定数据矩阵$\mathbf{Y}$,KSVD不断迭代更新，从而得到最适合表达数据的字典和稀疏。
+
+与KSVD不同的是，我希望我的模型里，字典是正交的并且有闭合解。原因是：1，相似块在一个低维空间里，所以正交基就足够了，不需要用过完备基；2，我们模型里的正交字典正好有闭合解，并且结合加权sparse coding得到的整个模型是有收敛性保证的。
+从而，我们想到的模型主体是这样的：
 \begin{equation}
 \min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
 +
@@ -90,35 +93,58 @@ First line of institution2 address\\
 \mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
 \end{equation}
 其中$\mathbf{S}$是对角正定矩阵(表示sparse coding每一行权值不同)。
-
-权重矩阵$\mathbf{W}$的设计应该遵循如下原理：噪声高，权重就小。噪声低，权重就大。这个原则是从贝叶斯的角度得来的：
+定义 $\mathbf{C}^{*}=\mathbf{S}^{-1}\mathbf{C}$, 有$\mathbf{C}=\mathbf{S}\mathbf{C}^{*}$ and 
 \begin{equation}
-\hat{\mathbf{c}}_{i} = \arg\max_{\mathbf{c}_{i}}\ln P(\mathbf{c}_{i}|\mathbf{y}_{i}).
+\min_{\mathbf{D},\mathbf{C}^{*}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{S}\mathbf{C}^{*})\mathbf{W}\|_{F}^{2} 
++
+\lambda\|\mathbf{C}^{*}\|_{1}
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} = \mathbf{I}.
+\end{equation}
+
+
+权重矩阵$\mathbf{W}$的设计应该遵循如下原理：噪声高，权重就小；噪声低，权重就大。这个原则是从求解系数矩阵$\mathbf{C}$时的贝叶斯法则得来的。
+\\
+一方面，求解系数矩阵$\mathbf{C}$需要每列每列单独求解：
+\begin{equation}
+\hat{\mathbf{c}}_{i}^{*}
+=
+\arg\min_{\mathbf{c}_{i}^{*}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}\mathbf{S}\mathbf{c}_{i}^{*})\mathbf{W}_{ii}\|_{2}^{2}
++
+\lambda\|\mathbf{c}_{i}^{*}\|_{1}.
+\end{equation}
+另一方面，由MAP框架，有
+\begin{equation}
+\hat{\mathbf{c}}_{i}^{*} = \arg\max_{\mathbf{c}_{i}^{*}}\ln P(\mathbf{c}_{i}^{*}|\mathbf{y}_{i}).
 \end{equation}
 由贝叶斯法则，等价于
 \begin{equation}
-\hat{\mathbf{c}}_{i} = \arg\max_{\mathbf{c}_{i}}\{\ln P(\mathbf{y}_{i}|\mathbf{c}_{i})+\ln P(\mathbf{c}_{i})\}.
+\hat{\mathbf{c}}_{i}^{*} = \arg\max_{\mathbf{c}_{i}^{*}}\{\ln P(\mathbf{y}_{i}|\mathbf{c}_{i}^{*})+\ln P(\mathbf{c}_{i}^{*})\}.
 \end{equation}
 其中拟合residual noise的数据项是
 \begin{equation}
-P(\mathbf{y}_{i}|\mathbf{c}_{i}) = \frac{1}{\sqrt{2\pi}\sigma}\exp(-\frac{1}{2\sigma^{2}}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}^{2}).
+P(\mathbf{y}_{i}|\mathbf{c}_{i}^{*}) = \frac{1}{\sqrt{2\pi}\sigma_{i}}\exp(-\frac{1}{2\sigma_{i}^{2}}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{S}\mathbf{c}_{i}^{*}\|_{2}^{2}).
 \end{equation}
 系数正则项是
 \begin{equation}
-P(\mathbf{c}_{i})=\prod_{j=1}^{d}\lambda\exp(-\lambda|\mathbf{c}_{ij}|).
+P(\mathbf{c}_{i}^{*})=\prod_{j=1}^{d}\lambda\exp(-\lambda_{i}|\mathbf{c}_{ij}^{*}|).
 \end{equation}
+从而得到
 \begin{equation}
-\hat{\mathbf{c}}_{i}=\arg\min_{\mathbf{c}_{i}}\|\frac{\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}}{\sigma}\|_{2}^{2}+\sum_{j=1}^{d}{\lambda}{|\mathbf{c}_{ij}|}.
+\hat{\mathbf{c}}_{i}^{*}=\arg\min_{\mathbf{c}_{i}^{*}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}\mathbf{S}\mathbf{c}_{i}^{*})\frac{1}{\sigma_{i}}\|_{2}^{2}+\lambda\|\mathbf{c}_{i}^{*}\|_{1}.
 \end{equation}
+对比这两个方面得到的系数矩阵，有
 \begin{equation}
-\mathbf{W}_{ii} = \frac{1}{\sigma}
+\mathbf{W}_{ii} = \frac{1}{\sigma_{i}}
 \end{equation}
+也就是说，权重应该是噪声水平的倒数：噪声高，权重就小；噪声低，权重就大。
 
 \section{初始化}
 \begin{itemize}
-\item $\mathbf{W}^{(0)}$是对角矩阵，初始化为恒等矩阵$\mathbf{I}_{m\times m}$(原因是一开始把所有块平等对待，视为受到相同的高斯噪声的影响)。或者初始化为一个对角矩阵，对角线上的每个元素对应于$\mathbf{Y}$的每一列（图像块）上的噪声水平$\sigma$，这个噪声水平可以用现有估计高斯噪声水平的方法估计出来)；
-\item 正交字典$\mathbf{D}^{(0)}=\mathbf{V}\mathbf{U}^{\top}$由$(\mathbf{Y}\mathbf{W}^{(0)})(\mathbf{Y}\mathbf{W}^{(0)})^{\top}=\mathbf{U}\mathbf{\Sigma}^{(0)}\mathbf{V}^{\top}$做SVD分解得到;
-\item 稀疏系数$\mathbf{C}$的行方向上的权值$\mathbf{s}^{(0)}=\text{diag}(\mathbf{\Sigma}^{(0)})$是weighted sparse coding的权重。$\mathbf{C}$每一行的权值不同，意味着正交字典$\mathbf{D}$的每一列对$\mathbf{C}$的重要性不同；
+\item $\mathbf{W}$上的对角元素是相似块矩阵$\mathbf{Y}$每一列的初始噪声水平的倒数。注意$\mathbf{Y}$已经去掉DC components，列均值为$\mathbf{0}$。因为$\mathbf{Y}$的每一列不全是噪声，还有信号部分，所以初始噪声水平近似于把$\mathbf{Y}$的每列乘上一个系数$\lambda_{ls}$，得到权重矩阵$\mathbf{W}_{ii}=\frac{1}{\lambda_{1}\sqrt{var(\mathbf{y}_{i})}}$。因为每一列中信号所占比例很难区别对待，所以乘以同一个系数。之前的做法是初始化为恒等矩阵$\mathbf{I}$(原因是一开始把所有块平等对待，视为受到相同的高斯噪声的影响)，这对于真实噪声是不合理的；或者初始化为一个对角矩阵，对角线上的每个元素对应于$\mathbf{Y}$的每一列（图像块）上的噪声水平$\sigma_{i}=\lambda_{1}\sqrt{var(\mathbf{y}_{i})}$，这个方法弄反了，应该是噪声水平的倒数。
+\item 正交字典$\mathbf{D}^{(0)}=\mathbf{U}\mathbf{U}^{\top}=\mathbf{I}$和稀疏系数$\mathbf{C}$行方向上的权值$\mathbf{S}=\mathbf{\Sigma}^{(0)}$由$(\mathbf{Y}\mathbf{W}^{(0)})(\mathbf{Y}\mathbf{W}^{(0)})^{\top}=\mathbf{U}\mathbf{\Sigma}^{(0)}\mathbf{U}^{\top}$做SVD分解得到，$\mathbf{C}$每一行的权值不同，意味着正交字典$\mathbf{D}$的每一列对$\mathbf{C}$的重要性不同；
 \end{itemize}
 
 
@@ -128,78 +154,78 @@ $k=0,1,2,...$:
 
 a. update $\mathbf{C}$
 \begin{equation}
-\mathbf{C}^{(k+1)}
-=
-\arg\min_{\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}^{(k)}\mathbf{C})\mathbf{W}^{(k)}\|_{F}^{2}
+\min_{\mathbf{C}^{*}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}^{(k)}\mathbf{S}\mathbf{C}^{*})\mathbf{W}\|_{F}^{2}
 +
-\lambda\|\mathbf{C}\|_{1,\mathbf{s}}.
+\lambda\|\mathbf{C}^{*}\|_{1}.
 \end{equation}
 有闭合解，每一列单独求解：
 \begin{equation}
-\mathbf{c}_{i}^{(k+1)}
+(\hat{\mathbf{c}}_{i}^{*})^{(k+1)}
 =
-\arg\min_{\mathbf{c}_{i}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}^{(k)}\mathbf{c}_{i})\mathbf{W}_{ii}^{(k)}\|_{2}^{2}
+\arg\min_{\mathbf{c}_{i}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}^{(k)}\mathbf{S}\mathbf{c}_{i}^{*})\mathbf{W}_{ii}\|_{2}^{2}
 +
-\lambda\|\mathbf{s}^{T}\mathbf{c}_{i}\|_{1}.
+\lambda\|\mathbf{c}_{i}^{*}\|_{1}.
 \end{equation}
 闭合解为：
 \begin{equation}
-\mathbf{c}_{i}^{(k+1)} 
+(\hat{\mathbf{c}}_{i}^{*})^{(k+1)}
 =
-\text{sgn}(\mathbf{D^{\top}y}) 
+\text{sgn}(\mathbf{S}\mathbf{D^{\top}y}) 
 \odot 
-\text{max}(|\mathbf{D^{\top}y}|-\frac{\lambda}{(\mathbf{W}_{ii}^{(k)})^{2}}\mathbf{s},0),
+\text{max}(|\mathbf{S}\mathbf{D^{\top}y}|-\frac{\lambda}{(\mathbf{W}_{ii})^{2}},0),
 \end{equation}
+别忘了$\mathbf{C}^{(k+1)}=\mathbf{S}(\mathbf{C}^{*})^{(k+1)}$！
 
 b. update $\mathbf{D}$
 \begin{equation}
-\begin{split}
-\mathbf{D}^{(k+1)}
-&
-=
-\arg\min_{\mathbf{D}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C}^{(k+1)})\mathbf{W}^{(k)}\|_{F}^{2}
-\\
-&
+\min_{\mathbf{D}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C}^{(k+1)})\mathbf{W}\|_{F}^{2}
 \quad
 \text{s.t.}
 \quad
 \mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
-\end{split}
 \end{equation}
-闭合解为：
+等价于
 \begin{equation}
-\mathbf{D}^{(k+1)}
-=
-\mathbf{U}\mathbf{V}^{\top}
+\min_{\mathbf{D}}\|(\mathbf{Y}\mathbf{W})-\mathbf{D}(\mathbf{C}^{(k+1)}\mathbf{W})\|_{F}^{2}
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} = \mathbf{I},
 \end{equation}
-其中，
-$\mathbf{U}$和$\mathbf{V}$由$\mathbf{C}^{(k+1)}(\mathbf{W}^{(k)})^{2}\mathbf{Y}^{\top}=\mathbf{U}\mathbf{\Sigma}^{(k+1)}\mathbf{V}^{\top}
-$
-做SVD分解得到。$(\mathbf{W}^{(k)})^{2}$是指$\mathbf{W}$的对角线上的元素分别平方后得到的对角矩阵。
+闭合解为：$\hat{\mathbf{D}}^{(k+1)}=\mathbf{V}\mathbf{U}^{\top}$, $\mathbf{C}\mathbf{W}(\mathbf{Y}\mathbf{W})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$.
 
-c. update $\mathbf{s}$
-
-$\mathbf{s}^{k+1}=\mathbf{\Sigma}^{(k+1)}$
-
-\subsection{(3),(6)收敛后，更新$\mathbf{W}$}
-d. update $\mathbf{W}$
-
-$\mathbf{W}$是对角矩阵，只需要更新迭代对角元即可：
+需要证明收敛性，用ADMM方法证明，并给一个收敛的图：
 \begin{equation}
-\mathbf{W}_{ii}^{new}=\exp(-\lambda_{2}\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\mathbf{c}_{i}^{(k+1)}\|_{2})
+\min_{\mathbf{D},\mathbf{C}^{*}}\|(\mathbf{D}^{\top}\mathbf{Y}-\mathbf{S}\mathbf{C}^{*})\mathbf{W}\|_{F}^{2} 
++
+\lambda\|\mathbf{C}^{*}\|_{1}
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} = \mathbf{I}.
+\end{equation}
+
+
+\subsection{WOPP收敛后，更新两个权重矩阵$\mathbf{W}$， $\mathbf{S}$}
+c. update $\mathbf{W}$
+
+稀疏系数$\mathbf{C}$列方向上的权重矩阵$\mathbf{W}$是对角矩阵，只需要更新迭代对角元即可。有两种迭代方式：
+\\
+RBF Case：
+\begin{equation}
+\mathbf{W}_{ii}^{new}=\exp(\lambda_{2}\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\hat{\mathbf{c}}_{i}^{(k+1)}\|_{2})
 \end{equation}
 $\lambda_{2}$是参数；
-
-或
+\\
+Noise Level Case：
 \begin{equation}
-\mathbf{W}_{ii}^{new}=\lambda_{2}(\sigma_{i}-\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\mathbf{c}_{i}^{(k+1)}\|_{2})
+\mathbf{W}_{ii}^{new}=\frac{\lambda_{2}}{\sigma_{i}-\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\hat{\mathbf{c}}_{i}^{(k+1)}\|_{2}}
 \end{equation}
-或者其它可能性。
 
-待说明问题：
-模型(1)或(2)的收敛性，收敛速率等问题，收敛值的上下界等问题。
+d. update $\mathbf{S}$
 
-实际中，我采用模型(2)，没有多次迭代（因为多次迭代速度太慢），权重的设计采用(8)，权重的物理意义，设计与效果值得探讨。
+稀疏系数$\mathbf{C}$行方向上的权重矩阵$\mathbf{S}$是对角矩阵：$\mathbf{S}=\mathbf{\Sigma}$ or $\mathbf{S}=\sqrt{\mathbf{\Sigma}}$由$(\mathbf{Y}\mathbf{W}^{new})(\mathbf{Y}\mathbf{W}^{new})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{U}^{\top}$做SVD分解得到。
+
 
 
 
