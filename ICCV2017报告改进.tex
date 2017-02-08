@@ -211,15 +211,15 @@ c. update $\mathbf{W}$
 
 稀疏系数$\mathbf{C}$列方向上的权重矩阵$\mathbf{W}$是对角矩阵，只需要更新迭代对角元即可。有两种迭代方式：
 \\
-RBF Case：
-\begin{equation}
-\mathbf{W}_{ii}^{new}=\exp(\lambda_{2}\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\hat{\mathbf{c}}_{i}^{(k+1)}\|_{2})
-\end{equation}
-$\lambda_{2}$是参数；
-\\
 Noise Level Case：
 \begin{equation}
 \mathbf{W}_{ii}^{new}=\frac{\lambda_{2}}{\sigma_{i}-\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\hat{\mathbf{c}}_{i}^{(k+1)}\|_{2}}
+\end{equation}
+$\lambda_{2}$是参数；
+\\
+*RBF Case在这里是不合理的设计方式，可作为备用：
+\begin{equation}
+\mathbf{W}_{ii}^{new}=\exp(\lambda_{2}\|\mathbf{y}_{i}-\mathbf{D}^{(k+1)}\hat{\mathbf{c}}_{i}^{(k+1)}\|_{2})
 \end{equation}
 
 d. update $\mathbf{S}$

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  8 FEB 2017 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  8 FEB 2017 22:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./20170124报告改进.tex
-(./20170124报告改进.tex
+**./ICCV2017报告改进.tex
+(./ICCV2017报告改进.tex
 LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 79 languages loaded.
 (c:/Software/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -1059,8 +1059,8 @@ File: UTF8.enc 2015/04/18 4.8.4
 (c:/Software/texlive/2015/texmf-dist/tex/latex/cjk/texinput/utf8/UTF8.chr
 File: UTF8.chr 2015/04/18 4.8.4
 )
-(./20170124报告改进.aux)
-\openout1 = `20170124报告改进.aux'.
+(./ICCV2017报告改进.aux)
+\openout1 = `ICCV2017报告改进.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
@@ -1263,22 +1263,22 @@ T1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )(\OT1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )[] =
 
  []
 
-No file 20170124报告改进.bbl.
+No file ICCV2017报告改进.bbl.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 239.
 [3
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
- (./20170124报告改进.aux)
+ (./ICCV2017报告改进.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 239.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 239.
  ) 
 Here is how much of TeX's memory you used:
- 20970 strings out of 493091
- 354638 string characters out of 6134517
+ 20971 strings out of 493091
+ 354656 string characters out of 6134517
  380906 words of memory out of 5000000
- 23921 multiletter control sequences out of 15000+600000
+ 23922 multiletter control sequences out of 15000+600000
  60522 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,10n,45p,10424b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1340,7 +1340,7 @@ helvetic/uhvb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/helvet
 ic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a
 .pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/
 Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 20170124报告改进.pdf (3 pages, 431824 bytes).
+Output written on ICCV2017报告改进.pdf (3 pages, 432001 bytes).
 PDF statistics:
  611 PDF objects out of 1000 (max. 8388607)
  418 compressed objects within 5 object streams
