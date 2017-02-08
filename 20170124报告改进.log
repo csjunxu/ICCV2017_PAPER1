@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  8 FEB 2017 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  8 FEB 2017 20:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1239,7 +1239,7 @@ quanjiao) on input line 61.
 File: zhwindowsfonts.tex 2015/07/01 v2.2 Windows font map loader for pdfTeX and
  DVIPDFMx (CTEX)
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 84.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 83.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -1247,19 +1247,16 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 102--107
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 119.
 
- []
-
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 111.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 119.
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 []\C70/rm/m/n/10/7a ^^@ \C70/rm/m/n/10/75 è \C70/rm/m/n/10/7c ˚ \C70/rm/m/n/10/
 65 p$\OT1/cmr/bx/n/10 C$\C70/rm/m/n/10/76 Ñ \C70/rm/m/n/10/88 L \C70/rm/m/n/10/
 65 π \C70/rm/m/n/10/54 ^^Q \C70/rm/m/n/10/4e 
@@ -1268,20 +1265,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--113
  []
 
 No file 20170124±®∏Ê∏ƒΩ¯.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
  (./20170124±®∏Ê∏ƒΩ¯.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 205.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 205.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 205.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 213.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
  ) 
 Here is how much of TeX's memory you used:
- 20930 strings out of 493091
- 354158 string characters out of 6134517
+ 20937 strings out of 493091
+ 354246 string characters out of 6134517
  376906 words of memory out of 5000000
- 23888 multiletter control sequences out of 15000+600000
- 60792 words of font info for 183 fonts, out of 8000000 for 9000
+ 23892 multiletter control sequences out of 15000+600000
+ 60522 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,17n,45p,10424b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/s
@@ -1309,8 +1306,8 @@ Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.
 ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts
 /simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windo
 ws/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><
-c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simh
-ei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fo
+c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simh
+ei.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fo
 nts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Wi
 ndows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.tt
 f><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/s
@@ -1321,31 +1318,30 @@ imkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows
 s/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Wind
 ows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf>
 <c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/sim
-kai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/f
-onts/simkai.ttf>{c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.en
-c}<c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Software/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Software/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Software/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Software/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Software/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Software/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Software/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Software/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Software/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Software/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/Software/texlive/20
-15/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/2015/tex
-mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dis
-t/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/
-times/utmri8a.pfb>
-Output written on 20170124±®∏Ê∏ƒΩ¯.pdf (2 pages, 416786 bytes).
+kai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf>{c:/Software/
+texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Windows/fonts/simkai.tt
+f><c:/Windows/fonts/simkai.ttf><c:/Software/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmex10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi5.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr5.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msbm10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw
+/helvetic/uhvb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/helve
+tic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:
+/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on 20170124±®∏Ê∏ƒΩ¯.pdf (2 pages, 418233 bytes).
 PDF statistics:
- 599 PDF objects out of 1000 (max. 8388607)
- 406 compressed objects within 5 object streams
- 20 named destinations out of 1000 (max. 500000)
- 241 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 600 PDF objects out of 1000 (max. 8388607)
+ 409 compressed objects within 5 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

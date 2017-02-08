@@ -76,41 +76,49 @@ First line of institution2 address\\
 \end{equation}
 用权重矩阵左乘redidual 向量，其物理含义是对residual 向量的每个variable加权，这是因为这个模型主要用在人脸识别上，当人脸有遮挡时，这个权重可以把遮挡部分的像素值的权重变小，使得模型对于有遮挡的人脸识别依然有效。这个加权方式不适合用于对真实噪声加权。原因是1，在真实噪声去噪问题里，如果把一些相似块堆起来组成一个矩阵，每一行是没有任何空间位置关系的点，要求这些点上的噪声符合高斯分布是没有依据的（相当于在图像中放一个网格，要求网格上的所有交叉点所对应的像素上的噪声符合高斯分布是不合理的)。2，
 
-我们把对角的权重矩阵右乘residual矩阵，注意是矩阵，而不是向量。相当于假设真实噪声图的每个局部的噪声都可以近似于一个高斯，不同的局部的噪声水平不同，对应的权重不同。噪声高，权重就大，这是合理的？
-
+我们把对角的权重矩阵右乘residual矩阵，注意是矩阵，而不是向量。相当于假设真实噪声图的每个局部的噪声都可以近似于一个高斯，不同的局部的噪声水平不同，对应的权重不同。
 
 \section{Weighted Orthogonal Dictionary Learning}
 现有一个图像块，假设是8x8($d=64$)的维度，拉成列向量$\mathbf{y}\in\mathbb{R}^{d}$，那么我们在其周围找$m$个相似块，得到相似块矩阵$\mathbf{Y}\in\mathbb{R}^{d\times m}$。我们希望在这个数据里学习到一个正交字典，同时利用稀疏表达这个工具。很自然，我想到了K-SVD这个模型，给定数据矩阵$\mathbf{Y}$,KSVD不断迭代更新，从而得到最适合表达数据的字典和稀疏。但是与KSVD不同的是，我希望我的模型里，字典是正交的并且有闭合解，系数也可以有闭合解。从而，我们想到的模型主体是这样的：
 \begin{equation}
-\min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|\mathbf{Y}-\mathbf{D}\mathbf{C}\mathbf{W}\|_{F}^{2}
-+
-\lambda\|\mathbf{C}\|_{1,\mathbf{s}}
-\quad
-\text{s.t.}
-\quad
-\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
-\end{equation}
-或者
-\begin{equation}
 \min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
 +
-\lambda\|\mathbf{C}\|_{1,\mathbf{s}}
+\lambda\|\mathbf{S}^{-1}\mathbf{C}\|_{1}
 \quad
 \text{s.t.}
 \quad
 \mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
 \end{equation}
-其中$\|\mathbf{C}\|_{1,\mathbf{s}}$表示用的是加权L1范数(对每一行加不同的权值)。
-\\
-\\
-这两个模型是类似的解法，但是物理意义稍有不同。我们先对模型进行初始化：
+其中$\mathbf{S}$是对角正定矩阵(表示sparse coding每一行权值不同)。
 
+权重矩阵$\mathbf{W}$的设计应该遵循如下原理：噪声高，权重就小。噪声低，权重就大。这个原则是从贝叶斯的角度得来的：
+\begin{equation}
+\hat{\mathbf{c}}_{i} = \arg\max_{\mathbf{c}_{i}}\ln P(\mathbf{c}_{i}|\mathbf{y}_{i}).
+\end{equation}
+由贝叶斯法则，等价于
+\begin{equation}
+\hat{\mathbf{c}}_{i} = \arg\max_{\mathbf{c}_{i}}\{\ln P(\mathbf{y}_{i}|\mathbf{c}_{i})+\ln P(\mathbf{c}_{i})\}.
+\end{equation}
+其中拟合residual noise的数据项是
+\begin{equation}
+P(\mathbf{y}_{i}|\mathbf{c}_{i}) = \frac{1}{\sqrt{2\pi}\sigma}\exp(-\frac{1}{2\sigma^{2}}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}^{2}).
+\end{equation}
+系数正则项是
+\begin{equation}
+P(\mathbf{c}_{i})=\prod_{j=1}^{d}\lambda\exp(-\lambda|\mathbf{c}_{ij}|).
+\end{equation}
+\begin{equation}
+\hat{\mathbf{c}}_{i}=\arg\min_{\mathbf{c}_{i}}\|\frac{\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}}{\sigma}\|_{2}^{2}+\sum_{j=1}^{d}{\lambda}{|\mathbf{c}_{ij}|}.
+\end{equation}
+\begin{equation}
+\mathbf{W}_{ii} = \frac{1}{\sigma}
+\end{equation}
 
 \section{初始化}
 \begin{itemize}
-\item 正交字典$\mathbf{D}^{(0)}$由$\mathbf{Y}=\mathbf{D}\mathbf{\Sigma}^{(0)}\mathbf{V}^{\top}$做SVD分解得到;
-\item 稀疏系数$\mathbf{C}$的行方向上的权值$\mathbf{s}^{(0)}=\text{diag}(\mathbf{\Sigma}^{(0)})$是weighted sparse coding的权重。$\mathbf{C}$每一行的权值不同，意味着正交字典$\mathbf{D}$的每一列对$\mathbf{C}$的重要性不同；
 \item $\mathbf{W}^{(0)}$是对角矩阵，初始化为恒等矩阵$\mathbf{I}_{m\times m}$(原因是一开始把所有块平等对待，视为受到相同的高斯噪声的影响)。或者初始化为一个对角矩阵，对角线上的每个元素对应于$\mathbf{Y}$的每一列（图像块）上的噪声水平$\sigma$，这个噪声水平可以用现有估计高斯噪声水平的方法估计出来)；
+\item 正交字典$\mathbf{D}^{(0)}=\mathbf{V}\mathbf{U}^{\top}$由$(\mathbf{Y}\mathbf{W}^{(0)})(\mathbf{Y}\mathbf{W}^{(0)})^{\top}=\mathbf{U}\mathbf{\Sigma}^{(0)}\mathbf{V}^{\top}$做SVD分解得到;
+\item 稀疏系数$\mathbf{C}$的行方向上的权值$\mathbf{s}^{(0)}=\text{diag}(\mathbf{\Sigma}^{(0)})$是weighted sparse coding的权重。$\mathbf{C}$每一行的权值不同，意味着正交字典$\mathbf{D}$的每一列对$\mathbf{C}$的重要性不同；
 \end{itemize}
 
 
