@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  25 JAN 2017 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  8 FEB 2017 19:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1059,7 +1059,7 @@ File: UTF8.enc 2015/04/18 4.8.4
 (c:/Software/texlive/2015/texmf-dist/tex/latex/cjk/texinput/utf8/UTF8.chr
 File: UTF8.chr 2015/04/18 4.8.4
 )
-No file 20170124±®∏Ê∏ƒΩ¯.aux.
+(./20170124±®∏Ê∏ƒΩ¯.aux)
 \openout1 = `20170124±®∏Ê∏ƒΩ¯.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -1145,6 +1145,7 @@ LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 29.
+
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -1234,32 +1235,11 @@ t/10/51 ˙ \C70/rm/m/it/10/4e ^^@ *\OT1/ptm/m/it/10 weighted Frobe-nious norm\C7
 
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
 quanjiao) on input line 61.
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--85
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 89.
-(c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-[]\C70/rm/m/n/10/7a ^^@ \C70/rm/m/n/10/75 è \C70/rm/m/n/10/7c ˚ \C70/rm/m/n/10/
-65 p$\OT1/cmr/bx/n/10 C$\C70/rm/m/n/10/76 Ñ \C70/rm/m/n/10/88 L \C70/rm/m/n/10/
-65 π \C70/rm/m/n/10/54 ^^Q \C70/rm/m/n/10/4e 
- \C70/rm/m/n/10/76 Ñ \C70/rm/m/n/10/67 C \C70/rm/m/n/10/50 <$\OT1/cmr/bx/n/10 s
-[] \OT1/cmr/m/n/10 =
- []
-
 (c:/Software/texlive/2015/texmf-dist/tex/generic/ctex/zhwindowsfonts.tex
 File: zhwindowsfonts.tex 2015/07/01 v2.2 Windows font map loader for pdfTeX and
  DVIPDFMx (CTEX)
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 138.
-
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 84.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -1267,40 +1247,52 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 
 
 ]
-Underfull \hbox (badness 1264) in paragraph at lines 178--181
-\C70/rm/m/n/10/5b _ \C70/rm/m/n/10/80 ^^A \C70/rm/m/n/10/5e ^^H \C70/rm/m/n/10/
-76 Ñ \C70/rm/m/n/10/6a ! \C70/rm/m/n/10/57 ã \C70/rm/m/n/10/66 /\OT1/ptm/m/n/10
- coordinate-wise\C70/rm/m/n/10/76 Ñ \C70/rm/m/n/10/8f Ì \C70/rm/m/n/10/4e „|\C7
-0/rm/m/n/10/ff ^^L| \C70/rm/m/n/10/51 v \C70/rm/m/n/10/4e ^^M \C70/rm/m/n/10/65
- ≠ \C70/rm/m/n/10/8f Ì
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 111.
+
+(c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+[]\C70/rm/m/n/10/7a ^^@ \C70/rm/m/n/10/75 è \C70/rm/m/n/10/7c ˚ \C70/rm/m/n/10/
+65 p$\OT1/cmr/bx/n/10 C$\C70/rm/m/n/10/76 Ñ \C70/rm/m/n/10/88 L \C70/rm/m/n/10/
+65 π \C70/rm/m/n/10/54 ^^Q \C70/rm/m/n/10/4e 
+ \C70/rm/m/n/10/76 Ñ \C70/rm/m/n/10/67 C \C70/rm/m/n/10/50 <$\OT1/cmr/bx/n/10 s
+[] \OT1/cmr/m/n/10 =
  []
 
 No file 20170124±®∏Ê∏ƒΩ¯.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
  (./20170124±®∏Ê∏ƒΩ¯.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 213.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 205.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 205.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 205.
  ) 
 Here is how much of TeX's memory you used:
- 20808 strings out of 493091
- 352698 string characters out of 6134517
- 373802 words of memory out of 5000000
- 23761 multiletter control sequences out of 15000+600000
- 61602 words of font info for 186 fonts, out of 8000000 for 9000
+ 20930 strings out of 493091
+ 354158 string characters out of 6134517
+ 376906 words of memory out of 5000000
+ 23888 multiletter control sequences out of 15000+600000
+ 60792 words of font info for 183 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,17n,45p,10424b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/s
-imhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows
+ 41i,17n,45p,10424b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/s
+imhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows
 /fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:
-/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei
-.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/font
-s/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Wind
-ows/fonts/simhei.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc>
+/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei
+.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/font
+s/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Wind
+ows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc>
 <c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/sim
-hei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/f
+sun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/f
 onts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/W
 indows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.t
 tc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/
@@ -1317,9 +1309,9 @@ Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.
 ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts
 /simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windo
 ws/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><
-c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/sims
-un.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fo
-nts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simkai.ttf><c:/Wi
+c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simh
+ei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fo
+nts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Wi
 ndows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.tt
 f><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/s
 imkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows
@@ -1330,30 +1322,30 @@ s/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Wind
 ows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf>
 <c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/sim
 kai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/f
-onts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/W
-indows/fonts/simkai.ttf>{c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/ba
-se/8r.enc}<c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Softwar
-e/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Softwar
-e/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Softwar
-e/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Software
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Software/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Software/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Software/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Software/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Software/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Software/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/Software/te
-xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/
-2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist
-/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/ty
-pe1/urw/times/utmri8a.pfb>
-Output written on 20170124±®∏Ê∏ƒΩ¯.pdf (2 pages, 400541 bytes).
+onts/simkai.ttf>{c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.en
+c}<c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Software/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Software/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Software/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Software/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Software/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Software/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Software/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Software/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Software/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Software/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/Software/texlive/20
+15/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/2015/tex
+mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dis
+t/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/t
+ype1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/
+times/utmri8a.pfb>
+Output written on 20170124±®∏Ê∏ƒΩ¯.pdf (2 pages, 416786 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 413 compressed objects within 5 object streams
- 21 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 599 PDF objects out of 1000 (max. 8388607)
+ 406 compressed objects within 5 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 241 words of extra memory for PDF output out of 10000 (max. 10000000)
 

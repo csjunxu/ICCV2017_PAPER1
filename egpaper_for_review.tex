@@ -58,6 +58,10 @@ Motivated by the weighted Orthogonal Procrustes Problem, we propose a noval weig
 
 %%%%%%%%% BODY TEXT
 \section{Introduction}
+When the recovered patch is close to the latent clean patch, the residual is close to the contaminating noise.
+
+
+
 Given a patch extracted from the tested image, assume $d=64$)的维度，拉成列向量$\mathbf{y}\in\mathbb{R}^{d}$，那么我们在其周围找$m$个相似块，得到相似块矩阵$\mathbf{Y}\in\mathbb{R}^{d\times m}$。我们希望在这个数据里学习到一个正交字典，同时利用稀疏表达这个工具。很自然，我想到了K-SVD这个模型，给定数据矩阵$\mathbf{Y}$,KSVD不断迭代更新，从而得到最适合表达数据的字典和稀疏。但是与KSVD不同的是，我希望我的模型里，字典是正交的并且有闭合解，系数也可以有闭合解。从而，我们想到的模型主体是这样的：
 \begin{equation}
 \min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|\mathbf{Y}-\mathbf{D}\mathbf{C}\mathbf{W}\|_{F}^{2}
