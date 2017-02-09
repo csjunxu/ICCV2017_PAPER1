@@ -16,6 +16,13 @@ Deyu Meng and Fernando De~La~Torre.
 \newblock In {\em Proceedings of the IEEE International Conference on Computer
   Vision}, pages 1337--1344, 2013.
 
+\bibitem{GillisGlineur}
+Nicolas Gillis and François Glineur.
+\newblock Low-rank matrix approximation with weights or missing data is
+  np-hard.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  32(4):1149--1165, 2011.
+
 \bibitem{yang2011robust}
 Meng Yang, Lei Zhang, Jian Yang, and David Zhang.
 \newblock Robust sparse coding for face recognition.
