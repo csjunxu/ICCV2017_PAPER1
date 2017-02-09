@@ -58,9 +58,9 @@ First line of institution2 address\\
 
 %%%%%%%%% BODY TEXT
 \section{模型Introduction}
-介绍各种在优化模型的数据项里加权重的方式和含义，目前最常见的是孟老师的pixel-wise的加权和杨猛师兄的对每个variable加权。
+介绍各种在优化模型的数据项里加权重的方式和含义，目前最常见的是Nathan Srebro的weighted low rank Approximations模型，孟老师的pixel-wise的加权和杨猛师兄的对每个variable加权。
 
-先看孟老师的模型，其主体是：
+先看Nathan Srebro的模型和孟老师的模型，其主体都是：
 \begin{equation}
 \min_{\mathbf{U},\mathbf{V}}\|\mathbf{W}\odot(\mathbf{X}-\mathbf{U}\mathbf{V}^{\top})\|_{1}
 \end{equation}
@@ -127,9 +127,9 @@ First line of institution2 address\\
 \begin{equation}
 P(\mathbf{y}_{i}|\mathbf{c}_{i}^{*}) = \frac{1}{\sqrt{2\pi}\sigma_{i}}\exp(-\frac{1}{2\sigma_{i}^{2}}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{S}\mathbf{c}_{i}^{*}\|_{2}^{2}).
 \end{equation}
-系数正则项是
+系数正则项是Laplace distribution with location $\mathbf{0}$ and scale $\lambda>0$:
 \begin{equation}
-P(\mathbf{c}_{i}^{*})=\prod_{j=1}^{d}\lambda\exp(-\lambda_{i}|\mathbf{c}_{ij}^{*}|).
+P(\mathbf{c}_{i}^{*})=\prod_{j=1}^{d}\frac{\lambda}{2}\exp(-\lambda|\mathbf{c}_{ij}^{*}|).
 \end{equation}
 从而得到
 \begin{equation}
