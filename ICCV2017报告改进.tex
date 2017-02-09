@@ -81,7 +81,7 @@ First line of institution2 address\\
 \section{Weighted Orthonormal Dictionary Learning}
 现有一个图像块，假设是8x8($d=64$)的维度，拉成列向量$\mathbf{y}\in\mathbb{R}^{d}$，那么我们在其周围找$m$个相似块，得到相似块矩阵$\mathbf{Y}\in\mathbb{R}^{d\times m}$。我们希望利用稀疏表达这个工具。很自然，我想到了K-SVD这个模型，给定数据矩阵$\mathbf{Y}$,KSVD不断迭代更新，从而得到最适合表达数据的字典和稀疏。
 
-与KSVD不同的是，我希望我的模型里，字典是正交的并且有闭合解。原因是：1，相似块在一个低维空间里，所以正交基就足够了，不需要用过完备基；2，我们模型里的正交字典正好有闭合解，并且结合加权sparse coding得到的整个模型是有收敛性保证的。
+与KSVD不同的是，我们要求这个新模型里的字典是正交的。原因是：1，相似块在一个低维空间里，所以正交基就足够了，不需要用过完备基；2，我们模型里的正交字典正好有闭合解，并且结合加权sparse coding得到的整个模型是有收敛性保证的。
 从而，我们想到的模型主体是这样的：
 \begin{equation}
 \min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
