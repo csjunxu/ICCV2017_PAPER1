@@ -58,6 +58,10 @@ First line of institution2 address\\
 
 %%%%%%%%% BODY TEXT
 \section{模型Introduction}
+Traditional Frobenius norm has been successfully accounted for Gaussian noise from the Bayesian perspective. However, the Frobenius norm is not robust to outliers or fails to account for non-Gaussian noise, which are commonly existed in realistic applications. For example, the real-world noisy images are mainly degraded by mixed Poisson and Gaussian noise, and the traditional Frobenius norm is not reasonable or effective to real noisy image denoising problem. The bilinear factorization problem with weights is NP-hard and does not have a closed-form solution in general. 
+
+SVD is sensitive to outliers
+
 Two different weighted Frobenius norms are defined by Higham in his paper \cite{higham2002computing}. The (1.3) of \cite{higham2002computing} is the Hadamard weighted Frobenius norm while the (1.3) of \cite{higham2002computing} is the most commonly used weighted Frobenius norm in numerical mathematics, where $\mathbf{W}$ is the symmetric positive definite matrix for the weighted Frobenius norm. 
 介绍各种在优化模型的数据项里加权重的方式和含义，目前最常见的是Nathan Srebro的weighted low rank Approximations模型，孟老师的pixel-wise的加权和杨猛师兄的对每个variable加权。
 
