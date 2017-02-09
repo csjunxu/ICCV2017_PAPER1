@@ -90,7 +90,7 @@ In fact, this problem is a NP-hard problem and can have several solutions \cite{
 
 与KSVD不同的是，我们要求这个新模型里的字典是正交的。原因是：1，相似块在一个低维空间里，所以正交基就足够了，不需要用过完备基；2，我们模型里的正交字典正好有闭合解，并且结合加权sparse coding得到的整个模型是有收敛性保证的。
 从而，我们想到的模型主体是这样的：
-\begin{equation}
+\begin{equation}\label{wlswsc}
 \min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
 +
 \lambda\|\mathbf{S}^{-1}\mathbf{C}\|_{1}
@@ -213,6 +213,8 @@ b. update $\mathbf{D}$
 \end{equation}
 
 实验中，我们发现，加权矩阵的引入使得模型可以自适应于不同的噪声情况，从而使得我们的模型收敛速度更快。如果不加权重矩阵$\mathbf{W}$， $\mathbf{S}$，那么收敛速度会慢很多。
+
+Since the objective function of (\ref{wlswsc}) is monotonically non-increasing and has the lower bound (0), it is convergent according to the famous Monotone Convergence Theorem \cite{stein2009real} \url{http://math.stackexchange.com/questions/789521/non-increasing-monotone-sequence-convergence-proof}. It could be reasonably terminated when the decreasing rate is smaller than a preset threshold or the number of alternating updating steps of the optimization problem reaches the maximum iteration number. 
 
 \subsection{WOPP收敛后，更新两个权重矩阵$\mathbf{W}$， $\mathbf{S}$}
 c. update $\mathbf{W}$
