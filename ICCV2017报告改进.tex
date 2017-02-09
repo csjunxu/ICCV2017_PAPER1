@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
-
+\usepackage[numbers,sort]{natbib}
 \usepackage[UTF8]{ctex}
 
 
@@ -58,15 +58,16 @@ First line of institution2 address\\
 
 %%%%%%%%% BODY TEXT
 \section{模型Introduction}
+Two different weighted Frobenius norms are defined by Higham in his paper \cite{higham2002computing}. The (1.3) of \cite{higham2002computing} is the Hadamard weighted Frobenius norm while the (1.3) of \cite{higham2002computing} is the most commonly used weighted Frobenius norm in numerical mathematics, where $\mathbf{W}$ is the symmetric positive definite matrix for the weighted Frobenius norm. 
 介绍各种在优化模型的数据项里加权重的方式和含义，目前最常见的是Nathan Srebro的weighted low rank Approximations模型，孟老师的pixel-wise的加权和杨猛师兄的对每个variable加权。
 
-先看Nathan Srebro的模型和孟老师的模型，其主体都是：
+先看Nathan Srebro的模型\cite{srebro2003weighted}和孟老师的模型\cite{meng2013robust}，其主体都是：
 \begin{equation}
 \min_{\mathbf{U},\mathbf{V}}\|\mathbf{W}\odot(\mathbf{X}-\mathbf{U}\mathbf{V}^{\top})\|_{1}
 \end{equation}
 这个模型应用在Low-Rank Matrix Factorization with Missing Entries这个问题里，$\mathbf{W}$指矩阵的元素是否是missing entry，其元素只有0或1。这几篇文章中，都用Mixture of Gaussians (MoG)模拟噪声，用EM算法估计噪声分布，$\mathbf{W}_{ij}$是噪声属于所有Gaussian的期望与高斯噪声方差的比值的和，即$\mathbf{W}_{ij}=\sum_{k=1}^{K}\frac{\gamma_{ijk}}{2\sigma_{k}^{2}}$。这个加权方式不适合用于对真实噪声加权。原因是1，这个权重矩阵变量太多，迭代的计算量很大。2，每个元素对应于一个像素值，但是很难仅仅通过一个像素值就估计出这个像素值里噪声的水平。3，真实噪声里，可能某个像素的噪声是outlier，而EM算法对outlier不鲁棒，导致无法很好地去除这个像素的噪声。4，EM算法估计过程计算量很大，不适合用于对真实噪声加权。5，对单个像素加一个权重忽略了图像的结构信息，这个加权方式适用于随机程度比较高的问题，比如矩阵分解，但是对于图像修复或者分类就不太适用。
 
-杨猛的模型主体是
+杨猛的模型\cite{yang2011robust}主体是
 \begin{equation}
 \min_{\mathbf{c}}\|\mathbf{W}^{\frac{1}{2}}(\mathbf{y}-\mathbf{D}\mathbf{c})\|_{2}^{2}
 \quad
@@ -76,7 +77,7 @@ First line of institution2 address\\
 \end{equation}
 用权重矩阵左乘redidual 向量，其物理含义是对residual 向量的每个variable加权，这是因为这个模型主要用在人脸识别上，当人脸有遮挡时，这个权重可以把遮挡部分的像素值的权重变小，使得模型对于有遮挡的人脸识别依然有效。这个加权方式不适合用于对真实噪声加权。原因是1，在真实噪声去噪问题里，如果把一些相似块堆起来组成一个矩阵，每一行是没有任何空间位置关系的点，要求这些点上的噪声符合高斯分布是没有依据的（相当于在图像中放一个网格，要求网格上的所有交叉点所对应的像素上的噪声符合高斯分布是不合理的)。
 
-我们把对角的权重矩阵右乘residual矩阵，注意是矩阵，而不是向量。相当于假设真实噪声图的每个局部的噪声都可以近似于一个高斯，不同的局部的噪声水平不同，对应的权重不同。
+我们把Frobenious Norm里的residual矩阵（注意是矩阵，而不是向量）右乘对角的权重矩阵$\mathbf{W}$，相当于假设真实噪声图的每个局部的噪声都可以近似于一个高斯，不同的局部的噪声水平不同，对应的权重不同。我们还学习得到一个正交字典，正交字典的好处后面会提到。因为正交字典里的每一列的atom是不同重要程度的，这个重要程度可以通过奇异值矩阵$\mathbf{S}$对角线上的对应奇异值的大小来决定，因此，我们还在residual 矩阵里正则项系数$\mathbf{C}$的左边乘上一个$\mathbf{S}$来对正则项的每一行加上一个权重。而且实验中，我们发现，加权矩阵的引入使得模型可以自适应于不同的噪声情况，从而使得我们的模型收敛速度更快。
 
 \section{Weighted Orthonormal Dictionary Learning}
 现有一个图像块，假设是8x8($d=64$)的维度，拉成列向量$\mathbf{y}\in\mathbb{R}^{d}$，那么我们在其周围找$m$个相似块，得到相似块矩阵$\mathbf{Y}\in\mathbb{R}^{d\times m}$。我们希望利用稀疏表达这个工具。很自然，我想到了K-SVD这个模型，给定数据矩阵$\mathbf{Y}$,KSVD不断迭代更新，从而得到最适合表达数据的字典和稀疏。
@@ -205,6 +206,7 @@ b. update $\mathbf{D}$
 \mathbf{D}^{\top}\mathbf{D} = \mathbf{I}.
 \end{equation}
 
+实验中，我们发现，加权矩阵的引入使得模型可以自适应于不同的噪声情况，从而使得我们的模型收敛速度更快。如果不加权重矩阵$\mathbf{W}$， $\mathbf{S}$，那么收敛速度会慢很多。
 
 \subsection{WOPP收敛后，更新两个权重矩阵$\mathbf{W}$， $\mathbf{S}$}
 c. update $\mathbf{W}$
@@ -232,7 +234,7 @@ d. update $\mathbf{S}$
 
 
 {\small
-\bibliographystyle{ieee}
+\bibliographystyle{unsrt}
 \bibliography{egbib}
 }
 

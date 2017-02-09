@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  9 FEB 2017 09:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  9 FEB 2017 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -156,6 +156,13 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(c:/Software/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip48
+\bibsep=\skip49
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count105
+)
 (c:/Software/texlive/2015/texmf-dist/tex/latex/ctex/ctex.sty
 (c:/Software/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2015/09/06 v5925 L3 programming layer (loader) 
@@ -170,24 +177,24 @@ L3 Module: l3tl 2015/09/02 v5908 L3 Token lists
 L3 Module: l3str 2015/09/05 v5920 L3 Strings
 L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
 L3 Module: l3int 2015/08/24 v5885 L3 Integers
-\c_max_int=\count105
-\l_tmpa_int=\count106
-\l_tmpb_int=\count107
-\g_tmpa_int=\count108
-\g_tmpb_int=\count109
+\c_max_int=\count106
+\l_tmpa_int=\count107
+\l_tmpb_int=\count108
+\g_tmpa_int=\count109
+\g_tmpb_int=\count110
 L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
 L3 Module: l3prg 2015/08/25 v5891 L3 Control structures
-\g__prg_map_int=\count110
+\g__prg_map_int=\count111
 L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
 L3 Module: l3token 2015/08/26 v5893 L3 Experimental token manipulation
 L3 Module: l3prop 2015/08/05 v5777 L3 Property lists
 L3 Module: l3msg 2015/08/25 v5891 L3 Messages
 L3 Module: l3file 2015/08/05 v5786 L3 File and I/O operations
-\l_iow_line_count_int=\count111
-\l__iow_target_count_int=\count112
-\l__iow_current_line_int=\count113
-\l__iow_current_word_int=\count114
-\l__iow_current_indentation_int=\count115
+\l_iow_line_count_int=\count112
+\l__iow_target_count_int=\count113
+\l__iow_current_line_int=\count114
+\l__iow_current_word_int=\count115
+\l__iow_current_indentation_int=\count116
 L3 Module: l3skip 2015/08/26 v5893 L3 Dimensions and skips
 \c_zero_dim=\dimen119
 \c_max_dim=\dimen120
@@ -195,12 +202,12 @@ L3 Module: l3skip 2015/08/26 v5893 L3 Dimensions and skips
 \l_tmpb_dim=\dimen122
 \g_tmpa_dim=\dimen123
 \g_tmpb_dim=\dimen124
-\c_zero_skip=\skip48
-\c_max_skip=\skip49
-\l_tmpa_skip=\skip50
-\l_tmpb_skip=\skip51
-\g_tmpa_skip=\skip52
-\g_tmpb_skip=\skip53
+\c_zero_skip=\skip50
+\c_max_skip=\skip51
+\l_tmpa_skip=\skip52
+\l_tmpb_skip=\skip53
+\g_tmpa_skip=\skip54
+\g_tmpb_skip=\skip55
 \c_zero_muskip=\muskip11
 \c_max_muskip=\muskip12
 \l_tmpa_muskip=\muskip13
@@ -208,18 +215,18 @@ L3 Module: l3skip 2015/08/26 v5893 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
 L3 Module: l3keys 2015/08/20 v5869 L3 Key-value interfaces
-\g__keyval_level_int=\count116
-\l_keys_choice_int=\count117
+\g__keyval_level_int=\count117
+\l_keys_choice_int=\count118
 L3 Module: l3fp 2015/08/25 v5890 L3 Floating points
-\c__fp_leading_shift_int=\count118
-\c__fp_middle_shift_int=\count119
-\c__fp_trailing_shift_int=\count120
-\c__fp_big_leading_shift_int=\count121
-\c__fp_big_middle_shift_int=\count122
-\c__fp_big_trailing_shift_int=\count123
-\c__fp_Bigg_leading_shift_int=\count124
-\c__fp_Bigg_middle_shift_int=\count125
-\c__fp_Bigg_trailing_shift_int=\count126
+\c__fp_leading_shift_int=\count119
+\c__fp_middle_shift_int=\count120
+\c__fp_trailing_shift_int=\count121
+\c__fp_big_leading_shift_int=\count122
+\c__fp_big_middle_shift_int=\count123
+\c__fp_big_trailing_shift_int=\count124
+\c__fp_Bigg_leading_shift_int=\count125
+\c__fp_Bigg_middle_shift_int=\count126
+\c__fp_Bigg_trailing_shift_int=\count127
 L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
 \c_empty_box=\box30
 \l_tmpa_box=\box31
@@ -271,17 +278,17 @@ File: l3unicode-data.def 2015/07/20 v5676 L3 Unicode data
 )
 (c:/Software/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2015/06/30 v5646 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count127
+\l__driver_color_stack_int=\count128
 ))
 Package: ctex 2015/07/01 v2.2 Chinese adapter in LaTeX (CTEX)
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2015/09/06 v5925 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count128
-\l__xparse_m_args_int=\count129
-\l__xparse_mandatory_args_int=\count130
-\l__xparse_processor_int=\count131
-\l__xparse_v_nesting_int=\count132
+\l__xparse_current_arg_int=\count129
+\l__xparse_m_args_int=\count130
+\l__xparse_mandatory_args_int=\count131
+\l__xparse_processor_int=\count132
+\l__xparse_v_nesting_int=\count133
 )
 (c:/Software/texlive/2015/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2015/09/06 v5925 LaTeX2e option processing using LaTeX3 keys
@@ -300,7 +307,7 @@ File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 (c:/Software/texlive/2015/texmf-dist/tex/latex/ms/everysel.sty
 Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 )
-\l__ctex_tmp_int=\count133
+\l__ctex_tmp_int=\count134
 \l__ctex_tmp_dim=\dimen150
 \l__ctex_tmp_box=\box45
 \g__file_internal_ior=\read1
@@ -707,11 +714,11 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 ))
 (c:/Software/texlive/2015/texmf-dist/tex/latex/cjkpunct/CJKpunct.sty
 Package: CJKpunct 2009/05/06 4.8.2
-\CJKpunct@cnta=\count134
-\CJKpunct@cntb=\count135
-\CJKpunct@cntc=\count136
-\CJKpunct@cntd=\count137
-\CJKpunct@cnte=\count138
+\CJKpunct@cnta=\count135
+\CJKpunct@cntb=\count136
+\CJKpunct@cntc=\count137
+\CJKpunct@cntd=\count138
+\CJKpunct@cnte=\count139
    defining Unicode char U+2018 (decimal 8216)
    defining Unicode char U+2019 (decimal 8217)
    defining Unicode char U+201C (decimal 8220)
@@ -734,27 +741,27 @@ Package: CJKulem 2015/04/18 4.8.4
 (c:/Software/texlive/2015/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box47
 \UL@hyphenbox=\box48
-\UL@skip=\skip54
+\UL@skip=\skip56
 \UL@hook=\toks22
 \UL@height=\dimen151
-\UL@pe=\count139
+\UL@pe=\count140
 \UL@pixel=\dimen152
 \ULC@box=\box49
 Package: ulem 2012/05/18
 \ULdepth=\dimen153
 )
 \UL@lastkern=\dimen154
-\CJK@skip=\skip55
+\CJK@skip=\skip57
 )
-\CJK@fntefSkip=\skip56
-\CJK@nest=\count140
+\CJK@fntefSkip=\skip58
+\CJK@nest=\count141
 \CJK@fntefDimen=\dimen155
 \CJK@underdotBox=\box50
 \CJK@ULbox=\box51
 \CJK@underanyskip=\dimen156
 )
 \ccwd=\dimen157
-\l__ctex_ccglue_skip=\skip57
+\l__ctex_ccglue_skip=\skip59
 )
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -815,15 +822,15 @@ Package: zhnumber 2015/05/21 v2.2 Typesetting numbers with Chinese glyphs
 . 
 . Defining command \zhdate with sig. '+s+m' on line 355.
 .................................................
-\l__zhnum_scale_int=\count141
+\l__zhnum_scale_int=\count142
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
 . Defining command \zhnumExtendScaleMap with sig. '>{\TrimSpaces }+o+m' on
 . line 468.
 .................................................
-\l__zhnum_byte_min_int=\count142
-\l__zhnum_byte_max_int=\count143
+\l__zhnum_byte_min_int=\count143
+\l__zhnum_byte_max_int=\count144
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -975,15 +982,15 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen159
-\Hy@linkcounter=\count144
-\Hy@pagecounter=\count145
+\Hy@linkcounter=\count145
+\Hy@pagecounter=\count146
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count146
+\Hy@SavedSpaceFactor=\count147
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -1017,7 +1024,7 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count147
+\c@Hy@tempcnt=\count148
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
@@ -1025,7 +1032,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen160
-\Fld@menulength=\count148
+\Fld@menulength=\count149
 \Field@Width=\dimen161
 \Fld@charsize=\dimen162
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -1037,18 +1044,18 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count149
-\c@Item=\count150
-\c@Hfootnote=\count151
+\Hy@abspage=\count150
+\c@Item=\count151
+\c@Hfootnote=\count152
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count152
-\c@bookmark@seq@number=\count153
-\Hy@SectionHShift=\skip58
+\Fld@listcount=\count153
+\c@bookmark@seq@number=\count154
+\Hy@SectionHShift=\skip60
 )
 (c:/Software/texlive/2015/texmf-dist/tex/latex/cjk/texinput/utf8/UTF8.bdg
 File: UTF8.bdg 2015/04/18 4.8.4
@@ -1160,16 +1167,16 @@ Package color Info: Driver file: pdftex.def on input line 142.
 )
 (c:/Software/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count154
+\scratchcounter=\count155
 \scratchdimen=\dimen163
 \scratchbox=\box52
-\nofMPsegments=\count155
-\nofMParguments=\count156
+\nofMPsegments=\count156
+\nofMParguments=\count157
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count157
+\MPscratchCnt=\count158
 \MPscratchDim=\dimen164
-\MPnumerator=\count158
-\makeMPintoPDFobject=\count159
+\MPnumerator=\count159
+\makeMPintoPDFobject=\count160
 \everyMPtoPDFconversion=\toks24
 ) (c:/Software/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1190,6 +1197,7 @@ ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 29.
 \AtBeginShipoutBox=\box53
 Package atbegshi Info: Package `everyshi' patched.
+Package backref Info: ** backref set up for natbib ** on input line 29.
 Package hyperref Info: Link coloring ON on input line 29.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1198,7 +1206,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (c:/Software/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count160
+\c@section@level=\count161
 )
 LaTeX Info: Redefining \ref on input line 29.
 LaTeX Info: Redefining \pageref on input line 29.
@@ -1234,12 +1242,12 @@ t/10/51 ú \C70/rm/m/it/10/4e ^^@ *\OT1/ptm/m/it/10 weighted Frobe-nious norm\C7
  []
 
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 61.
+quanjiao) on input line 62.
 (c:/Software/texlive/2015/texmf-dist/tex/generic/ctex/zhwindowsfonts.tex
 File: zhwindowsfonts.tex 2015/07/01 v2.2 Windows font map loader for pdfTeX and
  DVIPDFMx (CTEX)
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 86.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 81.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -1247,46 +1255,56 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 146.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 147.
 
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 146.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 147.
  [2]
-Underfull \hbox (badness 1845) in paragraph at lines 227--228
+Underfull \hbox (badness 1845) in paragraph at lines 229--230
 \OT1/cmr/bx/n/10 S \OT1/cmr/m/n/10 = \OT1/cmr/bx/n/10 ^^F$ \OT1/ptm/m/n/10 or $
 \OT1/cmr/bx/n/10 S \OT1/cmr/m/n/10 = []$\C70/rm/m/n/10/75 1$\OT1/cmr/m/n/10 (\O
 T1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )(\OT1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )[] =
 
  []
 
-No file ICCV2017±¨¸æ¸Ä½ø.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 239.
-[3
+(./ICCV2017±¨¸æ¸Ä½ø.bbl (./ICCV2017±¨¸æ¸Ä½ø.brf)
+\tf@brf=\write3
+\openout3 = `ICCV2017±¨¸æ¸Ä½ø.brf'.
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 241.
+ [3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 241.
  (./ICCV2017±¨¸æ¸Ä½ø.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 239.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 239.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 241.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 241.
+
+
+Package rerunfilecheck Warning: File `ICCV2017±¨¸æ¸Ä½ø.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `ICCV2017±¨¸æ¸Ä½ø.brf':
+(rerunfilecheck)             Before: E79213FE8562D09E93EC8305477E7035;145
+(rerunfilecheck)             After:  EA95CB34484037A3FF19322DC3B5D92F;298.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 241.
  ) 
 Here is how much of TeX's memory you used:
- 20971 strings out of 493091
- 354656 string characters out of 6134517
- 380906 words of memory out of 5000000
- 23922 multiletter control sequences out of 15000+600000
- 60522 words of font info for 182 fonts, out of 8000000 for 9000
+ 21364 strings out of 493091
+ 359643 string characters out of 6134517
+ 387525 words of memory out of 5000000
+ 24297 multiletter control sequences out of 15000+600000
+ 63554 words of font info for 186 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,45p,10424b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/s
+ 41i,10n,45p,10424b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/s
 imhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows
 /fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:
-/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simsun
-.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/font
+/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei
+.ttf><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/font
 s/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Wind
 ows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc>
 <c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/sim
@@ -1307,8 +1325,8 @@ Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.
 ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts
 /simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windo
 ws/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><
-c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simh
-ei.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fo
+c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simh
+ei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fo
 nts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Wi
 ndows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.tt
 f><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/s
@@ -1319,31 +1337,32 @@ imkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows
 s/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Wind
 ows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf>
 <c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/sim
-kai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf>{c:/Software/
-texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Windows/fonts/simkai.tt
-f><c:/Windows/fonts/simkai.ttf><c:/Software/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx12.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi5.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr5.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy5.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/
-helvetic/uhvb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/helvet
-ic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a
-.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/
-Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ICCV2017±¨¸æ¸Ä½ø.pdf (3 pages, 432365 bytes).
+kai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Windows/f
+onts/simkai.ttf>{c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.en
+c}<c:/Windows/fonts/simkai.ttf><c:/Windows/fonts/simkai.ttf><c:/Software/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Software/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Software/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Software/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Software/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Software/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Software/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Software/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Software/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Software/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/Software/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/Software/texlive/201
+5/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/2015/texm
+f-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist
+/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/ty
+pe1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/t
+imes/utmri8a.pfb>
+Output written on ICCV2017±¨¸æ¸Ä½ø.pdf (3 pages, 443731 bytes).
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
- 418 compressed objects within 5 object streams
- 29 named destinations out of 1000 (max. 500000)
- 237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 631 PDF objects out of 1000 (max. 8388607)
+ 436 compressed objects within 5 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 241 words of extra memory for PDF output out of 10000 (max. 10000000)
 

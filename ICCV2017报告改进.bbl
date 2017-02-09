@@ -1,0 +1,25 @@
+\begin{thebibliography}{1}
+
+\bibitem{higham2002computing}
+Nicholas~J Higham.
+\newblock Computing the nearest correlation matrix—a problem from finance.
+\newblock {\em IMA Journal of Numerical Analysis}, 22(3):329--343, 2002.
+
+\bibitem{srebro2003weighted}
+Nathan Srebro and Tommi Jaakkola.
+\newblock Weighted low-rank approximations.
+\newblock In {\em ICML}, volume~3, pages 720--727, 2003.
+
+\bibitem{meng2013robust}
+Deyu Meng and Fernando De~La~Torre.
+\newblock Robust matrix factorization with unknown noise.
+\newblock In {\em Proceedings of the IEEE International Conference on Computer
+  Vision}, pages 1337--1344, 2013.
+
+\bibitem{yang2011robust}
+Meng Yang, Lei Zhang, Jian Yang, and David Zhang.
+\newblock Robust sparse coding for face recognition.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2011 IEEE
+  Conference on}, pages 625--632. IEEE, 2011.
+
+\end{thebibliography}
