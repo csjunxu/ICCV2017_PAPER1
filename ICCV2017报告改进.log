@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  10 FEB 2017 10:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  10 FEB 2017 10:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1254,67 +1254,60 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 ) [1
 
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 155.
+] [2]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 157.
 
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 219.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 157.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 221.
 
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 2343) in paragraph at lines 219--220
+Underfull \hbox (badness 2343) in paragraph at lines 221--222
 []\OT1/ptm/m/n/10 Since the ob-jec-tive func-tion of ([][]3[][]) is mono-ton-
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 219--220
+Underfull \hbox (badness 4132) in paragraph at lines 221--222
 \OT1/ptm/m/n/10 i-cally non-increasing and has the lower bound (0),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 \OT1/ptm/m/n/10 it is con-ver-gent ac-cord-ing to the fa-mous Mono-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 \OT1/ptm/m/n/10 tone Con-ver-gence The-o-rem [[]] [][]$\OT1/pcr/m/n/10 http : /
  / math .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 \OT1/pcr/m/n/10 stackexchange . com / questions / 789521 /
  []
 
 
-Overfull \hbox (67.86406pt too wide) in paragraph at lines 219--220
+Overfull \hbox (67.86406pt too wide) in paragraph at lines 221--222
 \OT1/pcr/m/n/10 non-[]increasing-[]monotone-[]sequence-[]convergence-[]proof$[]
 []\OT1/ptm/m/n/10 .
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 219--220
+Underfull \hbox (badness 1082) in paragraph at lines 221--222
 \OT1/ptm/m/n/10 al-ter-nat-ing up-dat-ing steps of the op-ti-miza-tion prob-lem
 
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 239.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 239.
 [3]
-Underfull \hbox (badness 1845) in paragraph at lines 239--240
+Underfull \hbox (badness 1845) in paragraph at lines 241--242
 \OT1/cmr/bx/n/10 S \OT1/cmr/m/n/10 = \OT1/cmr/bx/n/10 ^^F$ \OT1/ptm/m/n/10 or $
 \OT1/cmr/bx/n/10 S \OT1/cmr/m/n/10 = []$\C70/rm/m/n/10/75 1$\OT1/cmr/m/n/10 (\O
 T1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )(\OT1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )[] =
@@ -1326,26 +1319,26 @@ T1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )(\OT1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )[] =
 \openout3 = `ICCV2017报告改进.brf'.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 251.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
  [4
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 251.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
  (./ICCV2017报告改进.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 251.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 251.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
 Package rerunfilecheck Info: File `ICCV2017报告改进.brf' has not changed.
 (rerunfilecheck)             Checksum: 026318E3695D420306E4E89F5CAB688F;494.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 251.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
  ) 
 Here is how much of TeX's memory you used:
- 21441 strings out of 493091
- 360900 string characters out of 6134517
- 389643 words of memory out of 5000000
- 24352 multiletter control sequences out of 15000+600000
+ 21420 strings out of 493091
+ 360575 string characters out of 6134517
+ 388643 words of memory out of 5000000
+ 24344 multiletter control sequences out of 15000+600000
  64069 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,45p,10424b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,45p,10424b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/fonts/simsun.ttc>{c:/Software/texlive/2015/texmf-dist/fonts/enc/d
 vips/base/8r.enc}<c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/
 Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.
@@ -1406,7 +1399,7 @@ fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on ICCV2017报告改进.pdf (4 pages, 460787 bytes).
+Output written on ICCV2017报告改进.pdf (4 pages, 461885 bytes).
 PDF statistics:
  657 PDF objects out of 1000 (max. 8388607)
  460 compressed objects within 5 object streams
