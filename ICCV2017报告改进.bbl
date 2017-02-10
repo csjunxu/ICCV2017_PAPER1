@@ -1,14 +1,19 @@
 \begin{thebibliography}{1}
 
-\bibitem{higham2002computing}
-Nicholas~J Higham.
-\newblock Computing the nearest correlation matrix—a problem from finance.
-\newblock {\em IMA Journal of Numerical Analysis}, 22(3):329--343, 2002.
+\bibitem{huber1973robust}
+Peter~J Huber.
+\newblock Robust regression: asymptotics, conjectures and monte carlo.
+\newblock {\em The Annals of Statistics}, pages 799--821, 1973.
 
 \bibitem{srebro2003weighted}
 Nathan Srebro and Tommi Jaakkola.
 \newblock Weighted low-rank approximations.
 \newblock In {\em ICML}, volume~3, pages 720--727, 2003.
+
+\bibitem{higham2002computing}
+Nicholas~J Higham.
+\newblock Computing the nearest correlation matrix—a problem from finance.
+\newblock {\em IMA Journal of Numerical Analysis}, 22(3):329--343, 2002.
 
 \bibitem{meng2013robust}
 Deyu Meng and Fernando De~La~Torre.

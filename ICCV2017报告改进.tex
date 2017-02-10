@@ -58,7 +58,7 @@ First line of institution2 address\\
 
 %%%%%%%%% BODY TEXT
 \section{模型Introduction}
-Traditional Frobenius norm has been successfully accounted for Gaussian noise from the Bayesian perspective. However, the Frobenius norm is not robust to outliers or fails to account for non-Gaussian noise, which are commonly existed in realistic applications. For example, the real-world noisy images are mainly degraded by mixed Poisson and Gaussian noise, and the traditional Frobenius norm is not reasonable or effective to real noisy image denoising problem. The bilinear factorization problem with weights is NP-hard and does not have a closed-form solution in general. 
+Traditional Frobenius norm has been successfully accounted for Gaussian noise from the Bayesian perspective. However, the Frobenius norm is not robust to outliers or fails to account for non-Gaussian noise, which are commonly existed in realistic applications. For example, the real-world noisy images are mainly degraded by mixed Poisson and Gaussian noise, and the traditional Frobenius norm is not reasonable or effective to real noisy image denoising problem. In order to deal with outliers and non-Gaussian noise, the $\ell_{1}$ norm of matrix or the robust function \cite{huber1973robust} could be employed to replace the traditional Frobenius norm. However, this will make the overall problem more complex since the problem with $\ell_{1}$ or robust function are non-smooth and could hardly have closed-form solutions. For example, the bilinear factorization problem with weights \cite{srebro2003weighted} is NP-hard and does not have a closed-form solution in general. 
 
 SVD is sensitive to outliers
 
