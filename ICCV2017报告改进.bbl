@@ -28,6 +28,18 @@ Nicolas Gillis and François Glineur.
 \newblock {\em SIAM Journal on Matrix Analysis and Applications},
   32(4):1149--1165, 2011.
 
+\bibitem{de2003framework}
+Fernando De~La~Torre and Michael~J Black.
+\newblock A framework for robust subspace learning.
+\newblock {\em International Journal of Computer Vision}, 54(1-3):117--142,
+  2003.
+
+\bibitem{buchanan2005damped}
+Aeron~M Buchanan and Andrew~W Fitzgibbon.
+\newblock Damped newton algorithms for matrix factorization with missing data.
+\newblock In {\em Computer Vision and Pattern Recognition, 2005. CVPR 2005.
+  IEEE Computer Society Conference on}, volume~2, pages 316--322. IEEE, 2005.
+
 \bibitem{yang2011robust}
 Meng Yang, Lei Zhang, Jian Yang, and David Zhang.
 \newblock Robust sparse coding for face recognition.

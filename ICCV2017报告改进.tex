@@ -75,11 +75,12 @@ Two different weighted Frobenius norms are defined by Higham in his paper \cite{
 
 Srebro and Jaakkola \cite{srebro2003weighted} proposed the weighted low-rank approximation model which employed the EM algorithm or conjugate gradient descent algorithm to solve the LRMF problem. 
 
-Meng \etal \cite{meng2013robust} replace the L2 norm to L1 norm and added the weighting matrix in a Hadamard type to deal with weights or missing entries. To solve their problem, they also employ the EM algorithm. The main problem of low-rank matrix factorization with weights or missing entries is
+Meng \etal \cite{meng2013robust} added the weighting matrix in a Hadamard type to deal with weights or missing entries. The main problem of low-rank matrix factorization with weights or missing entries is
 \begin{equation}
 \min_{\mathbf{U},\mathbf{V}}\|\mathbf{W}\odot(\mathbf{X}-\mathbf{U}\mathbf{V}^{\top})\|_{F}
 \end{equation}
-If $p=1$, this problem is a NP-hard problem and can have several solutions (local minimum?) \cite{GillisGlineur}, this may be attributed to the lack of convexity of the norm in terms of matrices of $\mathbf{U}$ and $\mathbf{V}$. The parametrs of the weighting matrix $\mathbf{W}$ are obtained by the estimated parameters of the MoG model during the alternative updating steps in Expectation-Maximization (EM) algorithm under the maximum likelihood estimation (MLE) framework.
+If $p=1$, this problem is a NP-hard problem and can have several solutions (local minimum?) \cite{GillisGlineur}, this may be attributed to the lack of convexity of the norm in terms of matrices of $\mathbf{U}$ and $\mathbf{V}$. The parametrs of the weighting matrix $\mathbf{W}$ are obtained by the estimated parameters of the MoG model during the alternative updating steps in Expectation-Maximization (EM) algorithm under the maximum likelihood estimation (MLE) framework. When the weighting matrix is predefined, existing algorithms, such as the Alternated
+Least Squares (ALS) \cite{de2003framework}, WLRA \cite{srebro2003weighted}, and the Damped Newton algorithms \cite{buchanan2005damped} can be employed to solve this weighted L2 LRMF problem. 
 
 这个模型应用在Low-Rank Matrix Factorization with Missing Entries这个问题里，$\mathbf{W}$指矩阵的元素是否是missing entry，其元素只有0或1。这几篇文章中，都用Mixture of Gaussians (MoG)模拟噪声，用EM算法估计噪声分布，$\mathbf{W}_{ij}$是噪声属于所有Gaussian的期望与高斯噪声方差的比值的和，即$\mathbf{W}_{ij}=\sum_{k=1}^{K}\frac{\gamma_{ijk}}{2\sigma_{k}^{2}}$。这个加权方式不适合用于对真实噪声加权。原因是1，这个权重矩阵变量太多，迭代的计算量很大。2，每个元素对应于一个像素值，但是很难仅仅通过一个像素值就估计出这个像素值里噪声的水平。3，真实噪声里，可能某个像素的噪声是outlier，而EM算法对outlier不鲁棒，导致无法很好地去除这个像素的噪声。4，EM算法估计过程计算量很大，不适合用于对真实噪声加权。5，对单个像素加一个权重忽略了图像的结构信息，这个加权方式适用于随机程度比较高的问题，比如矩阵分解，但是对于图像修复或者分类就不太适用。
 
@@ -251,7 +252,8 @@ d. update $\mathbf{S}$
 
 
 
-{\small
+{
+\small
 \bibliographystyle{unsrt}
 \bibliography{egbib}
 }
