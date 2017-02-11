@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  11 FEB 2017 09:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  11 FEB 2017 12:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1332,14 +1332,8 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
 (./ICCV2017报告改进.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
-
-
-Package rerunfilecheck Warning: File `ICCV2017报告改进.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `ICCV2017报告改进.brf':
-(rerunfilecheck)             Before: 4703C9E249B7B0834B4DF91C5AEE7D82;771
-(rerunfilecheck)             After:  6024DB8B99AB034221844EDCBE08DF54;824.
+Package rerunfilecheck Info: File `ICCV2017报告改进.brf' has not changed.
+(rerunfilecheck)             Checksum: 6024DB8B99AB034221844EDCBE08DF54;824.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
  ) 
 Here is how much of TeX's memory you used:
