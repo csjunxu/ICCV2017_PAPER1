@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  10 FEB 2017 15:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  11 FEB 2017 09:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1245,7 +1245,7 @@ t/10/51 ú \C70/rm/m/it/10/4e ^^@ *\OT1/ptm/m/it/10 weighted Frobe-nious norm\C7
 File: zhwindowsfonts.tex 2015/07/01 v2.2 Windows font map loader for pdfTeX and
  DVIPDFMx (CTEX)
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 68.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 70.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -1254,62 +1254,62 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 
 ]
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 74.
+quanjiao) on input line 76.
  [2]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 164.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 166.
 
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 164.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
  [3]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 228.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 230.
 
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 2343) in paragraph at lines 228--229
+Underfull \hbox (badness 2343) in paragraph at lines 230--231
 []\OT1/ptm/m/n/10 Since the ob-jec-tive func-tion of ([][]4[][]) is mono-ton-
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 228--229
+Underfull \hbox (badness 4132) in paragraph at lines 230--231
 \OT1/ptm/m/n/10 i-cally non-increasing and has the lower bound (0),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 \OT1/ptm/m/n/10 it is con-ver-gent ac-cord-ing to the fa-mous Mono-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 \OT1/ptm/m/n/10 tone Con-ver-gence The-o-rem [[]] [][]$\OT1/pcr/m/n/10 http : /
  / math .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 \OT1/pcr/m/n/10 stackexchange . com / questions / 789521 /
  []
 
 
-Overfull \hbox (67.86406pt too wide) in paragraph at lines 228--229
+Overfull \hbox (67.86406pt too wide) in paragraph at lines 230--231
 \OT1/pcr/m/n/10 non-[]increasing-[]monotone-[]sequence-[]convergence-[]proof$[]
 []\OT1/ptm/m/n/10 .
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 228--229
+Underfull \hbox (badness 1082) in paragraph at lines 230--231
 \OT1/ptm/m/n/10 al-ter-nat-ing up-dat-ing steps of the op-ti-miza-tion prob-lem
 
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 248--249
+Underfull \hbox (badness 1845) in paragraph at lines 250--251
 \OT1/cmr/bx/n/10 S \OT1/cmr/m/n/10 = \OT1/cmr/bx/n/10 ^^F$ \OT1/ptm/m/n/10 or $
 \OT1/cmr/bx/n/10 S \OT1/cmr/m/n/10 = []$\C70/rm/m/n/10/75 1$\OT1/cmr/m/n/10 (\O
 T1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )(\OT1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )[] =
@@ -1321,29 +1321,35 @@ T1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )(\OT1/cmr/bx/n/10 YW[]\OT1/cmr/m/n/10 )[] =
 \openout3 = `ICCV2017±¨¸æ¸Ä½ø.brf'.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
  [4])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 261.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 263.
  [5
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 261.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
 
 (./ICCV2017±¨¸æ¸Ä½ø.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 261.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 261.
-Package rerunfilecheck Info: File `ICCV2017±¨¸æ¸Ä½ø.brf' has not changed.
-(rerunfilecheck)             Checksum: 40654E8967A9F483D255F822356F9D7C;714.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 261.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
+
+
+Package rerunfilecheck Warning: File `ICCV2017±¨¸æ¸Ä½ø.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `ICCV2017±¨¸æ¸Ä½ø.brf':
+(rerunfilecheck)             Before: 4703C9E249B7B0834B4DF91C5AEE7D82;771
+(rerunfilecheck)             After:  6024DB8B99AB034221844EDCBE08DF54;824.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
  ) 
 Here is how much of TeX's memory you used:
- 21446 strings out of 493091
- 360981 string characters out of 6134517
- 386673 words of memory out of 5000000
- 24365 multiletter control sequences out of 15000+600000
+ 21453 strings out of 493091
+ 361133 string characters out of 6134517
+ 388689 words of memory out of 5000000
+ 24371 multiletter control sequences out of 15000+600000
  66939 words of font info for 196 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,45p,10424b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,45p,10424b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/fonts/simsun.ttc>{c:/Software/texlive/2015/texmf-dist/fonts/enc/d
 vips/base/8r.enc}<c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/
 Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.ttf><c:/Windows/fonts/simhei.
@@ -1403,10 +1409,10 @@ live/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2
 015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on ICCV2017±¨¸æ¸Ä½ø.pdf (5 pages, 463501 bytes).
+Output written on ICCV2017±¨¸æ¸Ä½ø.pdf (5 pages, 464179 bytes).
 PDF statistics:
- 663 PDF objects out of 1000 (max. 8388607)
- 467 compressed objects within 5 object streams
- 42 named destinations out of 1000 (max. 500000)
+ 667 PDF objects out of 1000 (max. 8388607)
+ 471 compressed objects within 5 object streams
+ 43 named destinations out of 1000 (max. 500000)
  241 words of extra memory for PDF output out of 10000 (max. 10000000)
 

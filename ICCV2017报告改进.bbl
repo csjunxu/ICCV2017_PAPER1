@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{huber1973robust}
 Peter~J Huber.
@@ -9,6 +9,11 @@ Peter~J Huber.
 Nathan Srebro and Tommi Jaakkola.
 \newblock Weighted low-rank approximations.
 \newblock In {\em ICML}, volume~3, pages 720--727, 2003.
+
+\bibitem{young1941maximum}
+Gale Young.
+\newblock Maximum likelihood estimation and factor analysis.
+\newblock {\em Psychometrika}, 6(1):49--53, 1941.
 
 \bibitem{higham2002computing}
 Nicholas~J Higham.
