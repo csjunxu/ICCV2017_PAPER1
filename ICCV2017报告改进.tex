@@ -157,6 +157,8 @@ P(\mathbf{c}_{i}^{*})=\prod_{j=1}^{d}\frac{\lambda}{2}\exp(-\lambda|\mathbf{c}_{
 \end{equation}
 也就是说，权重应该是噪声水平的倒数：噪声高，权重就小；噪声低，权重就大。
 
+When the noise level of this patch $\mathbf{y}_{i}$ is nearly zero, the weight will be approximate the infinity, and this will make the $\mathbf{y}_{i}=\mathbf{D}\mathbf{S}\mathbf{c}_{i}^{*}$. This makes sensen since there is almost no noise in the patch $\mathbf{y}_{i}$. The form of weights also avoid the possibility of zero or nearly zero weights, in which case the approximation would become meaningless.
+
 \section{初始化}
 \begin{itemize}
 \item $\mathbf{W}$上的对角元素是相似块矩阵$\mathbf{Y}$每一列的初始噪声水平的倒数。注意$\mathbf{Y}$已经去掉DC components，列均值为$\mathbf{0}$。因为$\mathbf{Y}$的每一列不全是噪声，还有信号部分，所以初始噪声水平近似于把$\mathbf{Y}$的每列乘上一个系数$\lambda_{ls}$，得到权重矩阵$\mathbf{W}_{ii}=\frac{1}{\lambda_{1}\sqrt{var(\mathbf{y}_{i})}}$。因为每一列中信号所占比例很难区别对待，所以乘以同一个系数。之前的做法是初始化为恒等矩阵$\mathbf{I}$(原因是一开始把所有块平等对待，视为受到相同的高斯噪声的影响)，这对于真实噪声是不合理的；或者初始化为一个对角矩阵，对角线上的每个元素对应于$\mathbf{Y}$的每一列（图像块）上的噪声水平$\sigma_{i}=\lambda_{1}\sqrt{var(\mathbf{y}_{i})}$，这个方法弄反了，应该是噪声水平的倒数。
