@@ -26,6 +26,12 @@ Deyu Meng and Fernando De~La~Torre.
 \newblock In {\em Proceedings of the IEEE International Conference on Computer
   Vision}, pages 1337--1344, 2013.
 
+\bibitem{jiang2014mixed}
+Jielin Jiang, Lei Zhang, and Jian Yang.
+\newblock Mixed noise removal by weighted encoding with sparse nonlocal
+  regularization.
+\newblock {\em IEEE transactions on image processing}, 23(6):2651--2662, 2014.
+
 \bibitem{GillisGlineur}
 Nicolas Gillis and François Glineur.
 \newblock Low-rank matrix approximation with weights or missing data is
