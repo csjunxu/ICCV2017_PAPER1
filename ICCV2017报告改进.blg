@@ -5,45 +5,45 @@ The style file: unsrt.bst
 Database file #1: egbib.bib
 Warning--I didn't find a database entry for ""
 Warning--can't use both volume and number fields in srebro2003weighted
-You've used 11 entries,
+You've used 12 entries,
             1791 wiz_defined-function locations,
-            520 strings with 5318 characters,
-and the built_in function-call counts, 3235 in all, are:
-= -- 326
-> -- 85
+            526 strings with 5578 characters,
+and the built_in function-call counts, 3481 in all, are:
+= -- 338
+> -- 108
 < -- 7
-+ -- 33
-- -- 22
-* -- 202
-:= -- 449
-add.period$ -- 35
-call.type$ -- 11
-change.case$ -- 10
++ -- 41
+- -- 29
+* -- 221
+:= -- 491
+add.period$ -- 38
+call.type$ -- 12
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 159
-empty$ -- 326
-format.name$ -- 22
-if$ -- 763
+cite$ -- 13
+duplicate$ -- 171
+empty$ -- 351
+format.name$ -- 29
+if$ -- 816
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 12
-newline$ -- 58
-num.names$ -- 11
-pop$ -- 36
+int.to.str$ -- 12
+missing$ -- 13
+newline$ -- 63
+num.names$ -- 12
+pop$ -- 43
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 102
+skip$ -- 105
 stack$ -- 0
 substring$ -- 295
-swap$ -- 65
+swap$ -- 67
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 35
-width$ -- 13
-write$ -- 126
+while$ -- 36
+width$ -- 14
+write$ -- 136
 (There were 2 warnings)

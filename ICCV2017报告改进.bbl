@@ -32,6 +32,14 @@ Jielin Jiang, Lei Zhang, and Jian Yang.
   regularization.
 \newblock {\em IEEE transactions on image processing}, 23(6):2651--2662, 2014.
 
+\bibitem{Cao2015ICCV}
+Xiangyong Cao, Yang Chen, Qian Zhao, Deyu Meng, Yao Wang, Dong Wang, and
+  Zongben Xu.
+\newblock Low-rank matrix factorization under general mixture noise
+  distributions.
+\newblock In {\em The IEEE International Conference on Computer Vision (ICCV)},
+  December 2015.
+
 \bibitem{GillisGlineur}
 Nicolas Gillis and François Glineur.
 \newblock Low-rank matrix approximation with weights or missing data is
