@@ -212,7 +212,7 @@ b. update $\mathbf{D}$
 \end{equation}
 闭合解为：$\hat{\mathbf{D}}^{(k+1)}=\mathbf{V}\mathbf{U}^{\top}$, $\mathbf{C}\mathbf{W}(\mathbf{Y}\mathbf{W})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$.
 
-需要证明收敛性，用ADMM方法证明，并给一个收敛的图：
+需要证明收敛性，这里不能用ADMM方法证明：
 \begin{equation}
 \min_{\mathbf{D},\mathbf{C}^{*}}\|(\mathbf{D}^{\top}\mathbf{Y}-\mathbf{S}\mathbf{C}^{*})\mathbf{W}\|_{F}^{2} 
 +
@@ -222,6 +222,7 @@ b. update $\mathbf{D}$
 \quad
 \mathbf{D}^{\top}\mathbf{D} = \mathbf{I}.
 \end{equation}
+
 
 实验中，我们发现，加权矩阵的引入使得模型可以自适应于不同的噪声情况，从而使得我们的模型收敛速度更快。如果不加权重矩阵$\mathbf{W}$， $\mathbf{S}$，那么收敛速度会慢很多。
 
