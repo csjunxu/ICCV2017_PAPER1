@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  21 FEB 2017 20:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  21 FEB 2017 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1341,31 +1341,31 @@ $\OT1/cmr/bx/n/10 W[]$\C70/rm/m/n/10/76 „ \C70/rm/m/n/10/8b ¾ ¡ \C70/rm/m/n/10/
 \openout3 = `ICCV2017±¨¸æ¸Ä½ø.brf'.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
  [5
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 342.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 347.
  [6
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 342.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 347.
 
 (./ICCV2017±¨¸æ¸Ä½ø.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 342.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 342.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 347.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 347.
 Package rerunfilecheck Info: File `ICCV2017±¨¸æ¸Ä½ø.brf' has not changed.
 (rerunfilecheck)             Checksum: 42D51B81E2A4E5CDB4798B9AC1C1B715;1173.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 342.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 347.
  ) 
 Here is how much of TeX's memory you used:
- 21510 strings out of 493091
- 361983 string characters out of 6134517
+ 21515 strings out of 493091
+ 362046 string characters out of 6134517
  386737 words of memory out of 5000000
- 24407 multiletter control sequences out of 15000+600000
+ 24411 multiletter control sequences out of 15000+600000
  68019 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,9n,45p,10424b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,9n,45p,10424b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/s
 imsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc>{c:/Softwar
 e/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Windows/fonts/simhei.
@@ -1426,10 +1426,10 @@ pe1/urw/courier/ucrr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw
 tic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:
 /Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ICCV2017±¨¸æ¸Ä½ø.pdf (6 pages, 481382 bytes).
+Output written on ICCV2017±¨¸æ¸Ä½ø.pdf (6 pages, 483318 bytes).
 PDF statistics:
- 716 PDF objects out of 1000 (max. 8388607)
- 510 compressed objects within 6 object streams
- 56 named destinations out of 1000 (max. 500000)
+ 717 PDF objects out of 1000 (max. 8388607)
+ 511 compressed objects within 6 object streams
+ 57 named destinations out of 1000 (max. 500000)
  257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
