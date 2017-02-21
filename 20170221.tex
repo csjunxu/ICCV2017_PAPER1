@@ -101,7 +101,7 @@ a. update $\mathbf{C}$
 \begin{equation}
 \min_{\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}^{(k)}\mathbf{C})\mathbf{W}\|_{F}^{2}
 +
-\lambda\|\mathbf{C}\|_{1}.
+\lambda\sigma_{Y}^{2}\|\mathbf{C}\|_{1}.
 \end{equation}
 有闭合解，每一列单独求解：
 \begin{equation}
@@ -109,7 +109,7 @@ a. update $\mathbf{C}$
 =
 \arg\min_{\mathbf{c}_{i}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}^{(k)}\mathbf{c}_{i})\mathbf{W}_{ii}\|_{2}^{2}
 +
-\lambda\|\mathbf{c}_{i}\|_{1}.
+\lambda\sigma_{Y}^{2}\|\mathbf{c}_{i}\|_{1}.
 \end{equation}
 闭合解为：
 \begin{equation}
@@ -117,7 +117,7 @@ a. update $\mathbf{C}$
 =
 \text{sgn}(\mathbf{D^{\top}y}) 
 \odot 
-\text{max}(|\mathbf{D^{\top}y}|-\frac{\lambda}{(\mathbf{W}_{ii})^{2}},0),
+\text{max}(|\mathbf{D^{\top}y}|-\frac{\lambda\sigma_{Y}^{2}}{(\mathbf{W}_{ii})^{2}},0),
 \end{equation}
 
 b. update $\mathbf{D}$
