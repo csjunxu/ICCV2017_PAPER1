@@ -283,8 +283,14 @@ y(\mu)=x(\mu) + n(\mu)
 \exp(-\tau_{1}\|\mathbf{y}_{ii}-\mathbf{D}\mathbf{c}_{ii}\|_{2}^{2})
 *\exp(-\tau_{2}\|\mathbf{y}_{1}-\mathbf{y}_{ii}\|_{2}^{2}).
 \end{equation}
+$\mathbf{W}_{ii}$的设计原理是：$\mathbf{W}_{ii}$与上次迭代里，算法对第$i$个相似块$\mathbf{y}_{ii}$去掉的噪声的多少有关($\exp(-\tau_{1}\|\mathbf{y}_{ii}-\mathbf{D}\mathbf{c}_{ii}\|_{2}^{2})$)，并且与第$i$个相似块和第一个种子块的欧式距离有关($\exp(-\tau_{2}\|\mathbf{y}_{1}-\mathbf{y}_{ii}\|_{2}^{2})$)。我们希望设计出一个框架，使得$\mathbf{W}_{ii}$可以自动探测第$i$个块里的噪声还有多少，从而可以有效去噪真实的噪声图。
 
-需要反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛。For $k=0,1,2,...$:
+当然，不同的相似块有不同的噪声水平。从而对于$\mathbf{Y}$的正则项参数之一$\sigma_{Y}$需要根据$\mathbf{Y}$估计得到，比如有：
+\begin{equation}
+\sigma_{Y} = f(\mathbf{Y},\mathbf{D},\mathbf{C})
+\end{equation}
+
+每一次迭代，都需要反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛。For $k=0,1,2,...$:
 
 a. update $\mathbf{C}$
 \begin{equation}
@@ -327,7 +333,6 @@ b. update $\mathbf{D}$
 \end{equation}
 闭合解为：$\hat{\mathbf{D}}^{(k+1)}=\mathbf{V}\mathbf{U}^{\top}$, $\mathbf{C}\mathbf{W}(\mathbf{Y}\mathbf{W})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$.
 
-\clearpage
 {
 \small
 \bibliographystyle{unsrt}
