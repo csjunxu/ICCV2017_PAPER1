@@ -248,6 +248,9 @@ d. update $\mathbf{S}$
 
 稀疏系数$\mathbf{C}$行方向上的权重矩阵$\mathbf{S}$是对角矩阵：$\mathbf{S}=\mathbf{\Sigma}$ or $\mathbf{S}=\sqrt{\mathbf{\Sigma}}$由$(\mathbf{Y}\mathbf{W}^{new})(\mathbf{Y}\mathbf{W}^{new})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{U}^{\top}$做SVD分解得到。
 
+
+
+
 \clearpage
 
 假设noisy image的生成模型是：
@@ -269,8 +272,19 @@ y(\mu)=x(\mu) + n(\mu)
 \end{equation}
 
 去噪过程如下：
-第一次迭代，我们采用\cite{Chen2015ICCV}的方法估计彩色带噪图的噪声水平，
-给定非局部相似块矩阵$\mathbf{Y}$，我们从中估计$\mathbf{W}$需要反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛。For $k=0,1,2,...$:
+\\
+第一次迭代中，我们从原始噪声图得到相似块矩阵$\mathbf{Y}$，我们采用\cite{Chen2015ICCV}的方法估计彩色带噪图的噪声水平，$\mathbf{W}$也是全1矩阵。
+用上述模型去噪之后，得到第一次去噪后的相似块矩阵$\mathbf{X}=\mathbf{DC}$。
+\\
+从第二次迭代开始，给定上一次迭代得到的非局部相似块矩阵$\mathbf{Y}$，我们从中估计$\mathbf{W}$(以下只是某种形式之一，需根据实验结果调整)：
+\begin{equation}
+\mathbf{W}_{ii} 
+=
+\exp(-\tau_{1}\|\mathbf{y}_{ii}-\mathbf{D}\mathbf{c}_{ii}\|_{2}^{2})
+*\exp(-\tau_{2}\|\mathbf{y}_{1}-\mathbf{y}_{ii}\|_{2}^{2}).
+\end{equation}
+
+需要反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛。For $k=0,1,2,...$:
 
 a. update $\mathbf{C}$
 \begin{equation}
