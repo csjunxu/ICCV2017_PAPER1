@@ -248,11 +248,72 @@ d. update $\mathbf{S}$
 
 稀疏系数$\mathbf{C}$行方向上的权重矩阵$\mathbf{S}$是对角矩阵：$\mathbf{S}=\mathbf{\Sigma}$ or $\mathbf{S}=\sqrt{\mathbf{\Sigma}}$由$(\mathbf{Y}\mathbf{W}^{new})(\mathbf{Y}\mathbf{W}^{new})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{U}^{\top}$做SVD分解得到。
 
+\clearpage
 
+假设noisy image的生成模型是：
+\begin{equation}
+y(\mu)=x(\mu) + n(\mu)
+\end{equation}
+其中$\mu$是图像中的像素位置，并且假定$n(\mu)\sim \mathcal{N}(0,\sigma^{2}({\mu}))$，假设$\sigma({\mu})\in C^{1}(\Omega)$,即噪声的标准差是一个光滑函数。
+模拟实验中，我们可以假设$\sigma({\mu})\in [\frac{1}{1+\epsilon}\sigma, (1+\epsilon)\sigma]$。
 
+我们的去噪模型是：
+\begin{equation}
+\min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
++
+\lambda\sigma_{Y}^{2}\|\mathbf{C}\|_{1}
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
+\end{equation}
 
+去噪过程如下：
+第一次迭代，我们采用\cite{Chen2015ICCV}的方法估计彩色带噪图的噪声水平，
+给定非局部相似块矩阵$\mathbf{Y}$，我们从中估计$\mathbf{W}$需要反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛。For $k=0,1,2,...$:
 
+a. update $\mathbf{C}$
+\begin{equation}
+\min_{\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}^{(k)}\mathbf{C})\mathbf{W}\|_{F}^{2}
++
+\lambda\|\mathbf{C}\|_{1}.
+\end{equation}
+有闭合解，每一列单独求解：
+\begin{equation}
+(\hat{\mathbf{c}}_{i})^{(k+1)}
+=
+\arg\min_{\mathbf{c}_{i}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}^{(k)}\mathbf{c}_{i})\mathbf{W}_{ii}\|_{2}^{2}
++
+\lambda\|\mathbf{c}_{i}\|_{1}.
+\end{equation}
+闭合解为：
+\begin{equation}
+(\hat{\mathbf{c}}_{i})^{(k+1)}
+=
+\text{sgn}(\mathbf{D^{\top}y}) 
+\odot 
+\text{max}(|\mathbf{D^{\top}y}|-\frac{\lambda}{(\mathbf{W}_{ii})^{2}},0),
+\end{equation}
 
+b. update $\mathbf{D}$
+\begin{equation}
+\min_{\mathbf{D}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C}^{(k+1)})\mathbf{W}\|_{F}^{2}
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
+\end{equation}
+等价于
+\begin{equation}
+\min_{\mathbf{D}}\|(\mathbf{Y}\mathbf{W})-\mathbf{D}(\mathbf{C}^{(k+1)}\mathbf{W})\|_{F}^{2}
+\quad
+\text{s.t.}
+\quad
+\mathbf{D}^{\top}\mathbf{D} = \mathbf{I},
+\end{equation}
+闭合解为：$\hat{\mathbf{D}}^{(k+1)}=\mathbf{V}\mathbf{U}^{\top}$, $\mathbf{C}\mathbf{W}(\mathbf{Y}\mathbf{W})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$.
+
+\clearpage
 {
 \small
 \bibliographystyle{unsrt}
