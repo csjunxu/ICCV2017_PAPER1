@@ -119,7 +119,7 @@ c. update $\mathbf{W}$
 根据贝叶斯法则，权重矩阵的第$i$项为
 \begin{equation}
 \mathbf{W}_{ii} 
-=\frac{\sqrt{d}}{\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}}
+=\frac{\sqrt{d}\frac{1}{N}\sum_{i=1}^{N}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}}{\sigma_{\mathbf{y}_{i}}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}}
 \end{equation}
 
 
