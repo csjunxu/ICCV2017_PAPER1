@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  21 FEB 2017 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  25 FEB 2017 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./20170221.tex
-(./20170221.tex
+**./20170225.tex
+(./20170225.tex
 LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 79 languages loaded.
 (c:/Software/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -1066,8 +1066,8 @@ File: UTF8.enc 2015/04/18 4.8.4
 (c:/Software/texlive/2015/texmf-dist/tex/latex/cjk/texinput/utf8/UTF8.chr
 File: UTF8.chr 2015/04/18 4.8.4
 )
-(./20170221.aux)
-\openout1 = `20170221.aux'.
+(./20170225.aux)
+\openout1 = `20170225.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
@@ -1235,17 +1235,12 @@ File: c70rm.fd 2015/07/01 v2.2 Chinese font definition (CTEX)
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
 quanjiao) on input line 56.
 
-Underfull \hbox (badness 2698) in paragraph at lines 59--62
-\C70/rm/m/n/10/51 v \C70/rm/m/n/10/4e -$\OML/cmm/m/it/10 ^^V$\C70/rm/m/n/10/66 
-/ \C70/rm/m/n/10/56 þ \C70/rm/m/n/10/50 Ï \C70/rm/m/n/10/4e - \C70/rm/m/n/10/76
- „ \C70/rm/m/n/10/50 Ï \C70/rm/m/n/10/7d   \C70/rm/m/n/10/4f M \C70/rm/m/n/10/7
-f n|\C70/rm/m/n/10/ff ^^L| \C70/rm/m/n/10/5e v \C70/rm/m/n/10/4e ^^T \C70/rm/m/
-n/10/50 G \C70/rm/m/n/10/5b š$\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/
-10 ^^V\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^X
- []
+
+Package natbib Warning: Citation `Chen2015ICCV' on page 1 undefined on input li
+ne 69.
 
 
-Underfull \hbox (badness 1817) in paragraph at lines 85--87
+Underfull \hbox (badness 1817) in paragraph at lines 78--80
 $\OT1/cmr/bx/n/10 W[]$\C70/rm/m/n/10/76 „ \C70/rm/m/n/10/8b ¾ ¡ \C70/rm/m/n/10/
 53 Ÿ \C70/rm/m/n/10/74 ^^F \C70/rm/m/n/10/66 /|\C70/rm/m/n/10/ff ^^Z| $\OT1/cmr
 /bx/n/10 W[]$\C70/rm/m/n/10/4e ^^N 
@@ -1254,18 +1249,21 @@ $\OT1/cmr/bx/n/10 W[]$\C70/rm/m/n/10/76 „ \C70/rm/m/n/10/8b ¾ ¡ \C70/rm/m/n/10/
 /5b ù
  []
 
-(./20170221.bbl (./20170221.brf)
+(./20170225.bbl
+No file 20170225.brf.
 \tf@brf=\write3
-\openout3 = `20170221.brf'.
+\openout3 = `20170225.brf'.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
 
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
 (c:/Software/texlive/2015/texmf-dist/tex/generic/ctex/zhwindowsfonts.tex
 File: zhwindowsfonts.tex 2015/07/01 v2.2 Windows font map loader for pdfTeX and
  DVIPDFMx (CTEX)
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 147.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 140.
 
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
@@ -1274,21 +1272,32 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
 
-(./20170221.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 147.
-Package rerunfilecheck Info: File `20170221.brf' has not changed.
-(rerunfilecheck)             Checksum: F118DFA460EC45A6AF7A13C5C4C4FB71;47.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
+(./20170225.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
+
+
+Package rerunfilecheck Warning: File `20170225.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `20170225.brf':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 140.
  ) 
 Here is how much of TeX's memory you used:
- 20564 strings out of 493091
- 345936 string characters out of 6134517
- 378472 words of memory out of 5000000
- 23624 multiletter control sequences out of 15000+600000
- 46335 words of font info for 130 fonts, out of 8000000 for 9000
+ 20517 strings out of 493091
+ 345343 string characters out of 6134517
+ 377457 words of memory out of 5000000
+ 23588 multiletter control sequences out of 15000+600000
+ 45255 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,45p,10416b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Windows/
@@ -1310,27 +1319,26 @@ s/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Wind
 ows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc>
 <c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/sim
 sun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/f
-onts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/W
-indows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.t
-tc><c:/Windows/fonts/simsun.ttc><c:/Software/texlive/2015/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmbx10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmbx7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmex10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi5.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/h
-elvetic/uhvb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/helveti
-c/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.
-pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/S
-oftware/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 20170221.pdf (1 page, 269538 bytes).
+onts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/S
+oftware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/S
+oftware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/So
+ftware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/So
+ftware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/So
+ftware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Sof
+tware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Soft
+ware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Softw
+are/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Softwar
+e/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Softwar
+e/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software
+/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texli
+ve/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/201
+5/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-d
+ist/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on 20170225.pdf (1 page, 258050 bytes).
 PDF statistics:
- 374 PDF objects out of 1000 (max. 8388607)
- 241 compressed objects within 3 object streams
- 15 named destinations out of 1000 (max. 500000)
- 225 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 351 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 14 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

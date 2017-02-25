@@ -53,16 +53,9 @@ First line of institution2 address\\
 
 \section{Introduction}
 
-假设noisy image的生成模型是：
-\begin{equation}
-y(\mu)=x(\mu) + n(\mu)
-\end{equation}
-其中$\mu$是图像中的像素位置，并且假定$n(\mu)\sim \mathcal{N}(0,\sigma^{2}({\mu}))$，假设$\sigma({\mu})\in C^{1}(\Omega)$,即噪声的标准差是一个光滑函数。
-模拟实验中，我们可以假设$\sigma({\mu})\in [\frac{1}{1+\epsilon}\sigma, (1+\epsilon)\sigma]$。
-
 我们的去噪模型是：
 \begin{equation}
-\min_{\mathbf{D},\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
+\min_{\mathbf{D},\mathbf{C},\mathbf{W}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
 +
 \lambda\sigma_{Y}^{2}\|\mathbf{C}\|_{1}
 \quad
