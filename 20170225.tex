@@ -57,7 +57,7 @@ First line of institution2 address\\
 \begin{equation}
 \min_{\mathbf{D},\mathbf{C},\mathbf{W}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
 +
-\lambda\sigma_{Y}^{2}\|\mathbf{C}\|_{1}
+\lambda\|\mathbf{C}\|_{1}
 \quad
 \text{s.t.}
 \quad
@@ -65,36 +65,20 @@ First line of institution2 address\\
 \end{equation}
 
 去噪过程如下：
-\\
-1. 第一次迭代中，我们从原始噪声图得到相似块矩阵$\mathbf{Y}$，我们采用\cite{Chen2015ICCV}的方法估计彩色带噪图的噪声水平$\sigma_{0}$，$\mathbf{W}$也是全1矩阵。
-用上述模型去噪之后，得到第一次去噪后的相似块矩阵$\mathbf{X}=\mathbf{DC}$。
-\\
-2. 从第二次迭代开始，给定上一次迭代得到的非局部相似块矩阵$\mathbf{Y}$，我们从中估计$\mathbf{W}$(以下只是某种形式之一，需根据实验结果调整)：
-\begin{equation}
-\mathbf{W}_{ii} 
-=
-\exp(-\tau_{1}\|\mathbf{y}_{ii}-\mathbf{D}\mathbf{c}_{ii}\|_{2}^{2})
-*\exp(-\tau_{2}\|\mathbf{y}_{1}-\mathbf{y}_{ii}\|_{2}^{2}).
-\end{equation}
-$\mathbf{W}_{ii}$的设计原理是：$\mathbf{W}_{ii}$与上次迭代里，算法对第$i$个相似块$\mathbf{y}_{ii}$去掉的噪声的多少有关($\exp(-\tau_{1}\|\mathbf{y}_{ii}-\mathbf{D}\mathbf{c}_{ii}\|_{2}^{2})$)，并且与第$i$个相似块和第一个种子块的欧式距离有关($\exp(-\tau_{2}\|\mathbf{y}_{1}-\mathbf{y}_{ii}\|_{2}^{2})$)。我们希望设计出一个框架，使得$\mathbf{W}_{ii}$可以自动探测第$i$个块里的噪声还有多少，从而可以有效去噪真实的噪声图。
 
-当然，不同的相似块有不同的噪声水平。从而对于$\mathbf{Y}$的正则项参数之一$\sigma_{Y}$需要根据$\mathbf{Y}$估计得到，比如有：
-\begin{equation}
-\sigma_{Y} = f(\mathbf{Y},\mathbf{D},\mathbf{C})
-\end{equation}
-一个简单的例子是：
-\begin{equation}
-\sigma_{Y} = \sqrt{\sigma_{0}^{2}- \frac{1}{N}(\sum_{i=1}^{N}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}^{2})}
-\end{equation}
-即初始估计的噪声方差$-$相似块矩阵的N个块里去掉的噪声方差，再开根号。
+1. 初始化：
 
-3. 对于每一次迭代，模型都需要反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛。For $k=0,1,2,...$:
+我们从原始噪声图得到相似块矩阵$\mathbf{Y}$，我们采用\cite{Chen2015ICCV}的方法估计彩色带噪图的噪声水平$\sigma_{0}$。初始化权重矩阵$\mathbf{W}^{(0)}=\frac{1}{\sigma_{0}}\mathbf{I}$, 初始化字典$\mathbf{D}^{(0)}=\mathbf{I}$。
+
+2. 进入内部迭代优化：
+
+对于每一次迭代，模型都需要反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛。For $k=0,1,2,...$:
 
 a. update $\mathbf{C}$
 \begin{equation}
-\min_{\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}^{(k)}\mathbf{C})\mathbf{W}\|_{F}^{2}
+\min_{\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}^{(k)}\mathbf{C})\mathbf{W}^{(k)}\|_{F}^{2}
 +
-\lambda\sigma_{Y}^{2}\|\mathbf{C}\|_{1}.
+\lambda\|\mathbf{C}\|_{1}.
 \end{equation}
 有闭合解，每一列单独求解：
 \begin{equation}
@@ -102,7 +86,7 @@ a. update $\mathbf{C}$
 =
 \arg\min_{\mathbf{c}_{i}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}^{(k)}\mathbf{c}_{i})\mathbf{W}_{ii}\|_{2}^{2}
 +
-\lambda\sigma_{Y}^{2}\|\mathbf{c}_{i}\|_{1}.
+\lambda\|\mathbf{c}_{i}\|_{1}.
 \end{equation}
 闭合解为：
 \begin{equation}
@@ -110,7 +94,7 @@ a. update $\mathbf{C}$
 =
 \text{sgn}(\mathbf{D^{\top}y}) 
 \odot 
-\text{max}(|\mathbf{D^{\top}y}|-\frac{\lambda\sigma_{Y}^{2}}{(\mathbf{W}_{ii})^{2}},0),
+\text{max}(|\mathbf{D^{\top}y}|-\frac{\lambda}{(\mathbf{W}_{ii})^{2}},0),
 \end{equation}
 
 b. update $\mathbf{D}$
@@ -130,6 +114,23 @@ b. update $\mathbf{D}$
 \mathbf{D}^{\top}\mathbf{D} = \mathbf{I},
 \end{equation}
 闭合解为：$\hat{\mathbf{D}}^{(k+1)}=\mathbf{V}\mathbf{U}^{\top}$, $\mathbf{C}\mathbf{W}(\mathbf{Y}\mathbf{W})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$.
+
+c. update $\mathbf{W}$
+根据贝叶斯法则，权重矩阵的第$i$项为
+\begin{equation}
+\mathbf{W}_{ii} 
+=\frac{\sqrt{d}}{\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}}
+\end{equation}
+
+
+3. 外部迭代优化：
+
+更新每个块的噪声水平：
+\begin{equation}
+\sigma_{\mathbf{y}_{i}} = \sqrt{\sigma_{0}^{2} - \|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}^{2}}
+\end{equation}
+然后重复步骤2.
+
 
 {
 \small
