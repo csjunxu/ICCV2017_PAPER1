@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  25 FEB 2017 15:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  7 MAR 2017 08:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1227,15 +1227,19 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
-LaTeX Font Info:    Try loading font information for C70+rm on input line 56.
 
+Underfull \hbox (badness 1132) in paragraph at lines 55--57
+[]\OT1/ptm/m/it/10 Motivated by the weighted Or-thog-o-nal Pro-crustes
+ []
+
+LaTeX Font Info:    Try loading font information for C70+rm on input line 62.
 (c:/Software/texlive/2015/texmf-dist/tex/latex/ctex/fd/c70rm.fd
 File: c70rm.fd 2015/07/01 v2.2 Chinese font definition (CTEX)
 )
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 56.
+quanjiao) on input line 62.
 
-Underfull \hbox (badness 2205) in paragraph at lines 75--76
+Underfull \hbox (badness 2205) in paragraph at lines 81--82
 []\C70/rm/m/n/10/5b ù \C70/rm/m/n/10/4e Ž \C70/rm/m/n/10/6b Ï \C70/rm/m/n/10/4e
  ^^@ \C70/rm/m/n/10/6b ! \C70/rm/m/n/10/8f í \C70/rm/m/n/10/4e ã|\C70/rm/m/n/10
 /ff ^^L| \C70/rm/m/n/10/6a ! \C70/rm/m/n/10/57 ‹ \C70/rm/m/n/10/90 ý \C70/rm/m/
@@ -1247,56 +1251,59 @@ rm/m/n/10/8f í \C70/rm/m/n/10/4e ã \C70/rm/m/n/10/6c B
 \tf@brf=\write3
 \openout3 = `20170225.brf'.
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
 
 (c:/Software/texlive/2015/texmf-dist/tex/generic/ctex/zhwindowsfonts.tex
 File: zhwindowsfonts.tex 2015/07/01 v2.2 Windows font map loader for pdfTeX and
  DVIPDFMx (CTEX)
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 141.
-
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 9.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 ) [1
 
 
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
+ [2
+
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
 
 (./20170225.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 147.
 Package rerunfilecheck Info: File `20170225.brf' has not changed.
 (rerunfilecheck)             Checksum: 9E2C506A2D14C8969D2327AE4C090E7E;47.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
  ) 
 Here is how much of TeX's memory you used:
- 20380 strings out of 493091
- 343630 string characters out of 6134517
- 373472 words of memory out of 5000000
- 23468 multiletter control sequences out of 15000+600000
- 42825 words of font info for 117 fonts, out of 8000000 for 9000
+ 20399 strings out of 493091
+ 343819 string characters out of 6134517
+ 375472 words of memory out of 5000000
+ 23479 multiletter control sequences out of 15000+600000
+ 47193 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,45p,10416b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Windows/
-fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/
-Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.
-ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts
-/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windo
-ws/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><
-c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/sims
-un.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fo
-nts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Wi
-ndows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.tt
-c><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/s
+ 42i,9n,45p,10416b,498s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/s
 imsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows
 /fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:
 /Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun
 .ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/font
 s/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Wind
-ows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Software/texlive/2015/tex
+ows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc>
+<c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/sim
+sun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/f
+onts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/W
+indows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.t
+tc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/
+simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Window
+s/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c
+:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsu
+n.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc>{c:/Software/te
+xlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Software/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Software/texlive/2015/texm
@@ -1313,10 +1320,10 @@ ype1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on 20170225.pdf (1 page, 236359 bytes).
+Output written on 20170225.pdf (2 pages, 243063 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
- 13 named destinations out of 1000 (max. 500000)
+ 315 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 14 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
