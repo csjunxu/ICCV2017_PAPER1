@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  7 MAR 2017 08:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  7 MAR 2017 09:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1232,14 +1232,14 @@ Underfull \hbox (badness 1132) in paragraph at lines 55--57
 []\OT1/ptm/m/it/10 Motivated by the weighted Or-thog-o-nal Pro-crustes
  []
 
-LaTeX Font Info:    Try loading font information for C70+rm on input line 70.
+LaTeX Font Info:    Try loading font information for C70+rm on input line 79.
 (c:/Software/texlive/2015/texmf-dist/tex/latex/ctex/fd/c70rm.fd
 File: c70rm.fd 2015/07/01 v2.2 Chinese font definition (CTEX)
 )
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 70.
+quanjiao) on input line 79.
 
-Underfull \hbox (badness 2205) in paragraph at lines 89--90
+Underfull \hbox (badness 2205) in paragraph at lines 98--99
 []\C70/rm/m/n/10/5b ù \C70/rm/m/n/10/4e Ž \C70/rm/m/n/10/6b Ï \C70/rm/m/n/10/4e
  ^^@ \C70/rm/m/n/10/6b ! \C70/rm/m/n/10/8f í \C70/rm/m/n/10/4e ã|\C70/rm/m/n/10
 /ff ^^L| \C70/rm/m/n/10/6a ! \C70/rm/m/n/10/57 ‹ \C70/rm/m/n/10/90 ý \C70/rm/m/
@@ -1251,17 +1251,12 @@ rm/m/n/10/8f í \C70/rm/m/n/10/4e ã \C70/rm/m/n/10/6c B
 File: zhwindowsfonts.tex 2015/07/01 v2.2 Windows font map loader for pdfTeX and
  DVIPDFMx (CTEX)
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 142.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 142.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 138.
 
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 142.
- [1
+) [1
 
 
 ]
@@ -1270,26 +1265,26 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 \openout3 = `20170225.brf'.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
  [2
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
  (./20170225.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
 Package rerunfilecheck Info: File `20170225.brf' has not changed.
 (rerunfilecheck)             Checksum: 9E2C506A2D14C8969D2327AE4C090E7E;47.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
  ) 
 Here is how much of TeX's memory you used:
- 20400 strings out of 493091
- 343949 string characters out of 6134517
+ 20383 strings out of 493091
+ 343664 string characters out of 6134517
  374472 words of memory out of 5000000
- 23473 multiletter control sequences out of 15000+600000
+ 23469 multiletter control sequences out of 15000+600000
  44509 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,45p,10416b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,45p,10416b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/s
 imsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows
 /fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:/Windows/fonts/simsun.ttc><c:
@@ -1323,7 +1318,7 @@ ype1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on 20170225.pdf (2 pages, 244573 bytes).
+Output written on 20170225.pdf (2 pages, 245185 bytes).
 PDF statistics:
  315 PDF objects out of 1000 (max. 8388607)
  206 compressed objects within 3 object streams
