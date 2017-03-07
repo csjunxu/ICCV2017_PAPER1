@@ -10,6 +10,13 @@
 \usepackage[numbers,sort]{natbib}
 \usepackage[UTF8]{ctex}
 
+\usepackage{subfigure}
+\usepackage{upgreek}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{bm}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\usepackage{arydshln}
 
 
 % Include other packages here, before hyperref.
@@ -21,7 +28,7 @@
 
 % \iccvfinalcopy % *** Uncomment this line for the final submission
 
-\def\iccvPaperID{****} % *** Enter the ICCV Paper ID here
+\def\iccvPaperID{572} % *** Enter the ICCV Paper ID here
 \def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
 
 % Pages are numbered in submission mode, and unnumbered in camera-ready
@@ -29,7 +36,7 @@
 \begin{document}
 
 %%%%%%%%% TITLE
-\title{\LaTeX\ Author Guidelines for ICCV Proceedings}
+\title{Multi-channel weighted nuclear norm minimization for color image denoising}
 
 \author{First Author\\
 Institution1\\
@@ -57,35 +64,22 @@ Motivated by the weighted Orthogonal Procrustes Problem, we propose a noval weig
 
 \section{Introduction}
 
-Image denoising is an important problem in computer vision and image processing. It aims to remove the noise from the noisy images to obtain the laten clean image which could be used in other computer vision tasks such as image restoration and segementation. In real world, the natural images, such as color image and heperspectral image, often contain multi-channels instead of one (grayscale image). And the multi-channel images often exhibit different noise levels in different channels. For example, real noisy color images often contains different noise levels among the R, G, B channels. This is caused by the color demosaicking during the transformation from raw data to RGB images in the standard in-camera imaging pipeline. Usually, the G channel contains the least noise levels among the three channels. Hence, in order to deal with each channel more effectively, different weights should be added to different channels.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Image denoising is an important step in enhance the quality of images in computer vision systems. It aims to recover the latent clean image $\mathbf{x}$ from the observed noisy version $\mathbf{y}=\mathbf{x}+\mathbf{n}$, where $\mathbf{n}$ is often assumed to be additive white Gaussian noise. Most denoising methods \cite{ksvd,lssc,ncsr,nlm,bm3d,cbm3d,pgpd,wnnm,mlp,csf,chen2015learning,foe,epll} are designed for grayscale images, and other color image denoising methods \cite{mairal2008sparse} treat equally the R, G, B channels in color images. However, in many computer vision tasks, the multiple channels in natural images being processed often exhibit distinct properties, e.g., contain different noise levels. For example, the noise levels among the R, G, B channels are different in real noisy images due to the different sampling frequency in color demosaicking. The This is caused by the color demosaicking during the transformation from raw data to RGB images in the standard in-camera imaging pipeline. Usually, the G channel contains the least noise levels among the three channels. Hence, in order to deal with each channel more effectively, different noise levels should be plugged into different channels for color image denoising. 
 
 The non-local self similarity property of images has been extensively employed in image denoising algorithms \cite{}. Among these methods, the weighted nuclear norm minimization (WNNM) achieved the state-of-the-art performance in grayscale image denoising with additive white Gaussian noise (AWGN). Though among the most effective methods, how WNNM can be extended to deal with color image denoising and real-world image denoising is still an open problem. In this paper, we proposed a multi-channel weighted nuclear norm minimization model to deal with the color image denoising problem as well as the real noisy image denoising problem.
 
-我们的去噪模型是：
+
+\section{Related Work}
+
+
+The WNNM model
 \begin{equation}
-\min_{\mathbf{D},\mathbf{C},\mathbf{W}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C})\mathbf{W}\|_{F}^{2}
+\min_{\mathbf{X}}\|\mathbf{Y}-\mathbf{X}\|_{F}^{2}
 +
-\lambda\|\mathbf{C}\|_{1}
-\quad
-\text{s.t.}
-\quad
-\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
+\|\mathbf{X}\|_{*,\mathbf{w}}
 \end{equation}
+is firstly proposed for grayscale image denoising problem. How to extend it to deal with color images or hyperspectral images is still an open problem. This model treat each 
+
 
 去噪过程如下：
 

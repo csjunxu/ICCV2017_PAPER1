@@ -1,9 +1,84 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{Chen2015ICCV}
-Guangyong Chen, Fengyuan Zhu, and Pheng Ann~Heng.
-\newblock An efficient statistical method for image noise level estimation.
-\newblock In {\em The IEEE International Conference on Computer Vision (ICCV)},
-  December 2015.
+\bibitem{ksvd}
+M.~Elad and M.~Aharon.
+\newblock Image denoising via sparse and redundant representations over learned
+  dictionaries.
+\newblock {\em IEEE Transactions on Image Processing}, 15(12):3736--3745, 2006.
+
+\bibitem{lssc}
+J.~Mairal, F.~Bach, J.~Ponce, G.~Sapiro, and A.~Zisserman.
+\newblock Non-local sparse models for image restoration.
+\newblock {\em IEEE International Conference on Computer Vision (ICCV)}, pages
+  2272--2279, 2009.
+
+\bibitem{ncsr}
+W.~Dong, L.~Zhang, G.~Shi, and X.~Li.
+\newblock Nonlocally centralized sparse representation for image restoration.
+\newblock {\em IEEE Transactions on Image Processing}, 22(4):1620--1630, 2013.
+
+\bibitem{nlm}
+A.~Buades, B.~Coll, and J.~M. Morel.
+\newblock A non-local algorithm for image denoising.
+\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 60--65, 2005.
+
+\bibitem{bm3d}
+K.~Dabov, A.~Foi, V.~Katkovnik, and K.~Egiazarian.
+\newblock Image denoising by sparse 3-{D} transform-domain collaborative
+  filtering.
+\newblock {\em IEEE Transactions on Image Processing}, 16(8):2080--2095, 2007.
+
+\bibitem{cbm3d}
+K.~Dabov, A.~Foi, V.~Katkovnik, and K.~Egiazarian.
+\newblock Color image denoising via sparse 3{D} collaborative filtering with
+  grouping constraint in luminance-chrominance space.
+\newblock {\em IEEE International Conference on Image Processing (ICIP)}, pages
+  313--316, 2007.
+
+\bibitem{pgpd}
+J.~Xu, L.~Zhang, W.~Zuo, D.~Zhang, and X.~Feng.
+\newblock Patch group based nonlocal self-similarity prior learning for image
+  denoising.
+\newblock {\em IEEE International Conference on Computer Vision (ICCV)}, pages
+  244--252, 2015.
+
+\bibitem{wnnm}
+S.~Gu, L.~Zhang, W.~Zuo, and X.~Feng.
+\newblock Weighted nuclear norm minimization with application to image
+  denoising.
+\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 2862--2869, 2014.
+
+\bibitem{mlp}
+H.~C. Burger, C.~J. Schuler, and S.~Harmeling.
+\newblock Image denoising: Can plain neural networks compete with {BM3D}?
+\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 2392--2399, 2012.
+
+\bibitem{csf}
+U.~Schmidt and S.~Roth.
+\newblock Shrinkage fields for effective image restoration.
+\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 2774--2781, June 2014.
+
+\bibitem{chen2015learning}
+Y.~Chen, W.~Yu, and T.~Pock.
+\newblock On learning optimized reaction diffusion processes for effective
+  image restoration.
+\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 5261--5269, 2015.
+
+\bibitem{foe}
+S.~Roth and M.~J. Black.
+\newblock Fields of experts.
+\newblock {\em International Journal of Computer Vision}, 82(2):205--229, 2009.
+
+\bibitem{epll}
+D.~Zoran and Y.~Weiss.
+\newblock From learning models of natural image patches to whole image
+  restoration.
+\newblock {\em IEEE International Conference on Computer Vision (ICCV)}, pages
+  479--486, 2011.
 
 \end{thebibliography}
