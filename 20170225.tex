@@ -57,7 +57,7 @@ Motivated by the weighted Orthogonal Procrustes Problem, we propose a noval weig
 
 \section{Introduction}
 
-Image denoising is an important problem in computer vision and image processing. It aims to remove the noise from the noisy images to obtain the laten clean image which could be used in other computer vision tasks such as image restoration and segementation. In real world, the natural images, such as color image and heperspectral image, often contain multi-channels instead of one channel (grayscale image). 
+Image denoising is an important problem in computer vision and image processing. It aims to remove the noise from the noisy images to obtain the laten clean image which could be used in other computer vision tasks such as image restoration and segementation. In real world, the natural images, such as color image and heperspectral image, often contain multi-channels instead of one (grayscale image). And the multi-channel images often exhibit different noise levels in different channels. For example, real noisy color images often contains different noise levels among the R, G, B channels. This is caused by the color demosaicking during the transformation from raw data to RGB images in the standard in-camera imaging pipeline. Usually, the G channel contains the least noise levels among the three channels. Hence, in order to deal with each channel more effectively, different weights should be added to different channels.
 
 
 
