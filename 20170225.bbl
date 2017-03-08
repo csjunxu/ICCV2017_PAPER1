@@ -194,16 +194,4 @@ Neatlab ABSoft.
 \newblock Neat {I}mage.
 \newblock \url{https://ni.neatvideo.com/home}.
 
-\bibitem{bertsekas1999nonlinear}
-Dimitri~P Bertsekas.
-\newblock Nonlinear programming.
-\newblock 1999.
-
-\bibitem{LADMAP}
-Zhouchen Lin, Risheng Liu, and Zhixun Su.
-\newblock Linearized alternating direction method with adaptive penalty for
-  low-rank representation.
-\newblock {\em Advances in Neural Information Processing Systems 24}, pages
-  612--620, 2011.
-
 \end{thebibliography}

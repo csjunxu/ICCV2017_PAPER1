@@ -127,10 +127,10 @@ In order to treat differently each channel in color images, we propose to add a 
 \|\mathbf{X}\|_{\bm{w},*}.
 \end{equation}
 where $\mathbf{W}$ is the weighting matrix. For simplisity, we assume $\mathbf{W}$ to be a diagonal matrix. 
-While the original WNNM problem has closed-form solution, the proposed multi-channel WNNM problem cannot be solved in an analytical form. This makes the proposed model more difficult to optimize than WNNM 
 
-\subsection{Optimization}
-This can be solved by introducing an augmented variable $\mathbf{Z}$, and the problem is equivalent to the following problem:
+Unfortunately, the proposed multi-channel WNNM problem cannot be solved in an analytical form. In \cite{wnnmijcv}, when the weights on singular values are non-descending, the weighted nuclear norm proximal operator can have global optimum with closed-form solution. However, such property is not valid for the multi-channel WNNM model. The reason is that the weighting matrix $\mathbf{W}$ is added to the matrix $\mathbf{X}$ instead of its singular values. Besides, the elements in $\mathbf{W}$ is not in a non-descending order with respect to the singular value of $\mathbf{X}$. This makes the proposed model more difficult to optimize than the original WNNM model. 
+
+This can be solved by introducing an augmented variable $\mathbf{Z}$, and the above multi-channel WNNM problem is equivalent to a linearly constrained non-convex problem with two variables.
 \begin{equation}
 \min_{\mathbf{X},\mathbf{Z}}\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
 +
@@ -140,13 +140,14 @@ This can be solved by introducing an augmented variable $\mathbf{Z}$, and the pr
 \quad
 \mathbf{X}=\mathbf{Z}.
 \end{equation}
-This is a standard convex  problem with variables $\mathbf{X}$ and $\mathbf{Z}$, which can be solved by 
-the Augmented Lagrange Multipliers (ALM) \cite{bertsekas1999nonlinear,LADMAP}. 
+This is an optimization problem with functions of two variables $\mathbf{X}$ and $\mathbf{Z}$ with linearly constrained condition of $\mathbf{X}=\mathbf{Z}$. In fact, this proplem can be solved by the alternating direction method of multipliers (ADMM) algorithm, which will be introduced in the next subsection.
 
-The augmented Lagrangian function is 
+\subsection{Optimization}
+
+To solve the above optimization problem, we first derive its augmented Lagrangian function as 
 \begin{equation}
 \begin{split}
-\mathcal{L}(\mathbf{X},\mathbf{Z},\mathbf{A})
+\mathcal{L}(\mathbf{X},\mathbf{Z},\mathbf{A},\rho)
 =
 &\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
 +
@@ -162,32 +163,37 @@ The augmented Lagrangian function is
 \|\mathbf{X}-\mathbf{Z}\|_{F}^{2}
 \end{split}
 \end{equation}
-
+where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the penalty parameter. 
+After some simple calculations, we can obtain the following equivalent form of the Lagrangian function
 \begin{equation}
 \begin{split}
-\mathcal{L}(\mathbf{X},\mathbf{Z},\mathbf{A})
+\mathcal{L}(\mathbf{X},\mathbf{Z},\mathbf{A},\rho)
 =
+&
 \|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
 +
-\|\mathbf{Z}\|_{*,\mathbf{P}}
+\|\mathbf{Z}\|_{\bm{w},*}
+\\
+&
 +
 \frac{\rho}{2}
 \|\mathbf{X}-\mathbf{Z}+\frac{1}{\rho}\mathbf{A}\|_{F}^{2}
 \end{split}
 \end{equation}
-where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the penalty parameter.
 
-This can be solved by alternative minimization of $\mathcal{L}$ with respect to $\mathbf{X}$ and $\mathbf{Z}$ , respectively
+We initialize the matrix variables $\mathbf{X}_{(0)}$ and $\mathbf{Z}_{(0)}$ to be zero matrix of suitable size.
+Taking derivative of the Lagrangian function $\mathcal{L}$ with respect to the variables $\mathbf{X}$ and $\mathbf{Z}$ and setting the derivative function to be zero, we can alternatively update the iterations of the ADMM algorithm as follows:
 
-Update $\mathbf{X}$
+(1) Update $\mathbf{X}$ while fixing $\mathbf{Z}$ and $\mathbf{A}$:
 \begin{equation}
-(\hat{\mathbf{c}}_{i})^{(k+1)}
+\mathbf{X}_{(k+1)}
 =
-\arg\min_{\mathbf{c}_{i}}\frac{1}{2}\|(\mathbf{y}_{i}-\mathbf{D}^{(k)}\mathbf{c}_{i})\mathbf{W}_{ii}\|_{2}^{2}
+\arg\min_{\mathbf{X}}
+\|\mathbf{W}\mathbf{Y} - \mathbf{W}\mathbf{X}\|_{F}^{2} 
 +
-\lambda\|\mathbf{c}_{i}\|_{1}.
+\frac{\rho}{2}\|\mathbf{X} - \mathbf{Z}_{(k)} + \rho^{-1}\mathbf{A}||_{F}^{2}
 \end{equation}
-
+This is a mixed wweighted least square and standard least square problem and we could derive its closed-form solution:
 \begin{equation}
 (\hat{\mathbf{c}}_{i})^{(k+1)}
 =
