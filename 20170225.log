@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  8 MAR 2017 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  8 MAR 2017 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -461,15 +461,16 @@ Underfull \hbox (badness 2837) in paragraph at lines 113--114
  []
 
 
-Underfull \hbox (badness 3826) in paragraph at lines 120--120
+Underfull \hbox (badness 3826) in paragraph at lines 122--122
 [] \OT1/ptm/b/n/12 . Multi-channel Weighted Nu-clear Norm
  []
 
 
-Overfull \hbox (25.7938pt too wide) in paragraph at lines 176--176
+Overfull \hbox (25.7938pt too wide) in paragraph at lines 178--178
 [] 
  []
 
+[2]
 Missing character: There is no é in font ptmr7t!
 Missing character: There is no — in font ptmr7t!
 Missing character: There is no ­ in font ptmr7t!
@@ -485,39 +486,48 @@ Missing character: There is no º in font ptmr7t!
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¼ in font ptmr7t!
 Missing character: There is no š in font ptmr7t!
-(./20170225.bbl (./20170225.brf)
+ (./20170225.bbl (./20170225.brf)
 \tf@brf=\write3
 \openout3 = `20170225.brf'.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
- [2]
+
 Underfull \hbox (badness 1320) in paragraph at lines 8--8
 \OT1/ptm/m/n/9 and re-dun-dant rep-re-sen-ta-tions over learned dic-tio-nar-ies
 .
  []
 
-[3])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 257.
- [4
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
+[3]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 191.
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
+ (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 7238) in paragraph at lines 196--196
+[]\OT1/ptm/m/n/9 Neatlab AB-Soft.  Neat Im-age.  [][]$\OT1/pcr/m/n/9 https : / 
+/ ni .
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 259.
+ [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 259.
  (./20170225.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 257.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 257.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 259.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 259.
 Package rerunfilecheck Info: File `20170225.brf' has not changed.
-(rerunfilecheck)             Checksum: 101F9B6AA40FF37B9D4D0396B94301EE;1793.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 257.
+(rerunfilecheck)             Checksum: B2E7E2A11381BF49BB0C685F6CE40CC8;2631.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 259.
  ) 
 Here is how much of TeX's memory you used:
- 7544 strings out of 493091
- 107678 string characters out of 6134517
- 204503 words of memory out of 5000000
- 10818 multiletter control sequences out of 15000+600000
- 42759 words of font info for 108 fonts, out of 8000000 for 9000
+ 7628 strings out of 493091
+ 108972 string characters out of 6134517
+ 204615 words of memory out of 5000000
+ 10890 multiletter control sequences out of 15000+600000
+ 43274 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,16n,34p,1324b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,16n,28p,1324b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software/
@@ -532,15 +542,16 @@ re/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Software/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Software/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software/te
-xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/
-2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist
-/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/ty
-pe1/urw/times/utmri8a.pfb>
-Output written on 20170225.pdf (4 pages, 193716 bytes).
+xlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Software/texlive/2
+015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/2015/te
+xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-di
+st/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
+type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on 20170225.pdf (4 pages, 208415 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 292 PDF objects out of 1000 (max. 8388607)
+ 264 compressed objects within 3 object streams
+ 68 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

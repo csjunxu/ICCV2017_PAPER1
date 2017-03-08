@@ -154,6 +154,46 @@ Shuhang Gu, Qi~Xie, Deyu Meng, Wangmeng Zuo, Xiangchu Feng, and Lei Zhang.
   vision.
 \newblock {\em International Journal of Computer Vision}, pages 1--26, 2016.
 
+\bibitem{crosschannel2016}
+S.~Nam, Y.~Hwang, Y.~Matsushita, and S.~J. Kim.
+\newblock A holistic approach to cross-channel image noise modeling and its
+  application to image denoising.
+\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 1683--1691, 2016.
+
+\bibitem{Liu2008}
+C.~Liu, R.~Szeliski, S.~Bing Kang, C.~L. Zitnick, and W.~T. Freeman.
+\newblock Automatic estimation and removal of noise from a single image.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  30(2):299--314, 2008.
+
+\bibitem{almapg}
+Z.~Gong, Z.~Shen, and K.-C. Toh.
+\newblock Image restoration with mixed or unknown noises.
+\newblock {\em Multiscale Modeling \& Simulation}, 12(2):458--487, 2014.
+
+\bibitem{Zhu_2016_CVPR}
+F.~Zhu, G.~Chen, and P.-A. Heng.
+\newblock From noise modeling to blind image denoising.
+\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, June 2016.
+
+\bibitem{noiseclinic}
+M.~Lebrun, M.~Colom, and J.-M. Morel.
+\newblock Multiscale image blind denoising.
+\newblock {\em IEEE Transactions on Image Processing}, 24(10):3149--3161, 2015.
+
+\bibitem{ncwebsite}
+M.~Lebrun, M.~Colom, and J.~M. Morel.
+\newblock The noise clinic: a blind image denoising algorithm.
+\newblock \url{http://www.ipol.im/pub/art/2015/125/}.
+\newblock Accessed 01 28, 2015.
+
+\bibitem{neatimage}
+Neatlab ABSoft.
+\newblock Neat {I}mage.
+\newblock \url{https://ni.neatvideo.com/home}.
+
 \bibitem{bertsekas1999nonlinear}
 Dimitri~P Bertsekas.
 \newblock Nonlinear programming.

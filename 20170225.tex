@@ -98,9 +98,9 @@ where $\mathbf{Y}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$ is the singular va
 $\mathcal{S}_{\tau}(\bullet)$ is the soft-thresholding function with parameter $\tau>0$:
 \begin{equation}
 \mathcal{S}_{\tau}
-(\mathbf{\Sigma})
+(\mathbf{\Sigma}_{ii})
 =
-\max(\mathbf{\Sigma}-\tau, 0)
+\max(\mathbf{\Sigma}_{ii}-\tau, 0)
 \end{equation}
 One limitation of the original NNM model is that it treats all the singular values equally but ignore the different importance of them. To make the NNM mmodel more flexible at processing sigular values, it has been extended to the truncated nuclear norm minimization model \cite{tnnm}, the partial sum minimization of singular values \cite{PartialSum}, and the weighted nuclear norm minimization (WNNM) model \cite{wnnm}, etc. Among these models, the WNNM model has been applied on grayscale image denoising problem with highly effective performance. This model adds weights to each singular values and the problem is:
 \begin{equation}
@@ -113,7 +113,9 @@ is firstly proposed for grayscale image denoising problem, where $\|\mathbf{X}\|
 Though having achieved excellent performance on grayscale image denoising task, the WNNM method could not be applied on color image denoising in a direct manner. Of course we can apply the WNNM on each channel seperately, but it has been studied that this manner would get inferior performance when compared to the power of this model on grayscale images. In this paper, we would add a weighting matrix to the WNNM model and naturally extend it to deal with color images and maintain its powerful ability on exploring the non-local self similarity property of the natural images. 
 
 \subsection{Color Image Denoising}
+Numerous methods \cite{nlm,ksvd,bm3d,epll,lssc,wnnm,pgpd,mlp,csf,chen2015learning} has been proposed for grayscale image denoising task. These methods could be employed to denoise each channel in color images separately. However, the performance would be largely reduced when compared to the performance of these methods on grayscale images \cite{mairal2008sparse}. This could be alleviated if we denoise each image patch of R, G, B channels as a long concatenated vector. However, this simple modification treat each channel equally and ignores the differences among these channels. To explore the difference and correlation among the three channels in color images, several methods \cite{crosschannel2016,Liu2008,almapg,Zhu_2016_CVPR,noiseclinic,ncwebsite,neatimage} have also been proposed with different strategies for color image denoising task.  
 
+In this paper, we propose a new strategy for color image denoising. Specifically, we employ different weights for the R, G, B channels to deal with the distinct noise property among these channels. Experiments will show that this new 
 
 
 

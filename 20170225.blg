@@ -4,45 +4,45 @@ The top-level auxiliary file: 20170225.aux
 The style file: unsrt.bst
 Database file #1: egbib.bib
 Warning--empty journal in bertsekas1999nonlinear
-You've used 28 entries,
+You've used 35 entries,
             1791 wiz_defined-function locations,
-            611 strings with 7880 characters,
-and the built_in function-call counts, 7985 in all, are:
-= -- 763
-> -- 330
-< -- 12
-+ -- 120
-- -- 92
-* -- 544
-:= -- 1191
-add.period$ -- 84
-call.type$ -- 28
-change.case$ -- 28
+            647 strings with 8803 characters,
+and the built_in function-call counts, 9625 in all, are:
+= -- 910
+> -- 409
+< -- 13
++ -- 149
+- -- 114
+* -- 653
+:= -- 1446
+add.period$ -- 106
+call.type$ -- 35
+change.case$ -- 35
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 360
-empty$ -- 703
-format.name$ -- 92
-if$ -- 1818
+cite$ -- 36
+duplicate$ -- 425
+empty$ -- 859
+format.name$ -- 114
+if$ -- 2185
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 28
-newline$ -- 143
-num.names$ -- 28
-pop$ -- 62
+int.to.str$ -- 35
+missing$ -- 33
+newline$ -- 179
+num.names$ -- 35
+pop$ -- 83
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 239
+skip$ -- 276
 stack$ -- 0
-substring$ -- 692
-swap$ -- 139
-text.length$ -- 12
+substring$ -- 809
+swap$ -- 157
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 83
-width$ -- 30
-write$ -- 305
+while$ -- 98
+width$ -- 37
+write$ -- 379
 (There was 1 warning)
