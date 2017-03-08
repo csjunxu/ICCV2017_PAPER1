@@ -49,6 +49,10 @@
 \backcite {csf}{{2}{2.2}{subsection.2.2}}
 \backcite {chen2015learning}{{2}{2.2}{subsection.2.2}}
 \backcite {epll}{{2}{2.2}{subsection.2.2}}
+\backcite {cbm3d}{{2}{2.2}{subsection.2.2}}
+\backcite {bm3d}{{2}{2.2}{subsection.2.2}}
+\backcite {mairal2008sparse}{{2}{2.2}{subsection.2.2}}
+\backcite {mairal2008sparse}{{2}{2.2}{subsection.2.2}}
 \backcite {mairal2008sparse}{{2}{2.2}{subsection.2.2}}
 \backcite {crosschannel2016}{{2}{2.2}{subsection.2.2}}
 \backcite {Liu2008}{{2}{2.2}{subsection.2.2}}
@@ -57,5 +61,5 @@
 \backcite {noiseclinic}{{2}{2.2}{subsection.2.2}}
 \backcite {ncwebsite}{{2}{2.2}{subsection.2.2}}
 \backcite {neatimage}{{2}{2.2}{subsection.2.2}}
-\backcite {bertsekas1999nonlinear}{{2}{3.2}{equation.3.6}}
-\backcite {LADMAP}{{2}{3.2}{equation.3.6}}
+\backcite {bertsekas1999nonlinear}{{3}{3.2}{equation.3.6}}
+\backcite {LADMAP}{{3}{3.2}{equation.3.6}}

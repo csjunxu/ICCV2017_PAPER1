@@ -110,32 +110,31 @@ One limitation of the original NNM model is that it treats all the singular valu
 \end{equation}
 is firstly proposed for grayscale image denoising problem, where $\|\mathbf{X}\|_{\bm{w},*}=\sum_{i}w_{i}\sigma_{i}(\mathbf{X})$ is the weighted nuclear norm of matrix $\mathbf{X}$ and $\bm{w}=[w_{1},...,w_{n}]^{\top}, w_{i}\ge 0$ is the weight vector. According to the Remark 1 of \cite{wnnmijcv}, the problem (4) has closed-form solution if the weights are in a non-decreasing order
 
-Though having achieved excellent performance on grayscale image denoising task, the WNNM method could not be applied on color image denoising in a direct manner. Of course we can apply the WNNM on each channel seperately, but it has been studied that this manner would get inferior performance when compared to the power of this model on grayscale images. In this paper, we would add a weighting matrix to the WNNM model and naturally extend it to deal with color images and maintain its powerful ability on exploring the non-local self similarity property of the natural images. 
+Though having achieved excellent performance on grayscale image denoising task, the WNNM method could not be applied on color image denoising in a direct manner. Of course we can apply the WNNM on each channel seperately, but it has been studied that this manner would get inferior performance when compared to the power of this model on grayscale images. In this paper, we would add a weighting matrix to the WNNM model and naturally extend it to deal with color images and maintain its powerful ability on exploring the non-local self similarity property of the natural images. The proposed multi-channel WNNM model can be solved via the famous ADMM \cite{admm} algorithm. For each variable, we can derive a closed-form solution and hence the overall model can be solved in an efficient way. Besides, we analysis the convergence results of the proposed model.
 
 \subsection{Color Image Denoising}
-Numerous methods \cite{nlm,ksvd,bm3d,epll,lssc,wnnm,pgpd,mlp,csf,chen2015learning} has been proposed for grayscale image denoising task. These methods could be employed to denoise each channel in color images separately. However, the performance would be largely reduced when compared to the performance of these methods on grayscale images \cite{mairal2008sparse}. This could be alleviated if we denoise each image patch of R, G, B channels as a long concatenated vector. However, this simple modification treat each channel equally and ignores the differences among these channels. To explore the difference and correlation among the three channels in color images, several methods \cite{crosschannel2016,Liu2008,almapg,Zhu_2016_CVPR,noiseclinic,ncwebsite,neatimage} have also been proposed with different strategies for color image denoising task.  
-
-In this paper, we propose a new strategy for color image denoising. Specifically, we employ different weights for the R, G, B channels to deal with the distinct noise property among these channels. Experiments will show that this new 
-
-
+Numerous methods \cite{nlm,ksvd,bm3d,epll,lssc,wnnm,pgpd,mlp,csf,chen2015learning} has been proposed for grayscale image denoising task. These methods could be trivially employed to denoise each channel in color images separately. For example, the CBM3D \cite{cbm3d} first transform the RGB image into luminance-chrominance color space (e.g., YCbCr) and perform BM3D \cite{bm3d} for each channels separately with the patches only being grouped in luminance channel. However, as pointed out in \cite{mairal2008sparse}, the performance would be largely reduced when compared to the performance of these methods on grayscale images. 
+This method \cite{mairal2008sparse} performs color image denoising by concatenating the patches in R, G, B channels into a single vector. However, the concatenation would generate false colors and artifacts \cite{mairal2008sparse}. The major reason is that the concatenation methods treat multiple channels equally and ignore the different properties among these channels. To better explore the difference and correlation among the three channels in color images, several methods \cite{crosschannel2016,Liu2008,almapg,Zhu_2016_CVPR,noiseclinic,ncwebsite,neatimage} have been proposed to deal with real noisy image denoising task. These methods often firstly estimate the parameters of the assumed noise model (usually Gaussian), and then perform denoising with the estimated noise model. In this paper, we propose a weighting matrix (diagonal) which add differents noise levels on different channels for color image denoising. The proposed multi-channel method are able to deal with the distinct noise property among these channels. Experiments will demonstrate that the proposed model achieves better results than other competing methods for color image denoising.
 
 \section{Multi-channel Weighted Nuclear Norm Minimization}
 
 \subsection{The Problem}
+Given 
+In order to treat differently each channel in color images, we propose to add a weighting matrix to the original WNNM model and the resulting problem becomes
 \begin{equation}
 \min_{\mathbf{X}}\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
 + 
-\|\mathbf{X}\|_{*,\mathbf{P}}.
+\|\mathbf{X}\|_{\bm{w},*}.
 \end{equation}
-where 
-
+where $\mathbf{W}$ is the weighting matrix. For simplisity, we assume $\mathbf{W}$ to be a diagonal matrix. 
+While the original WNNM problem has closed-form solution, the proposed multi-channel WNNM problem cannot be solved in an analytical form. This makes the proposed model more difficult to optimize than WNNM 
 
 \subsection{Optimization}
 This can be solved by introducing an augmented variable $\mathbf{Z}$, and the problem is equivalent to the following problem:
 \begin{equation}
 \min_{\mathbf{X},\mathbf{Z}}\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
 +
-\|\mathbf{Z}\|_{*,\mathbf{P}}
+\|\mathbf{Z}\|_{\bm{w},*}
 \quad
 \text{s.t.}
 \quad
@@ -151,7 +150,7 @@ The augmented Lagrangian function is
 =
 &\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
 +
-\|\mathbf{Z}\|_{*,\mathbf{P}}
+\|\mathbf{Z}\|_{\bm{w},*}
 \\
 &
 +
