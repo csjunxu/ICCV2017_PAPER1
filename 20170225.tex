@@ -67,33 +67,68 @@ Image denoising is an important step in enhance the quality of images in compute
 
 The non-local self similarity (NSS) property of images has been extensively employed in image restoration tasks such as denoising \cite{ksvd,lssc,ncsr,nlm,bm3d,pgpd,wnnm}. Among these methods, the weighted nuclear norm minimization (WNNM) model has achieved the state-of-the-art performance on denoising the additive white Gaussian noise (AWGN) in grayscale images. Though among the most effective methods, how to extend the single channel WNNM model to handle multi-channel images such as the real-world color images is still an open problem. Of course the WNNM method can be applied to denoising color images by processing each channel separately, its performance would be largely inferior than jointly processing the RGB channels by concatenating the RGB values into a single vector \cite{mairal2008sparse}. Besides, the searching of non-local similar patches would be unstable due to the seperate processing of the RGB images and hence the power of the NSS would be largely reduced. This would also limit the performance of not only WNNM but also other NSS based methods \cite{lssc,ncsr,nlm,bm3d,pgpd}. This fact is also evaluated by our experiments on color image denoising task. 
 
-In this paper, we proposed to solve the multi-channel weighted nuclear norm minimization model to perform image denoising on color images. The original WNNM model has closed-form solutions under the weighted nulcear norm proximal operator (WNNP). However, if we add a weighting matrix $\mathbf{W}$ to the left of the data term, the resulting multi-channel WNNM model no longer has the nice property of closed-form solutions. This makes the problem more chanllging. To solve this problem, we formulate the proposed multi-channel WNNM problem into a linearly constrained non-convex program with an augmented variable. It is also not directly solvable due to the non-convexity of the existance of the weighted nuclear norm. Note that the reformulated model contains two variables with linear constraint. This can be solved by employing the alternating direction method of multipliers (ADMM). 
-
-
+In this paper, we proposed to solve the multi-channel weighted nuclear norm minimization model to perform image denoising on color images. The original WNNM model has closed-form solutions under the weighted nulcear norm proximal operator (WNNP). However, if we add a weighting matrix $\mathbf{W}$ to the left of the data term, the resulting multi-channel WNNM model no longer has the nice property of closed-form solutions. This makes the problem more chanllging. To solve this problem, we formulate the proposed multi-channel WNNM problem into a linearly constrained non-convex program with an augmented variable. It is also not directly solvable due to the non-convexity of the existance of the weighted nuclear norm. Note that the reformulated model contains two variables with linear constraint. This can be solved by employing the alternating direction method of multipliers (ADMM). For the variable $\mathbf{Z}$, it is the original weighted nuclear norm minimization problem and can be solved with closed-form solution \cite{wnnm,lugsvt}. For the variable $\mathbf{X}$, it is a standard least squares problem and we can also obatin its closed-form solution. The convergency of the proposed method is also given to guarantee a rational termination of the our model. 
 
 
 
 \section{Related Work}
 
-
-The WNNM model
+\subsection{Nuclear Norm Minimization}
+As the tightest convex surrogate function of the matrix rank minimization \cite{Guaranteed,fazelPhDthesis}, the nuclear norm minimization (NNM) problem has been extensive studied in low rank matrix approximation (LRMA) \cite{srebro2003weighted,cai2010singular,candes2011robust,lin2011linearized}. A standard nuclear norm minimization problem is as follows:
+\begin{equation}
+\mathbf{\hat{X}}
+=
+\arg
+\min_{X}
+\|\mathbf{Y}-\mathbf{X}\|_{F}^{2}
++
+\lambda
+\|\mathbf{X}\|_{*}.
+\end{equation}
+This NNM problem has closed-form solution by soft-thresholding the singular values of the matrix $\mathbf{Y}$ as 
+\begin{equation}
+\mathbf{\hat{X}}
+=
+\mathbf{U}
+\mathcal{S}_{\frac{\lambda}{2}}
+(\mathbf{\Sigma})
+\mathbf{V}^{\top}
+\end{equation}
+where $\mathbf{Y}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$ is the singular value decomposition (a.k.a. Eckart-Young Decomposition \cite{eckart1936approximation}) of $\mathbf{Y}$ and 
+$\mathcal{S}_{\tau}(\bullet)$ is the soft-thresholding function with parameter $\tau>0$:
+\begin{equation}
+\mathcal{S}_{\tau}
+(\mathbf{\Sigma})
+=
+\max(\mathbf{\Sigma}-\tau, 0)
+\end{equation}
+One limitation of the original NNM model is that it treats all the singular values equally but ignore the different importance of them. To make the NNM mmodel more flexible at processing sigular values, it has been extended to the truncated nuclear norm minimization model \cite{tnnm}, the partial sum minimization of singular values \cite{PartialSum}, and the weighted nuclear norm minimization (WNNM) model \cite{wnnm}, etc. Among these models, the WNNM model has been applied on grayscale image denoising problem with highly effective performance. This model adds weights to each singular values and the problem is:
 \begin{equation}
 \min_{\mathbf{X}}\|\mathbf{Y}-\mathbf{X}\|_{F}^{2}
 +
-\|\mathbf{X}\|_{*,\mathbf{w}}
+\|\mathbf{X}\|_{\bm{w},*}
 \end{equation}
-is firstly proposed for grayscale image denoising problem. How to extend it to deal with color images or hyperspectral images is still an open problem. This model treat each 
+is firstly proposed for grayscale image denoising problem, where $\|\mathbf{X}\|_{\bm{w},*}=\sum_{i}w_{i}\sigma_{i}(\mathbf{X})$ is the weighted nuclear norm of matrix $\mathbf{X}$ and $\bm{w}=[w_{1},...,w_{n}]^{\top}, w_{i}\ge 0$ is the weight vector. According to the Remark 1 of \cite{wnnmijcv}, the problem (4) has closed-form solution if the weights are in a non-decreasing order
+
+Though having achieved excellent performance on grayscale image denoising task, the WNNM method could not be applied on color image denoising in a direct manner. Of course we can apply the WNNM on each channel seperately, but it has been studied that this manner would get inferior performance when compared to the power of this model on grayscale images. In this paper, we would add a weighting matrix to the WNNM model and naturally extend it to deal with color images and maintain its powerful ability on exploring the non-local self similarity property of the natural images. 
+
+\subsection{Color Image Denoising}
+
+
 
 
 \section{Multi-channel Weighted Nuclear Norm Minimization}
 
+\subsection{The Problem}
 \begin{equation}
 \min_{\mathbf{X}}\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
-+
++ 
 \|\mathbf{X}\|_{*,\mathbf{P}}.
 \end{equation}
 where 
 
+
+\subsection{Optimization}
 This can be solved by introducing an augmented variable $\mathbf{Z}$, and the problem is equivalent to the following problem:
 \begin{equation}
 \min_{\mathbf{X},\mathbf{Z}}\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
@@ -189,6 +224,28 @@ c. update $\mathbf{W}$
 \begin{equation}
 \sigma_{\mathbf{y}_{i}} = \sqrt{\sigma_{0}^{2} - \|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}^{2}}
 \end{equation}
+
+
+
+\section{Multi-channel WNNM For Color Image Denoising}
+
+
+\section{Experiments}
+
+
+\subsection{Implementation Details}
+
+
+\subsection{Experiments on Synthetic Noisy Images}
+
+
+
+\subsection{Experiments on Real Noisy Images}
+
+
+
+\section{Conclusion}
+
 
 
 {

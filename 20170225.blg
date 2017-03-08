@@ -3,47 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 20170225.aux
 The style file: unsrt.bst
 Database file #1: egbib.bib
-Warning--I didn't find a database entry for ""
 Warning--empty journal in bertsekas1999nonlinear
-You've used 16 entries,
+You've used 28 entries,
             1791 wiz_defined-function locations,
-            539 strings with 5917 characters,
-and the built_in function-call counts, 5087 in all, are:
-= -- 511
-> -- 181
-< -- 10
-+ -- 66
-- -- 50
-* -- 322
-:= -- 721
-add.period$ -- 48
-call.type$ -- 16
-change.case$ -- 16
+            611 strings with 7880 characters,
+and the built_in function-call counts, 7985 in all, are:
+= -- 763
+> -- 330
+< -- 12
++ -- 120
+- -- 92
+* -- 544
+:= -- 1191
+add.period$ -- 84
+call.type$ -- 28
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 241
-empty$ -- 441
-format.name$ -- 50
-if$ -- 1184
+cite$ -- 29
+duplicate$ -- 360
+empty$ -- 703
+format.name$ -- 92
+if$ -- 1818
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 16
-newline$ -- 83
-num.names$ -- 16
-pop$ -- 40
+int.to.str$ -- 28
+missing$ -- 28
+newline$ -- 143
+num.names$ -- 28
+pop$ -- 62
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 183
+skip$ -- 239
 stack$ -- 0
-substring$ -- 485
-swap$ -- 113
-text.length$ -- 10
+substring$ -- 692
+swap$ -- 139
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 55
-width$ -- 18
-write$ -- 176
-(There were 2 warnings)
+while$ -- 83
+width$ -- 30
+write$ -- 305
+(There was 1 warning)
