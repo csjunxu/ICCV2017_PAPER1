@@ -4,46 +4,46 @@ The top-level auxiliary file: 20170225.aux
 The style file: unsrt.bst
 Database file #1: egbib.bib
 Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "Chen2015ICCV"
-You've used 13 entries,
+Warning--empty journal in bertsekas1999nonlinear
+You've used 16 entries,
             1791 wiz_defined-function locations,
-            521 strings with 5376 characters,
-and the built_in function-call counts, 4380 in all, are:
-= -- 443
-> -- 155
-< -- 9
-+ -- 56
-- -- 43
-* -- 280
-:= -- 614
-add.period$ -- 39
-call.type$ -- 13
-change.case$ -- 13
+            539 strings with 5917 characters,
+and the built_in function-call counts, 5087 in all, are:
+= -- 511
+> -- 181
+< -- 10
++ -- 66
+- -- 50
+* -- 322
+:= -- 721
+add.period$ -- 48
+call.type$ -- 16
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 206
-empty$ -- 376
-format.name$ -- 43
-if$ -- 1024
+cite$ -- 17
+duplicate$ -- 241
+empty$ -- 441
+format.name$ -- 50
+if$ -- 1184
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 13
-newline$ -- 68
-num.names$ -- 13
-pop$ -- 31
+int.to.str$ -- 16
+missing$ -- 16
+newline$ -- 83
+num.names$ -- 16
+pop$ -- 40
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 162
+skip$ -- 183
 stack$ -- 0
-substring$ -- 434
-swap$ -- 102
-text.length$ -- 9
+substring$ -- 485
+swap$ -- 113
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 47
-width$ -- 15
-write$ -- 145
+warning$ -- 1
+while$ -- 55
+width$ -- 18
+write$ -- 176
 (There were 2 warnings)

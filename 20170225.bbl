@@ -81,4 +81,21 @@ D.~Zoran and Y.~Weiss.
 \newblock {\em IEEE International Conference on Computer Vision (ICCV)}, pages
   479--486, 2011.
 
+\bibitem{mairal2008sparse}
+Julien Mairal, Michael Elad, and Guillermo Sapiro.
+\newblock Sparse representation for color image restoration.
+\newblock {\em IEEE Transactions on image processing}, 17(1):53--69, 2008.
+
+\bibitem{bertsekas1999nonlinear}
+Dimitri~P Bertsekas.
+\newblock Nonlinear programming.
+\newblock 1999.
+
+\bibitem{LADMAP}
+Zhouchen Lin, Risheng Liu, and Zhixun Su.
+\newblock Linearized alternating direction method with adaptive penalty for
+  low-rank representation.
+\newblock {\em Advances in Neural Information Processing Systems 24}, pages
+  612--620, 2011.
+
 \end{thebibliography}

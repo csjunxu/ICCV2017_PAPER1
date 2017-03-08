@@ -8,7 +8,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[numbers,sort]{natbib}
-\usepackage[UTF8]{ctex}
 
 \usepackage{subfigure}
 \usepackage{upgreek}
@@ -64,9 +63,14 @@ Motivated by the weighted Orthogonal Procrustes Problem, we propose a noval weig
 
 \section{Introduction}
 
-Image denoising is an important step in enhance the quality of images in computer vision systems. It aims to recover the latent clean image $\mathbf{x}$ from the observed noisy version $\mathbf{y}=\mathbf{x}+\mathbf{n}$, where $\mathbf{n}$ is often assumed to be additive white Gaussian noise. Most denoising methods \cite{ksvd,lssc,ncsr,nlm,bm3d,cbm3d,pgpd,wnnm,mlp,csf,chen2015learning,foe,epll} are designed for grayscale images, and other color image denoising methods \cite{mairal2008sparse} treat equally the R, G, B channels in color images. However, in many computer vision tasks, the multiple channels in natural images being processed often exhibit distinct properties, e.g., contain different noise levels. For example, the noise levels among the R, G, B channels are different in real noisy images due to the different sampling frequency in color demosaicking. The This is caused by the color demosaicking during the transformation from raw data to RGB images in the standard in-camera imaging pipeline. Usually, the G channel contains the least noise levels among the three channels. Hence, in order to deal with each channel more effectively, different noise levels should be plugged into different channels for color image denoising. 
+Image denoising is an important step in enhance the quality of images in computer vision systems. It aims to recover the latent clean image $\mathbf{x}$ from the observed noisy version $\mathbf{y}=\mathbf{x}+\mathbf{n}$, where $\mathbf{n}$ is often assumed to be additive white Gaussian noise. Most denoising methods \cite{ksvd,lssc,ncsr,nlm,bm3d,cbm3d,pgpd,wnnm,mlp,csf,chen2015learning,foe,epll} are designed for grayscale images, and other color image denoising methods \cite{mairal2008sparse} treat equally the R, G, B channels in color images. However, in many computer vision tasks, the multiple channels in natural images being processed often exhibit distinct properties, e.g., contain different noise levels. For example, the noise levels among the R, G, B channels are different in real noisy images due to the on board processing in in-camera imaging pipelines \cite{karaimer_brown_ECCV_2016}. The This is caused by the color demosaicking during the transformation from raw data to RGB images in the standard in-camera imaging pipeline. Usually, the G channel contains the least noise levels among the three channels. Hence, in order to deal with each channel more effectively, different noise levels should be plugged into different channels for color image denoising. 
 
-The non-local self similarity property of images has been extensively employed in image denoising algorithms \cite{}. Among these methods, the weighted nuclear norm minimization (WNNM) achieved the state-of-the-art performance in grayscale image denoising with additive white Gaussian noise (AWGN). Though among the most effective methods, how WNNM can be extended to deal with color image denoising and real-world image denoising is still an open problem. In this paper, we proposed a multi-channel weighted nuclear norm minimization model to deal with the color image denoising problem as well as the real noisy image denoising problem.
+The non-local self similarity (NSS) property of images has been extensively employed in image restoration tasks such as denoising \cite{ksvd,lssc,ncsr,nlm,bm3d,pgpd,wnnm}. Among these methods, the weighted nuclear norm minimization (WNNM) model has achieved the state-of-the-art performance on denoising the additive white Gaussian noise (AWGN) in grayscale images. Though among the most effective methods, how to extend the single channel WNNM model to handle multi-channel images such as the real-world color images is still an open problem. Of course the WNNM method can be applied to denoising color images by processing each channel separately, its performance would be largely inferior than jointly processing the RGB channels by concatenating the RGB values into a single vector \cite{mairal2008sparse}. Besides, the searching of non-local similar patches would be unstable due to the seperate processing of the RGB images and hence the power of the NSS would be largely reduced. This would also limit the performance of not only WNNM but also other NSS based methods \cite{lssc,ncsr,nlm,bm3d,pgpd}. This fact is also evaluated by our experiments on color image denoising task. 
+
+In this paper, we proposed to solve the multi-channel weighted nuclear norm minimization model to perform image denoising on color images. The original WNNM model has closed-form solutions under the weighted nulcear norm proximal operator (WNNP). However, if we add a weighting matrix $\mathbf{W}$ to the left of the data term, the resulting multi-channel WNNM model no longer has the nice property of closed-form solutions. This makes the problem more chanllging. To solve this problem, we formulate the proposed multi-channel WNNM problem into a linearly constrained non-convex program with an augmented variable. It is also not directly solvable due to the non-convexity of the existance of the weighted nuclear norm. Note that the reformulated model contains two variables with linear constraint. This can be solved by employing the alternating direction method of multipliers (ADMM). 
+
+
+
 
 
 \section{Related Work}
@@ -81,23 +85,65 @@ The WNNM model
 is firstly proposed for grayscale image denoising problem. How to extend it to deal with color images or hyperspectral images is still an open problem. This model treat each 
 
 
-去噪过程如下：
+\section{Multi-channel Weighted Nuclear Norm Minimization}
 
-1. 初始化：
-
-我们从原始噪声图得到相似块矩阵$\mathbf{Y}$，我们采用\cite{Chen2015ICCV}的方法估计彩色带噪图的噪声水平$\sigma_{0}$。初始化权重矩阵$\mathbf{W}^{(0)}=\frac{1}{\sigma_{0}}\mathbf{I}$, 初始化字典$\mathbf{D}^{(0)}=\mathbf{I}$。
-
-2. 进入内部迭代优化：
-
-对于每一次迭代，模型都需要反复迭代求解$\mathbf{D}$,$\mathbf{C}$直到收敛。For $k=0,1,2,...$:
-
-a. update $\mathbf{C}$
 \begin{equation}
-\min_{\mathbf{C}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}^{(k)}\mathbf{C})\mathbf{W}^{(k)}\|_{F}^{2}
+\min_{\mathbf{X}}\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
 +
-\lambda\|\mathbf{C}\|_{1}.
+\|\mathbf{X}\|_{*,\mathbf{P}}.
 \end{equation}
-有闭合解，每一列单独求解：
+where 
+
+This can be solved by introducing an augmented variable $\mathbf{Z}$, and the problem is equivalent to the following problem:
+\begin{equation}
+\min_{\mathbf{X},\mathbf{Z}}\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
++
+\|\mathbf{Z}\|_{*,\mathbf{P}}
+\quad
+\text{s.t.}
+\quad
+\mathbf{X}=\mathbf{Z}.
+\end{equation}
+This is a standard convex  problem with variables $\mathbf{X}$ and $\mathbf{Z}$, which can be solved by 
+the Augmented Lagrange Multipliers (ALM) \cite{bertsekas1999nonlinear,LADMAP}. 
+
+The augmented Lagrangian function is 
+\begin{equation}
+\begin{split}
+\mathcal{L}(\mathbf{X},\mathbf{Z},\mathbf{A})
+=
+&\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
++
+\|\mathbf{Z}\|_{*,\mathbf{P}}
+\\
+&
++
+\langle
+\mathbf{A},\mathbf{X}-\mathbf{Z}
+\rangle
++
+\frac{\rho}{2}
+\|\mathbf{X}-\mathbf{Z}\|_{F}^{2}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+\mathcal{L}(\mathbf{X},\mathbf{Z},\mathbf{A})
+=
+\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
++
+\|\mathbf{Z}\|_{*,\mathbf{P}}
++
+\frac{\rho}{2}
+\|\mathbf{X}-\mathbf{Z}+\frac{1}{\rho}\mathbf{A}\|_{F}^{2}
+\end{split}
+\end{equation}
+where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the penalty parameter.
+
+This can be solved by alternative minimization of $\mathcal{L}$ with respect to $\mathbf{X}$ and $\mathbf{Z}$ , respectively
+
+Update $\mathbf{X}$
 \begin{equation}
 (\hat{\mathbf{c}}_{i})^{(k+1)}
 =
@@ -105,7 +151,7 @@ a. update $\mathbf{C}$
 +
 \lambda\|\mathbf{c}_{i}\|_{1}.
 \end{equation}
-闭合解为：
+
 \begin{equation}
 (\hat{\mathbf{c}}_{i})^{(k+1)}
 =
@@ -122,7 +168,7 @@ b. update $\mathbf{D}$
 \quad
 \mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
 \end{equation}
-等价于
+
 \begin{equation}
 \min_{\mathbf{D}}\|(\mathbf{Y}\mathbf{W})-\mathbf{D}(\mathbf{C}^{(k+1)}\mathbf{W})\|_{F}^{2}
 \quad
@@ -133,20 +179,16 @@ b. update $\mathbf{D}$
 闭合解为：$\hat{\mathbf{D}}^{(k+1)}=\mathbf{V}\mathbf{U}^{\top}$, $\mathbf{C}\mathbf{W}(\mathbf{Y}\mathbf{W})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$.
 
 c. update $\mathbf{W}$
-根据贝叶斯法则，权重矩阵的第$i$项为
+
 \begin{equation}
 \mathbf{W}_{ii} 
 =\frac{\frac{1}{N}\sum_{i=1}^{N}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}}{\sigma_{\mathbf{y}_{i}}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}}
 \end{equation}
 
 
-3. 外部迭代优化：
-
-更新每个块的噪声水平：
 \begin{equation}
 \sigma_{\mathbf{y}_{i}} = \sqrt{\sigma_{0}^{2} - \|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}^{2}}
 \end{equation}
-然后重复步骤2.
 
 
 {
