@@ -177,11 +177,11 @@ After some simple calculations, we can obtain the following equivalent form of t
 &
 +
 \frac{\rho}{2}
-\|\mathbf{X}-\mathbf{Z}+\frac{1}{\rho}\mathbf{A}\|_{F}^{2}
+\|\mathbf{X}-\mathbf{Z}+\rho^{-1}\mathbf{A}\|_{F}^{2}
 \end{split}
 \end{equation}
 
-We initialize the matrix variables $\mathbf{X}_{(0)}$ and $\mathbf{Z}_{(0)}$ to be zero matrix of suitable size.
+We initialize the matrix variables $\mathbf{X}_{(0)}$, $\mathbf{Z}_{(0)}$, and $\mathbf{A}_{(0)}$ to be zero matrix of suitable size.
 Taking derivative of the Lagrangian function $\mathcal{L}$ with respect to the variables $\mathbf{X}$ and $\mathbf{Z}$ and setting the derivative function to be zero, we can alternatively update the iterations of the ADMM algorithm as follows:
 
 (1) Update $\mathbf{X}$ while fixing $\mathbf{Z}$ and $\mathbf{A}$:
@@ -191,46 +191,126 @@ Taking derivative of the Lagrangian function $\mathcal{L}$ with respect to the v
 \arg\min_{\mathbf{X}}
 \|\mathbf{W}\mathbf{Y} - \mathbf{W}\mathbf{X}\|_{F}^{2} 
 +
-\frac{\rho}{2}\|\mathbf{X} - \mathbf{Z}_{(k)} + \rho^{-1}\mathbf{A}||_{F}^{2}
+\frac{\rho}{2}\|\mathbf{X} - \mathbf{Z}_{(k)} + \rho^{-1}\mathbf{A}_{(k)}||_{F}^{2}
 \end{equation}
-This is a mixed wweighted least square and standard least square problem and we could derive its closed-form solution:
+This is a mixed weighted least square and standard least square problem and we could derive its closed-form solution:
 \begin{equation}
-(\hat{\mathbf{c}}_{i})^{(k+1)}
+\mathbf{X}_{(k+1)}
 =
-\text{sgn}(\mathbf{D^{\top}y}) 
-\odot 
-\text{max}(|\mathbf{D^{\top}y}|-\frac{\lambda}{(\mathbf{W}_{ii})^{2}},0),
+(\mathbf{W}^{2}+\frac{\rho}{2}\mathbf{I})^{-1}
+(\mathbf{W}^{2}\mathbf{Y} + \frac{\rho}{2}\mathbf{Z} -\frac{1}{2}\mathbf{A})
 \end{equation}
 
-b. update $\mathbf{D}$
+(2) Update $\mathbf{Z}$ while fixing $\mathbf{X}$ and $\mathbf{A}$:
 \begin{equation}
-\min_{\mathbf{D}}\frac{1}{2}\|(\mathbf{Y}-\mathbf{D}\mathbf{C}^{(k+1)})\mathbf{W}\|_{F}^{2}
-\quad
+\mathbf{Z}_{(k+1)}
+=
+\arg\min_{\mathbf{Z}}\frac{\rho}{2}
+\|\mathbf{Z} - (\mathbf{X}_{(k+1)}+\rho^{-1}\mathbf{A}_{(k)})\|_{F}^{2}
++
+\|\mathbf{Z}\|_{\bm{w},*}
+\end{equation}
+According to the Theorem 1 in \cite{wnnmijcv}, given the $\mathbf{X}_{(k+1)}+\rho^{-1}\mathbf{A}_{(k)}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$ be the SVD of $\mathbf{X}_{(k+1)}+\rho^{-1}\mathbf{A}_{(k)}$, where $\mathbf{\Sigma}=
+\left( \begin{array}{c}
+\text{diag}(\sigma_{1},\sigma_{2},...,\sigma_{n})
+\\
+\mathbf{0}
+\end{array} \right)
+\in\mathbb{R}^{m\times n}$,
+then the global optimum of the above problem is 
+$\hat{\mathbf{Z}}=\mathbf{U}\hat{\mathbf{\Sigma}}\mathbf{V}^{\top}$, where 
+$\hat{\mathbf{\Sigma}}=
+\left( \begin{array}{c}
+\text{diag}(\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{n})
+\\
+\mathbf{0}
+\end{array} \right)
+\in\mathbb{R}^{m\times n}$
+and $(\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{n})$ is the solution to the following convex optimization problem:
+\begin{equation}
+\begin{split}
+\min_{\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{n}}
+&
+\sum_{i=1}^{n}
+(\sigma_{i}-\hat{\sigma}_{i})^{2}
++
+\frac{2w_{i}}{\rho}\hat{\sigma}_{i}
+\\
+&
 \text{s.t.}
 \quad
-\mathbf{D}^{\top}\mathbf{D} =\mathbf{I}. 
+\hat{\sigma}_{1}\ge \hat{\sigma}_{2} \ge...\ge \hat{\sigma}_{n}\ge 0.
+\end{split}
 \end{equation}
-
+According to the Remark 1 in \cite{wnnmijcv}, the problem above has closed-form solution
 \begin{equation}
-\min_{\mathbf{D}}\|(\mathbf{Y}\mathbf{W})-\mathbf{D}(\mathbf{C}^{(k+1)}\mathbf{W})\|_{F}^{2}
-\quad
-\text{s.t.}
-\quad
-\mathbf{D}^{\top}\mathbf{D} = \mathbf{I},
+\hat{\sigma}_{i}
+=
+\left\{ \begin{array}{ll}
+0 & \textrm{if $c_{2}<0$}\\
+\frac{c_{1}+\sqrt{c_{2}}}{2} & \textrm{if $c_{2}\ge 0$}
+\end{array} \right.
 \end{equation}
-闭合解为：$\hat{\mathbf{D}}^{(k+1)}=\mathbf{V}\mathbf{U}^{\top}$, $\mathbf{C}\mathbf{W}(\mathbf{Y}\mathbf{W})^{\top}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$.
-
-c. update $\mathbf{W}$
-
+where $c_{1}=\sigma_{i}-\epsilon$, $c_{2} = (\sigma_{i}-\epsilon)^{2}-\frac{8C}{\rho}$ and $C$ is set as $√
+\sqrt{2n}$ by experience in image denoising.
+ 
+(3) Update $\mathbf{A}$ while fixing $\mathbf{X}$ and $\mathbf{Z}$:
 \begin{equation}
-\mathbf{W}_{ii} 
-=\frac{\frac{1}{N}\sum_{i=1}^{N}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}}{\sigma_{\mathbf{y}_{i}}\|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}}
+\mathbf{A}_{(k+1)}
+=
+\mathbf{A}_{(k+1)} + \rho(\mathbf{X}_{(k+1)}-\mathbf{Z}_{(k+1)})
 \end{equation}
 
-
-\begin{equation}
-\sigma_{\mathbf{y}_{i}} = \sqrt{\sigma_{0}^{2} - \|\mathbf{y}_{i}-\mathbf{D}\mathbf{c}_{i}\|_{2}^{2}}
-\end{equation}
+We summerize the optimization steps in Algorithm 1.
+\begin{table}\label{alg1}
+\begin{tabular}{l}
+\hline
+\textbf{Algorithm 1}: Multi-channel WNNM Problem
+\\
+\hline
+\textbf{Input:} Noisy image $\mathbf{y}$, external PG prior GMM model
+\\
+\textbf{Output:} The denoised image $\hat{\mathbf{x}}$.
+\\
+\textbf{Initialization:} $\hat{\mathbf{x}}^{(0)}=\mathbf{y}$;
+\\
+\textbf{for} $Ite = 1:IteNum$ \textbf{do}
+\\
+1. Extracting internal PGs $\{\mathbf{Y}_{n}\}_{n=1}^{N}$ from $\hat{\mathbf{x}}^{(Ite-1)}$;
+\\
+%\textbf{Guided Internal Subspace Assignment:}
+%\\
+\quad\textbf{for} each PG $\mathbf{Y}_{n}$ \textbf{do}
+\\
+2.\quad Calculate group mean vector $\bm{\mu}_{n}$ and form 
+\\
+\quad \ \ \ mean subtracted PG $\mathbf{\overline{Y}}_{n}$;
+\\
+3.\quad Subspace assignment via Eq. (\ref{equ3});
+\\
+\quad\textbf{end for}
+\\
+%\textbf{Guided Internal Orthogonal Dictionary Learning:}
+%\\
+\quad\textbf{for} the PGs in each subspace \textbf{do}
+\\
+4.\quad External PG prior guided internal orthogonal
+\\
+\quad \ \ \ dictionary learning by solving (\ref{equ4});
+\\
+5.\quad Recover each patch in all PGs via Eq. (\ref{equ10});
+\\
+\quad\textbf{end for}
+\\
+6. Aggregate the recovered PGs of all subspaces to form
+\\
+\quad the recovered image $\hat{\mathbf{x}}^{(Ite)}$;
+\\
+\textbf{end for}
+\\
+\hline
+\end{tabular}
+\end{table}
 
 
 

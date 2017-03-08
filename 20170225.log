@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  8 MAR 2017 21:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  8 MAR 2017 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -474,42 +474,42 @@ Underfull \hbox (badness 3078) in paragraph at lines 131--132
  []
 
 [2]
-Overfull \hbox (5.72229pt too wide) detected at line 195
+Overfull \hbox (16.89249pt too wide) detected at line 195
 []\OT1/cmr/bx/n/10 X[] \OT1/cmr/m/n/10 = [] [] \OMS/cmsy/m/n/10 k\OT1/cmr/bx/n/
 10 WY \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n/10 WX\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n
 /10 + []\OMS/cmsy/m/n/10 k\OT1/cmr/bx/n/10 X \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n
-/10 Z[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^Z[]\OT1/cmr/bx/n/10 A\OMS/cmsy/m/n
-/10 jj[]
+/10 Z[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^Z[]\OT1/cmr/bx/n/10 A[]\OMS/cmsy/m
+/n/10 jj[]
  []
 
-Missing character: There is no È in font ptmr7t!
-Missing character: There is no ó in font ptmr7t!
-Missing character: There is no ≠ in font ptmr7t!
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no ê in font ptmr7t!
-Missing character: There is no à in font ptmr7t!
-Missing character: There is no Ë in font ptmr7t!
-Missing character: There is no ß in font ptmr7t!
-Missing character: There is no £ in font ptmr7t!
-Missing character: There is no ‰ in font ptmr7t!
-Missing character: There is no ∏ in font ptmr7t!
-Missing character: There is no ∫ in font ptmr7t!
-Missing character: There is no Ô in font ptmr7t!
-Missing character: There is no º in font ptmr7t!
-Missing character: There is no ö in font ptmr7t!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no ö in font cmr10!
+
+LaTeX Warning: Reference `equ3' on page 3 undefined on input line 289.
+
+
+LaTeX Warning: Reference `equ4' on page 3 undefined on input line 299.
+
+
+LaTeX Warning: Reference `equ10' on page 3 undefined on input line 301.
+
 (./20170225.bbl (./20170225.brf)
 \tf@brf=\write3
 \openout3 = `20170225.brf'.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+ [3]
 Underfull \hbox (badness 1320) in paragraph at lines 8--8
 \OT1/ptm/m/n/9 and re-dun-dant rep-re-sen-ta-tions over learned dic-tio-nar-ies
 .
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
-[3]
+[4]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 191.
 
  (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -524,24 +524,30 @@ Underfull \hbox (badness 7238) in paragraph at lines 196--196
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
-[4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 344.
+[5
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 344.
  (./20170225.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 264.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 344.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 344.
 Package rerunfilecheck Info: File `20170225.brf' has not changed.
-(rerunfilecheck)             Checksum: 8A9461A20B0C1E102CA361A07FBB059A;2771.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 264.
+(rerunfilecheck)             Checksum: 17B1B7B8ADEB3FC2ABFEC7CE98FB5A84;2863.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 344.
  ) 
 Here is how much of TeX's memory you used:
- 7616 strings out of 493091
- 108706 string characters out of 6134517
- 204583 words of memory out of 5000000
- 10879 multiletter control sequences out of 15000+600000
+ 7621 strings out of 493091
+ 108737 string characters out of 6134517
+ 205631 words of memory out of 5000000
+ 10883 multiletter control sequences out of 15000+600000
  44381 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,15n,28p,1324b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,17n,34p,1324b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software/
@@ -556,16 +562,17 @@ re/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Software/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Software/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software/te
-xlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Software/texlive/2
-015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/2015/te
-xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
-type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw
-/times/utmri8a.pfb>
-Output written on 20170225.pdf (4 pages, 210551 bytes).
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/Softwa
+re/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Software/texl
+ive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/20
+15/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on 20170225.pdf (5 pages, 221754 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 273 compressed objects within 3 object streams
+ 67 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
