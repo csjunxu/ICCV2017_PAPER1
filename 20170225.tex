@@ -264,7 +264,7 @@ where $c_{1}=\sigma_{i}-\epsilon$, $c_{2} = (\sigma_{i}-\epsilon)^{2}-\frac{8C}{
 \begin{equation}\label{e14}
 \mathbf{A}_{k+1}
 =
-\mathbf{A}_{k+1} + \rho_{k}(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
+\mathbf{A}_{k} + \rho_{k}(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
 \end{equation}
 
 (4) Update $\rho_{k}$ as $\rho_{k+1}= \mu * \rho_{k}$.
@@ -308,7 +308,7 @@ $
 $
 \mathbf{A}_{k+1}
 =
-\mathbf{A}_{k+1} + \rho_{k}(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
+\mathbf{A}_{k} + \rho_{k}(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
 $
 \\
 4. Update $\rho_{k+1}= \mu * \rho_{k}$;
@@ -511,8 +511,62 @@ The inequality above can be proofed as follows: given the diagonal matrix $\math
 $
 \mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k},\rho_{k})
 \le
-\mathcal{L}(\mathbf{X}_{k},\mathbf{Z}_{k},\mathbf{A}_{k},\rho_{k})
+\mathcal{L}(\mathbf{X}_{k},\mathbf{Z}_{k},\mathbf{A}_{k},\rho_{k}).
 $
+Based on the updating rule that 
+$
+\mathbf{A}_{k+1}
+=
+\mathbf{A}_{k} + \rho_{k}(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
+$,
+we have 
+$
+\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k+1},\rho_{k+1})
+=
+\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k},\rho_{k})
++
+\langle
+\mathbf{A}_{k+1}
+-
+\mathbf{A}_{k}
+,
+\mathbf{X}_{k+1}
+-
+\mathbf{Z}_{k+1}
+\rangle
++
+\frac{\rho_{k+1}-\rho_{k}}{2}
+\|
+\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}
+\|_{F}^{2}
+=
+\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k},\rho_{k})
++
+\frac{\rho_{k+1}+\rho_{k}}{2\rho_{k}^{2}}
+\|
+\mathbf{A}_{k+1}
+-
+\mathbf{A}_{k}
+\|_{F}^{2}
+$.
+Since the sequence 
+$\{\|
+\mathbf{A}_{k}\}$
+is upper bounded, the sequence 
+$\{\|
+\mathbf{A}_{k+1}
+-
+\mathbf{A}_{k}
+\|_{F}\}$ is also upper bounded. Denote by $a$ the upper bound of 
+$\{\|
+\mathbf{A}_{k+1}
+-
+\mathbf{A}_{k}
+\|_{F}\}$, 
+we have 
+
+
+
 
 
 Since $\{\rho_{k}\}$ is unbounded, that is $\lim_{k\to\infty}{\rho_{k}}=+\infty$, 
