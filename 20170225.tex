@@ -16,6 +16,12 @@
 \usepackage{bm}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \usepackage{arydshln}
+\usepackage{latexsym}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}[theorem]{Conjecture}
 
 
 % Include other packages here, before hyperref.
@@ -67,7 +73,7 @@ Image denoising is an important step in enhance the quality of images in compute
 
 The non-local self similarity (NSS) property of images has been extensively employed in image restoration tasks such as denoising \cite{ksvd,lssc,ncsr,nlm,bm3d,pgpd,wnnm}. Among these methods, the weighted nuclear norm minimization (WNNM) model has achieved the state-of-the-art performance on denoising the additive white Gaussian noise (AWGN) in grayscale images. Though among the most effective methods, how to extend the single channel WNNM model to handle multi-channel images such as the real-world color images is still an open problem. Of course the WNNM method can be applied to denoising color images by processing each channel separately, its performance would be largely inferior than jointly processing the RGB channels by concatenating the RGB values into a single vector \cite{mairal2008sparse}. Besides, the searching of non-local similar patches would be unstable due to the seperate processing of the RGB images and hence the power of the NSS would be largely reduced. This would also limit the performance of not only WNNM but also other NSS based methods \cite{lssc,ncsr,nlm,bm3d,pgpd}. This fact is also evaluated by our experiments on color image denoising task. 
 
-In this paper, we proposed to solve the multi-channel weighted nuclear norm minimization model to perform image denoising on color images. The original WNNM model has closed-form solutions under the weighted nulcear norm proximal operator (WNNP). However, if we add a weighting matrix $\mathbf{W}$ to the left of the data term, the resulting multi-channel WNNM model no longer has the nice property of closed-form solutions. This makes the problem more chanllging. To solve this problem, we formulate the proposed multi-channel WNNM problem into a linearly constrained non-convex program with an augmented variable. It is also not directly solvable due to the non-convexity of the existance of the weighted nuclear norm. Note that the reformulated model contains two variables with linear constraint. This can be solved by employing the alternating direction method of multipliers (ADMM). For the variable $\mathbf{Z}$, it is the original weighted nuclear norm minimization problem and can be solved with closed-form solution \cite{wnnm,lugsvt}. For the variable $\mathbf{X}$, it is a standard least squares problem and we can also obatin its closed-form solution. The convergency of the proposed method is also given to guarantee a rational termination of the our model. 
+In this paper, we proposed to solve the multi-channel weighted nuclear norm minimization model to perform image denoising on color images. The original WNNM model has closed-form solutions under the weighted nulcear norm proximal operator (WNNP). However, if we add a weighting matrix $\mathbf{W}$ to the left of the data term, the resulting multi-channel WNNM model no longer has the nice property of closed-form solutions. This makes the problem more chanllging. To solve this problem, we formulate the proposed multi-channel WNNM problem into a linearly constrained non-convex program with an augmented variable. It is also not directly solvable due to the non-convexity of the existance of the weighted nuclear norm. Note that the reformulated model contains two variables with linear constraint. This can be solved by employing the alternating direction method of multipliers (ADMM) \cite{admm}. For the variable $\mathbf{Z}$, it is the original weighted nuclear norm minimization problem and can be solved with closed-form solution \cite{wnnm,lugsvt}. For the variable $\mathbf{X}$, it is a standard least squares problem and we can also obatin its closed-form solution. The convergency of the proposed method is also given to guarantee a rational termination of the our model. 
 
 
 
@@ -181,36 +187,36 @@ After some simple calculations, we can obtain the following equivalent form of t
 \end{split}
 \end{equation}
 
-We initialize the matrix variables $\mathbf{X}_{(0)}$, $\mathbf{Z}_{(0)}$, and $\mathbf{A}_{(0)}$ to be zero matrix of suitable size.
+We initialize the matrix variables $\mathbf{X}_{0}$, $\mathbf{Z}_{0}$, and $\mathbf{A}_{0}$ to be zero matrix of suitable size.
 Taking derivative of the Lagrangian function $\mathcal{L}$ with respect to the variables $\mathbf{X}$ and $\mathbf{Z}$ and setting the derivative function to be zero, we can alternatively update the iterations of the ADMM algorithm as follows:
 
 (1) Update $\mathbf{X}$ while fixing $\mathbf{Z}$ and $\mathbf{A}$:
 \begin{equation}
-\mathbf{X}_{(k+1)}
+\mathbf{X}_{k+1}
 =
 \arg\min_{\mathbf{X}}
 \|\mathbf{W}\mathbf{Y} - \mathbf{W}\mathbf{X}\|_{F}^{2} 
 +
-\frac{\rho}{2}\|\mathbf{X} - \mathbf{Z}_{(k)} + \rho^{-1}\mathbf{A}_{(k)}||_{F}^{2}
+\frac{\rho}{2}\|\mathbf{X} - \mathbf{Z}_{k} + \rho^{-1}\mathbf{A}_{k}||_{F}^{2}
 \end{equation}
 This is a mixed weighted least square and standard least square problem and we could derive its closed-form solution:
 \begin{equation}
-\mathbf{X}_{(k+1)}
+\mathbf{X}_{k+1}
 =
 (\mathbf{W}^{2}+\frac{\rho}{2}\mathbf{I})^{-1}
-(\mathbf{W}^{2}\mathbf{Y} + \frac{\rho}{2}\mathbf{Z} -\frac{1}{2}\mathbf{A})
+(\mathbf{W}^{2}\mathbf{Y} + \frac{\rho}{2}\mathbf{Z}_{k} -\frac{1}{2}\mathbf{A}_{k})
 \end{equation}
 
 (2) Update $\mathbf{Z}$ while fixing $\mathbf{X}$ and $\mathbf{A}$:
 \begin{equation}
-\mathbf{Z}_{(k+1)}
+\mathbf{Z}_{k+1}
 =
 \arg\min_{\mathbf{Z}}\frac{\rho}{2}
-\|\mathbf{Z} - (\mathbf{X}_{(k+1)}+\rho^{-1}\mathbf{A}_{(k)})\|_{F}^{2}
+\|\mathbf{Z} - (\mathbf{X}_{k+1}+\rho^{-1}\mathbf{A}_{k})\|_{F}^{2}
 +
 \|\mathbf{Z}\|_{\bm{w},*}
 \end{equation}
-According to the Theorem 1 in \cite{wnnmijcv}, given the $\mathbf{X}_{(k+1)}+\rho^{-1}\mathbf{A}_{(k)}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$ be the SVD of $\mathbf{X}_{(k+1)}+\rho^{-1}\mathbf{A}_{(k)}$, where $\mathbf{\Sigma}=
+According to the Theorem 1 in \cite{wnnmijcv}, given the $\mathbf{X}_{k+1}+\rho^{-1}\mathbf{A}_{k}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$ be the SVD of $\mathbf{X}_{k+1}+\rho^{-1}\mathbf{A}_{k}$, where $\mathbf{\Sigma}=
 \left( \begin{array}{c}
 \text{diag}(\sigma_{1},\sigma_{2},...,\sigma_{n})
 \\
@@ -256,61 +262,88 @@ where $c_{1}=\sigma_{i}-\epsilon$, $c_{2} = (\sigma_{i}-\epsilon)^{2}-\frac{8C}{
  
 (3) Update $\mathbf{A}$ while fixing $\mathbf{X}$ and $\mathbf{Z}$:
 \begin{equation}
-\mathbf{A}_{(k+1)}
+\mathbf{A}_{k+1}
 =
-\mathbf{A}_{(k+1)} + \rho(\mathbf{X}_{(k+1)}-\mathbf{Z}_{(k+1)})
+\mathbf{A}_{k+1} + \rho(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
 \end{equation}
 
-We summerize the optimization steps in Algorithm 1.
+We summerize the optimization steps in Algorithm 1. We can obtain a convergence theorem to guarantee that the Algorithm 1 can be terminated in a rational manner.
+
 \begin{table}\label{alg1}
 \begin{tabular}{l}
 \hline
-\textbf{Algorithm 1}: Multi-channel WNNM Problem
+\textbf{Algorithm 1}: Solve Multi-channel WNNM via ADMM
 \\
 \hline
-\textbf{Input:} Noisy image $\mathbf{y}$, external PG prior GMM model
+\textbf{Input:} Matrices $\mathbf{Y}$ and $\mathbf{W}$, $\text{Tol}>0$, $\text{Iter}=10$;
 \\
-\textbf{Output:} The denoised image $\hat{\mathbf{x}}$.
+\textbf{Initialization:} $\mathbf{X}_{0}=\mathbf{Z}_{0}=\mathbf{A}_{0}=\mathbf{0}$, \text{T} = \text{False}, $k=0$; 
 \\
-\textbf{Initialization:} $\hat{\mathbf{x}}^{(0)}=\mathbf{y}$;
+\textbf{While} (\text{T} == \text{false}) \textbf{do}
 \\
-\textbf{for} $Ite = 1:IteNum$ \textbf{do}
+1. Update $\mathbf{X}_{k+1}$ as 
 \\
-1. Extracting internal PGs $\{\mathbf{Y}_{n}\}_{n=1}^{N}$ from $\hat{\mathbf{x}}^{(Ite-1)}$;
+\quad \quad $\mathbf{X}_{k+1}
+=
+(\mathbf{W}^{2}+\frac{\rho}{2}\mathbf{I})^{-1}
+(\mathbf{W}^{2}\mathbf{Y} + \frac{\rho}{2}\mathbf{Z}_{k} -\frac{1}{2}\mathbf{A}_{k})
+$
 \\
-%\textbf{Guided Internal Subspace Assignment:}
-%\\
-\quad\textbf{for} each PG $\mathbf{Y}_{n}$ \textbf{do}
+2. Update $\mathbf{Z}_{k+1}$ by solving the WNNM problem
 \\
-2.\quad Calculate group mean vector $\bm{\mu}_{n}$ and form 
+\quad 
+\quad
+$
+\min_{\mathbf{Z}}\frac{\rho}{2}
+\|\mathbf{Z} - (\mathbf{X}_{k+1}+\rho^{-1}\mathbf{A}_{k})\|_{F}^{2}
++
+\|\mathbf{Z}\|_{\bm{w},*}
+$
 \\
-\quad \ \ \ mean subtracted PG $\mathbf{\overline{Y}}_{n}$;
+3. Update $\mathbf{A}_{k+1}$ as
+$
+\mathbf{A}_{k+1}
+=
+\mathbf{A}_{k+1} + \rho(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
+$
 \\
-3.\quad Subspace assignment via Eq. (\ref{equ3});
+4. $k \leftarrow k + 1$;
 \\
-\quad\textbf{end for}
+\quad \textbf{if} ($\|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}/\|\mathbf{Z}_{k+1}\|_{F}< \text{Tol}$) or ($k\ge \text{Iter}$)
 \\
-%\textbf{Guided Internal Orthogonal Dictionary Learning:}
-%\\
-\quad\textbf{for} the PGs in each subspace \textbf{do}
+5.\quad \text{T} $\leftarrow$ \text{True}
 \\
-4.\quad External PG prior guided internal orthogonal
+\quad \textbf{end if}
 \\
-\quad \ \ \ dictionary learning by solving (\ref{equ4});
+\textbf{end while}
 \\
-5.\quad Recover each patch in all PGs via Eq. (\ref{equ10});
-\\
-\quad\textbf{end for}
-\\
-6. Aggregate the recovered PGs of all subspaces to form
-\\
-\quad the recovered image $\hat{\mathbf{x}}^{(Ite)}$;
-\\
-\textbf{end for}
+\textbf{Output:} Matrices $\mathbf{X}$ and $\mathbf{Z}$.
 \\
 \hline
 \end{tabular}
 \end{table}
+
+\begin{theorem}
+Assume the weights in $\bm{w}$ are in a non-descending order, the sequence $\{\mathbf{X}_{k}\}$ and $\{\mathbf{Z}_{k}\}$ generated in Algorithm 1 satisfy:
+\begin{align}
+&(1) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{X}_{k}\|=0;
+\\
+&(2) \lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|=0;
+\\
+&(3) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|=0.
+\end{align}
+\end{theorem}
+The proof of this theorem can be found in Appendix.
+\begin{proof}
+Denote
+
+
+\end{proof}
+
+
+
+
+
 
 
 

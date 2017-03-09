@@ -26,6 +26,7 @@
 \backcite {nlm}{{1}{1}{section.1}}
 \backcite {bm3d}{{1}{1}{section.1}}
 \backcite {pgpd}{{1}{1}{section.1}}
+\backcite {admm}{{1}{1}{section.1}}
 \backcite {wnnm}{{1}{1}{section.1}}
 \backcite {lugsvt}{{1}{1}{section.1}}
 \backcite {Guaranteed}{{2}{2.1}{subsection.2.1}}
@@ -39,6 +40,7 @@
 \backcite {PartialSum}{{2}{2.1}{equation.2.3}}
 \backcite {wnnm}{{2}{2.1}{equation.2.3}}
 \backcite {wnnmijcv}{{2}{2.1}{equation.2.4}}
+\backcite {admm}{{2}{2.1}{equation.2.4}}
 \backcite {ksvd}{{2}{2.2}{subsection.2.2}}
 \backcite {lssc}{{2}{2.2}{subsection.2.2}}
 \backcite {nlm}{{2}{2.2}{subsection.2.2}}

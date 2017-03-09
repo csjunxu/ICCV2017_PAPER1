@@ -91,6 +91,12 @@ Hakki~Can Karaimer and Michael~S. Brown.
 \newblock A software platform for manipulating the camera imaging pipeline.
 \newblock {\em European Conference on Computer Vision (ECCV)}, October 2016.
 
+\bibitem{admm}
+Stephen Boyd, Neal Parikh, Eric Chu, Borja Peleato, and Jonathan Eckstein.
+\newblock Distributed optimization and statistical learning via the alternating
+  direction method of multipliers.
+\newblock {\em Found. Trends Mach. Learn.}, 3(1):1--122, January 2011.
+
 \bibitem{lugsvt}
 Canyi Lu, Changbo Zhu, Chunyan Xu, Shuicheng Yan, and Zhouchen Lin.
 \newblock Generalized singular value thresholding.
