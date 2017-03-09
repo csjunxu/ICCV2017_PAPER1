@@ -197,26 +197,26 @@ Taking derivative of the Lagrangian function $\mathcal{L}$ with respect to the v
 \arg\min_{\mathbf{X}}
 \|\mathbf{W}\mathbf{Y} - \mathbf{W}\mathbf{X}\|_{F}^{2} 
 +
-\frac{\rho}{2}\|\mathbf{X} - \mathbf{Z}_{k} + \rho^{-1}\mathbf{A}_{k}||_{F}^{2}
+\frac{\rho_{k}}{2}\|\mathbf{X} - \mathbf{Z}_{k} + \rho_{k}^{-1}\mathbf{A}_{k}||_{F}^{2}
 \end{equation}
 This is a mixed weighted least square and standard least square problem and we could derive its closed-form solution:
 \begin{equation}
 \mathbf{X}_{k+1}
 =
-(\mathbf{W}^{2}+\frac{\rho}{2}\mathbf{I})^{-1}
-(\mathbf{W}^{2}\mathbf{Y} + \frac{\rho}{2}\mathbf{Z}_{k} -\frac{1}{2}\mathbf{A}_{k})
+(\mathbf{W}^{\top}\mathbf{W}+\frac{\rho_{k}}{2}\mathbf{I})^{-1}
+(\mathbf{W}^{\top}\mathbf{W}\mathbf{Y} + \frac{\rho_{k}}{2}\mathbf{Z}_{k} -\frac{1}{2}\mathbf{A}_{k})
 \end{equation}
 
 (2) Update $\mathbf{Z}$ while fixing $\mathbf{X}$ and $\mathbf{A}$:
 \begin{equation}
 \mathbf{Z}_{k+1}
 =
-\arg\min_{\mathbf{Z}}\frac{\rho}{2}
-\|\mathbf{Z} - (\mathbf{X}_{k+1}+\rho^{-1}\mathbf{A}_{k})\|_{F}^{2}
+\arg\min_{\mathbf{Z}}\frac{\rho_{k}}{2}
+\|\mathbf{Z} - (\mathbf{X}_{k+1}+\rho_{k}^{-1}\mathbf{A}_{k})\|_{F}^{2}
 +
 \|\mathbf{Z}\|_{\bm{w},*}
 \end{equation}
-According to the Theorem 1 in \cite{wnnmijcv}, given the $\mathbf{X}_{k+1}+\rho^{-1}\mathbf{A}_{k}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$ be the SVD of $\mathbf{X}_{k+1}+\rho^{-1}\mathbf{A}_{k}$, where $\mathbf{\Sigma}=
+According to the Theorem 1 in \cite{wnnmijcv}, given the $\mathbf{X}_{k+1}+\rho_{k}^{-1}\mathbf{A}_{k}=\mathbf{U}_{k}\mathbf{\Sigma}_{k}\mathbf{V}_{k}^{\top}$ be the SVD of $\mathbf{X}_{k+1}+\rho_{k}^{-1}\mathbf{A}_{k}$, where $\mathbf{\Sigma}_{k}=
 \left( \begin{array}{c}
 \text{diag}(\sigma_{1},\sigma_{2},...,\sigma_{n})
 \\
@@ -224,8 +224,8 @@ According to the Theorem 1 in \cite{wnnmijcv}, given the $\mathbf{X}_{k+1}+\rho^
 \end{array} \right)
 \in\mathbb{R}^{m\times n}$,
 then the global optimum of the above problem is 
-$\hat{\mathbf{Z}}=\mathbf{U}\hat{\mathbf{\Sigma}}\mathbf{V}^{\top}$, where 
-$\hat{\mathbf{\Sigma}}=
+$\hat{\mathbf{Z}}=\mathbf{U}_{k}\hat{\mathbf{\Sigma}}_{k}\mathbf{V}_{k}^{\top}$, where 
+$\hat{\mathbf{\Sigma}}_{k}=
 \left( \begin{array}{c}
 \text{diag}(\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{n})
 \\
@@ -240,7 +240,7 @@ and $(\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{n})$ is the solution t
 \sum_{i=1}^{n}
 (\sigma_{i}-\hat{\sigma}_{i})^{2}
 +
-\frac{2w_{i}}{\rho}\hat{\sigma}_{i}
+\frac{2w_{i}}{\rho_{k}}\hat{\sigma}_{i}
 \\
 &
 \text{s.t.}
@@ -257,17 +257,19 @@ According to the Remark 1 in \cite{wnnmijcv}, the problem above has closed-form 
 \frac{c_{1}+\sqrt{c_{2}}}{2} & \textrm{if $c_{2}\ge 0$}
 \end{array} \right.
 \end{equation}
-where $c_{1}=\sigma_{i}-\epsilon$, $c_{2} = (\sigma_{i}-\epsilon)^{2}-\frac{8C}{\rho}$ and $C$ is set as $√
+where $c_{1}=\sigma_{i}-\epsilon$, $c_{2} = (\sigma_{i}-\epsilon)^{2}-\frac{8C}{\rho_{k}}$ and $C$ is set as $√
 \sqrt{2n}$ by experience in image denoising.
  
 (3) Update $\mathbf{A}$ while fixing $\mathbf{X}$ and $\mathbf{Z}$:
-\begin{equation}
+\begin{equation}\label{e14}
 \mathbf{A}_{k+1}
 =
-\mathbf{A}_{k+1} + \rho(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
+\mathbf{A}_{k+1} + \rho_{k}(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
 \end{equation}
 
-We summerize the optimization steps in Algorithm 1. We can obtain a convergence theorem to guarantee that the Algorithm 1 can be terminated in a rational manner.
+(4) Update $\rho_{k}$ as $\rho_{k+1}= \mu * \rho_{k}$.
+
+We summerize the optimization steps in Algorithm 1. We can obtain a convergence theorem to guarantee that the Algorithm 1 can be terminated in a rational manner. Note that since the weighted nuclear norm is non-convex in general, we employ an unbounded sequence of $\{\rho_{k}\}$ here to make sure that the Algorithm 1 is convergent. 
 
 \begin{table}\label{alg1}
 \begin{tabular}{l}
@@ -275,18 +277,20 @@ We summerize the optimization steps in Algorithm 1. We can obtain a convergence 
 \textbf{Algorithm 1}: Solve Multi-channel WNNM via ADMM
 \\
 \hline
-\textbf{Input:} Matrices $\mathbf{Y}$ and $\mathbf{W}$, $\text{Tol}>0$, $\text{Iter}=10$;
+\textbf{Input:} Matrices $\mathbf{Y}$ and $\mathbf{W}$, $\mu>1$, $\text{Tol}>0$, $\text{Iter}>0$;
 \\
-\textbf{Initialization:} $\mathbf{X}_{0}=\mathbf{Z}_{0}=\mathbf{A}_{0}=\mathbf{0}$, \text{T} = \text{False}, $k=0$; 
+\textbf{Initialization:} $\mathbf{X}_{0}=\mathbf{Z}_{0}=\mathbf{A}_{0}=\mathbf{0}$, $\rho_{0}>0$, \text{T} = \text{False},
+\\
+\quad \quad \quad \quad \quad \quad $k=0$; 
 \\
 \textbf{While} (\text{T} == \text{false}) \textbf{do}
 \\
 1. Update $\mathbf{X}_{k+1}$ as 
 \\
-\quad \quad $\mathbf{X}_{k+1}
+$\mathbf{X}_{k+1}
 =
-(\mathbf{W}^{2}+\frac{\rho}{2}\mathbf{I})^{-1}
-(\mathbf{W}^{2}\mathbf{Y} + \frac{\rho}{2}\mathbf{Z}_{k} -\frac{1}{2}\mathbf{A}_{k})
+(\mathbf{W}^{\top}\mathbf{W}+\frac{\rho_{k}}{2}\mathbf{I})^{-1}
+(\mathbf{W}^{\top}\mathbf{W}\mathbf{Y} + \frac{\rho_{k}}{2}\mathbf{Z}_{k} -\frac{1}{2}\mathbf{A}_{k})
 $
 \\
 2. Update $\mathbf{Z}_{k+1}$ by solving the WNNM problem
@@ -294,8 +298,8 @@ $
 \quad 
 \quad
 $
-\min_{\mathbf{Z}}\frac{\rho}{2}
-\|\mathbf{Z} - (\mathbf{X}_{k+1}+\rho^{-1}\mathbf{A}_{k})\|_{F}^{2}
+\min_{\mathbf{Z}}\frac{\rho_{k}}{2}
+\|\mathbf{Z} - (\mathbf{X}_{k+1}+\rho_{k}^{-1}\mathbf{A}_{k})\|_{F}^{2}
 +
 \|\mathbf{Z}\|_{\bm{w},*}
 $
@@ -304,10 +308,12 @@ $
 $
 \mathbf{A}_{k+1}
 =
-\mathbf{A}_{k+1} + \rho(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
+\mathbf{A}_{k+1} + \rho_{k}(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
 $
 \\
-4. $k \leftarrow k + 1$;
+4. Update $\rho_{k+1}= \mu * \rho_{k}$;
+\\
+5. $k \leftarrow k + 1$;
 \\
 \quad \textbf{if} ($\|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}/\|\mathbf{Z}_{k+1}\|_{F}< \text{Tol}$) or ($k\ge \text{Iter}$)
 \\
@@ -326,20 +332,91 @@ $
 \begin{theorem}
 Assume the weights in $\bm{w}$ are in a non-descending order, the sequence $\{\mathbf{X}_{k}\}$, $\{\mathbf{Z}_{k}\}$, and $\{\mathbf{A}_{k}\}$ generated in Algorithm 1 satisfy:
 \begin{align}
-&(1) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{X}_{k}\|=0;
+&(1) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|=0;
 \\
-&(2) \lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|=0;
+&(2) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{X}_{k}\|=0;
 \\
-&(3) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|=0.
-\\
-&(4) \lim_{k \to \infty} \|\mathbf{A}_{k+1}-\mathbf{A}_{k}\|=0.
+&(3) \lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|=0.
 \end{align}
 \end{theorem}
-The proof of this theorem can be found in Appendix.
 \begin{proof}
-Denote
-
-
+We give proof sketch here and detailed proof of this theorem can be found in Appendix. We can first proof that the sequence $\{\mathbf{A}_{k}\}$ generated by Algorithm 1 is upper bounded. Since $\{\rho_{k}\}$ is unbounded, that is $\lim_{k\to\infty}{\rho_{k}}=+\infty$, we can proof that the sequence of Lagrangian function $\{\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k},\rho_{k})\}$ is also upper bounded. 
+Hence, both $\{\mathbf{W}\mathbf{Y}-\mathbf{W}\mathbf{X}_{k}\}$ and $\{\mathbf{Z}_{k}\}$ are upper bounded. According to Eq. (\ref{e14}), we can proof that 
+$
+\lim_{k \to \infty} 
+\|
+\mathbf{X}_{k+1}
+-
+\mathbf{Z}_{k+1}
+\|_{F}
+=
+\lim_{k \to \infty} 
+\rho_{k}^{-1}
+\|
+\mathbf{A}_{k+1}
+-
+\mathbf{A}_{k}
+\|_{F}
+=
+0
+$,
+and (1) is proofed. Then we can proof that 
+$
+\lim_{k \to \infty} 
+\|
+\mathbf{X}_{k+1}
+-
+\mathbf{X}_{k}
+\|_{F}
+\le
+\lim_{k \to \infty} 
+\|
+(\mathbf{W}^{\top}\mathbf{W}
++
+\frac{\rho_{k}}{2}
+\mathbf{I})^{-1}
+(\mathbf{W}^{\top}\mathbf{W}\mathbf{Y}
+-
+\mathbf{W}^{\top}\mathbf{W}\mathbf{Z}_{k}
+-
+\frac{1}{2}
+\mathbf{A}_{k})
+\|_{F}
++
+\rho_{k}^{-1}\|
+\mathbf{A}_{k}-\mathbf{A}_{k-1}
+\|_{F}
+=
+0
+$
+and hence (2) is proofed. Then (3) can be proofed by checking that 
+$
+\lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|
+\le
+\lim_{k \to \infty} 
+\|
+\mathbf{\Sigma}_{k-1}-\mathcal{S}_{\bm{w}/\rho_{k-1}}(\mathbf{\Sigma}_{k-1})
+\|_{F}
++
+\|
+\mathbf{X}_{k+1}-\mathbf{X}_{k}
+\|_{F}
++
+\rho_{k}^{-1}
+\|
+\mathbf{A}_{k-1}
++
+\mathbf{A}_{k+1}
+-
+\mathbf{A}_{k}
+\|_{F}
+=
+0
+$
+,
+where $\mathbf{U}_{k-1}\mathbf{\Sigma}_{k-1}\mathbf{V}_{k-1}^{\top}$ is the SVD of the matrix $\mathbf{X}_{k}+\rho_{k-1}\mathbf{A}_{k-1}$
+.
+The proof skecth of Theorem 1 is end.
 \end{proof}
 
 
@@ -368,6 +445,153 @@ Denote
 
 \section{Conclusion}
 
+\section{A. Proof of Theorem 1.}
+\begin{proof}
+1.\ Firstly, we proof that the sequence $\{\mathbf{A}_{k}\}$ generated by Algorithm 1 is upper bounded.
+Let $\mathbf{X}_{k+1}+\rho_{k}^{-1}\mathbf{A}_{k}
+=
+\mathbf{U}_{k}\mathbf{\Sigma}_{k}\mathbf{V}_{k}^{\top}$
+be its SVD in the $(k+1)$-th iteration. According to Corollary 1 of \cite{wnnmijcv}, we can have the SVD of $\mathbf{Z}_{k+1}$ as $\mathbf{Z}_{k+1}=\mathbf{U}_{k}\hat{\mathbf{\Sigma}}_{k}\mathbf{V}_{k}^{\top}=\mathbf{U}_{k}\mathcal{S}_{\frac{\bm{w}}{\rho_{k}}}(\mathbf{\Sigma}_{k})\mathbf{V}_{k}^{\top}$. 
+Then we have 
+\begin{align}
+\|
+\mathbf{A}_{k+1}
+\|_{F}
+&
+=
+\|
+\mathbf{A}_{k}
++
+\rho_{k}
+(\mathbf{X}_{k+1}-\mathbf{Z}_{k+1})
+\|_{F}
+\\
+&
+=
+\rho_{k}\|
+\rho_{k}^{-1}
+\mathbf{A}_{k}
++
+\mathbf{X}_{k+1}
+-
+\mathbf{Z}_{k+1}
+\|_{F}
+\\
+&
+=
+\rho_{k}\|
+\mathbf{U}_{k}\mathbf{\Sigma}_{k}\mathbf{V}_{k}^{\top}
+-
+\mathbf{U}_{k}\mathcal{S}_{\frac{\bm{w}}{\rho_{k}}}(\mathbf{\Sigma}_{k})\mathbf{V}_{k}^{\top}
+\|_{F}
+\\
+&
+=
+\rho_{k}\|
+\mathbf{\Sigma}_{k}
+-
+\mathcal{S}_{\frac{\bm{w}}{\rho_{k}}}(\mathbf{\Sigma}_{k})
+\|_{F}
+\\
+&
+=
+\rho_{k}
+\sqrt{\sum_{i}(\mathbf{\Sigma}_{k}^{ii}-\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\mathbf{\Sigma}_{k}^{ii}))^{2}}
+\\
+&
+\le
+\rho_{k}
+\sqrt{\sum_{i}(\frac{w_{i}}{\rho_{k}})^{2}}
+=
+\sqrt{\sum_{i}w_{i}^{2}}.
+\end{align}
+The inequality above can be proofed as follows: given the diagonal matrix $\mathbf{\Sigma}_{k}$, we define $\mathbf{\Sigma}_{k}^{ii}$ as the $i$-th element of $\mathbf{\Sigma}_{k}^{ii}$. If $\mathbf{\Sigma}_{k}^{ii}\ge\frac{w_{i}}{\rho_{k}}$, we have $\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\mathbf{\Sigma}_{k}^{ii})=\mathbf{\Sigma}_{k}^{ii}-\frac{w_{i}}{\rho_{k}}>0$. If $\mathbf{\Sigma}_{k}^{ii}<\frac{w_{i}}{\rho_{k}}$, we have $\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\mathbf{\Sigma}_{k}^{ii})=0<\mathbf{\Sigma}_{k}^{ii}+\frac{w_{i}}{\rho_{k}}$. After all, we have $|\mathbf{\Sigma}_{k}^{ii}-\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\mathbf{\Sigma}_{k}^{ii})|\le\frac{w_{i}}{\rho_{k}}$ and hence the inequality holds true. Hence, the sequence $\{\mathbf{A}_{k}\}$ is upper bounded.
+
+2.\ Secondly, we proof that the sequence of Lagrangian function $\{\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k},\rho_{k})\}$ is also upper bounded. Since the global optimal solution of $\mathbf{X}$ and $\mathbf{Z}$ in corresponding subproblems, we always have 
+$
+\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k},\rho_{k})
+\le
+\mathcal{L}(\mathbf{X}_{k},\mathbf{Z}_{k},\mathbf{A}_{k},\rho_{k})
+$
+
+
+Since $\{\rho_{k}\}$ is unbounded, that is $\lim_{k\to\infty}{\rho_{k}}=+\infty$, 
+Hence, both $\{\mathbf{W}\mathbf{Y}-\mathbf{W}\mathbf{X}_{k}\}$ and $\{\mathbf{Z}_{k}\}$ are upper bounded. According to Eq. (\ref{e14}), we can proof that 
+$
+\lim_{k \to \infty} 
+\|
+\mathbf{X}_{k+1}
+-
+\mathbf{Z}_{k+1}
+\|_{F}
+=
+\lim_{k \to \infty} 
+\rho_{k}^{-1}
+\|
+\mathbf{A}_{k+1}
+-
+\mathbf{A}_{k}
+\|_{F}
+=
+0
+$,
+and (1) is proofed. Then we can proof that 
+$
+\lim_{k \to \infty} 
+\|
+\mathbf{X}_{k+1}
+-
+\mathbf{X}_{k}
+\|_{F}
+\le
+\lim_{k \to \infty} 
+\|
+(\mathbf{W}^{\top}\mathbf{W}
++
+\frac{\rho_{k}}{2}
+\mathbf{I})^{-1}
+(\mathbf{W}^{\top}\mathbf{W}\mathbf{Y}
+-
+\mathbf{W}^{\top}\mathbf{W}\mathbf{Z}_{k}
+-
+\frac{1}{2}
+\mathbf{A}_{k})
+\|_{F}
++
+\rho_{k}^{-1}\|
+\mathbf{A}_{k}-\mathbf{A}_{k-1}
+\|_{F}
+=
+0
+$
+and hence (2) is proofed. Then (3) can be proofed by checking that 
+$
+\lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|
+\le
+\lim_{k \to \infty} 
+\|
+\mathbf{\Sigma}_{k-1}-\mathcal{S}_{\bm{w}/\rho_{k-1}}(\mathbf{\Sigma}_{k-1})
+\|_{F}
++
+\|
+\mathbf{X}_{k+1}-\mathbf{X}_{k}
+\|_{F}
++
+\rho_{k}^{-1}
+\|
+\mathbf{A}_{k-1}
++
+\mathbf{A}_{k+1}
+-
+\mathbf{A}_{k}
+\|_{F}
+=
+0
+$
+,
+where $\mathbf{U}_{k-1}\mathbf{\Sigma}_{k-1}\mathbf{V}_{k-1}^{\top}$ is the SVD of the matrix $\mathbf{X}_{k}+\rho_{k-1}\mathbf{A}_{k-1}$
+.
+\end{proof}
 
 
 {
