@@ -324,13 +324,15 @@ $
 \end{table}
 
 \begin{theorem}
-Assume the weights in $\bm{w}$ are in a non-descending order, the sequence $\{\mathbf{X}_{k}\}$ and $\{\mathbf{Z}_{k}\}$ generated in Algorithm 1 satisfy:
+Assume the weights in $\bm{w}$ are in a non-descending order, the sequence $\{\mathbf{X}_{k}\}$, $\{\mathbf{Z}_{k}\}$, and $\{\mathbf{A}_{k}\}$ generated in Algorithm 1 satisfy:
 \begin{align}
 &(1) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{X}_{k}\|=0;
 \\
 &(2) \lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|=0;
 \\
 &(3) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|=0.
+\\
+&(4) \lim_{k \to \infty} \|\mathbf{A}_{k+1}-\mathbf{A}_{k}\|=0.
 \end{align}
 \end{theorem}
 The proof of this theorem can be found in Appendix.
