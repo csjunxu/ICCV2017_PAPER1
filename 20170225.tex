@@ -332,11 +332,11 @@ $
 \begin{theorem}
 Assume the weights in $\bm{w}$ are in a non-descending order, the sequence $\{\mathbf{X}_{k}\}$, $\{\mathbf{Z}_{k}\}$, and $\{\mathbf{A}_{k}\}$ generated in Algorithm 1 satisfy:
 \begin{align}
-&(1) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|=0;
+&(1) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}=0;
 \\
-&(2) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{X}_{k}\|=0;
+&(2) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{X}_{k}\|_{F}=0;
 \\
-&(3) \lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|=0.
+&(3) \lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|_{F}=0.
 \end{align}
 \end{theorem}
 \begin{proof}
@@ -418,12 +418,6 @@ where $\mathbf{U}_{k-1}\mathbf{\Sigma}_{k-1}\mathbf{V}_{k-1}^{\top}$ is the SVD 
 .
 The proof skecth of Theorem 1 is end.
 \end{proof}
-
-
-
-
-
-
 
 
 \section{Multi-channel WNNM For Color Image Denoising}
@@ -564,20 +558,62 @@ $\{\|
 \mathbf{A}_{k}
 \|_{F}\}$, 
 we have 
+$
+\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k+1},\rho_{k+1})
+\le
+\mathcal{L}(\mathbf{X}_{1},\mathbf{Z}_{1},\mathbf{A}_{0},\rho_{0})
++
+a\sum_{k=0}^{\infty}\frac{\rho_{k+1}+\rho_{k}}{2\rho_{k}^{2}}
+=
+\mathcal{L}(\mathbf{X}_{1},\mathbf{Z}_{1},\mathbf{A}_{0},\rho_{0})
++
+a\sum_{k=0}^{\infty}\frac{\mu+1}{2\mu^{k}\rho_{0}}
+\le
+\mathcal{L}(\mathbf{X}_{1},\mathbf{Z}_{1},\mathbf{A}_{0},\rho_{0})
++
+\frac{a}{\rho_{0}}\sum_{k=0}^{\infty}\frac{1}{\mu^{k-1}}.
+$
+The last inequality holds since $\mu+1<2\mu$. Since $\sum_{k=0}^{\infty}\frac{1}{\mu^{k-1}}<\infty$, the sequence of Lagrangian function 
+$\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k+1},\rho_{k+1})$
+is upper bound.
 
-
-
-
-
-Since $\{\rho_{k}\}$ is unbounded, that is $\lim_{k\to\infty}{\rho_{k}}=+\infty$, 
-Hence, both $\{\mathbf{W}\mathbf{Y}-\mathbf{W}\mathbf{X}_{k}\}$ and $\{\mathbf{Z}_{k}\}$ are upper bounded. According to Eq. (\ref{e14}), we can proof that 
+3. Thirdly, we proof that the sequences of 
+$\{\mathbf{X}_{k}\}$ and $\{\mathbf{Z}_{k}\}$ are upper bounded. Since 
+$\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
++
+\|\mathbf{Z}\|_{\bm{w},*}
+=
+\mathcal{L}(\mathbf{X}_{k},\mathbf{Z}_{k},\mathbf{A}_{k-1},\rho_{k-1})
+-
+\langle
+\mathbf{A}_{k},
+\mathbf{X}_{k}-\mathbf{Z}_{k}
+\rangle
+-
+\frac{\rho_{k}}{2}
+\|
+\mathbf{X}_{k}-\mathbf{Z}_{k}
+\|_{F}^{2}
+=
+\mathcal{L}(\mathbf{X}_{k},\mathbf{Z}_{k},\mathbf{A}_{k-1},\rho_{k-1})
++
+\frac{1}{2\rho_{k}}
+(
+\|
+\mathbf{A}_{k-1}
+\|_{F}^{2}
+-
+\|
+\mathbf{A}_{k}
+\|_{F}^{2}
+)
+$.
+Thus $\{\mathbf{W}(\mathbf{Y}-\mathbf{X}_{k})\}$ and $\{\mathbf{Z}_{k}\}$ are upper bounded, and hence
+the sequence $\{\mathbf{X}_{k}\}$ is bounded by Cauchy-Schwarz inequality and triangle inequality.
+We can obtain that 
 $
 \lim_{k \to \infty} 
-\|
-\mathbf{X}_{k+1}
--
-\mathbf{Z}_{k+1}
-\|_{F}
+\|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}
 =
 \lim_{k \to \infty} 
 \rho_{k}^{-1}
@@ -588,14 +624,32 @@ $
 \|_{F}
 =
 0
-$,
-and (1) is proofed. Then we can proof that 
+$ and the equation (1) is proofed.
+
+4. Then we can proof that 
 $
 \lim_{k \to \infty} 
 \|
 \mathbf{X}_{k+1}
 -
 \mathbf{X}_{k}
+\|_{F}
+=
+\lim_{k \to \infty} 
+\|
+(\mathbf{W}^{\top}\mathbf{W}
++
+\frac{\rho_{k}}{2}
+\mathbf{I})^{-1}
+(\mathbf{W}^{\top}\mathbf{W}\mathbf{Y}
+-
+\mathbf{W}^{\top}\mathbf{W}\mathbf{Z}_{k}
+-
+\frac{1}{2}
+\mathbf{A}_{k})
+-
+\rho_{k}^{-1}
+(\mathbf{A}_{k}-\mathbf{A}_{k-1})
 \|_{F}
 \le
 \lim_{k \to \infty} 
@@ -618,9 +672,30 @@ $
 =
 0
 $
-and hence (2) is proofed. Then (3) can be proofed by checking that 
+and hence (2) is proofed. 
+
+5. Then (3) can be proofed by checking that 
 $
-\lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|
+\lim_{k \to \infty} 
+\|
+\mathbf{Z}_{k+1}-\mathbf{Z}_{k}
+\|_{F}
+=
+\lim_{k \to \infty} 
+\|
+\mathbf{X}_{k}+\rho_{k}^{-1}\mathbf{A}_{k-1}-\mathbf{Z}_{k}
++
+\mathbf{X}_{k+1}-\mathbf{X}_{k}
++
+\rho_{k}^{-1}
+\mathbf{A}_{k-1}
++
+\rho_{k}^{-1}
+\mathbf{A}_{k}
+-
+\rho_{k}^{-1}
+\mathbf{A}_{k+1}
+\|_{F}
 \le
 \lim_{k \to \infty} 
 \|

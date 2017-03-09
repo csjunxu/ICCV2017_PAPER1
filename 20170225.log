@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  9 MAR 2017 17:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  9 MAR 2017 23:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,12 +516,12 @@ Overfull \hbox (3.56223pt too wide) in paragraph at lines 275--330
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 510--567
+Underfull \hbox (badness 3168) in paragraph at lines 504--579
 []\OT1/ptm/m/n/10 2. Sec-ondly, we proof that the se-quence of La-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--567
+Underfull \hbox (badness 10000) in paragraph at lines 504--579
 \OT1/ptm/m/n/10 grangian func-tion $\OMS/cmsy/m/n/10 fL\OT1/cmr/m/n/10 (\OT1/cm
 r/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr
 /bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$ \OT1/p
@@ -529,25 +529,25 @@ tm/m/n/10 is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--567
+Underfull \hbox (badness 10000) in paragraph at lines 504--579
 \OT1/ptm/m/n/10 also up-per bounded. Since the global op-ti-mal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--567
+Underfull \hbox (badness 10000) in paragraph at lines 504--579
 \OT1/ptm/m/n/10 so-lu-tion of $\OT1/cmr/bx/n/10 X$ \OT1/ptm/m/n/10 and $\OT1/cm
 r/bx/n/10 Z$ \OT1/ptm/m/n/10 in cor-re-spond-ing sub-prob-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--567
+Underfull \hbox (badness 10000) in paragraph at lines 504--579
 \OT1/ptm/m/n/10 lems, we al-ways have $\OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/
 cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/c
 mr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--567
+Underfull \hbox (badness 10000) in paragraph at lines 504--579
 \OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/
 cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\
 OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :$ \OT1/ptm/m/n/10 Based on the up-dat-ing rul
@@ -555,7 +555,7 @@ e
  []
 
 
-Underfull \hbox (badness 2435) in paragraph at lines 510--567
+Underfull \hbox (badness 2435) in paragraph at lines 504--579
 \OT1/ptm/m/n/10 that $\OT1/cmr/bx/n/10 A[] \OT1/cmr/m/n/10 = \OT1/cmr/bx/n/10 A
 [] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^Z[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[
 ] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n/10 Z[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 , 
@@ -563,15 +563,50 @@ we have
  []
 
 
-Underfull \hbox (badness 1509) in paragraph at lines 510--567
+Underfull \hbox (badness 1509) in paragraph at lines 504--579
 \OT1/ptm/m/n/10 the se-quence $\OMS/cmsy/m/n/10 fk\OT1/cmr/bx/n/10 A[]\OMS/cmsy
 /m/n/10 g$ \OT1/ptm/m/n/10 is up-per bounded, the se-quence
  []
 
 
-Underfull \hbox (badness 2486) in paragraph at lines 572--648
-[]\OT1/ptm/m/n/10 Since $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^Z[]\OMS/cmsy/m/n/
-10 g$ \OT1/ptm/m/n/10 is un-bounded, that is $[][] [] \OT1/cmr/m/n/10 =
+Underfull \hbox (badness 2343) in paragraph at lines 504--579
+\OMS/cmsy/m/n/10 fk\OT1/cmr/bx/n/10 A[] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n/10 A
+[]\OMS/cmsy/m/n/10 k[]g$ \OT1/ptm/m/n/10 is also up-per bounded. De-note
+ []
+
+
+Underfull \hbox (badness 2894) in paragraph at lines 504--579
+\OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/
+cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\
+OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OM
+L/cmm/m/it/10 ; \OT1/cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML
+/cmm/m/it/10 ; ^^Z[]\OT1/cmr/m/n/10 ) +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--579
+\OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/
+cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\
+OT1/cmr/m/n/10 ) + [] [][] []\OML/cmm/m/it/10 :$ \OT1/ptm/m/n/10 The last
+ []
+
+
+Underfull \hbox (badness 7888) in paragraph at lines 504--579
+\OT1/ptm/m/n/10 in-equal-ity holds since $\OML/cmm/m/it/10 ^^V \OT1/cmr/m/n/10 
++ 1 \OML/cmm/m/it/10 < \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^V$\OT1/ptm/m/n/10 . 
+Since
+ []
+
+
+Underfull \hbox (badness 5908) in paragraph at lines 580--628
+\OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OT1/cmr/bx/n/10 Z[]\OMS/cmsy/m/n/10 g$ 
+\OT1/ptm/m/n/10 are up-per bounded. Since $\OMS/cmsy/m/n/10 k\OT1/cmr/bx/n/10 W
+\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 Y \OMS/cmsy/m/n/10 ^^@
+ []
+
+[4]
+Underfull \hbox (badness 3547) in paragraph at lines 677--723
+[]\OT1/ptm/m/n/10 5. Then (3) can be proofed by check-ing that
  []
 
 (./20170225.bbl (./20170225.brf)
@@ -585,8 +620,8 @@ Underfull \hbox (badness 1320) in paragraph at lines 8--8
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 14.
-[4] [5]
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 156.
+[5]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 197.
 
  (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -598,17 +633,17 @@ Underfull \hbox (badness 7238) in paragraph at lines 202--202
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 657.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 732.
  [6
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 657.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 732.
  (./20170225.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 657.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 657.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 732.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 732.
 Package rerunfilecheck Info: File `20170225.brf' has not changed.
 (rerunfilecheck)             Checksum: CF4E50AFB41AE6CDED35A1F79D3A59B6;2980.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 657.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 732.
  ) 
 Here is how much of TeX's memory you used:
  7734 strings out of 493091
@@ -617,7 +652,7 @@ Here is how much of TeX's memory you used:
  10967 multiletter control sequences out of 15000+600000
  45123 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,17n,28p,1324b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,17n,28p,1324b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software/
@@ -641,10 +676,10 @@ e/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015
 /texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on 20170225.pdf (6 pages, 247159 bytes).
+Output written on 20170225.pdf (6 pages, 250194 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
+ 338 PDF objects out of 1000 (max. 8388607)
+ 304 compressed objects within 4 object streams
  80 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
