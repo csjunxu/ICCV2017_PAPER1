@@ -491,7 +491,7 @@ The multi-channel WNNM is applied to the non-local similar patches of each local
 \end{table}
 
 \section{Experiments}
-In this section, we demonstrate the effectiveness of the proposed multi-channel WNNM model on color image denoising problem. We first apply the proposed method on synthetic noisy images with additive white Gaussian noise with different standard deviations. Then we evaluate the proposed mehtod on recently proposed dataset of real noisy images with ``ground truth'' clean images \cite{crosschannel2016}.
+We evaluate the proposed method on synthetic noisy images as well as real noisy images. We firstly use the 24 high quality color images from the Kodak PhotoCD Dataset (\url{http://r0k.us/graphics/kodak/}). Then we add additive white Gaussian noise with different standard deviations to different channels of the color images. In the second part, we test the proposed method on real noisy images with ``ground truth'' clean images \cite{crosschannel2016}. We compare the proposed method with other state-of-the-art denoising algorithms and commercial software \cite{bm3d,cbm3d,mlp,wnnm,csf,chen2015learning,crosschannel2016,noiseclinic,ncwebsite,neatimage}.
 
 In order to compare with the original WNNM method, we not only apply the WNNM method on each channel separately, but also concatenate the RGB values into a single vector to perform denoising to boost the original WNNM method with channel correlations. To demonstrate the effectiveness of the proposed weighting matrix $\mathbf{W}$, we set $\mathbf{W}=\sigma_{n}\mathbf{I}$, which is reduced to the standard WNNM method. These three types of WNNM are named as WNNM, WNNMc, and WNNMadmm, respectively.
 
