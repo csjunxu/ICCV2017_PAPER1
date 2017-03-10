@@ -269,15 +269,16 @@ where $c_{1}=\sigma_{i}-\epsilon$, $c_{2} = (\sigma_{i}-\epsilon)^{2}-\frac{8C}{
 
 (4) Update $\rho_{k}$ as $\rho_{k+1}= \mu * \rho_{k}$.
 
-We summerize the optimization steps in Algorithm 1. We can obtain a convergence theorem to guarantee that the Algorithm 1 can be terminated in a rational manner. Note that since the weighted nuclear norm is non-convex in general, we employ an unbounded sequence of $\{\rho_{k}\}$ here to make sure that the Algorithm 1 is convergent. 
+The above 4 alternative updating steps are repeated until the convergence conditions are satisfied or
+the number of iterations exceeds a preset maximum number, e.g., $K_{1}$. The overall algorithm will achieve its convergence conditions when $\|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}\le \text{Tol}$, $\|\mathbf{X}_{k+1}-\mathbf{X}_{k}\|_{F}\le \text{Tol}$, and $\|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|_{F}\le \text{Tol}$ are simutaniously satisfied, where $\text{Tol}>0$ is a small tolerance. We summerize the optimization steps in Algorithm 1 (A1). We give a theorem, i.e., Theorem 1, to guarantee the convergence of the proposed Algorithm 1. Note that since the weighted nuclear norm is non-convex in general, we employ an unbounded sequence of $\{\rho_{k}\}$ here to make sure that the Algorithm 1 is convergent. 
 
 \begin{table}\label{alg1}
 \begin{tabular}{l}
 \hline
-\textbf{Algorithm 1}: Solve Multi-channel WNNM via ADMM
+\textbf{A1}: Solve Multi-channel WNNM via ADMM
 \\
 \hline
-\textbf{Input:} Matrices $\mathbf{Y}$ and $\mathbf{W}$, $\mu>1$, $\text{Tol}>0$, $\text{Iter}>0$;
+\textbf{Input:} Matrices $\mathbf{Y}$ and $\mathbf{W}$, $\mu>1$, $\text{Tol}>0$, $K_{1}>0$;
 \\
 \textbf{Initialization:} $\mathbf{X}_{0}=\mathbf{Z}_{0}=\mathbf{A}_{0}=\mathbf{0}$, $\rho_{0}>0$, \text{T} = \text{False},
 \\
@@ -315,7 +316,7 @@ $
 \\
 5. $k \leftarrow k + 1$;
 \\
-\quad \textbf{if} ($\|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}/\|\mathbf{Z}_{k+1}\|_{F}< \text{Tol}$) or ($k\ge \text{Iter}$)
+\quad \textbf{if} ($\|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}/\|\mathbf{Z}_{k+1}\|_{F}< \text{Tol}$) or ($k\ge K_{1}$)
 \\
 5.\quad \text{T} $\leftarrow$ \text{True}
 \\
@@ -424,18 +425,18 @@ The proof skecth of Theorem 1 is end.
 In this section, we apply the proposed multi-channel WNNM model on color image denoising problem. The multi-channel WNNM model can make use of the non-local self similarity property of natural images while treating each channel adaptively. In real-world noisy images, the noise are first emerged in the RAW data, i.e., color filter array (CFA). The major noise generated in real noisy images are due to the discrete nature of light and thermal agitation \cite{}, which can be modeled as Poisson and Gaussian distribution, respectively. Since the Poisson distribution can be approximately modeled by Gaussian distribution, the overall noise model in each channel of the color image could be Gaussian. Some methods would first transform the color images into other color spaces such as luminance/chrominance space such as YCbCr or Lab, but this would change the noise distribution in each channel. Hence, in this work we still choose to deal with the RGB channels in color images. Besides, even though if the demosaicing of RAW image generate similar distribution in noise in different channels, the channel-wise scaling in white balance would definitely change the noise distribution in each channel. Thus, the noise in R, G, B channels are definitely different which can be described by different noise levels and structures. According to above analysis, color image denoising is to recover the latent clean image $\mathbf{x}$ from the observed noisy version $\mathbf{y}_{c}=\mathbf{x}_{c}+\mathbf{n}_{c}$, where $c\in \{R, G, B\}$ represent the R, G, B channels in color images and $\mathbf{n}_{c}$ is the noise in the $c$ channel 
 (assumed to be additive white Gaussian noise).
 
-The patches in color image $\mathbf{y}$  are of size $p\times p\times 3$. For each patch, we search its non-local similar patches in a large area and stack the similar patches column by column. The resulting matrix $\mathbf{Y}\in\mathbb{R}^{3p^{2}\times n}$, where $n$ is the number of similar patches. The corresponding matrices containing the clean patches and the channel-wise noise are defined as $\mathbf{X}$ and $\mathbf{N}$, respectively. Since $\mathbf{X}$ is made of similar patches, it should be a low rank matrix. And hence the multi-channel WNNM model proposed in this paper can be used here. Compared to the original single channel WNNM model \cite{wnnm} proposed for grayscale image denoising
+The patches in color image $\mathbf{y}$  are of size $p\times p\times 3$. For each patch $\mathbf{y}_{j}$, we search its non-local similar patches in a large area and stack the similar patches column by column. The resulting matrix $\mathbf{Y}_{j}\in\mathbb{R}^{3p^{2}\times n}$, where $n$ is the number of similar patches. The corresponding matrices containing the clean patches and the channel-wise noise are defined as $\mathbf{X}_{j}$ and $\mathbf{N}_{j}$, respectively. Since $\mathbf{X}_{j}$ is made of similar patches, it should be a low rank matrix. And hence the multi-channel WNNM model proposed in this paper can be used here. Compared to the original single channel WNNM model \cite{wnnm} proposed for grayscale image denoising
 \begin{equation}
-\min_{\mathbf{X}}
+\min_{\mathbf{X}_{j}}
 \|
 \mathbf{W}
-(\mathbf{Y}
+(\mathbf{Y}_{j}
 -
-\mathbf{X})
+\mathbf{X}_{j})
 \|_{F}^{2}
 +
 \|
-\mathbf{X}\|_{\bm_{w},*}.
+\mathbf{X}_{j}\|_{\bm_{w},*}.
 \end{equation}
 When the weighting matrix $\mathbf{W}=\frac{1}{\sigma_{n}^{2}}\mathbf{I}
 $, where $\mathbf{I}
@@ -454,58 +455,47 @@ the weighting matrix $\mathbf{W}$ should be modified to be suitable for multi-ch
 \end{equation}
 Here, for simplicity, we assume that the noise in different channels are independent to each other. The experimental results have already demonstrated that this simple assumption could already generate the best denoising performance on benchmark real noisy image dataset. In this paper, we did not consider the correlations of noise among different channels, which is the future work of our research line. The determination of the weight vector in weighted nuclear norm is the same as in the WNNM model \cite{wnnmijcv}. We set the weight vector as $w_{i}^{k+1}=\frac{C}{|\sigma_{i}(\mathbf{X}_{k})|+\epsilon }$. 
 
-The multi-channel WNNM is applied to the non-local similar patches of each local patch in the noisy image $\mathbf{y}$. And then all the patches are aggregated together to form the final recovered image $\hat{\mathbf{y}}$. We also perform the denoising procedure for several iterations to obtain better results. In Algorithm 2 (A. 2), we summarizes the denoising steps of multi-channel WNNM model on color image denoising.
+The multi-channel WNNM is applied to the non-local similar patches of each local patch in the noisy image $\mathbf{y}$. And then all the patches are aggregated together to form the final recovered image $\hat{\mathbf{y}}$. We also perform the denoising procedure for several ($K_{2}$) iterations to obtain better denoising results. In Algorithm 2 (A2), we summarizes the denoising steps of multi-channel WNNM model on color image denoising.
 \begin{table}\label{alg1}
 \begin{tabular}{l}
 \hline
-\textbf{A. 2}: Multi-channel WNNM for Color Image Denoising
+\textbf{A2}: Color Image Denoising by Multi-channel WNNM
 \\
 \hline
 \textbf{Input:} Noisy image $\mathbf{y}$, noise levels $\{\sigma_{r}, \sigma_{g}, \sigma_{b}\}$;
 \\
-\textbf{Initialization:} $\hat{\mathbf{x}}^{(0)}=\mathbf{y}$;
+\textbf{Initialization:} $\hat{\mathbf{x}}^{(0)}=\mathbf{y}$, $\mathbf{y}^{(0)}=\mathbf{y}$;
 \\
-\textbf{for} $Ite = 1:IteNum$ \textbf{do}
+\textbf{for} $k = 1:K_{2}$ \textbf{do}
 \\
-1. Extracting internal PGs $\{\mathbf{Y}_{n}\}_{n=1}^{N}$ from $\hat{\mathbf{x}}^{(Ite-1)}$;
+1. Set $\mathbf{y}^{(k)}=\hat{\mathbf{x}}^{(k-1)}$;
 \\
-%\textbf{Guided Internal Subspace Assignment:}
-%\\
-\quad\textbf{for} each PG $\mathbf{Y}_{n}$ \textbf{do}
+2. Extracte local patches $\{\mathbf{y}_{j}\}_{j=1}^{N}$ from $\mathbf{y}^{(k)}$;
 \\
-2.\quad Calculate group mean vector $\bm{\mu}_{n}$ and form 
+\quad\textbf{for} each patch $\mathbf{y}_{j}$ \textbf{do}
 \\
-\quad \ \ \ mean subtracted PG $\mathbf{\overline{Y}}_{n}$;
+3.\quad Search non-local similar patches $\mathbf{Y}_{j}$;
 \\
-3.\quad Subspace assignment via Eq. (\ref{equ3});
+4.\quad Estimate $\mathbf{X}_{j}$ by applying the Algorithm 1 to $\mathbf{Y}_{j}$;
 \\
 \quad\textbf{end for}
 \\
-%\textbf{Guided Internal Orthogonal Dictionary Learning:}
-%\\
-\quad\textbf{for} the PGs in each subspace \textbf{do}
-\\
-4.\quad External PG prior guided internal orthogonal
-\\
-\quad \ \ \ dictionary learning by solving (\ref{equ4});
-\\
-5.\quad Recover each patch in all PGs via Eq. (\ref{equ10});
-\\
-\quad\textbf{end for}
-\\
-6. Aggregate the recovered PGs of all subspaces to form
-\\
-\quad the recovered image $\hat{\mathbf{x}}^{(Ite)}$;
+5. Aggregate $\{\mathbf{X}_{j}\}_{j=1}^{N}$ to form the image $\hat{\mathbf{x}}^{(k)}$;
 \\
 \textbf{end for}
 \\
-\textbf{Output:} Denoised image $\hat{\mathbf{x}}$.
+\textbf{Output:} Denoised image $\hat{\mathbf{x}}^{K_{2}}$.
 \\
 \hline
 \end{tabular}
 \end{table}
 
 \section{Experiments}
+In this section, we demonstrate the effectiveness of the proposed multi-channel WNNM model on color image denoising problem. We first apply the proposed method on synthetic noisy images with additive white Gaussian noise with different standard deviations. Then we evaluate the proposed mehtod on recently proposed dataset of real noisy images with ``ground truth'' clean images \cite{crosschannel2016}.
+
+In order to compare with the original WNNM method, we not only apply the WNNM method on each channel separately, but also concatenate the RGB values into a single vector to perform denoising to boost the original WNNM method with channel correlations. To demonstrate the effectiveness of the proposed weighting matrix $\mathbf{W}$, we set $\mathbf{W}=\sigma_{n}\mathbf{I}$, which is reduced to the standard WNNM method. These three types of WNNM are named as WNNM, WNNMc, and WNNMadmm, respectively.
+
+
 
 
 \subsection{Implementation Details}
