@@ -495,14 +495,96 @@ We evaluate the proposed method on synthetic noisy images as well as real noisy 
 
 In order to compare with the original WNNM method, we not only apply the WNNM method on each channel separately, but also concatenate the RGB values into a single vector to perform denoising to boost the original WNNM method with channel correlations. To demonstrate the effectiveness of the proposed weighting matrix $\mathbf{W}$, we set $\mathbf{W}=\sigma_{n}\mathbf{I}$, which is reduced to the standard WNNM method. These three types of WNNM are named as WNNM, WNNMc, and WNNMadmm, respectively.
 
-
-
-
-\subsection{Implementation Details}
-
-
 \subsection{Experiments on Synthetic Noisy Images}
+In the proposed multi-channel the first stage, we set $p = 6$ (the patch size), $M = 10$ (the number of similar patches in a PG), $W = 31$ (the window size for PG searching) and $K = 32$ (the number of Gaussian components in GMM).\ We learn the external GMM prior with 3.6 million PGs extracted from the Kodak PhotoCD Dataset (\url{http://r0k.us/graphics/kodak/}), which includes 24 high quality color images. 
 
+In the second stage, we set $r = 54$ (the number of atoms in the external sub-dictionaries); that is, we let the external sub-dictionaries have the same number of atoms as the internal sub-dictionaries to be learned.\ Our experiments show that setting $r$ between 27 and 81 will lead to very similar results.\ For other parameters, we set $\lambda=0.001$ (the sparse regularization parameter), $T = 2$ (the number of iterations for solving problem (\ref{equ4})), and $IteNum = 4$ (the number of iterations for Alg.1).\ All parameters of our method are fixed to all experiments, which are run under the Matlab2014b environment on a machine with Intel(R) Core(TM) i7-5930K CPU of 3.5GHz and 32GB RAM.
+\begin{figure}[t]
+\centering
+\subfigure{
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim01.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim02.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim03.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim04.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim05.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim06.png}
+\end{minipage}
+}\vspace{-3mm}
+\subfigure{
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim07.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim08.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim09.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim10.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim11.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim12.png}
+\end{minipage}
+}\vspace{-3mm}
+\subfigure{
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim13.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim14.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim15.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim16.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim17.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim18.png}
+\end{minipage}
+}\vspace{-3mm}
+\subfigure{
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim19.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim20.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim21.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim22.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim23.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim24.png}
+\end{minipage}
+}\vspace{-1mm}
+\caption{The 24 high quality color images from the Kodak PhotoCD Dataset.}
+\label{fig3}
+\vspace{-2mm}
+\end{figure}
 
 
 \subsection{Experiments on Real Noisy Images}
