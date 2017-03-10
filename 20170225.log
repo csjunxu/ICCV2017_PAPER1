@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  10 MAR 2017 18:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  10 MAR 2017 19:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -994,14 +994,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1136.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1136.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1136.
 
+Package rerunfilecheck Info: File `20170225.brf' has not changed.
+(rerunfilecheck)             Checksum: 1B14E97C8C49E425FFF9980BBF49F597;4245.
 
-
-Package rerunfilecheck Warning: File `20170225.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `20170225.brf':
-(rerunfilecheck)             Before: 0FF4292636507DFD1819C60119ADE04B;4206
-(rerunfilecheck)             After:  1B14E97C8C49E425FFF9980BBF49F597;4245.
 
 LaTeX Warning: There were undefined references.
 
@@ -1041,10 +1036,10 @@ e/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015
 /texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on 20170225.pdf (9 pages, 2910569 bytes).
+Output written on 20170225.pdf (9 pages, 2910619 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
- 375 compressed objects within 4 object streams
+ 452 PDF objects out of 1000 (max. 8388607)
+ 376 compressed objects within 4 object streams
  96 named destinations out of 1000 (max. 500000)
  196 words of extra memory for PDF output out of 10000 (max. 10000000)
 
