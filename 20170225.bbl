@@ -200,4 +200,9 @@ Neatlab ABSoft.
 \newblock Neat {I}mage.
 \newblock \url{https://ni.neatvideo.com/home}.
 
+\bibitem{nearcor}
+Nicholas~J. Higham.
+\newblock Computing the nearest correlation matrix—a problem from finance.
+\newblock {\em IMA Journal of Numerical Analysis}, 22(3):329, 2002.
+
 \end{thebibliography}
