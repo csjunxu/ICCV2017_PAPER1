@@ -837,11 +837,6 @@ Package pdftex.def Info: CC15images/resize_d800_iso6400_3_real.png used on inpu
 t line 761.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-
-Package natbib Warning: Citation `nearcor' on page 5 undefined on input line 84
-4.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./24images/resize_kodim01.png (PNG copy)> <./24images/resize_kodim02.png (
@@ -986,12 +981,12 @@ Underfull \hbox (badness 7238) in paragraph at lines 202--202
 / ni .
  []
 
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ” in font ptmr7t!
 )
-
-Package natbib Warning: There were undefined citations.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1136.
-[9
+ [9
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1136.
@@ -999,9 +994,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1136.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1136.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1136.
 
-Package rerunfilecheck Info: File `20170225.brf' has not changed.
-(rerunfilecheck)             Checksum: 0FF4292636507DFD1819C60119ADE04B;4206.
 
+
+Package rerunfilecheck Warning: File `20170225.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `20170225.brf':
+(rerunfilecheck)             Before: 0FF4292636507DFD1819C60119ADE04B;4206
+(rerunfilecheck)             After:  1B14E97C8C49E425FFF9980BBF49F597;4245.
 
 LaTeX Warning: There were undefined references.
 
@@ -1011,13 +1011,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1136.
  ) 
 Here is how much of TeX's memory you used:
- 7961 strings out of 493091
- 117342 string characters out of 6134517
- 242433 words of memory out of 5000000
- 11134 multiletter control sequences out of 15000+600000
+ 7967 strings out of 493091
+ 117423 string characters out of 6134517
+ 242449 words of memory out of 5000000
+ 11139 multiletter control sequences out of 15000+600000
  48342 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,17n,28p,1783b,572s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,17n,28p,1784b,572s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software/
@@ -1041,10 +1041,10 @@ e/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015
 /texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on 20170225.pdf (9 pages, 2910407 bytes).
+Output written on 20170225.pdf (9 pages, 2910569 bytes).
 PDF statistics:
- 449 PDF objects out of 1000 (max. 8388607)
- 373 compressed objects within 4 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 451 PDF objects out of 1000 (max. 8388607)
+ 375 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
  196 words of extra memory for PDF output out of 10000 (max. 10000000)
 

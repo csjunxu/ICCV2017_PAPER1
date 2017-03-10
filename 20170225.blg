@@ -3,10 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 20170225.aux
 The style file: unsrt.bst
 Database file #1: egbib.bib
-Illegal end of database file---line 1491 of file egbib.bib
- : year = {2002},
- :               
-I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for ""
 You've used 35 entries,
             1791 wiz_defined-function locations,
@@ -49,4 +45,4 @@ warning$ -- 0
 while$ -- 98
 width$ -- 37
 write$ -- 381
-(There was 1 error message)
+(There was 1 warning)
