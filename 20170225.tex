@@ -421,8 +421,89 @@ The proof skecth of Theorem 1 is end.
 
 
 \section{Multi-channel WNNM For Color Image Denoising}
-In this section, we apply the proposed multi-channel WNNM model on color image denoising problem. The multi-channel WNNM model can make use of the non-local self similarity property of natural images while treating each channel adaptively. In real-world noisy images, the noise are first emerged in the RAW data, i.e., color filter array (CFA). The major types of noise in real noisy images are . 
-Some methods would first transform the color images into other color spaces such as luminance/chrominance space such as YCbCr or Lab, but this would change the noise distribution in each channel. Hence, in this work we still choose to deal with the RGB channels in color images. Besides, the noise distribution in R, G, B channel are definitely different which can be described by different noise levels.
+In this section, we apply the proposed multi-channel WNNM model on color image denoising problem. The multi-channel WNNM model can make use of the non-local self similarity property of natural images while treating each channel adaptively. In real-world noisy images, the noise are first emerged in the RAW data, i.e., color filter array (CFA). The major noise generated in real noisy images are due to the discrete nature of light and thermal agitation \cite{}, which can be modeled as Poisson and Gaussian distribution, respectively. Since the Poisson distribution can be approximately modeled by Gaussian distribution, the overall noise model in each channel of the color image could be Gaussian. Some methods would first transform the color images into other color spaces such as luminance/chrominance space such as YCbCr or Lab, but this would change the noise distribution in each channel. Hence, in this work we still choose to deal with the RGB channels in color images. Besides, even though if the demosaicing of RAW image generate similar distribution in noise in different channels, the channel-wise scaling in white balance would definitely change the noise distribution in each channel. Thus, the noise in R, G, B channels are definitely different which can be described by different noise levels and structures. According to above analysis, color image denoising is to recover the latent clean image $\mathbf{x}$ from the observed noisy version $\mathbf{y}_{c}=\mathbf{x}_{c}+\mathbf{n}_{c}$, where $c\in \{R, G, B\}$ represent the R, G, B channels in color images and $\mathbf{n}_{c}$ is the noise in the $c$ channel 
+(assumed to be additive white Gaussian noise).
+
+The patches in color image $\mathbf{y}$  are of size $p\times p\times 3$. For each patch, we search its non-local similar patches in a large area and stack the similar patches column by column. The resulting matrix $\mathbf{Y}\in\mathbb{R}^{3p^{2}\times n}$, where $n$ is the number of similar patches. The corresponding matrices containing the clean patches and the channel-wise noise are defined as $\mathbf{X}$ and $\mathbf{N}$, respectively. Since $\mathbf{X}$ is made of similar patches, it should be a low rank matrix. And hence the multi-channel WNNM model proposed in this paper can be used here. Compared to the original single channel WNNM model \cite{wnnm} proposed for grayscale image denoising
+\begin{equation}
+\min_{\mathbf{X}}
+\|
+\mathbf{W}
+(\mathbf{Y}
+-
+\mathbf{X})
+\|_{F}^{2}
++
+\|
+\mathbf{X}\|_{\bm_{w},*}.
+\end{equation}
+When the weighting matrix $\mathbf{W}=\frac{1}{\sigma_{n}^{2}}\mathbf{I}
+$, where $\mathbf{I}
+\in\mathbb{R}^{3p^{2}\times 3p^{2}}$ is the identity matrix, the multi-channel WNNM model will reduce to the WNNM model as a special case. The design of WNNM model also motivate us to consider a similar design of the weighting matrix. In order to deal with color image denoising task, 
+the weighting matrix $\mathbf{W}$ should be modified to be suitable for multi-channel cases. In fact, for the color image denoising task, a holistic try of the weighting matrix $\mathbf{W}$ could be 
+\begin{equation}
+\mathbf{W}
+=
+\left( \begin{array}{ccc}
+\sigma_{r}^{-2}\mathbf{I} & \mathbf{0} & \mathbf{0}
+\\
+\mathbf{0} & \sigma_{g}^{-2}\mathbf{I} & \mathbf{0}
+\\
+\mathbf{0} & \mathbf{0} & \sigma_{b}^{-2}\mathbf{I}
+\end{array} \right).
+\end{equation}
+Here, for simplicity, we assume that the noise in different channels are independent to each other. The experimental results have already demonstrated that this simple assumption could already generate the best denoising performance on benchmark real noisy image dataset. In this paper, we did not consider the correlations of noise among different channels, which is the future work of our research line. The determination of the weight vector in weighted nuclear norm is the same as in the WNNM model \cite{wnnmijcv}. We set the weight vector as $w_{i}^{k+1}=\frac{C}{|\sigma_{i}(\mathbf{X}_{k})|+\epsilon }$. 
+
+The multi-channel WNNM is applied to the non-local similar patches of each local patch in the noisy image $\mathbf{y}$. And then all the patches are aggregated together to form the final recovered image $\hat{\mathbf{y}}$. We also perform the denoising procedure for several iterations to obtain better results. In Algorithm 2 (A. 2), we summarizes the denoising steps of multi-channel WNNM model on color image denoising.
+\begin{table}\label{alg1}
+\begin{tabular}{l}
+\hline
+\textbf{A. 2}: Multi-channel WNNM for Color Image Denoising
+\\
+\hline
+\textbf{Input:} Noisy image $\mathbf{y}$, noise levels $\{\sigma_{r}, \sigma_{g}, \sigma_{b}\}$;
+\\
+\textbf{Initialization:} $\hat{\mathbf{x}}^{(0)}=\mathbf{y}$;
+\\
+\textbf{for} $Ite = 1:IteNum$ \textbf{do}
+\\
+1. Extracting internal PGs $\{\mathbf{Y}_{n}\}_{n=1}^{N}$ from $\hat{\mathbf{x}}^{(Ite-1)}$;
+\\
+%\textbf{Guided Internal Subspace Assignment:}
+%\\
+\quad\textbf{for} each PG $\mathbf{Y}_{n}$ \textbf{do}
+\\
+2.\quad Calculate group mean vector $\bm{\mu}_{n}$ and form 
+\\
+\quad \ \ \ mean subtracted PG $\mathbf{\overline{Y}}_{n}$;
+\\
+3.\quad Subspace assignment via Eq. (\ref{equ3});
+\\
+\quad\textbf{end for}
+\\
+%\textbf{Guided Internal Orthogonal Dictionary Learning:}
+%\\
+\quad\textbf{for} the PGs in each subspace \textbf{do}
+\\
+4.\quad External PG prior guided internal orthogonal
+\\
+\quad \ \ \ dictionary learning by solving (\ref{equ4});
+\\
+5.\quad Recover each patch in all PGs via Eq. (\ref{equ10});
+\\
+\quad\textbf{end for}
+\\
+6. Aggregate the recovered PGs of all subspaces to form
+\\
+\quad the recovered image $\hat{\mathbf{x}}^{(Ite)}$;
+\\
+\textbf{end for}
+\\
+\textbf{Output:} Denoised image $\hat{\mathbf{x}}$.
+\\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Experiments}
 
