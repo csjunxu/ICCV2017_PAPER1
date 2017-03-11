@@ -69,12 +69,13 @@ In this paper, we propose a new multi-channel model for color image denoising. I
 \end{abstract}
 
 \section{Introduction}
+Image denoising is an important problem in enhancing the image quality in computer vision systems. It aims to recover the clean image $\mathbf{x}$ from the noisy observation $\mathbf{y}=\mathbf{x}+\mathbf{n}$, where $\mathbf{n}$ is often assumed to be additive white Gaussian noise (AWGN). Most image denoising methods \cite{nlm,bm3d,foe,ksvd,epll,lssc,ncsr,pgpd,wnnm,mlp,csf,chen2015learning} are designed for grayscale (i.e., single channel) images. Though these methods have achieved excellant denoising performance on grayscale images, directly extending these methods to process each channel of color images seperately would generate false colors or artifacts \cite{mairal2008sparse}.
 
-Image denoising is an important problem in enhancing the image quality in computer vision systems. It aims to recover the clean image $\mathbf{x}$ from the observed noisy version $\mathbf{y}=\mathbf{x}+\mathbf{n}$, where $\mathbf{n}$ is often assumed to be additive white Gaussian noise. Most denoising methods \cite{ksvd,lssc,ncsr,nlm,bm3d,cbm3d,pgpd,wnnm,mlp,csf,chen2015learning,foe,epll} are designed for grayscale images, and other color image denoising methods \cite{mairal2008sparse} treat equally the R, G, B channels in color images. However, in many computer vision tasks, the multiple channels in natural images being processed often exhibit distinct properties, e.g., contain different noise levels. For example, the noise levels among the R, G, B channels are different in real noisy images due to the on board processing in in-camera imaging pipelines \cite{karaimer_brown_ECCV_2016}. The This is caused by the color demosaicking during the transformation from raw data to RGB images in the standard in-camera imaging pipeline. Usually, the G channel contains the least noise levels among the three channels. Hence, in order to deal with each channel more effectively, different noise levels should be plugged into different channels for color image denoising. 
+When compared to the grayscale image denoising problems, little attention has been paid to their color counterpairs. There are several work \cite{cbm3d,mairal2008sparse,almapg,noiseclinic,crosschannel2016,Zhu_2016_CVPR} proposed specifically for color images. These methods either treat equally the R, G, B channels in color images \cite{cbm3d,mairal2008sparse,almapg} or fail to explore the properties of natural images \cite{noiseclinic,crosschannel2016,Zhu_2016_CVPR}. On one hand, treating each channel equally in color images is not that reasonable, since the noise structures and levels among the R, G, B channels are different in natural images due to the on board processing in in-camera imaging pipelines \cite{karaimer_brown_ECCV_2016}. Hence, the methods treating each channel equally would generate fake colors or artifacts \cite{mairal2008sparse}. On the other hand, the performance of denoising methods would be largely depressed if the non-local self similarity property of natural images has not been fully exploited \cite{wnnm}. Due to the two reasons, some important information in color images would be highly degraded when applying these denoising methods directly on color images. 
 
-The non-local self similarity (NSS) property of images has been extensively employed in image restoration tasks such as denoising \cite{ksvd,lssc,ncsr,nlm,bm3d,pgpd,wnnm}. Among these methods, the weighted nuclear norm minimization (WNNM) model has achieved the state-of-the-art performance on denoising the additive white Gaussian noise (AWGN) in grayscale images. Though among the most effective methods, how to extend the single channel WNNM model to handle multi-channel images such as the real-world color images is still an open problem. Of course the WNNM method can be applied to denoising color images by processing each channel separately, its performance would be largely inferior than jointly processing the RGB channels by concatenating the RGB values into a single vector \cite{mairal2008sparse}. Besides, the searching of non-local similar patches would be unstable due to the seperate processing of the RGB images and hence the power of the NSS would be largely reduced. This would also limit the performance of not only WNNM but also other NSS based methods \cite{lssc,ncsr,nlm,bm3d,pgpd}. This fact is also evaluated by our experiments on color image denoising task. 
+Based on the above observations, we argue that new denoising algorithms are still desiable which can treat well the R, G, B channels in color images and exploit the non-local self similarity property of natural images. In order to deal with the R, G, B channels in color images more effectively, different noise properties of these channels should be considered in the new methods designed for color image denoising. Besides, the non-local self similarity (NSS) property of images has been extensively employed in image restoration tasks such as denoising \cite{ksvd,lssc,ncsr,nlm,bm3d,pgpd,wnnm}. Among these methods, the weighted nuclear norm minimization (WNNM) model has achieved the state-of-the-art performance on denoising the additive white Gaussian noise (AWGN) in grayscale images. Though among the most effective methods, how to extend the single channel WNNM model to handle multi-channel images such as the real-world color images is still an open problem. Of course the WNNM method can be applied to denoising color images by processing each channel separately, its performance would be largely inferior than jointly processing the RGB channels by concatenating the RGB values into a single vector \cite{mairal2008sparse}. Besides, the searching of non-local similar patches would be unstable due to the seperate processing of the RGB images and hence the power of the NSS would be largely reduced. This would also limit the performance of not only WNNM but also other NSS based methods \cite{lssc,ncsr,nlm,bm3d,pgpd}. This fact is also evaluated by our experiments on color image denoising task. 
 
-In this paper, we proposed to solve the multi-channel weighted nuclear norm minimization model to perform image denoising on color images. The original WNNM model has closed-form solutions under the weighted nulcear norm proximal operator (WNNP). However, if we add a weighting matrix $\mathbf{W}$ to the left of the data term, the resulting multi-channel WNNM model no longer has the nice property of closed-form solutions. This makes the problem more chanllging. To solve this problem, we formulate the proposed multi-channel WNNM problem into a linearly constrained non-convex program with an augmented variable. It is also not directly solvable due to the non-convexity of the existance of the weighted nuclear norm. Note that the reformulated model contains two variables with linear constraint. This can be solved by employing the alternating direction method of multipliers (ADMM) \cite{admm}. For the variable $\mathbf{Z}$, it is the original weighted nuclear norm minimization problem and can be solved with closed-form solution \cite{wnnm,lugsvt}. For the variable $\mathbf{X}$, it is a standard least squares problem and we can also obatin its closed-form solution. The convergency of the proposed method is also given to guarantee a rational termination of the our model. 
+In this paper, we proposed a new multi-channel weighted nuclear norm minimization model for color image denoising. The original WNNM model has closed-form solutions under the weighted nulcear norm proximal operator (WNNP). However, if we add a weighting matrix $\mathbf{W}$ to the left of the data term, the resulting multi-channel WNNM model no longer has the nice property of closed-form solutions. This makes the problem more chanllging. To solve this problem, we formulate the proposed multi-channel WNNM problem into a linearly constrained non-convex program with an augmented variable. It is also not directly solvable due to the non-convexity of the existance of the weighted nuclear norm. Note that the reformulated model contains two variables with linear constraint. This can be solved by employing the alternating direction method of multipliers (ADMM) \cite{admm}. For the variable $\mathbf{Z}$, it is the original weighted nuclear norm minimization problem and can be solved with closed-form solution \cite{wnnm,lugsvt}. For the variable $\mathbf{X}$, it is a standard least squares problem and we can also obatin its closed-form solution. The convergency of the proposed method is also given to guarantee a rational termination of the our model. 
 
 
 
@@ -422,7 +423,7 @@ The proof skecth of Theorem 1 is end.
 \end{proof}
 
 
-\section{Multi-channel WNNM For Color Image Denoising}
+\section{Multi-channel WNNM for Color Image Denoising}
 In this section, we apply the proposed multi-channel WNNM model on color image denoising problem. The multi-channel WNNM model can make use of the non-local self similarity property of natural images while treating each channel adaptively. In real-world noisy images, the noise are first emerged in the RAW data, i.e., color filter array (CFA). The major noise generated in real noisy images are due to the discrete nature of light and thermal agitation \cite{}, which can be modeled as Poisson and Gaussian distribution, respectively. Since the Poisson distribution can be approximately modeled by Gaussian distribution, the overall noise model in each channel of the color image could be Gaussian. Some methods would first transform the color images into other color spaces such as luminance/chrominance space such as YCbCr or Lab, but this would change the noise distribution in each channel. Hence, in this work we still choose to deal with the RGB channels in color images. Besides, even though if the demosaicing of RAW image generate similar distribution in noise in different channels, the channel-wise scaling in white balance would definitely change the noise distribution in each channel. Thus, the noise in R, G, B channels are definitely different which can be described by different noise levels and structures. According to above analysis, color image denoising is to recover the latent clean image $\mathbf{x}$ from the observed noisy version $\mathbf{y}_{c}=\mathbf{x}_{c}+\mathbf{n}_{c}$, where $c\in \{R, G, B\}$ represent the R, G, B channels in color images and $\mathbf{n}_{c}$ is the noise in the $c$ channel 
 (assumed to be additive white Gaussian noise).
 
@@ -430,7 +431,7 @@ The patches in color image $\mathbf{y}$  are of size $p\times p\times 3$. For ea
 \begin{equation}
 \min_{\mathbf{X}_{j}}
 \|
-\mathbf{W}
+\mathbf{W}_{j}
 (\mathbf{Y}_{j}
 -
 \mathbf{X}_{j})
@@ -439,19 +440,19 @@ The patches in color image $\mathbf{y}$  are of size $p\times p\times 3$. For ea
 \|
 \mathbf{X}_{j}\|_{\bm_{w},*}.
 \end{equation}
-When the weighting matrix $\mathbf{W}=\frac{1}{\sigma_{n}^{2}}\mathbf{I}
+When the weighting matrix $\mathbf{W}_{j}=\frac{1}{\sigma_{n}^{2}}\mathbf{I}
 $, where $\mathbf{I}
 \in\mathbb{R}^{3p^{2}\times 3p^{2}}$ is the identity matrix, the multi-channel WNNM model will reduce to the WNNM model as a special case. The design of WNNM model also motivate us to consider a similar design of the weighting matrix. In order to deal with color image denoising task, 
-the weighting matrix $\mathbf{W}$ should be modified to be suitable for multi-channel cases. In fact, for the color image denoising task, a holistic try of the weighting matrix $\mathbf{W}$ could be 
+the weighting matrix $\mathbf{W}_{j}$ should be modified to be suitable for multi-channel cases. In fact, for the color image denoising task, a holistic try of the weighting matrix $\mathbf{W}_{j}$ could be 
 \begin{equation}
-\mathbf{W}
+\mathbf{W}_{j}
 =
 \left( \begin{array}{ccc}
-\sigma_{r}^{-2}\mathbf{I} & \mathbf{0} & \mathbf{0}
+\sigma_{rj}^{-2}\mathbf{I} & \mathbf{0} & \mathbf{0}
 \\
-\mathbf{0} & \sigma_{g}^{-2}\mathbf{I} & \mathbf{0}
+\mathbf{0} & \sigma_{gj}^{-2}\mathbf{I} & \mathbf{0}
 \\
-\mathbf{0} & \mathbf{0} & \sigma_{b}^{-2}\mathbf{I}
+\mathbf{0} & \mathbf{0} & \sigma_{bj}^{-2}\mathbf{I}
 \end{array} \right).
 \end{equation}
 Here, for simplicity, we assume that the noise in different channels are independent to each other. The experimental results have already demonstrated that this simple assumption could already generate the best denoising performance on benchmark real noisy image dataset. In this paper, we did not consider the correlations of noise among different channels, which is the future work of our research line. The determination of the weight vector in weighted nuclear norm is the same as in the WNNM model \cite{wnnmijcv}. We set the weight vector as $w_{i}^{k+1}=\frac{C}{|\sigma_{i}(\mathbf{X}_{k})|+\epsilon }$. 
@@ -492,16 +493,15 @@ The multi-channel WNNM is applied to the non-local similar patches of each local
 \end{table}
 
 \section{Experiments}
-We evaluate the proposed method on synthetic noisy images as well as real noisy images. We compare the proposed method with other state-of-the-art denoising algorithms including CBM3D \cite{bm3d,cbm3d}, MLP \cite{mlp}, CSF \cite{csf}, WNNM \cite{wnnm}, TNRD \cite{chen2015learning}, ``Noise Clinic'' \cite{noiseclinic,ncwebsite}, and the commercial software Neat Image \cite{neatimage}.
+We evaluate the proposed method on synthetic noisy images as well as real noisy images. The synthetic noisy images are generated by adding additive white Gaussian noise with known noise standard derivations $\sigma_{r}, \sigma_{g}, \sigma_{b}$ for the R, G, B channels, respectively. We compare the proposed method with other state-of-the-art denoising algorithms including CBM3D \cite{bm3d,cbm3d}, MLP \cite{mlp}, CSF \cite{csf}, WNNM \cite{wnnm}, TNRD \cite{chen2015learning}, ``Noise Clinic'' \cite{noiseclinic,ncwebsite}, and the commercial software Neat Image \cite{neatimage}.
 
-In order to compare with the original WNNM method, we not only apply the WNNM method on each channel separately, but also concatenate the RGB values into a single vector to perform denoising to boost the original WNNM method with channel correlations. To demonstrate the effectiveness of the proposed weighting matrix $\mathbf{W}$, we set $\mathbf{W}=\sigma_{n}\mathbf{I}$, which is reduced to the standard WNNM method. These three types of WNNM are named as WNNM, WNNMc, and WNNMadmm, respectively.
+In order to take fully comparison with the original WNNM method, we extended the WNNM method \cite{wnnmijcv} in three directions. The first one is to apply the WNNM method on each channel separately, this method is channel-wise and we call it the ``WNNMCW'' method. The second one is to concatenate the corresponding patches in the R, G, B channels into a joint patch. We call this method ``WNNMJ''. These two methods are directly extended from the original WNNM and hence have closed form solutions for the denoising model. To validate the effectiveness of the weighting matrix $\mathbf{W}$ in multi-channel WNNM model, we set $\mathbf{W}=\sigma_{n}^{2}\mathbf{I}$ and reduce the multi-channel WNNM model to its special case: the WNNM model solved by ADMM algorithm. We call this third method ``WNNMJadmm'' method. We set the same parameters settings for the ``WNNMJadmm'' method and the proposed multi-channel WNNM method (called ``Proposed''). For fair comparison, for the ``WNNMCW'' method, the corresponding noise level $\sigma_{c}$ of the $c$ ($c=r, g, b$) channel is input as known parameter;  for the method ``WNNMJ'', we input the noise level as $\sigma = \sqrt{\frac{\sigma_{r}^{2}+\sigma_{g}^{2}+\sigma_{b}^{2}}{3}}$ and tune the other parameters to achieve its best denoising performance (i.e., highest average PSNR results). We employ the same parameter settings for the ``WNNMJadmm'' method and the proposed multi-channel WNNM method, which will be introduced in details in corresponding sections.
 
 \subsection{Experiments on Synthetic Noisy Images}
 In this section, we compare the proposed method with other competing method \cite{cbm3d,mlp,wnnm,csf,chen2015learning,noiseclinic,neatimage}
-on 24 high quality color images from the Kodak PhotoCD Dataset (\url{http://r0k.us/graphics/kodak/}), which are shown in Fig.\ 1. Then we add additive white Gaussian noise with different standard deviations to different channels of the color images. The standard deviations of noise we add to the R, G, B channels of the 24 clean images are 40, 20, 30, respectively.  We set the patch size as $p = 6$, the number of non-local similar patches as $n = 70$, the window size for searching similar patches as $W = 20$. For the proposed multi-channel WNNM model, we set the regularization parameter as $\lambda=4$, the penalty parameter as $\rho=6$, the $\mu=1.1$, the number of iterations in Algorithm 1 as $K_{1} = 10$, the number of iterations in Algorithm 2 as $K_{2}=8$. For fair comparison, we employ the same parameter settings for the WNNM, WNNMc, WNNMadmm methods.
+on 24 high quality color images from the Kodak PhotoCD Dataset (\url{http://r0k.us/graphics/kodak/}), which are shown in Fig.\ 1. Then we add additive white Gaussian noise with different standard deviations to different channels of the color images. The standard deviations of noise we add to the R, G, B channels of the 24 clean images are 40, 20, 30, respectively.  We set the patch size as $p = 6$, the number of non-local similar patches as $n = 70$, the window size for searching similar patches as $W = 20$. For the proposed multi-channel WNNM model, we set the regularization parameter as $\lambda=4$, the penalty parameter as $\rho=6$, the $\mu=1.1$, the number of iterations in Algorithm 1 as $K_{1} = 10$, the number of iterations in Algorithm 2 as $K_{2}=8$. 
 
-We firstly perform quantitative comparison on the 15 cropped images used in \cite{crosschannel2016}. The PSNR results of CBM3D \cite{bm3d}, WNNM \cite{wnnm}, MLP \cite{mlp}, CSF \cite{csf}, TNRD \cite{chen2015learning}, NC \cite{noiseclinic,ncwebsite}, NI \cite{neatimage} and
-CC \cite{crosschannel2016} are listed in Table \ref{tab2} (The results of CC are copied from the original paper \cite{crosschannel2016}).\ The best and second best PSNR results of each image are highlighted in red and blue, respectively.\ One can see that on 9 out of the 15 images, our method achieves the best PSNR values.\ CC achieves the best PSNR on 3 of the 15 images.\ It should be noted that in the CC method, a specific model is trained for each camera and camera setting, while our method uses the same model for all images.\ On average, our proposed method has 0.28dB PSNR improvements over \cite{crosschannel2016} and much higher PSNR gains over other competing methods.\ Fig.\ \ref{fig7} shows the denoised images of a scene captured by Canon 5D Mark 3 at ISO = 3200.\ We can see that CBM3D, WNNM, NC, NI and CC would either remain noise or generate artifacts, while MLP, TNRD over-smooth much the image.\ By using the proposed multi-channel WNNM model, our method preserves the structures (e.g., edges and textures) better across the R, G, B channels and generate less artifacts than other denoising methods, leading to visually pleasant outputs.\ More visual comparisons can be found in the supplementary file.
+We perform quantitative comparison on the 24 high quality images from the Kodak PhotoCD Dataset, which are widely used for color image denoising task. The PSNR results of CBM3D \cite{bm3d}, MLP \cite{mlp}, TNRD \cite{chen2015learning}, NC \cite{noiseclinic,ncwebsite}, NI \cite{neatimage}, ``WNNMCW'' \cite{wnnmijcv}, ``WNNMJ'', ``WNNMJadmm'' and the proposed multi-channel WNNM methods are listed in Table \ref{taba}.\ The best PSNR results of each image are highlighted in bold.\ One can see that on all the 24 images, our method achieves the best PSNR values.\ On average, our proposed method has 0.45dB PSNR improvements over the second best method, i.e., ``WNNMJ'' and much higher PSNR gains over other competing methods.\ Fig.\ \ref{fig7} shows the denoised images of a scene in the Kodak PhotoCD Dataset .\ We can see that CBM3D, NC, and NI would either remain noise or generate artifacts, while MLP, TNRD ``WNNMCW'', ``WNNMJ'', ``WNNMJadmm'' over-smooth much the image.\ By using the proposed multi-channel WNNM model, our method preserves the structures (e.g., edges and textures) better across the R, G, B channels and generate less artifacts than other denoising methods, leading to visually pleasant outputs.\ More visual comparisons can be found in the supplementary file.
 
 \begin{figure}
 \centering
@@ -591,9 +591,9 @@ CC \cite{crosschannel2016} are listed in Table \ref{tab2} (The results of CC are
 \end{figure}
 
 
-\begin{table*}[t]
+\begin{table*}
 \caption{PSNR(dB) results of different denoising algorithms on 20 natural images.}
-\label{tab1}
+\label{taba}
 \begin{center}
 \renewcommand\arraystretch{1.0}
 \scriptsize
@@ -617,9 +617,9 @@ Image\#
 &
 \textbf{WNNMCW}
 &
-\textbf{WNNMC}
+\textbf{WNNMJ}
 &
-\textbf{WNNMCadmm}
+\textbf{WNNMJadmm}
 &
 \textbf{Proposed}
 \\
@@ -765,10 +765,10 @@ Image\#
 \end{figure*}
 
 \subsection{Experiments on Real Noisy Images}
-In the second part, we compare the proposed method with other competing methods on the 15 real noisy images, , which are shown in Fig.\ 2, with ``ground truth'' clean images \cite{crosschannel2016}. The noisy images were collected under controlled indoor environment.\ Each scene was shot 500 times under the same camera and camera setting.\ The mean image of the 500 shots is roughly taken as the ``ground truth", with which the PSNR can be computed. Since the image size is very large (about $7000\times5000$) and the scenes of this dataset share repetitive contents, the authors of \cite{crosschannel2016} cropped 15 smaller images (of size $512\times512$) to perform experiments.
+In the second part, we compare the proposed method with other competing methods on the 15 real noisy images, , which are shown in Fig.\ 2, with ``ground truth'' clean images \cite{crosschannel2016}. The noisy images were collected under controlled indoor environment.\ Each scene was shot 500 times under the same camera and camera setting.\ The mean image of the 500 shots is roughly taken as the ``ground truth", with which the PSNR can be computed. Since the image size is very large (about $7000\times5000$) and the scenes of this dataset share repetitive contents, the authors of \cite{crosschannel2016} cropped 15 smaller images (of size $512\times512$) to perform experiments. In this section, we do not compare with the ``WNNMCW'' method due to its inferior performance.
 
-We firstly perform quantitative comparison on the 15 cropped images used in \cite{crosschannel2016}. The PSNR results of CBM3D \cite{bm3d}, WNNM \cite{wnnm}, MLP \cite{mlp}, CSF \cite{csf}, TNRD \cite{chen2015learning}, NC \cite{noiseclinic,ncwebsite}, NI \cite{neatimage} and
-CC \cite{crosschannel2016} are listed in Table \ref{tab2} (The results of CC are copied from the original paper \cite{crosschannel2016}).\ The best and second best PSNR results of each image are highlighted in red and blue, respectively.\ One can see that on 9 out of the 15 images, our method achieves the best PSNR values.\ CC achieves the best PSNR on 3 of the 15 images.\ It should be noted that in the CC method, a specific model is trained for each camera and camera setting, while our method uses the same model for all images.\ On average, our proposed method has 0.28dB PSNR improvements over \cite{crosschannel2016} and much higher PSNR gains over other competing methods.\ Fig.\ \ref{fig7} shows the denoised images of a scene captured by Canon 5D Mark 3 at ISO = 3200.\ We can see that CBM3D, WNNM, NC, NI and CC would either remain noise or generate artifacts, while MLP, TNRD over-smooth much the image.\ By using the proposed multi-channel WNNM model, our method preserves the structures (e.g., edges and textures) better across the R, G, B channels and generate less artifacts than other denoising methods, leading to visually pleasant outputs.\ More visual comparisons can be found in the supplementary file.
+We firstly perform quantitative comparison on the 15 cropped images used in \cite{crosschannel2016}. The PSNR results of CBM3D \cite{bm3d}, ``WNNMJ'' \cite{wnnm}, MLP \cite{mlp}, TNRD \cite{chen2015learning}, NC \cite{noiseclinic,ncwebsite}, NI \cite{neatimage} and
+CC \cite{crosschannel2016} are listed in Table \ref{tabb} (The results of CC are copied from the original paper \cite{crosschannel2016}).\ The best and second best PSNR results of each image are highlighted in red and blue, respectively.\ One can see that on 9 out of the 15 images, our method achieves the best PSNR values.\ CC achieves the best PSNR on 3 of the 15 images.\ It should be noted that in the CC method, a specific model is trained for each camera and camera setting, while our method uses the same model for all images.\ On average, our proposed method has 0.28dB PSNR improvements over \cite{crosschannel2016} and much higher PSNR gains over other competing methods.\ Fig.\ \ref{fig7} shows the denoised images of a scene captured by Canon 5D Mark 3 at ISO = 3200.\ We can see that CBM3D, WNNM, NC, NI and CC would either remain noise or generate artifacts, while MLP, TNRD over-smooth much the image.\ By using the proposed multi-channel WNNM model, our method preserves the structures (e.g., edges and textures) better across the R, G, B channels and generate less artifacts than other denoising methods, leading to visually pleasant outputs.\ More visual comparisons can be found in the supplementary file.
 
 \begin{figure}
 \centering
@@ -832,12 +832,12 @@ CC \cite{crosschannel2016} are listed in Table \ref{tab2} (The results of CC are
 \begin{table*}\vspace{2mm}
 \caption{PSNR(dB) results of different methods on 15 cropped real noisy images used in \cite{crosschannel2016}.}
 \vspace{0.5mm}
-\label{tab2}
+\label{tabb}
 \begin{center}
 \renewcommand\arraystretch{1}
 \begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|}
 \hline
-Camera Settings & \textbf{Noisy} &\textbf{CBM3D}&\textbf{WNNM}&\textbf{MLP}&\textbf{CSF}&\textbf{TNRD}& \textbf{NI}& \textbf{NC}& \textbf{CC} &\textbf{Ours} 
+Camera Settings & \textbf{Noisy} &\textbf{CBM3D}&\textbf{WNNMJ}&\textbf{MLP}&\textbf{WNNMJadmm}&\textbf{TNRD}& \textbf{NI}& \textbf{NC}& \textbf{CC} &\textbf{Proposed} 
 \\
 \hline
 \multirow{3}{*}{\small{Canon 5D Mark III}} 
@@ -895,7 +895,7 @@ Camera Settings & \textbf{Noisy} &\textbf{CBM3D}&\textbf{WNNM}&\textbf{MLP}&\tex
 & 29.87 & 29.90 & 29.95 & 31.42 & 31.52 & 31.76 & 31.40 & 32.86 & {\color{blue}{33.22}} & {\color{red}{33.58}}
 \\
 \hline
-Average & 33.41 & 33.48 & 33.48 & 34.32 & 35.33 & 35.65 & 35.49 & 36.43 & {\color{blue}{36.88}} & {\color{red}{ 37.16}}
+Average & 33.41 & 33.48 & 37.27 & 34.32 & 35.33 & 35.65 & 35.49 & 36.43 & {\color{blue}{36.88}} & {\color{red}{ 37.72}}
 \\
 \hline
 \end{tabular}
