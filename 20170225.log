@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  11 MAR 2017 11:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  11 MAR 2017 12:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1189,14 +1189,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1260.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1260.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1260.
 
+Package rerunfilecheck Info: File `20170225.brf' has not changed.
+(rerunfilecheck)             Checksum: 19463D57E03B3E15DDD8D31AC32BB512;6330.
 
-
-Package rerunfilecheck Warning: File `20170225.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `20170225.brf':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  19463D57E03B3E15DDD8D31AC32BB512;6330.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1205,7 +1200,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1260.
 Here is how much of TeX's memory you used:
  8030 strings out of 493091
  120057 string characters out of 6134517
- 236146 words of memory out of 5000000
+ 241465 words of memory out of 5000000
  11182 multiletter control sequences out of 15000+600000
  51553 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1233,10 +1228,10 @@ e/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015
 /texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on 20170225.pdf (10 pages, 3709142 bytes).
+Output written on 20170225.pdf (10 pages, 3712559 bytes).
 PDF statistics:
- 458 PDF objects out of 1000 (max. 8388607)
- 369 compressed objects within 4 object streams
+ 541 PDF objects out of 1000 (max. 8388607)
+ 451 compressed objects within 5 object streams
  103 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
