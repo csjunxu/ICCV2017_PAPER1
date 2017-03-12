@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  12 MAR 2017 12:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  12 MAR 2017 13:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1181,14 +1181,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1280.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1280.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1280.
 
+Package rerunfilecheck Info: File `egpaper_for_review.brf' has not changed.
+(rerunfilecheck)             Checksum: 266C6029BC29FEAF2F96E1C8BB73A4B0;6635.
 
-
-Package rerunfilecheck Warning: File `egpaper_for_review.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `egpaper_for_review.brf':
-(rerunfilecheck)             Before: 0430DF98FEE23CE7C706DB1E7F7672D0;6635
-(rerunfilecheck)             After:  266C6029BC29FEAF2F96E1C8BB73A4B0;6635.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1197,7 +1192,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1280.
 Here is how much of TeX's memory you used:
  8030 strings out of 493091
  120187 string characters out of 6134517
- 252219 words of memory out of 5000000
+ 252224 words of memory out of 5000000
  11182 multiletter control sequences out of 15000+600000
  51553 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1225,10 +1220,10 @@ e/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015
 /texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on egpaper_for_review.pdf (10 pages, 3716953 bytes).
+Output written on egpaper_for_review.pdf (10 pages, 3716966 bytes).
 PDF statistics:
- 560 PDF objects out of 1000 (max. 8388607)
- 470 compressed objects within 5 object streams
+ 559 PDF objects out of 1000 (max. 8388607)
+ 469 compressed objects within 5 object streams
  103 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
