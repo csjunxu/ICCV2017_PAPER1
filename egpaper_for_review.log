@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  12 MAR 2017 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  12 MAR 2017 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -742,7 +742,7 @@ File: images/resize_br_Noisy_5dmark3_iso3200_1_real.png Graphic file (type png)
 
  <use images/resize_br_Noisy_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_Noisy_5dmark3_iso3200_1_real.png used
- on input line 759.
+ on input line 735.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
 <images/resize_br_CBM3D_5dmark3_iso3200_1_real.png, id=249, 256.96pt x 256.96pt
@@ -751,14 +751,14 @@ File: images/resize_br_CBM3D_5dmark3_iso3200_1_real.png Graphic file (type png)
 
  <use images/resize_br_CBM3D_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_CBM3D_5dmark3_iso3200_1_real.png used
- on input line 759.
+ on input line 735.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
 <images/resize_br_WNNM_5dmark3_iso3200_1_real.png, id=252, 256.96pt x 256.96pt>
 File: images/resize_br_WNNM_5dmark3_iso3200_1_real.png Graphic file (type png)
 <use images/resize_br_WNNM_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_WNNM_5dmark3_iso3200_1_real.png used 
-on input line 759.
+on input line 735.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
 <images/resize_br_MLP_5dmark3_iso3200_1_real.png, id=254, 256.96pt x 256.96pt>
@@ -766,7 +766,7 @@ File: images/resize_br_MLP_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_MLP_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_MLP_5dmark3_iso3200_1_real.png used o
-n input line 759.
+n input line 735.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
 <images/resize_br_TRD_5dmark3_iso3200_1_real.png, id=256, 256.96pt x 256.96pt>
@@ -774,7 +774,7 @@ File: images/resize_br_TRD_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_TRD_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_TRD_5dmark3_iso3200_1_real.png used o
-n input line 759.
+n input line 735.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
 <images/resize_br_NI_5dmark3_iso3200_1_real.png, id=258, 256.96pt x 256.96pt>
@@ -782,7 +782,7 @@ File: images/resize_br_NI_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_NI_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_NI_5dmark3_iso3200_1_real.png used on
- input line 786.
+ input line 762.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
 <images/resize_br_NC_5dmark3_iso3200_1_real.png, id=260, 256.96pt x 256.96pt>
@@ -790,7 +790,7 @@ File: images/resize_br_NC_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_NC_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_NC_5dmark3_iso3200_1_real.png used on
- input line 786.
+ input line 762.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
 <images/resize_br_CCNoise_5dmark3_iso3200_1.png, id=263, 256.96pt x 256.96pt>
@@ -798,7 +798,7 @@ File: images/resize_br_CCNoise_5dmark3_iso3200_1.png Graphic file (type png)
 
 <use images/resize_br_CCNoise_5dmark3_iso3200_1.png>
 Package pdftex.def Info: images/resize_br_CCNoise_5dmark3_iso3200_1.png used on
- input line 786.
+ input line 762.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
 <images/resize_br_Guided_5dmark3_iso3200_1_real.png, id=265, 256.96pt x 256.96p
@@ -807,24 +807,24 @@ File: images/resize_br_Guided_5dmark3_iso3200_1_real.png Graphic file (type png
 )
  <use images/resize_br_Guided_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_Guided_5dmark3_iso3200_1_real.png use
-d on input line 786.
+d on input line 762.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 786.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 762.
 
 <images/resize_br_Mean_5dmark3_iso3200_1_real.png, id=266, 256.96pt x 256.96pt>
 File: images/resize_br_Mean_5dmark3_iso3200_1_real.png Graphic file (type png)
 <use images/resize_br_Mean_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_Mean_5dmark3_iso3200_1_real.png used 
-on input line 786.
+on input line 762.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
-Overfull \hbox (2.59673pt too wide) in paragraph at lines 759--787
+Overfull \hbox (2.59673pt too wide) in paragraph at lines 735--763
  [][] 
  []
 
 
-Overfull \hbox (2.59673pt too wide) in paragraph at lines 759--787
+Overfull \hbox (2.59673pt too wide) in paragraph at lines 735--763
  [][] 
  []
 
@@ -834,7 +834,7 @@ t>
 File: CC15images/resize_5dmark3_iso3200_1_real.png Graphic file (type png)
  <use CC15images/resize_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: CC15images/resize_5dmark3_iso3200_1_real.png used on i
-nput line 816.
+nput line 792.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_5dmark3_iso3200_2_real.png, id=286, 205.76875pt x 205.76875p
@@ -842,7 +842,7 @@ t>
 File: CC15images/resize_5dmark3_iso3200_2_real.png Graphic file (type png)
  <use CC15images/resize_5dmark3_iso3200_2_real.png>
 Package pdftex.def Info: CC15images/resize_5dmark3_iso3200_2_real.png used on i
-nput line 816.
+nput line 792.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_5dmark3_iso3200_3_real.png, id=287, 205.76875pt x 205.76875p
@@ -850,7 +850,7 @@ t>
 File: CC15images/resize_5dmark3_iso3200_3_real.png Graphic file (type png)
  <use CC15images/resize_5dmark3_iso3200_3_real.png>
 Package pdftex.def Info: CC15images/resize_5dmark3_iso3200_3_real.png used on i
-nput line 816.
+nput line 792.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d600_iso3200_1_real.png, id=288, 205.76875pt x 205.76875pt>
@@ -858,7 +858,7 @@ File: CC15images/resize_d600_iso3200_1_real.png Graphic file (type png)
 
 <use CC15images/resize_d600_iso3200_1_real.png>
 Package pdftex.def Info: CC15images/resize_d600_iso3200_1_real.png used on inpu
-t line 816.
+t line 792.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d600_iso3200_2_real.png, id=289, 205.76875pt x 205.76875pt>
@@ -866,7 +866,7 @@ File: CC15images/resize_d600_iso3200_2_real.png Graphic file (type png)
 
 <use CC15images/resize_d600_iso3200_2_real.png>
 Package pdftex.def Info: CC15images/resize_d600_iso3200_2_real.png used on inpu
-t line 816.
+t line 792.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d600_iso3200_3_real.png, id=290, 205.76875pt x 205.76875pt>
@@ -874,7 +874,7 @@ File: CC15images/resize_d600_iso3200_3_real.png Graphic file (type png)
 
 <use CC15images/resize_d600_iso3200_3_real.png>
 Package pdftex.def Info: CC15images/resize_d600_iso3200_3_real.png used on inpu
-t line 833.
+t line 809.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d800_iso1600_1_real.png, id=291, 205.76875pt x 205.76875pt>
@@ -882,7 +882,7 @@ File: CC15images/resize_d800_iso1600_1_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso1600_1_real.png>
 Package pdftex.def Info: CC15images/resize_d800_iso1600_1_real.png used on inpu
-t line 833.
+t line 809.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d800_iso1600_2_real.png, id=292, 205.76875pt x 205.76875pt>
@@ -890,7 +890,7 @@ File: CC15images/resize_d800_iso1600_2_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso1600_2_real.png>
 Package pdftex.def Info: CC15images/resize_d800_iso1600_2_real.png used on inpu
-t line 833.
+t line 809.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d800_iso1600_3_real.png, id=293, 205.76875pt x 205.76875pt>
@@ -898,7 +898,7 @@ File: CC15images/resize_d800_iso1600_3_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso1600_3_real.png>
 Package pdftex.def Info: CC15images/resize_d800_iso1600_3_real.png used on inpu
-t line 833.
+t line 809.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d800_iso3200_1_real.png, id=294, 205.76875pt x 205.76875pt>
@@ -906,7 +906,7 @@ File: CC15images/resize_d800_iso3200_1_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso3200_1_real.png>
 Package pdftex.def Info: CC15images/resize_d800_iso3200_1_real.png used on inpu
-t line 833.
+t line 809.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d800_iso3200_2_real.png, id=295, 205.76875pt x 205.76875pt>
@@ -914,7 +914,7 @@ File: CC15images/resize_d800_iso3200_2_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso3200_2_real.png>
 Package pdftex.def Info: CC15images/resize_d800_iso3200_2_real.png used on inpu
-t line 850.
+t line 826.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d800_iso3200_3_real.png, id=296, 205.76875pt x 205.76875pt>
@@ -922,7 +922,7 @@ File: CC15images/resize_d800_iso3200_3_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso3200_3_real.png>
 Package pdftex.def Info: CC15images/resize_d800_iso3200_3_real.png used on inpu
-t line 850.
+t line 826.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d800_iso6400_1_real.png, id=297, 205.76875pt x 205.76875pt>
@@ -930,7 +930,7 @@ File: CC15images/resize_d800_iso6400_1_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso6400_1_real.png>
 Package pdftex.def Info: CC15images/resize_d800_iso6400_1_real.png used on inpu
-t line 850.
+t line 826.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d800_iso6400_2_real.png, id=298, 205.76875pt x 205.76875pt>
@@ -938,7 +938,7 @@ File: CC15images/resize_d800_iso6400_2_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso6400_2_real.png>
 Package pdftex.def Info: CC15images/resize_d800_iso6400_2_real.png used on inpu
-t line 850.
+t line 826.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
 <CC15images/resize_d800_iso6400_3_real.png, id=299, 205.76875pt x 205.76875pt>
@@ -946,78 +946,78 @@ File: CC15images/resize_d800_iso6400_3_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso6400_3_real.png>
 Package pdftex.def Info: CC15images/resize_d800_iso6400_3_real.png used on inpu
-t line 850.
+t line 826.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 File: images/resize_br_Noisy_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 
 <use images/resize_br_Noisy_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_Noisy_5dmark3_iso3200_1_real.png used
- on input line 977.
+ on input line 953.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 File: images/resize_br_CBM3D_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 
 <use images/resize_br_CBM3D_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_CBM3D_5dmark3_iso3200_1_real.png used
- on input line 977.
+ on input line 953.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 File: images/resize_br_WNNM_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_WNNM_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_WNNM_5dmark3_iso3200_1_real.png used 
-on input line 977.
+on input line 953.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 File: images/resize_br_MLP_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_MLP_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_MLP_5dmark3_iso3200_1_real.png used o
-n input line 977.
+n input line 953.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 File: images/resize_br_TRD_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_TRD_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_TRD_5dmark3_iso3200_1_real.png used o
-n input line 977.
+n input line 953.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 File: images/resize_br_NI_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_NI_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_NI_5dmark3_iso3200_1_real.png used on
- input line 1004.
+ input line 980.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 File: images/resize_br_NC_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_NC_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_NC_5dmark3_iso3200_1_real.png used on
- input line 1004.
+ input line 980.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 File: images/resize_br_CCNoise_5dmark3_iso3200_1.png Graphic file (type png)
 
 <use images/resize_br_CCNoise_5dmark3_iso3200_1.png>
 Package pdftex.def Info: images/resize_br_CCNoise_5dmark3_iso3200_1.png used on
- input line 1004.
+ input line 980.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 File: images/resize_br_Guided_5dmark3_iso3200_1_real.png Graphic file (type png
 )
 
 <use images/resize_br_Guided_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_Guided_5dmark3_iso3200_1_real.png use
-d on input line 1004.
+d on input line 980.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 File: images/resize_br_Mean_5dmark3_iso3200_1_real.png Graphic file (type png)
 
 <use images/resize_br_Mean_5dmark3_iso3200_1_real.png>
 Package pdftex.def Info: images/resize_br_Mean_5dmark3_iso3200_1_real.png used 
-on input line 1004.
+on input line 980.
 (pdftex.def)             Requested size: 96.8906pt x 96.88907pt.
 
-Overfull \hbox (2.59673pt too wide) in paragraph at lines 977--1005
+Overfull \hbox (2.59673pt too wide) in paragraph at lines 953--981
  [][] 
  []
 
 
-Overfull \hbox (2.59673pt too wide) in paragraph at lines 977--1005
+Overfull \hbox (2.59673pt too wide) in paragraph at lines 953--981
  [][] 
  []
 
@@ -1046,12 +1046,12 @@ _1_real.png (PNG copy)> <./images/resize_br_TRD_5dmark3_iso3200_1_real.png (PNG
 e_5dmark3_iso3200_1.png (PNG copy)> <./images/resize_br_Guided_5dmark3_iso3200_
 1_real.png (PNG copy)> <./images/resize_br_Mean_5dmark3_iso3200_1_real.png (PNG
  copy)>]
-Underfull \hbox (badness 3168) in paragraph at lines 1076--1151
+Underfull \hbox (badness 3168) in paragraph at lines 1052--1127
 []\OT1/ptm/m/n/10 2. Sec-ondly, we proof that the se-quence of La-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1151
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1127
 \OT1/ptm/m/n/10 grangian func-tion $\OMS/cmsy/m/n/10 fL\OT1/cmr/m/n/10 (\OT1/cm
 r/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr
 /bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$ \OT1/p
@@ -1059,25 +1059,25 @@ tm/m/n/10 is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1151
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1127
 \OT1/ptm/m/n/10 also up-per bounded. Since the global op-ti-mal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1151
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1127
 \OT1/ptm/m/n/10 so-lu-tion of $\OT1/cmr/bx/n/10 X$ \OT1/ptm/m/n/10 and $\OT1/cm
 r/bx/n/10 Z$ \OT1/ptm/m/n/10 in cor-re-spond-ing sub-prob-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1151
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1127
 \OT1/ptm/m/n/10 lems, we al-ways have $\OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/
 cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/c
 mr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1151
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1127
 \OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/
 cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\
 OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :$ \OT1/ptm/m/n/10 Based on the up-dat-ing rul
@@ -1085,7 +1085,7 @@ e
  []
 
 
-Underfull \hbox (badness 2435) in paragraph at lines 1076--1151
+Underfull \hbox (badness 2435) in paragraph at lines 1052--1127
 \OT1/ptm/m/n/10 that $\OT1/cmr/bx/n/10 A[] \OT1/cmr/m/n/10 = \OT1/cmr/bx/n/10 A
 [] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^Z[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[
 ] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n/10 Z[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 , 
@@ -1093,19 +1093,19 @@ we have
  []
 
 
-Underfull \hbox (badness 1509) in paragraph at lines 1076--1151
+Underfull \hbox (badness 1509) in paragraph at lines 1052--1127
 \OT1/ptm/m/n/10 the se-quence $\OMS/cmsy/m/n/10 fk\OT1/cmr/bx/n/10 A[]\OMS/cmsy
 /m/n/10 g$ \OT1/ptm/m/n/10 is up-per bounded, the se-quence
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 1076--1151
+Underfull \hbox (badness 2343) in paragraph at lines 1052--1127
 \OMS/cmsy/m/n/10 fk\OT1/cmr/bx/n/10 A[] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n/10 A
 []\OMS/cmsy/m/n/10 k[]g$ \OT1/ptm/m/n/10 is also up-per bounded. De-note
  []
 
 
-Underfull \hbox (badness 2894) in paragraph at lines 1076--1151
+Underfull \hbox (badness 2894) in paragraph at lines 1052--1127
 \OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/
 cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\
 OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OM
@@ -1114,21 +1114,21 @@ L/cmm/m/it/10 ; \OT1/cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1151
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1127
 \OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/
 cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\
 OT1/cmr/m/n/10 ) + [] [][] []\OML/cmm/m/it/10 :$ \OT1/ptm/m/n/10 The last
  []
 
 
-Underfull \hbox (badness 7888) in paragraph at lines 1076--1151
+Underfull \hbox (badness 7888) in paragraph at lines 1052--1127
 \OT1/ptm/m/n/10 in-equal-ity holds since $\OML/cmm/m/it/10 ^^V \OT1/cmr/m/n/10 
 + 1 \OML/cmm/m/it/10 < \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^V$\OT1/ptm/m/n/10 . 
 Since
  []
 
 
-Underfull \hbox (badness 5908) in paragraph at lines 1152--1200
+Underfull \hbox (badness 5908) in paragraph at lines 1128--1176
 \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OT1/cmr/bx/n/10 Z[]\OMS/cmsy/m/n/10 g$ 
 \OT1/ptm/m/n/10 are up-per bounded. Since $\OMS/cmsy/m/n/10 k\OT1/cmr/bx/n/10 W
 \OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 Y \OMS/cmsy/m/n/10 ^^@
@@ -1145,7 +1145,7 @@ o3200_1_real.png (PNG copy)> <./CC15images/resize_d800_iso3200_2_real.png (PNG
 copy)> <./CC15images/resize_d800_iso3200_3_real.png (PNG copy)> <./CC15images/r
 esize_d800_iso6400_1_real.png (PNG copy)> <./CC15images/resize_d800_iso6400_2_r
 eal.png (PNG copy)> <./CC15images/resize_d800_iso6400_3_real.png (PNG copy)>]
-Underfull \hbox (badness 3547) in paragraph at lines 1249--1295
+Underfull \hbox (badness 3547) in paragraph at lines 1225--1271
 []\OT1/ptm/m/n/10 5. Then (3) can be proofed by check-ing that
  []
 
@@ -1171,12 +1171,12 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1304.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1280.
  [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1304.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1280.
  (./egpaper_for_review.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1304.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1304.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1280.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1280.
 
 Package rerunfilecheck Info: File `egpaper_for_review.brf' has not changed.
 (rerunfilecheck)             Checksum: 0430DF98FEE23CE7C706DB1E7F7672D0;6635.
@@ -1184,12 +1184,12 @@ Package rerunfilecheck Info: File `egpaper_for_review.brf' has not changed.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1304.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1280.
  ) 
 Here is how much of TeX's memory you used:
  8030 strings out of 493091
  120187 string characters out of 6134517
- 252821 words of memory out of 5000000
+ 252946 words of memory out of 5000000
  11182 multiletter control sequences out of 15000+600000
  51553 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1217,7 +1217,7 @@ e/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015
 /texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on egpaper_for_review.pdf (10 pages, 3716709 bytes).
+Output written on egpaper_for_review.pdf (10 pages, 3716811 bytes).
 PDF statistics:
  560 PDF objects out of 1000 (max. 8388607)
  470 compressed objects within 5 object streams
