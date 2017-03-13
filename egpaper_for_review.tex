@@ -71,7 +71,7 @@ The noise structures among the R, G, B channels of real images are quite differe
 \section{Introduction}
 Image denoising is an important problem in enhancing the image quality in computer vision systems. The traditional grayscale image denoising problem aims to recover the clean image $\mathbf{x}$ from the noisy observation $\mathbf{y}=\mathbf{x}+\mathbf{n}$, where $\mathbf{n}$ is often assumed to be additive white Gaussian noise (AWGN). Most image denoising methods in this field either employ the non-local self similarity (NSS) of natural images \cite{nlm,bm3d,ksvd,lssc,ncsr,pgpd,wnnm} or learn generative or discriminative denoisers from paired natural clean images and synthetic noisy images \cite{foe,epll,mlp,csf,chen2015learning}. Among these methods, the weighted nuclear norm minimization (WNNM) method achieves excallent denoising performance by exploiting the NSS property via low rank regularization. 
 
-The real color image denoising problem is not a trivial extension from single channel (grayscale image) to multiple channels (color image). The reason is that the noise structures are quite different among the R, G, B channels of images captured by CCD or CMOS cameras due to the on-board processing steps \cite{karaimer_brown_ECCV_2016}. This makes the real color image denoising problem much more complex. Directly applying the denoising methods for grayscale images to each channel of color images seperately would obtain bad performance \cite{mairal2008sparse}. There are several work  \cite{foe,cbm3d,mairal2008sparse,Liu2008,noiseclinic,crosschannel2016,Zhu_2016_CVPR} proposed specifically for color image denoising. Some methods \cite{foe,cbm3d} first transforms the color images into the luminance/chrominance space such as YCbCr before denoising, but this would make the noise distribution more complex in color images. The methods of \cite{mairal2008sparse,Zhu_2016_CVPR} process the joint patches concatenated by the corresponding patches in R, G, B channels and treat equally the patches in different channels. This would would generate false colors or artifacts \cite{mairal2008sparse}. The methods of \cite{Liu2008,noiseclinic,crosschannel2016} ignore the non-local self similarity property of natural images, and their performance would be largely depressed \cite{bm3d,wnnm}.
+The real color image denoising problem is not a trivial extension from single channel (grayscale image) to multiple channels (color image). The reason is that the noise structures are quite different among the R, G, B channels of images captured by CCD or CMOS cameras due to the on-board processing steps \cite{karaimer_brown_ECCV_2016}. This makes the real color image denoising problem much more complex. Directly applying the denoising methods for grayscale images to each channel of color images seperately would obtain bad performance \cite{mairal2008sparse}. There are several work  \cite{cbm3d,mairal2008sparse,Liu2008,noiseclinic,crosschannel2016,Zhu_2016_CVPR} proposed specifically for color image denoising. The method \cite{cbm3d} first transforms the color images into the luminance/chrominance space such as YCbCr before denoising, but this would make the noise distribution more complex in color images. The methods of \cite{mairal2008sparse,Zhu_2016_CVPR} process the joint patches concatenated by the corresponding patches in R, G, B channels and treat equally the patches in different channels. This would would generate false colors or artifacts \cite{mairal2008sparse}. The methods of \cite{Liu2008,noiseclinic,crosschannel2016} ignore the non-local self similarity property of natural images, and their performance would be largely depressed \cite{bm3d,wnnm}.
 
 In order to deal with the R, G, B channels in color images more effectively, different noise properties of different channels should be considered in solving real color image denoising problem. Besides, due to its expressive denoising performance, the WNNM model \cite{wnnm} is employed to exploit the NSS property of natural images. In this paper, we proposed a multi-channel WNNM model for real color image denoising. By introducing a weighting matrix to the WNNM model, the proposed multi-channel WNNM model no longer has closed-form solutions and more challenging to solve. By reformulating the proposed multi-channel WNNM model into a linear constrained program with two variables, the relaxed problem can be solved under the alternating direction method of multipliers (ADMM) \cite{admm} framework. Each variable can be updated with closed-form solution \cite{wnnm,lugsvt}. We also give the convergency resutls with detailed proof to guarantee a rational termination of the proposed algorithm. 
 
@@ -113,13 +113,90 @@ $\mathcal{S}_{\tau}(\bullet)$ is the generalized soft-thresholding operator with
 
 Though having achieved excallent performance on grayscale image denoising, the WNNM model would generate false colors or artifacts \cite{mairal2008sparse}, if being directly extended to real color image denoising by processing each channel seperately or joint vectors concatenated by multiple channels. In this paper, for real noisy image denoising, we propose a multi-channel WNNM model which preserve the power of WNNM and be able to process the differences among different channels.
 
-\subsection{Color Image Denoising}
-Existing methods \cite{nlm,ksvd,bm3d,epll,lssc,wnnm,pgpd,mlp,csf,chen2015learning} for grayscale image denoising could be trivially employed to color images by processing each channel separately. But this would achieve inferior performance than processing  jointly the multiple channels \cite{mairal2008sparse}. the CBM3D \cite{cbm3d} first transform the RGB image into luminance-chrominance color space (e.g., YCbCr) and perform BM3D \cite{bm3d} for each channels separately with the patches only being grouped in luminance channel. However, as pointed out in \cite{mairal2008sparse}, the performance would be largely reduced when compared to the performance of these methods on grayscale images. 
-This method \cite{mairal2008sparse} performs color image denoising by concatenating the patches in R, G, B channels into a single vector. However, the concatenation would generate false colors and artifacts \cite{mairal2008sparse}. The major reason is that the concatenation methods treat multiple channels equally and ignore the different properties among these channels. To better explore the difference and correlation among the three channels in color images, several methods \cite{crosschannel2016,Liu2008,almapg,Zhu_2016_CVPR,noiseclinic,ncwebsite,neatimage} have been proposed to deal with real noisy image denoising task. These methods often firstly estimate the parameters of the assumed noise model (usually Gaussian), and then perform denoising with the estimated noise model. In this paper, we propose a weighting matrix (diagonal) which add differents noise levels on different channels for color image denoising. The proposed multi-channel method are able to deal with the distinct noise property among these channels. Experiments will demonstrate that the proposed model achieves better results than other competing methods for color image denoising.
+\subsection{Real Color Image Denoising}
+During the last decade, several denoising methods are proposed for real color image denoising \cite{cbm3d,Liu2008,Zhu_2016_CVPR,noiseclinic}. Among them, the CBM3D \cite{cbm3d} first transform the RGB image into luminance-chrominance space (e.g., YCbCr) and then apply the famous BM3D method \cite{bm3d} on each channel separately with the patches being grouped only in the luminance channel. In \cite{Liu2008}, the authors proposed the ``Noise Level Function'' to eatimate and remove the noise for each channel in natural images. However, the methods processing each channel seperately would achieve inferior performance than processing jointly these channels \cite{mairal2008sparse}. The methods of \cite{noiseclinic,ncwebsite,Zhu_2016_CVPR} perform real color image denoising by concatenating the patches in R, G, B channels into joint vectors. However, the concatenation would treat each channel equally and ignore the different noise properties among these channels. The method in \cite{crosschannel2016} models the cross-channel noise in real noisy image as a multivariate Gaussian and the noise is removed by the Bayesian nonlocal means filter \cite{kervrann2007bayesian}. The commercial software Neat Image \cite{neatimage} estimates the noise parameters from a flat region of the given noisy image and filters the noise correspondingly. But these methods \cite{crosschannel2016,neatimage} ignore the non-local self similarity property of natural images \cite{bm3d,wnnm}. 
+
+In this paper, we introduce a weighting matrix which add differents weights to different channels for color image denoising. The proposed multi-channel method can effectively solve the problem of different noise structures among different channels.
 
 \section{Color Image Denoising via Multi-channel Weighted Nuclear Norm Minimization}
 
 \subsection{The Problem}
+\begin{figure*}
+\label{fa}
+\vspace{1mm}
+\centering
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_kodim23}}
+{\footnotesize (a) kodim23}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_kodim23_1}}
+{\footnotesize (b) kodim23: Red Channel}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_kodim23_2}}
+{\footnotesize (c) kodim23: Green Channel}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_kodim23_3}}
+{\footnotesize (d) kodim23: Blue Channel}
+\end{minipage}
+}\vspace{-4mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_Noisy_nSig402030_kodim23.png}}
+{\footnotesize (e) Noisy }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_Noisy_nSig402030_kodim23_1.png}}
+{\footnotesize (f) Noisy: Red Channel}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_Noisy_nSig402030_kodim23_2.png}}
+{\footnotesize (g) Noisy: Green Channel}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_Noisy_nSig402030_kodim23_3.png}}
+{\footnotesize (h) Noisy: Blue Channel}
+\end{minipage}
+}\vspace{-4mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_WNNM_nSig402030_lambda1_kodim23.png}}
+{\footnotesize (i) WNNM}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_WNNM_nSig402030_lambda1_kodim23_1.png}}
+{\footnotesize (j) WNNM: Red Channel}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_WNNM_nSig402030_lambda1_kodim23_2.png}}
+{\footnotesize (k) WNNM: Green Channel}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_WNNM_nSig402030_lambda1_kodim23_3.png}}
+{\footnotesize (l) WNNM: Blue Channel}
+\end{minipage}
+}\vspace{-1mm}
+\caption{The image ``kodim23'' of the Kodak PhotoCD dataset, its degraded version, and the image recovered by WNNM. The R, G, B channels are also listed here for image quality comparison.}
+\vspace{-2mm}
+\end{figure*}
+
+In Fig.\ \ref{fa}, we show the denoising results of WNNM \cite{wnnm} on a color image from the Kodak PhotoCD Dataset with synthetic additive white Gaussian noise. The noise added to the R, G, B channels are of standard derivations with $\sigma=40, 20, 30$.\ One can see that the WNNM method would se two methods do not perform well on this noisy image either. 
+
 In order to treat differently each channel in color images, we propose to add a weighting matrix to the original WNNM model and the resulting problem becomes
 \begin{equation}
 \min_{\mathbf{X}}\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}

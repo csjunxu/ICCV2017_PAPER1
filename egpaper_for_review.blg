@@ -6,43 +6,43 @@ Database file #1: egbib.bib
 Warning--I didn't find a database entry for ""
 You've used 28 entries,
             1791 wiz_defined-function locations,
-            603 strings with 7593 characters,
-and the built_in function-call counts, 7853 in all, are:
-= -- 750
+            603 strings with 7718 characters,
+and the built_in function-call counts, 7944 in all, are:
+= -- 762
 > -- 330
-< -- 11
+< -- 12
 + -- 120
 - -- 92
-* -- 531
-:= -- 1172
+* -- 528
+:= -- 1178
 add.period$ -- 85
 call.type$ -- 28
 change.case$ -- 28
 chr.to.int$ -- 0
 cite$ -- 28
-duplicate$ -- 346
-empty$ -- 698
+duplicate$ -- 355
+empty$ -- 703
 format.name$ -- 92
-if$ -- 1784
+if$ -- 1813
 int.to.chr$ -- 0
 int.to.str$ -- 28
 missing$ -- 26
 newline$ -- 144
 num.names$ -- 28
-pop$ -- 66
+pop$ -- 68
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 231
+skip$ -- 243
 stack$ -- 0
-substring$ -- 673
-swap$ -- 133
-text.length$ -- 11
+substring$ -- 680
+swap$ -- 142
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 82
+while$ -- 83
 width$ -- 30
 write$ -- 305
 (There was 1 warning)
