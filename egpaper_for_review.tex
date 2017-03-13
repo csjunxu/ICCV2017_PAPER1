@@ -1,5 +1,5 @@
 
-\documentclass[10pt,twocolumn,letterpaper]{article}
+\documentclass[10pt,twocolumn,letterpaper,sort&compress]{article}
 
 \usepackage{iccv}
 \usepackage{times}
@@ -17,7 +17,6 @@
 \DeclareMathOperator*{\argmin}{arg\,min}
 \usepackage{arydshln}
 \usepackage{latexsym}
-
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
@@ -65,8 +64,7 @@ First line of institution2 address\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-Most of existing image denoising methods focus on grayscale images which contain a single channel, while little attention has been paid to color images containing multiple channels. In order to apply the existing denoising methods to color images, commonly used strategies are: 1) to process separately the patches in R, G, B channels; or 2) to process jointly the patch vectors concatenated by corresponding patches in the R, G, B channels. However, both processing strategies would generate false colors or artifacts of the color images, which will definately lose a certain of information in the color images.
-In this paper, we propose a new multi-channel model for color image denoising. We also concatenate the patches in the same positions of R, G ,B channels to form joint patch vectors. In the data term, we employ the weighted Frobinous norm, in which we add a weighting matrix to adaptively deal with different channels with different weights. For each concatenated patch, we search its non-local similar patches to it and form the patch matrix. To fully exploit the low rank property of the non-local similar patches, we employ the well-defined weighted nuclear norm as the regularization term. The resulting multi-channel weighted nuclear norm minimization model is much more complex than the original weighted nuclear norm minimization (WNNM) model. We transform the proposed model into a linear constrained non-convex optimization problem, which can be solved by the alternating direction method of multipliers (ADMM) algorithm. For each alternative updating step, the problem has closed-form solution. We also proof that the proposed algorithm has convergence results. The proposed model has been evaluated on color image denosing problem. Experiments on benchmark datasets demonstrate that the proposed model outperforms state-of-the-art denoising methods on synthetic as well as real-world noisy images.
+Most existing denoising methods focus on grayscale images.\ Extending these methods to their color version are commonly by processing separately the patches in R, G, B channels or jointly the patches concatenated by corresponding patches in these channels.\ However, both strategies would generate artifacts since they treat equally each channel of the color images.\ In this paper, we propose a multi-channel optimization model for color image denoising.\ Specifically, we introduce a weighting matrix into the data term to process adaptively different parts of the joint patches.\ In the regularization term, we employ the weighted nuclear norm to exploit the non-local self similar property.\ The proposed multi-channel weighted nuclear norm minimization (WNNM) model is much more complex than the standard WNNM model.\ We reformulate the proposed model into a linear constrained optimization problem and solve it by the alternating direction method of multipliers algorithm.\ Each alternative updating step has closed-form solution and the convergence results are given.\ Experiments on benchmark datasets demonstrate that the proposed model outperforms state-of-the-art denoising methods on synthetic as well as real-world noisy images.
 \end{abstract}
 
 \section{Introduction}
@@ -75,8 +73,6 @@ Image denoising is an important problem in enhancing the image quality in comput
 There are several work  \cite{cbm3d,mairal2008sparse,almapg,noiseclinic,crosschannel2016,Zhu_2016_CVPR} proposed specifically for color image denoising. These methods either treat equally the R, G, B channels in color images \cite{cbm3d,mairal2008sparse,almapg} or ignore the non-local self similarity property of natural images \cite{noiseclinic,crosschannel2016,Zhu_2016_CVPR}. On one hand, since the noise structures and levels among the R, G, B channels in color images are quite different due to the processing steps, such as demosaicing, white balance, etc., of in-camera imaging pipelines \cite{karaimer_brown_ECCV_2016}, the methods treating each channel equally would generate false colors or artifacts \cite{mairal2008sparse}. In order to deal with the R, G, B channels in color images more effectively, different noise properties of these channels should be considered in denoising color images, especially real noisy images. On the other hand, the performance of existing denoising methods would be largely depressed if the non-local self similarity property of natural images is ignored \cite{bm3d,wnnm}. This can be validated by the success of the state-of-the-art denoising methods \cite{bm3d,lssc,wnnm,pgpd} which all exployed the non-local self similarity (NSS) property of natural images in different ways.
 
 Recently, the weighted nuclear norm minimization method (WNNM) \cite{wnnm} is among the most successful methods on image denoising task which employ the NSS property o f natural images. In this paper, we proposed a noval multi-channel WNNM model for color image denoising by intorducing a weighting matrix to the WNNM method. However, if we add a weighting matrix $\mathbf{W}$ to the WNNM model, the resulting multi-channel WNNM model no longer has closed-form solutions as WNNM. This makes the proposed model more challenging to solve. To solve this problem, we reformulate the proposed multi-channel WNNM problem into a linear constrained non-convex program with two variables. And the relaxed problem can be solved by employing the alternating direction method of multipliers (ADMM) \cite{admm}. Each variable can be updated with closed-form solution \cite{wnnm,lugsvt}. The convergency resutls with detailed proof are given to guarantee a rational termination of the proposed model. 
-
-
 
 \section{Related Work}
 
