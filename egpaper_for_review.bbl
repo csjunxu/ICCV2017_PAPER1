@@ -12,23 +12,11 @@ K.~Dabov, A.~Foi, V.~Katkovnik, and K.~Egiazarian.
   filtering.
 \newblock {\em IEEE Transactions on Image Processing}, 16(8):2080--2095, 2007.
 
-\bibitem{foe}
-S.~Roth and M.~J. Black.
-\newblock Fields of experts.
-\newblock {\em International Journal of Computer Vision}, 82(2):205--229, 2009.
-
 \bibitem{ksvd}
 M.~Elad and M.~Aharon.
 \newblock Image denoising via sparse and redundant representations over learned
   dictionaries.
 \newblock {\em IEEE Transactions on Image Processing}, 15(12):3736--3745, 2006.
-
-\bibitem{epll}
-D.~Zoran and Y.~Weiss.
-\newblock From learning models of natural image patches to whole image
-  restoration.
-\newblock {\em IEEE International Conference on Computer Vision (ICCV)}, pages
-  479--486, 2011.
 
 \bibitem{lssc}
 J.~Mairal, F.~Bach, J.~Ponce, G.~Sapiro, and A.~Zisserman.
@@ -55,6 +43,18 @@ S.~Gu, L.~Zhang, W.~Zuo, and X.~Feng.
 \newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, pages 2862--2869, 2014.
 
+\bibitem{foe}
+S.~Roth and M.~J. Black.
+\newblock Fields of experts.
+\newblock {\em International Journal of Computer Vision}, 82(2):205--229, 2009.
+
+\bibitem{epll}
+D.~Zoran and Y.~Weiss.
+\newblock From learning models of natural image patches to whole image
+  restoration.
+\newblock {\em IEEE International Conference on Computer Vision (ICCV)}, pages
+  479--486, 2011.
+
 \bibitem{mlp}
 H.~C. Burger, C.~J. Schuler, and S.~Harmeling.
 \newblock Image denoising: Can plain neural networks compete with {BM3D}?
@@ -74,10 +74,15 @@ Y.~Chen, W.~Yu, and T.~Pock.
 \newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, pages 5261--5269, 2015.
 
+\bibitem{karaimer_brown_ECCV_2016}
+H.~C. Karaimer and M.~S. Brown.
+\newblock A software platform for manipulating the camera imaging pipeline.
+\newblock {\em European Conference on Computer Vision (ECCV)}, October 2016.
+
 \bibitem{mairal2008sparse}
 Julien Mairal, Michael Elad, and Guillermo Sapiro.
 \newblock Sparse representation for color image restoration.
-\newblock {\em IEEE Transactions on image processing}, 17(1):53--69, 2008.
+\newblock {\em IEEE Transactions on Image Processing}, 17(1):53--69, 2008.
 
 \bibitem{cbm3d}
 K.~Dabov, A.~Foi, V.~Katkovnik, and K.~Egiazarian.
@@ -86,10 +91,11 @@ K.~Dabov, A.~Foi, V.~Katkovnik, and K.~Egiazarian.
 \newblock {\em IEEE International Conference on Image Processing (ICIP)}, pages
   313--316, 2007.
 
-\bibitem{almapg}
-Z.~Gong, Z.~Shen, and K.-C. Toh.
-\newblock Image restoration with mixed or unknown noises.
-\newblock {\em Multiscale Modeling \& Simulation}, 12(2):458--487, 2014.
+\bibitem{Liu2008}
+C.~Liu, R.~Szeliski, S.~Bing Kang, C.~L. Zitnick, and W.~T. Freeman.
+\newblock Automatic estimation and removal of noise from a single image.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  30(2):299--314, 2008.
 
 \bibitem{noiseclinic}
 M.~Lebrun, M.~Colom, and J.-M. Morel.
@@ -109,85 +115,37 @@ F.~Zhu, G.~Chen, and P.-A. Heng.
 \newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, June 2016.
 
-\bibitem{karaimer_brown_ECCV_2016}
-Hakki~Can Karaimer and Michael~S. Brown.
-\newblock A software platform for manipulating the camera imaging pipeline.
-\newblock {\em European Conference on Computer Vision (ECCV)}, October 2016.
-
 \bibitem{admm}
-Stephen Boyd, Neal Parikh, Eric Chu, Borja Peleato, and Jonathan Eckstein.
+S.~Boyd, N.~Parikh, E.~Chu, B.~Peleato, and J.~Eckstein.
 \newblock Distributed optimization and statistical learning via the alternating
   direction method of multipliers.
 \newblock {\em Found. Trends Mach. Learn.}, 3(1):1--122, January 2011.
 
 \bibitem{lugsvt}
-Canyi Lu, Changbo Zhu, Chunyan Xu, Shuicheng Yan, and Zhouchen Lin.
+C.~Lu, C.~Zhu, C.~Xu, S.~Yan, and Z.~Lin.
 \newblock Generalized singular value thresholding.
 \newblock {\em AAAI}, 2015.
 
-\bibitem{Guaranteed}
-Benjamin Recht, Maryam Fazel, and Pablo~A. Parrilo.
-\newblock Guaranteed minimum-rank solutions of linear matrix equations via
-  nuclear norm minimization.
-\newblock {\em SIAM Review}, 52(3):471--501, 2010.
-
-\bibitem{fazelPhDthesis}
-Maryam Fazel.
-\newblock Matrix rank minimization with applications.
-\newblock {\em PhD thesis, Stanford University}, 2002.
-
-\bibitem{srebro2003weighted}
-Nathan Srebro, Tommi Jaakkola, et~al.
-\newblock Weighted low-rank approximations.
-\newblock {\em ICML}, 3(2003):720--727, 2003.
-
 \bibitem{cai2010singular}
-Jian-Feng Cai, Emmanuel~J Cand{\`e}s, and Zuowei Shen.
+J.~Cai, E.~J. Cand{\`e}s, and Z.~Shen.
 \newblock A singular value thresholding algorithm for matrix completion.
 \newblock {\em SIAM Journal on Optimization}, 20(4):1956--1982, 2010.
 
-\bibitem{candes2011robust}
-Emmanuel~J Cand{\`e}s, Xiaodong Li, Yi~Ma, and John Wright.
-\newblock Robust principal component analysis?
-\newblock {\em Journal of the ACM (JACM)}, 58(3):11, 2011.
-
-\bibitem{lin2011linearized}
-Zhouchen Lin, Risheng Liu, and Zhixun Su.
-\newblock Linearized alternating direction method with adaptive penalty for
-  low-rank representation.
-\newblock {\em Advances in neural information processing systems}, pages
-  612--620, 2011.
-
-\bibitem{eckart1936approximation}
-Carl Eckart and Gale Young.
-\newblock The approximation of one matrix by another of lower rank.
-\newblock {\em Psychometrika}, 1(3):211--218, 1936.
-
-\bibitem{tnnm}
-Y.~Hu, D.~Zhang, J.~Ye, X.~Li, and X.~He.
-\newblock Fast and accurate matrix completion via truncated nuclear norm
-  regularization.
-\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  35(9):2117--2130, Sept 2013.
-
-\bibitem{PartialSum}
-T.~H. Oh, Y.~W. Tai, J.~C. Bazin, H.~Kim, and I.~S. Kweon.
-\newblock Partial sum minimization of singular values in robust pca: Algorithm
-  and applications.
-\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  38(4):744--758, April 2016.
-
 \bibitem{wnnmijcv}
-Shuhang Gu, Qi~Xie, Deyu Meng, Wangmeng Zuo, Xiangchu Feng, and Lei Zhang.
+S.~Gu, Q.~Xie, D.~Meng, W.~Zuo, X.~Feng, and L.~Zhang.
 \newblock Weighted nuclear norm minimization and its applications to low level
   vision.
 \newblock {\em International Journal of Computer Vision}, pages 1--26, 2016.
 
-\bibitem{Liu2008}
-C.~Liu, R.~Szeliski, S.~Bing Kang, C.~L. Zitnick, and W.~T. Freeman.
-\newblock Automatic estimation and removal of noise from a single image.
-\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  30(2):299--314, 2008.
+\bibitem{eckart1936approximation}
+C.~Eckart and G.~Young.
+\newblock The approximation of one matrix by another of lower rank.
+\newblock {\em Psychometrika}, 1(3):211--218, 1936.
+
+\bibitem{almapg}
+Z.~Gong, Z.~Shen, and K.-C. Toh.
+\newblock Image restoration with mixed or unknown noises.
+\newblock {\em Multiscale Modeling \& Simulation}, 12(2):458--487, 2014.
 
 \bibitem{ncwebsite}
 M.~Lebrun, M.~Colom, and J.~M. Morel.
@@ -201,7 +159,7 @@ Neatlab ABSoft.
 \newblock \url{https://ni.neatvideo.com/home}.
 
 \bibitem{nearcor}
-Nicholas~J. Higham.
+N.~J. Higham.
 \newblock Computing the nearest correlation matrix—a problem from finance.
 \newblock {\em IMA Journal of Numerical Analysis}, 22(3):329, 2002.
 

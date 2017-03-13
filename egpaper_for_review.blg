@@ -4,45 +4,45 @@ The top-level auxiliary file: egpaper_for_review.aux
 The style file: unsrt.bst
 Database file #1: egbib.bib
 Warning--I didn't find a database entry for ""
-You've used 35 entries,
+You've used 28 entries,
             1791 wiz_defined-function locations,
-            647 strings with 8819 characters,
-and the built_in function-call counts, 9589 in all, are:
-= -- 901
-> -- 415
-< -- 12
-+ -- 151
-- -- 116
-* -- 669
-:= -- 1450
-add.period$ -- 106
-call.type$ -- 35
-change.case$ -- 35
+            603 strings with 7593 characters,
+and the built_in function-call counts, 7853 in all, are:
+= -- 750
+> -- 330
+< -- 11
++ -- 120
+- -- 92
+* -- 531
+:= -- 1172
+add.period$ -- 85
+call.type$ -- 28
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 417
-empty$ -- 858
-format.name$ -- 116
-if$ -- 2167
+cite$ -- 28
+duplicate$ -- 346
+empty$ -- 698
+format.name$ -- 92
+if$ -- 1784
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 33
-newline$ -- 179
-num.names$ -- 35
-pop$ -- 77
+int.to.str$ -- 28
+missing$ -- 26
+newline$ -- 144
+num.names$ -- 28
+pop$ -- 66
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 264
+skip$ -- 231
 stack$ -- 0
-substring$ -- 805
-swap$ -- 149
-text.length$ -- 12
+substring$ -- 673
+swap$ -- 133
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 98
-width$ -- 37
-write$ -- 381
+while$ -- 82
+width$ -- 30
+write$ -- 305
 (There was 1 warning)
