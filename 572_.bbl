@@ -160,6 +160,17 @@ Neatlab ABSoft.
 \newblock Neat {I}mage.
 \newblock \url{https://ni.neatvideo.com/home}.
 
+\bibitem{noiselevel}
+X.~Liu, M.~Tanaka, and M.~Okutomi.
+\newblock Single-image noise level estimation for blind denoising.
+\newblock {\em IEEE Transactions on Image Processing}, 22(12):5226--5237, 2013.
+
+\bibitem{Chen2015ICCV}
+G.~Chen, F.~Zhu, and A.~H. Pheng.
+\newblock An efficient statistical method for image noise level estimation.
+\newblock {\em IEEE International Conference on Computer Vision (ICCV)},
+  December 2015.
+
 \bibitem{nearcor}
 N.~J. Higham.
 \newblock Computing the nearest correlation matrix—a problem from finance.
