@@ -382,11 +382,11 @@ where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the pe
 \mathbf{X}_{k+1}
 =
 \arg\min_{\mathbf{X}}
-\|\mathbf{W}\mathbf{Y} - \mathbf{W}\mathbf{X}\|_{F}^{2} 
+\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2} 
 +
 \frac{\rho_{k}}{2}\|\mathbf{X} - \mathbf{Z}_{k} + \rho_{k}^{-1}\mathbf{A}_{k}||_{F}^{2}
 \end{equation}
-This is a mixed weighted least square and standard least square problem and we could derive its closed-form solution:
+This is a least squares regression problem with closed-form solution:
 \vspace{-3mm}
 \begin{equation}
 \label{e14}
@@ -629,6 +629,8 @@ where $\mathbf{U}_{k-1}\mathbf{\Sigma}_{k-1}\mathbf{V}_{k-1}^{\top}$ is the SVD 
 We evaluate the proposed MC-WNNM method on synthetic and real color image denoising. We compare the proposed method with other state-of-the-art denoising methods including CBM3D \cite{bm3d,cbm3d}, MLP \cite{mlp}, WNNM \cite{wnnm}, TNRD \cite{chen2015learning}, ``Noise Clinic'' \cite{noiseclinic,ncwebsite}, and the commercial software Neat Image \cite{neatimage}.
 
 \subsection{Implementation Details}
+
+Assume the noise levels in R, G ,B channels are known as $\sigma_{r}, \sigma_{g}, \sigma_{b}$. For the CBM3D method \cite{cbm3d}, the input noise levels are the Root Mean Square (RMS) as $\sigma = \sqrt{(\sigma_{r}^{2}+\sigma_{g}^{2}+\sigma_{b}^{2})/3}$. For the methods of MLP \cite{mlp} and TNRD \cite{chen2015learning}, we retrain the models on grayscale images following their corresponding strategies at different noise levels from $\sigma=10$ to $\sigma=75$ with gap of $5$. The denoising on color images is performed by processing each channel with the model trained at the nearest or equal noise levels 
 
 In order to take fully comparison with the original WNNM method, we extended the WNNM method \cite{wnnmijcv} in three directions. The first is to apply the WNNM method on each channel separately and we still call this method ``WNNM''. The second is to concatenate the corresponding patches in the R, G, B channels into a joint patch and perform denoising in a joint manner. We call this method ``WNNM1''. Note that both ``WNNM'' and ``WNNM1'' have closed form solutions since they are directly extended from the original WNNM. The third is to set the weighting matrix $\mathbf{W}$ in the proposed multi-channel WNNM model as $\mathbf{W}=\sigma_{n}^{2}\mathbf{I}$. This is to more clearly validate the effectiveness of the weighting matrix by reducing the multi-channel WNNM model to its special case: the WNNM model solved by ADMM algorithm. We call this method ``WNNM2''. We set the same parameters settings for the ``WNNM2'' method and the proposed multi-channel WNNM method (called ``Proposed''). For fair comparison, for ``WNNM'', the corresponding noise levels $\sigma_{c}$ of the $c$ ($c=r, g, b$) channel is input as known parameter;  for ``WNNM1'', we input the noise level as $\sigma = \sqrt{(\sigma_{r}^{2}+\sigma_{g}^{2}+\sigma_{b}^{2})/3}$ and tune the other parameters to achieve its best denoising performance (i.e., highest average PSNR results); for ``WNNM2'', we employ the same parameter settings as the proposed multi-channel WNNM method, which will be introduced in details in the following sections.
 

@@ -55,6 +55,9 @@
 \backcite {noiseclinic}{{5}{4}{section.4}}
 \backcite {ncwebsite}{{5}{4}{section.4}}
 \backcite {neatimage}{{5}{4}{section.4}}
+\backcite {cbm3d}{{5}{4.1}{subsection.4.1}}
+\backcite {mlp}{{5}{4.1}{subsection.4.1}}
+\backcite {chen2015learning}{{5}{4.1}{subsection.4.1}}
 \backcite {wnnmijcv}{{5}{4.1}{subsection.4.1}}
 \backcite {wnnm}{{5}{4.2}{subsection.4.2}}
 \backcite {mlp}{{5}{4.2}{subsection.4.2}}
@@ -62,13 +65,13 @@
 \backcite {cbm3d}{{5}{4.2}{subsection.4.2}}
 \backcite {noiseclinic}{{5}{4.2}{subsection.4.2}}
 \backcite {neatimage}{{5}{4.2}{subsection.4.2}}
-\backcite {bm3d}{{5}{4.2}{subsection.4.2}}
-\backcite {mlp}{{5}{4.2}{subsection.4.2}}
-\backcite {chen2015learning}{{5}{4.2}{subsection.4.2}}
-\backcite {noiseclinic}{{5}{4.2}{subsection.4.2}}
-\backcite {ncwebsite}{{5}{4.2}{subsection.4.2}}
-\backcite {neatimage}{{5}{4.2}{subsection.4.2}}
-\backcite {wnnmijcv}{{5}{4.2}{subsection.4.2}}
+\backcite {bm3d}{{6}{4.2}{subsection.4.2}}
+\backcite {mlp}{{6}{4.2}{subsection.4.2}}
+\backcite {chen2015learning}{{6}{4.2}{subsection.4.2}}
+\backcite {noiseclinic}{{6}{4.2}{subsection.4.2}}
+\backcite {ncwebsite}{{6}{4.2}{subsection.4.2}}
+\backcite {neatimage}{{6}{4.2}{subsection.4.2}}
+\backcite {wnnmijcv}{{6}{4.2}{subsection.4.2}}
 \backcite {crosschannel2016}{{6}{4.3}{subsection.4.3}}
 \backcite {crosschannel2016}{{6}{4.3}{subsection.4.3}}
 \backcite {crosschannel2016}{{6}{4.3}{subsection.4.3}}
@@ -82,7 +85,6 @@
 \backcite {crosschannel2016}{{6}{4.3}{subsection.4.3}}
 \backcite {crosschannel2016}{{6}{4.3}{subsection.4.3}}
 \backcite {crosschannel2016}{{6}{4.3}{subsection.4.3}}
-\backcite {nearcor}{{6}{5}{section.5}}
 \backcite {crosschannel2016}{{7}{3(a)}{subfigure.3.1}}
 \backcite {bm3d}{{7}{3(a)}{subfigure.3.1}}
 \backcite {cbm3d}{{7}{3(a)}{subfigure.3.1}}
@@ -95,6 +97,7 @@
 \backcite {crosschannel2016}{{7}{3(b)}{subfigure.3.2}}
 \backcite {crosschannel2016}{{7}{3(b)}{subfigure.3.2}}
 \backcite {crosschannel2016}{{7}{3}{figure.caption.6}}
+\backcite {nearcor}{{7}{5}{section.5}}
 \backcite {crosschannel2016}{{8}{4}{table.caption.8}}
 \backcite {crosschannel2016}{{8}{4}{figure.caption.7}}
 \backcite {crosschannel2016}{{9}{5(a)}{subfigure.5.1}}
