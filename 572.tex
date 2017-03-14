@@ -841,6 +841,7 @@ Image\#
 \hline
 \end{tabular}
 \end{center}
+\vspace{-3mm}
 \end{table*}
 
 \begin{figure*}\vspace{1mm}
@@ -848,58 +849,58 @@ Image\#
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_Noisy_5dmark3_iso3200_1_real.png}}
-{\footnotesize (a) Noisy  \cite{crosschannel2016}: 37.00dB }
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_Noisy_nSig402030_kodim07.png}}
+{\footnotesize (a) Noisy kodim07: 37.00dB }
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_CBM3D_5dmark3_iso3200_1_real.png}}
-{\footnotesize (b) CBM3D \cite{bm3d,cbm3d}: 37.02dB}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_CBM3D_nSig402030_kodim07.png}}
+{\footnotesize (b) CBM3D \cite{cbm3d}: 37.02dB}
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_WNNM_5dmark3_iso3200_1_real.png}}
-{\footnotesize (c) WNNM \cite{wnnm}: 37.01dB}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_MLP_nSig402030_kodim07.png}}
+{\footnotesize (c) MLP \cite{mlp}: 37.01dB}
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_MLP_5dmark3_iso3200_1_real.png}}
-{\footnotesize (d) MLP \cite{mlp}: 33.90dB }
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_TNRD_nSig402030_kodim07.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}: 33.90dB }
 \end{minipage}
 \centering
 \begin{minipage}[t]{0.195\textwidth}
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_TRD_5dmark3_iso3200_1_real.png}}
-{\footnotesize (e) TNRD \cite{chen2015learning}: 36.18dB  } 
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_NC_nSig402030_kodim07.png}}
+{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 36.18dB  } 
 \end{minipage}
 }\vspace{-3mm}
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_NI_5dmark3_iso3200_1_real.png}}
-{\footnotesize (f) NI \cite{neatimage}: 37.68dB  }
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNMCW_nSig402030_kodim07.png}}
+{\footnotesize (f) WNNM0: 37.68dB  }
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_NC_5dmark3_iso3200_1_real.png}}
-{\footnotesize (g) NC \cite{noiseclinic,ncwebsite}: 38.76dB  }
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNMJ_nSig402030_kodim07.png}}
+{\footnotesize (g) WNNM1: 38.76dB  }
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_CCNoise_5dmark3_iso3200_1.png}}
-{\footnotesize (h) CC \cite{crosschannel2016}: 38.37dB }
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNM_ADMM_nSig402030_kodim07.png}}
+{\footnotesize (h) WNNM2: 38.37dB }
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_Guided_5dmark3_iso3200_1_real.png}}
-{\footnotesize (i) Ours: \textbf{40.50}dB}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNM_ADMM_nSig402030_kodim07.png}}
+{\footnotesize (i) MC-WNNM: \textbf{40.50}dB}
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{images/resize_br_Mean_5dmark3_iso3200_1_real.png}}
-{\footnotesize (j) Mean Image \cite{crosschannel2016}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_kodim07.png}}
+{\footnotesize (j) kodim07}
 \end{minipage}
 }\vspace{-0.5mm}
-\caption{Denoised images of a region cropped from the real noisy image ``Canon 5D Mark 3 ISO 3200 1" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
+\caption{Denoised images of different methods on the image ``kodim07'' degraded by noise with different levels on different channels. The images are better to be zoomed in on screen.}
 \label{f3}
 \vspace{-3mm}
 \end{figure*}
@@ -959,7 +960,7 @@ Image\#
 }\vspace{-1mm}
 \caption{The 15 cropped real noisy images used in \cite{crosschannel2016}.}
 \label{f4}
-\vspace{-2mm}
+\vspace{-3mm}
 \end{figure}
 
 \subsection{Experiments on Real Noisy Images}
