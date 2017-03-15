@@ -74,6 +74,19 @@ Y.~Chen, W.~Yu, and T.~Pock.
 \newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, pages 5261--5269, 2015.
 
+\bibitem{Leungtip}
+B.~Leung, G.~Jeon, and E.~Dubois.
+\newblock Least-squares luma-chroma demultiplexing algorithm for bayer
+  demosaicking.
+\newblock {\em IEEE Transactions on Image Processing}, 20(7):1885--1894, 2011.
+
+\bibitem{crosschannel2016}
+S.~Nam, Y.~Hwang, Y.~Matsushita, and S.~J. Kim.
+\newblock A holistic approach to cross-channel image noise modeling and its
+  application to image denoising.
+\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 1683--1691, 2016.
+
 \bibitem{karaimer_brown_ECCV_2016}
 H.~C. Karaimer and M.~S. Brown.
 \newblock A software platform for manipulating the camera imaging pipeline.
@@ -101,13 +114,6 @@ C.~Liu, R.~Szeliski, S.~Bing Kang, C.~L. Zitnick, and W.~T. Freeman.
 M.~Lebrun, M.~Colom, and J.-M. Morel.
 \newblock Multiscale image blind denoising.
 \newblock {\em IEEE Transactions on Image Processing}, 24(10):3149--3161, 2015.
-
-\bibitem{crosschannel2016}
-S.~Nam, Y.~Hwang, Y.~Matsushita, and S.~J. Kim.
-\newblock A holistic approach to cross-channel image noise modeling and its
-  application to image denoising.
-\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
-  (CVPR)}, pages 1683--1691, 2016.
 
 \bibitem{Zhu_2016_CVPR}
 F.~Zhu, G.~Chen, and P.-A. Heng.
