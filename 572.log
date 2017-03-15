@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  15 MAR 2017 08:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  15 MAR 2017 08:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,84 +839,86 @@ Overfull \hbox (3.94023pt too wide) in paragraph at lines 665--726
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 746.
 
-<comparea/resize_br_Noisy_nSig402030_kodim07.png, id=248, 309.155pt x 205.76875
+<comparea/resize_br_Noisy_nSig402030_kodim21.png, id=248, 309.155pt x 205.76875
 pt>
-File: comparea/resize_br_Noisy_nSig402030_kodim07.png Graphic file (type png)
- <use comparea/resize_br_Noisy_nSig402030_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_Noisy_nSig402030_kodim07.png used o
+File: comparea/resize_br_Noisy_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_Noisy_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_Noisy_nSig402030_kodim21.png used o
 n input line 873.
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
 
-<comparea/resize_br_CBM3D_nSig402030_kodim07.png, id=249, 309.155pt x 205.76875
+<comparea/resize_br_CBM3D_nSig402030_kodim21.png, id=249, 309.155pt x 205.76875
 pt>
-File: comparea/resize_br_CBM3D_nSig402030_kodim07.png Graphic file (type png)
- <use comparea/resize_br_CBM3D_nSig402030_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_CBM3D_nSig402030_kodim07.png used o
+File: comparea/resize_br_CBM3D_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_CBM3D_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_CBM3D_nSig402030_kodim21.png used o
 n input line 873.
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
 
-<comparea/resize_br_MLP_nSig402030_kodim07.png, id=251, 309.155pt x 205.76875pt
+<comparea/resize_br_MLP_nSig402030_kodim21.png, id=251, 309.155pt x 205.76875pt
 >
-File: comparea/resize_br_MLP_nSig402030_kodim07.png Graphic file (type png)
- <use comparea/resize_br_MLP_nSig402030_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_MLP_nSig402030_kodim07.png used on 
+File: comparea/resize_br_MLP_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_MLP_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_MLP_nSig402030_kodim21.png used on 
 input line 873.
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
 
-<comparea/resize_br_TNRD_nSig402030_kodim07.png, id=253, 309.155pt x 205.76875p
+<comparea/resize_br_TNRD_nSig402030_kodim21.png, id=253, 309.155pt x 205.76875p
 t>
-File: comparea/resize_br_TNRD_nSig402030_kodim07.png Graphic file (type png)
- <use comparea/resize_br_TNRD_nSig402030_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_TNRD_nSig402030_kodim07.png used on
+File: comparea/resize_br_TNRD_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_TNRD_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_TNRD_nSig402030_kodim21.png used on
  input line 873.
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
 
-<comparea/resize_br_NC_nSig402030_kodim07.png, id=255, 309.155pt x 205.76875pt>
-File: comparea/resize_br_NC_nSig402030_kodim07.png Graphic file (type png)
-<use comparea/resize_br_NC_nSig402030_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_NC_nSig402030_kodim07.png used on i
+<comparea/resize_br_NC_nSig402030_kodim21.png, id=255, 309.155pt x 205.76875pt>
+File: comparea/resize_br_NC_nSig402030_kodim21.png Graphic file (type png)
+<use comparea/resize_br_NC_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_NC_nSig402030_kodim21.png used on i
 nput line 873.
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
 
-<comparea/resize_br_WNNMCW_nSig402030_kodim07.png, id=258, 309.155pt x 205.7687
+<comparea/resize_br_WNNMCW_nSig402030_kodim21.png, id=258, 309.155pt x 205.7687
 5pt>
-File: comparea/resize_br_WNNMCW_nSig402030_kodim07.png Graphic file (type png)
- <use comparea/resize_br_WNNMCW_nSig402030_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_WNNMCW_nSig402030_kodim07.png used 
+File: comparea/resize_br_WNNMCW_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_WNNMCW_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_WNNMCW_nSig402030_kodim21.png used 
 on input line 900.
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
 
-<comparea/resize_br_WNNMJ_nSig402030_kodim07.png, id=259, 309.155pt x 205.76875
+<comparea/resize_br_WNNMJ_nSig402030_kodim21.png, id=259, 309.155pt x 205.76875
 pt>
-File: comparea/resize_br_WNNMJ_nSig402030_kodim07.png Graphic file (type png)
- <use comparea/resize_br_WNNMJ_nSig402030_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_WNNMJ_nSig402030_kodim07.png used o
+File: comparea/resize_br_WNNMJ_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_WNNMJ_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_WNNMJ_nSig402030_kodim21.png used o
 n input line 900.
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
 
-<comparea/resize_br_WNNM_ADMM_nSig402030_kodim07.png, id=260, 309.155pt x 205.7
+<comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png, id=260, 309.155pt x 205.7
 6875pt>
-File: comparea/resize_br_WNNM_ADMM_nSig402030_kodim07.png Graphic file (type pn
+File: comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png Graphic file (type pn
 g)
- <use comparea/resize_br_WNNM_ADMM_nSig402030_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_WNNM_ADMM_nSig402030_kodim07.png us
+ <use comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png us
 ed on input line 900.
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-File: comparea/resize_br_WNNM_ADMM_nSig402030_kodim07.png Graphic file (type pn
-g)
 
-<use comparea/resize_br_WNNM_ADMM_nSig402030_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_WNNM_ADMM_nSig402030_kodim07.png us
-ed on input line 900.
+<comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png, id=261, 309.155pt x 205.
+76875pt>
+File: comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png Graphic file (type p
+ng)
+ <use comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png u
+sed on input line 900.
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 900.
 
-<comparea/resize_br_kodim07.png, id=261, 309.155pt x 205.76875pt>
-File: comparea/resize_br_kodim07.png Graphic file (type png)
+<comparea/resize_br_kodim21.png, id=262, 309.155pt x 205.76875pt>
+File: comparea/resize_br_kodim21.png Graphic file (type png)
 
-<use comparea/resize_br_kodim07.png>
-Package pdftex.def Info: comparea/resize_br_kodim07.png used on input line 900.
+<use comparea/resize_br_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_kodim21.png used on input line 900.
 
 (pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
 
@@ -930,7 +932,7 @@ Overfull \hbox (2.59673pt too wide) in paragraph at lines 873--901
  []
 
 
-<CC15images/resize_5dmark3_iso3200_1_real.png, id=262, 205.76875pt x 205.76875p
+<CC15images/resize_5dmark3_iso3200_1_real.png, id=263, 205.76875pt x 205.76875p
 t>
 File: CC15images/resize_5dmark3_iso3200_1_real.png Graphic file (type png)
  <use CC15images/resize_5dmark3_iso3200_1_real.png>
@@ -938,7 +940,7 @@ Package pdftex.def Info: CC15images/resize_5dmark3_iso3200_1_real.png used on i
 nput line 924.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_5dmark3_iso3200_2_real.png, id=263, 205.76875pt x 205.76875p
+<CC15images/resize_5dmark3_iso3200_2_real.png, id=264, 205.76875pt x 205.76875p
 t>
 File: CC15images/resize_5dmark3_iso3200_2_real.png Graphic file (type png)
  <use CC15images/resize_5dmark3_iso3200_2_real.png>
@@ -946,7 +948,7 @@ Package pdftex.def Info: CC15images/resize_5dmark3_iso3200_2_real.png used on i
 nput line 924.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_5dmark3_iso3200_3_real.png, id=264, 205.76875pt x 205.76875p
+<CC15images/resize_5dmark3_iso3200_3_real.png, id=265, 205.76875pt x 205.76875p
 t>
 File: CC15images/resize_5dmark3_iso3200_3_real.png Graphic file (type png)
  <use CC15images/resize_5dmark3_iso3200_3_real.png>
@@ -954,7 +956,7 @@ Package pdftex.def Info: CC15images/resize_5dmark3_iso3200_3_real.png used on i
 nput line 924.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d600_iso3200_1_real.png, id=265, 205.76875pt x 205.76875pt>
+<CC15images/resize_d600_iso3200_1_real.png, id=266, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d600_iso3200_1_real.png Graphic file (type png)
 
 <use CC15images/resize_d600_iso3200_1_real.png>
@@ -962,7 +964,7 @@ Package pdftex.def Info: CC15images/resize_d600_iso3200_1_real.png used on inpu
 t line 924.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d600_iso3200_2_real.png, id=266, 205.76875pt x 205.76875pt>
+<CC15images/resize_d600_iso3200_2_real.png, id=267, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d600_iso3200_2_real.png Graphic file (type png)
 
 <use CC15images/resize_d600_iso3200_2_real.png>
@@ -970,7 +972,7 @@ Package pdftex.def Info: CC15images/resize_d600_iso3200_2_real.png used on inpu
 t line 924.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d600_iso3200_3_real.png, id=267, 205.76875pt x 205.76875pt>
+<CC15images/resize_d600_iso3200_3_real.png, id=268, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d600_iso3200_3_real.png Graphic file (type png)
 
 <use CC15images/resize_d600_iso3200_3_real.png>
@@ -978,7 +980,7 @@ Package pdftex.def Info: CC15images/resize_d600_iso3200_3_real.png used on inpu
 t line 941.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d800_iso1600_1_real.png, id=268, 205.76875pt x 205.76875pt>
+<CC15images/resize_d800_iso1600_1_real.png, id=269, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d800_iso1600_1_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso1600_1_real.png>
@@ -986,7 +988,7 @@ Package pdftex.def Info: CC15images/resize_d800_iso1600_1_real.png used on inpu
 t line 941.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d800_iso1600_2_real.png, id=269, 205.76875pt x 205.76875pt>
+<CC15images/resize_d800_iso1600_2_real.png, id=270, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d800_iso1600_2_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso1600_2_real.png>
@@ -994,7 +996,7 @@ Package pdftex.def Info: CC15images/resize_d800_iso1600_2_real.png used on inpu
 t line 941.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d800_iso1600_3_real.png, id=270, 205.76875pt x 205.76875pt>
+<CC15images/resize_d800_iso1600_3_real.png, id=271, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d800_iso1600_3_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso1600_3_real.png>
@@ -1002,7 +1004,7 @@ Package pdftex.def Info: CC15images/resize_d800_iso1600_3_real.png used on inpu
 t line 941.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d800_iso3200_1_real.png, id=271, 205.76875pt x 205.76875pt>
+<CC15images/resize_d800_iso3200_1_real.png, id=272, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d800_iso3200_1_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso3200_1_real.png>
@@ -1010,7 +1012,7 @@ Package pdftex.def Info: CC15images/resize_d800_iso3200_1_real.png used on inpu
 t line 941.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d800_iso3200_2_real.png, id=272, 205.76875pt x 205.76875pt>
+<CC15images/resize_d800_iso3200_2_real.png, id=273, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d800_iso3200_2_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso3200_2_real.png>
@@ -1018,7 +1020,7 @@ Package pdftex.def Info: CC15images/resize_d800_iso3200_2_real.png used on inpu
 t line 958.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d800_iso3200_3_real.png, id=273, 205.76875pt x 205.76875pt>
+<CC15images/resize_d800_iso3200_3_real.png, id=274, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d800_iso3200_3_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso3200_3_real.png>
@@ -1026,7 +1028,7 @@ Package pdftex.def Info: CC15images/resize_d800_iso3200_3_real.png used on inpu
 t line 958.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d800_iso6400_1_real.png, id=274, 205.76875pt x 205.76875pt>
+<CC15images/resize_d800_iso6400_1_real.png, id=275, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d800_iso6400_1_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso6400_1_real.png>
@@ -1034,7 +1036,7 @@ Package pdftex.def Info: CC15images/resize_d800_iso6400_1_real.png used on inpu
 t line 958.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d800_iso6400_2_real.png, id=275, 205.76875pt x 205.76875pt>
+<CC15images/resize_d800_iso6400_2_real.png, id=276, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d800_iso6400_2_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso6400_2_real.png>
@@ -1042,7 +1044,7 @@ Package pdftex.def Info: CC15images/resize_d800_iso6400_2_real.png used on inpu
 t line 958.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<CC15images/resize_d800_iso6400_3_real.png, id=276, 205.76875pt x 205.76875pt>
+<CC15images/resize_d800_iso6400_3_real.png, id=277, 205.76875pt x 205.76875pt>
 File: CC15images/resize_d800_iso6400_3_real.png Graphic file (type png)
 
 <use CC15images/resize_d800_iso6400_3_real.png>
@@ -1050,7 +1052,7 @@ Package pdftex.def Info: CC15images/resize_d800_iso6400_3_real.png used on inpu
 t line 958.
 (pdftex.def)             Requested size: 42.23611pt x 42.23624pt.
 
-<compareb/resize_br_Noisy_5dmark3_iso3200_1.png, id=296, 205.76875pt x 205.7687
+<compareb/resize_br_Noisy_5dmark3_iso3200_1.png, id=297, 205.76875pt x 205.7687
 5pt>
 File: compareb/resize_br_Noisy_5dmark3_iso3200_1.png Graphic file (type png)
  <use compareb/resize_br_Noisy_5dmark3_iso3200_1.png>
@@ -1058,7 +1060,7 @@ Package pdftex.def Info: compareb/resize_br_Noisy_5dmark3_iso3200_1.png used on
  input line 1092.
 (pdftex.def)             Requested size: 96.8906pt x 96.89027pt.
 
-<compareb/resize_br_CBM3D_CC15_5dmark3_iso3200_1.png, id=297, 205.76875pt x 205
+<compareb/resize_br_CBM3D_CC15_5dmark3_iso3200_1.png, id=298, 205.76875pt x 205
 .76875pt>
 File: compareb/resize_br_CBM3D_CC15_5dmark3_iso3200_1.png Graphic file (type pn
 g)
@@ -1067,7 +1069,7 @@ Package pdftex.def Info: compareb/resize_br_CBM3D_CC15_5dmark3_iso3200_1.png us
 ed on input line 1092.
 (pdftex.def)             Requested size: 96.8906pt x 96.89027pt.
 
-<compareb/resize_br_TRD_CC15_5dmark3_iso3200_1.png, id=299, 205.76875pt x 205.7
+<compareb/resize_br_TRD_CC15_5dmark3_iso3200_1.png, id=300, 205.76875pt x 205.7
 6875pt>
 File: compareb/resize_br_TRD_CC15_5dmark3_iso3200_1.png Graphic file (type png)
 
@@ -1076,7 +1078,7 @@ Package pdftex.def Info: compareb/resize_br_TRD_CC15_5dmark3_iso3200_1.png used
  on input line 1092.
 (pdftex.def)             Requested size: 96.8906pt x 96.89027pt.
 
-<compareb/resize_br_NI_CC15_5dmark3_iso3200_1.png, id=301, 205.76875pt x 205.76
+<compareb/resize_br_NI_CC15_5dmark3_iso3200_1.png, id=302, 205.76875pt x 205.76
 875pt>
 File: compareb/resize_br_NI_CC15_5dmark3_iso3200_1.png Graphic file (type png)
  <use compareb/resize_br_NI_CC15_5dmark3_iso3200_1.png>
@@ -1084,7 +1086,7 @@ Package pdftex.def Info: compareb/resize_br_NI_CC15_5dmark3_iso3200_1.png used
 on input line 1092.
 (pdftex.def)             Requested size: 96.8906pt x 96.89027pt.
 
-<compareb/resize_br_NC_CC15_5dmark3_iso3200_1.png, id=303, 205.76875pt x 205.76
+<compareb/resize_br_NC_CC15_5dmark3_iso3200_1.png, id=304, 205.76875pt x 205.76
 875pt>
 File: compareb/resize_br_NC_CC15_5dmark3_iso3200_1.png Graphic file (type png)
  <use compareb/resize_br_NC_CC15_5dmark3_iso3200_1.png>
@@ -1092,7 +1094,7 @@ Package pdftex.def Info: compareb/resize_br_NC_CC15_5dmark3_iso3200_1.png used
 on input line 1092.
 (pdftex.def)             Requested size: 96.8906pt x 96.89027pt.
 
-<compareb/resize_br_CC_CC15_5dmark3_iso3200_1.png, id=306, 205.76875pt x 205.76
+<compareb/resize_br_CC_CC15_5dmark3_iso3200_1.png, id=307, 205.76875pt x 205.76
 875pt>
 File: compareb/resize_br_CC_CC15_5dmark3_iso3200_1.png Graphic file (type png)
  <use compareb/resize_br_CC_CC15_5dmark3_iso3200_1.png>
@@ -1100,7 +1102,7 @@ Package pdftex.def Info: compareb/resize_br_CC_CC15_5dmark3_iso3200_1.png used
 on input line 1119.
 (pdftex.def)             Requested size: 96.8906pt x 96.89027pt.
 
-<compareb/resize_br_WNNMJ_CC15_5dmark3_iso3200_1.png, id=308, 205.76875pt x 205
+<compareb/resize_br_WNNMJ_CC15_5dmark3_iso3200_1.png, id=309, 205.76875pt x 205
 .76875pt>
 File: compareb/resize_br_WNNMJ_CC15_5dmark3_iso3200_1.png Graphic file (type pn
 g)
@@ -1109,7 +1111,7 @@ Package pdftex.def Info: compareb/resize_br_WNNMJ_CC15_5dmark3_iso3200_1.png us
 ed on input line 1119.
 (pdftex.def)             Requested size: 96.8906pt x 96.89027pt.
 
-<compareb/resize_br_WNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png, id=309, 205.76875p
+<compareb/resize_br_WNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png, id=310, 205.76875p
 t x 205.76875pt>
 File: compareb/resize_br_WNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png Graphic file (
 type png)
@@ -1119,7 +1121,7 @@ Package pdftex.def Info: compareb/resize_br_WNNM_ADMM_NL_CC15_5dmark3_iso3200_1
 .png used on input line 1119.
 (pdftex.def)             Requested size: 96.8906pt x 96.89027pt.
 
-<compareb/resize_br_CWNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png, id=310, 205.76875
+<compareb/resize_br_CWNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png, id=311, 205.76875
 pt x 205.76875pt>
 File: compareb/resize_br_CWNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png Graphic file 
 (type png)
@@ -1129,7 +1131,7 @@ Package pdftex.def Info: compareb/resize_br_CWNNM_ADMM_NL_CC15_5dmark3_iso3200_
 1.png used on input line 1119.
 (pdftex.def)             Requested size: 96.8906pt x 96.89027pt.
 
-<compareb/resize_br_5dmark3_iso3200_1.png, id=311, 205.76875pt x 205.76875pt>
+<compareb/resize_br_5dmark3_iso3200_1.png, id=312, 205.76875pt x 205.76875pt>
 File: compareb/resize_br_5dmark3_iso3200_1.png Graphic file (type png)
 
 <use compareb/resize_br_5dmark3_iso3200_1.png>
@@ -1162,26 +1164,26 @@ mages/resize_kodim21.png (PNG copy)> <./24images/resize_kodim22.png (PNG copy)>
  copy)>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./comparea/resize_br_Noisy_nSig402030_kodim07.png (PNG copy)> <./comparea/
-resize_br_CBM3D_nSig402030_kodim07.png (PNG copy)> <./comparea/resize_br_MLP_nS
-ig402030_kodim07.png (PNG copy)> <./comparea/resize_br_TNRD_nSig402030_kodim07.
-png (PNG copy)> <./comparea/resize_br_NC_nSig402030_kodim07.png (PNG copy)> <./
-comparea/resize_br_WNNMCW_nSig402030_kodim07.png (PNG copy)> <./comparea/resize
-_br_WNNMJ_nSig402030_kodim07.png (PNG copy)> <./comparea/resize_br_WNNM_ADMM_nS
-ig402030_kodim07.png (PNG copy)> <./comparea/resize_br_kodim07.png (PNG copy)> 
-<./CC15images/resize_5dmark3_iso3200_1_real.png (PNG copy)> <./CC15images/resiz
-e_5dmark3_iso3200_2_real.png (PNG copy)> <./CC15images/resize_5dmark3_iso3200_3
-_real.png (PNG copy)> <./CC15images/resize_d600_iso3200_1_real.png (PNG copy)> 
-<./CC15images/resize_d600_iso3200_2_real.png (PNG copy)> <./CC15images/resize_d
-600_iso3200_3_real.png (PNG copy)> <./CC15images/resize_d800_iso1600_1_real.png
- (PNG copy)> <./CC15images/resize_d800_iso1600_2_real.png (PNG copy)> <./CC15im
-ages/resize_d800_iso1600_3_real.png (PNG copy)> <./CC15images/resize_d800_iso32
-00_1_real.png (PNG copy)> <./CC15images/resize_d800_iso3200_2_real.png (PNG cop
-y)> <./CC15images/resize_d800_iso3200_3_real.png (PNG copy)> <./CC15images/resi
-ze_d800_iso6400_1_real.png (PNG copy)> <./CC15images/resize_d800_iso6400_2_real
-.png (PNG copy)> <./CC15images/resize_d800_iso6400_3_real.png (PNG copy)>] (./5
-72.bbl
-(./572.brf)
+ [7 <./comparea/resize_br_Noisy_nSig402030_kodim21.png (PNG copy)> <./comparea/
+resize_br_CBM3D_nSig402030_kodim21.png (PNG copy)> <./comparea/resize_br_MLP_nS
+ig402030_kodim21.png (PNG copy)> <./comparea/resize_br_TNRD_nSig402030_kodim21.
+png (PNG copy)> <./comparea/resize_br_NC_nSig402030_kodim21.png (PNG copy)> <./
+comparea/resize_br_WNNMCW_nSig402030_kodim21.png (PNG copy)> <./comparea/resize
+_br_WNNMJ_nSig402030_kodim21.png (PNG copy)> <./comparea/resize_br_WNNM_ADMM_nS
+ig402030_kodim21.png (PNG copy)> <./comparea/resize_br_CWNNM_ADMM_nSig402030_ko
+dim21.png (PNG copy)> <./comparea/resize_br_kodim21.png (PNG copy)> <./CC15imag
+es/resize_5dmark3_iso3200_1_real.png (PNG copy)> <./CC15images/resize_5dmark3_i
+so3200_2_real.png (PNG copy)> <./CC15images/resize_5dmark3_iso3200_3_real.png (
+PNG copy)> <./CC15images/resize_d600_iso3200_1_real.png (PNG copy)> <./CC15imag
+es/resize_d600_iso3200_2_real.png (PNG copy)> <./CC15images/resize_d600_iso3200
+_3_real.png (PNG copy)> <./CC15images/resize_d800_iso1600_1_real.png (PNG copy)
+> <./CC15images/resize_d800_iso1600_2_real.png (PNG copy)> <./CC15images/resize
+_d800_iso1600_3_real.png (PNG copy)> <./CC15images/resize_d800_iso3200_1_real.p
+ng (PNG copy)> <./CC15images/resize_d800_iso3200_2_real.png (PNG copy)> <./CC15
+images/resize_d800_iso3200_3_real.png (PNG copy)> <./CC15images/resize_d800_iso
+6400_1_real.png (PNG copy)> <./CC15images/resize_d800_iso6400_2_real.png (PNG c
+opy)> <./CC15images/resize_d800_iso6400_3_real.png (PNG copy)>] (./572.bbl (./5
+72.brf)
 \tf@brf=\write3
 \openout3 = `572.brf'.
 
@@ -1223,10 +1225,10 @@ Package rerunfilecheck Info: File `572.brf' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1137.
  ) 
 Here is how much of TeX's memory you used:
- 8137 strings out of 493091
- 124738 string characters out of 6134517
- 256723 words of memory out of 5000000
- 11269 multiletter control sequences out of 15000+600000
+ 8142 strings out of 493091
+ 125008 string characters out of 6134517
+ 256936 words of memory out of 5000000
+ 11273 multiletter control sequences out of 15000+600000
  51553 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,17n,28p,1689b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1236,26 +1238,29 @@ Here is how much of TeX's memory you used:
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Software/
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Software/
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Software/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Software/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Software/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/Softw
-are/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Softwa
-re/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Software
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Software/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Software/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/Software/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/Softwar
-e/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Software/texli
-ve/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/201
-5/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fo
-nts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on 572.pdf (9 pages, 5226901 bytes).
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/Software/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Software/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/Software/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Software/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/Softwar
+e/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Software
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Software/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Software/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Software/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Software/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/Software/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/Software/te
+xlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Software/texlive/2
+015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/2015/te
+xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-di
+st/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/
+type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on 572.pdf (9 pages, 5303603 bytes).
 PDF statistics:
- 523 PDF objects out of 1000 (max. 8388607)
- 415 compressed objects within 5 object streams
+ 536 PDF objects out of 1000 (max. 8388607)
+ 424 compressed objects within 5 object streams
  100 named destinations out of 1000 (max. 500000)
- 351 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 356 words of extra memory for PDF output out of 10000 (max. 10000000)
 
