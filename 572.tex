@@ -209,8 +209,8 @@ In order to process each channel differently while still exploiting the joint st
 + 
 \|\mathbf{X}\|_{\bm{w},*}.
 \end{equation}
-where $\bm{w}$ is the weight vector for singular values of $\mathbf{X}$. In In \cite{wnnmijcv} and this paper, $\bm{w}$ is set as $w_{i}^{k+1}=\frac{C}{|\sigma_{i}(\mathbf{X}_{k})|+\epsilon }$ where $\epsilon>0$ is a small number to avoid zero numerator. Note that if $\sigma_{r}=\sigma_{g}=\sigma_{b}$, the proposed MC-WNNM model will be reduced to the concatenated WNNM model as a special case.
-How to set the weighting matrix $\mathbf{W}$ and how to solve the proposed model will be introduced in the next sections.
+In \cite{wnnmijcv} and this paper, the weight vector $\bm{w}$ is set as $w_{i}^{k+1}=\frac{C}{|\sigma_{i}(\mathbf{X}_{k})|+\epsilon }$ where $\epsilon>0$ is a small number to avoid zero numerator. Note that if $\sigma_{r}=\sigma_{g}=\sigma_{b}$, the proposed MC-WNNM model will be reduced to the concatenated WNNM model as a special case.
+The setting of the weighting matrix $\mathbf{W}$ and the solution of the proposed MC-WNNM model will be introduced in the next subsections.
 
 
 
@@ -285,59 +285,13 @@ where
 where $\mathbf{I}
 \in\mathbb{R}^{p^{2}\times p^{2}}$ is the identity matrix. Hence, the weighting matrix $\mathbf{W}$ is determined to contribute equal weights for the pixel values in the same channel, while different weights for those in different channels. The experimental (which will be introduced later) results have already demonstrated that this form of weighting matrix have already generated the best denoising performance on synthetic and real noisy images in benchmark datasets.
 
-
-
-
-\subsection{The Denoising Algorithm}
-
-The multi-channel WNNM is applied to the noisy patch matrix $\mathbf{Y}_{j}$ of each local patch $\mathbf{y}_{j}$ in the noisy image $\mathbf{y}$. And then all the patches are aggregated together to form the final recovered image $\hat{\mathbf{y}}$. To obtain better denoising results, we perform the above denoising procedure for several ($K_{1}$) iterations. The proposed MC-WNNM denoising algorithm for color images is summarized in Algorithm 1.
-\begin{table}
-\begin{tabular}{l}
-\hline
-\textbf{Algorithm 1}: Color Image Denoising by MC-WNNM
-\\
-\hline
-\textbf{Input:} Noisy image $\mathbf{y}$, noise levels $\{\sigma_{r}, \sigma_{g}, \sigma_{b}\}$;
-\\
-\textbf{Initialization:} $\hat{\mathbf{x}}^{(0)}=\mathbf{y}$, $\mathbf{y}^{(0)}=\mathbf{y}$;
-\\
-\textbf{for} $k = 1:K_{1}$ \textbf{do}
-\\
-1. Set $\mathbf{y}^{(k)}=\hat{\mathbf{x}}^{(k-1)}$;
-\\
-2. Extract local patches $\{\mathbf{y}_{j}\}_{j=1}^{N}$ from $\mathbf{y}^{(k)}$;
-\\
-\quad\textbf{for} each patch $\mathbf{y}_{j}$ \textbf{do}
-\\
-3.\quad Search non-local similar patches $\mathbf{Y}_{j}$;
-\\
-4.\quad Apply the MC-WNNM model (\ref{e10}) to $\mathbf{Y}_{j}$ and
-\\
-\quad \quad 
-obtain the estimated $\mathbf{X}_{j}$;
-\\
-\quad\textbf{end for}
-\\
-5. Aggregate $\{\mathbf{X}_{j}\}_{j=1}^{N}$ to form the image $\hat{\mathbf{x}}^{(k)}$;
-\\
-\textbf{end for}
-\\
-\textbf{Output:} Denoised image $\hat{\mathbf{x}}^{K_{1}}$.
-\\
-\hline
-\end{tabular}
-\vspace{-1mm}
-\label{a1}
-\end{table}
-
-
 \subsection{Optimization}
 The proposed MC-WNNM model could not be solved in an analytical form while the original WNNM model \cite{wnnmijcv} could. In the WNNM model, when the weights on singular values are non-descending, the weighted nuclear norm proximal operator \cite{wnnmijcv} can have global optimum with closed-form solution. However, such property is not valid for the multi-channel WNNM model. The reason is that the weighting matrix $\mathbf{W}$ is added to the rows of matrix $\mathbf{X}$ instead of its singular values. Besides, the elements in $\mathbf{W}$ is not in a non-descending order with respect to the singular value of $\mathbf{X}$. This makes the proposed model more difficult to solve when compared to the original WNNM model.
 
 By introducing an augmented variable $\mathbf{Z}$, the MC-WNNM model is reformulated as a linear equality-constrained problem with two variables $\mathbf{X}$ and $\mathbf{Z}$:
 \vspace{-1mm}
 \begin{equation}
-\label{e11}
+\label{e10}
 \vspace{-1mm}
 \min_{\mathbf{X},\mathbf{Z}}\|\mathbf{W}(\mathbf{Y}-\mathbf{X})\|_{F}^{2}
 +
@@ -347,10 +301,10 @@ By introducing an augmented variable $\mathbf{Z}$, the MC-WNNM model is reformul
 \quad
 \mathbf{X}=\mathbf{Z}.
 \end{equation}
-Since the objective function is separable across the two variables, the problem (\ref{e11}) can be solved under alternating direction method of multipliers (ADMM) framework. We can derive its augmented Lagrangian function:
+Since the objective function is separable across the two variables, the problem (\ref{e10}) can be solved under alternating direction method of multipliers (ADMM) framework. We can derive its augmented Lagrangian function:
 \vspace{-1mm}
 \begin{equation}
-\label{e12}
+\label{e11}
 \vspace{-1mm}
 \begin{split}
 \mathcal{L}(\mathbf{X},\mathbf{Z},\mathbf{A},\rho)
@@ -374,7 +328,7 @@ where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the pe
 (1) \textbf{Update $\mathbf{X}$ while fixing $\mathbf{Z}$ and $\mathbf{A}$}:
 \vspace{-1mm}
 \begin{equation}
-\label{e13}
+\label{e12}
 \mathbf{X}_{k+1}
 =
 \arg\min_{\mathbf{X}}
@@ -385,7 +339,7 @@ where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the pe
 This is a standard least squares regression problem with closed-form solution:
 \vspace{-1mm}
 \begin{equation}
-\label{e14}
+\label{e13}
 \vspace{-1mm}
 \mathbf{X}_{k+1}
 =
@@ -396,7 +350,7 @@ This is a standard least squares regression problem with closed-form solution:
 (2) \textbf{Update $\mathbf{Z}$ while fixing $\mathbf{X}$ and $\mathbf{A}$}:
 \vspace{-1mm}
 \begin{equation}
-\label{e15}
+\label{e14}
 \mathbf{Z}_{k+1}
 =
 \arg\min_{\mathbf{Z}}\frac{\rho_{k}}{2}
@@ -424,7 +378,7 @@ $\hat{\mathbf{\Sigma}}_{k}=
 and $(\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{n})$ is the solution to the following convex optimization problem:
 \vspace{-1mm}
 \begin{equation}
-\label{e16}
+\label{e15}
 \vspace{-1mm}
 \begin{split}
 \min_{\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{n}}
@@ -443,7 +397,7 @@ and $(\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{n})$ is the solution t
 According to the Remark 1 in \cite{wnnmijcv}, the problem above has closed-form solution
 \vspace{-1mm}
 \begin{equation}
-\label{e17}
+\label{e16}
 \vspace{-1mm}
 \hat{\sigma}_{i}
 =
@@ -452,12 +406,12 @@ According to the Remark 1 in \cite{wnnmijcv}, the problem above has closed-form 
 \frac{c_{1}+\sqrt{c_{2}}}{2} & \textrm{if $c_{2}\ge 0$}
 \end{array} \right.
 \end{equation}
-where $c_{1}=\sigma_{i}-\epsilon$, $c_{2} = (\sigma_{i}-\epsilon)^{2}-\frac{8C}{\rho_{k}}$ and $C$ is set as $\sqrt{2n}$ by experience in image denoising.
+where $c_{1}=\sigma_{i}-\epsilon$, $c_{2} = (\sigma_{i}-\epsilon)^{2}-\frac{8C}{\rho_{k}}$ and $C$ is set as $\sqrt{2M}$ by experience in image denoising.
  \\
 (3) \textbf{Update $\mathbf{A}$ while fixing $\mathbf{X}$ and $\mathbf{Z}$}:
 \vspace{-1mm}
 \begin{equation}
-\label{e18}
+\label{e17}
 \vspace{-3mm}
 \mathbf{A}_{k+1}
 =
@@ -466,12 +420,12 @@ where $c_{1}=\sigma_{i}-\epsilon$, $c_{2} = (\sigma_{i}-\epsilon)^{2}-\frac{8C}{
 \\
 (4) \textbf{Update $\rho_{k}$}: $\rho_{k+1}= \mu * \rho_{k}$, where $\mu>1$.
 
-The above alternative updating steps are repeated until the convergence condition is satisfied or the number of iterations exceeds a preset maximum number, e.g., $K_{2}$. The convergence condition of the ADMM algorithm is: $\|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}\le \text{Tol}$, $\|\mathbf{X}_{k+1}-\mathbf{X}_{k}\|_{F}\le \text{Tol}$, and $\|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|_{F}\le \text{Tol}$ are simultaneously satisfied, where $\text{Tol}>0$ is a small tolerance. We summarize the updating steps in Algorithm 2. The convergence analysis of the proposed Algorithm 2 is given in Theorem \ref{t1}. Note that since the weighted nuclear norm is non-convex in general, we employ an unbounded sequence of $\{\rho_{k}\}$ here to make sure that the Algorithm 2 is convergent. 
+The above alternative updating steps are repeated until the convergence condition is satisfied or the number of iterations exceeds a preset maximum number, e.g., $K_{1}$. The convergence condition of the ADMM algorithm is: $\|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}\le \text{Tol}$, $\|\mathbf{X}_{k+1}-\mathbf{X}_{k}\|_{F}\le \text{Tol}$, and $\|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|_{F}\le \text{Tol}$ are simultaneously satisfied, where $\text{Tol}>0$ is a small tolerance. We summarize the updating steps in Algorithm 1. The convergence analysis of the proposed Algorithm 1 is given in Theorem \ref{t1}. Note that since the weighted nuclear norm is non-convex in general, we employ an unbounded sequence of $\{\rho_{k}\}$ here to make sure that the Algorithm 1 is convergent. 
 
 \begin{table}
 \begin{tabular}{l}
 \hline
-\textbf{Algorithm 2}: Solve MC-WNNM via ADMM
+\textbf{Algorithm 1}: Solve MC-WNNM via ADMM
 \\
 \hline
 \textbf{Input:} Matrices $\mathbf{Y}$ and $\mathbf{W}$, $\mu>1$, $\text{Tol}>0$;
@@ -512,7 +466,7 @@ $
 \\
 5. $k \leftarrow k + 1$;
 \\
-\quad \textbf{if} (Convergence conditions are satisfied) or ($k\ge K_{2}$)
+\quad \textbf{if} (Convergence condition is satisfied) or ($k\ge K_{1}$)
 \\
 5.\quad \text{T} $\leftarrow$ \text{True}
 \\
@@ -525,7 +479,7 @@ $
 \hline
 \end{tabular}
 \vspace{-2mm}
-\label{a2}
+\label{a1}
 \end{table}
 
 \begin{theorem}
@@ -540,8 +494,8 @@ Assume the weights in $\bm{w}$ are in a non-descending order, the sequence $\{\m
 \end{align}
 \end{theorem}
 \begin{proof}
-We give proof sketch here and detailed proof of this theorem can be found in supplementary files. We can first proof that the sequence $\{\mathbf{A}_{k}\}$ generated by Algorithm \ref{a2} is upper bounded.\ Since $\{\rho_{k}\}$ is unbounded, that is $\lim_{k\to\infty}{\rho_{k}}=+\infty$, we can proof that the sequence of Lagrangian function $\{\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k},\rho_{k})\}$ is also upper bounded.\
-Hence, both $\{\mathbf{W}(\mathbf{Y}-\mathbf{X}_{k})\}$ and $\{\mathbf{Z}_{k}\}$ are upper bounded.\ According to Eq.\ (\ref{e18}), we can proof that 
+We give proof sketch here and detailed proof of this theorem can be found in supplementary files. We can first proof that the sequence $\{\mathbf{A}_{k}\}$ generated by Algorithm 1 is upper bounded.\ Since $\{\rho_{k}\}$ is unbounded, that is $\lim_{k\to\infty}{\rho_{k}}=+\infty$, we can proof that the sequence of Lagrangian function $\{\mathcal{L}(\mathbf{X}_{k+1},\mathbf{Z}_{k+1},\mathbf{A}_{k},\rho_{k})\}$ is also upper bounded.\
+Hence, both $\{\mathbf{W}(\mathbf{Y}-\mathbf{X}_{k})\}$ and $\{\mathbf{Z}_{k}\}$ are upper bounded.\ According to Eq.\ (\ref{e17}), we can proof that 
 $
 \lim_{k \to \infty} 
 \|
@@ -618,6 +572,47 @@ where $\mathbf{U}_{k-1}\mathbf{\Sigma}_{k-1}\mathbf{V}_{k-1}^{\top}$ is the SVD 
 .
 \end{proof}
 
+\subsection{The Denoising Algorithm}
+Given a noisy color image $\mathbf{y}_{c}$, assume we have extracted $N$ local patches $\{\mathbf{y}_{j}\}_{j=1}^{N}$ and corresponding similar patches to form the noisy patch matrices $\{\mathbf{Y}_{j}\}_{j=1}^{N}$. The proposed MC-WNNM is applied to the noisy patch matrix $\mathbf{Y}_{j}$ of each local patch $\mathbf{y}_{j}$ ($j=1,...,N$) of the noisy image $\mathbf{y}_{c}$. And then all the estimated clean patch matrices $\{\mathbf{X}_{j}\}_{j=1}^{N}$ are aggregated together to form the final recovered image $\hat{\mathbf{x}}_{c}$. To obtain better denoising results, we perform the above denoising procedure for several ($K_{2}$) iterations. The proposed MC-WNNM denoising algorithm for color images is summarized in Algorithm 2.
+\begin{table}
+\begin{tabular}{l}
+\hline
+\textbf{Algorithm 2}: Color Image Denoising by MC-WNNM
+\\
+\hline
+\textbf{Input:} Noisy image $\mathbf{y}_{c}$, noise levels $\{\sigma_{r}, \sigma_{g}, \sigma_{b}\}$;
+\\
+\textbf{Initialization:} $\hat{\mathbf{x}}_{c}^{(0)}=\mathbf{y}_{c}$, $\mathbf{y}_{c}^{(0)}=\mathbf{y}_{c}$;
+\\
+\textbf{for} $k = 1:K_{2}$ \textbf{do}
+\\
+1. Set $\mathbf{y}_{c}^{(k)}=\hat{\mathbf{x}}_{c}^{(k-1)}$;
+\\
+2. Extract local patches $\{\mathbf{y}_{j}\}_{j=1}^{N}$ from $\mathbf{y}_{c}^{(k)}$;
+\\
+\quad\textbf{for} each patch $\mathbf{y}_{j}$ \textbf{do}
+\\
+3.\quad Search non-local similar patches $\mathbf{Y}_{j}$;
+\\
+4.\quad Apply the MC-WNNM model (\ref{e10}) to $\mathbf{Y}_{j}$ and
+\\
+\quad \quad 
+obtain the estimated $\mathbf{X}_{j}$;
+\\
+\quad\textbf{end for}
+\\
+5. Aggregate $\{\mathbf{X}_{j}\}_{j=1}^{N}$ to form the image $\hat{\mathbf{x}}_{c}^{(k)}$;
+\\
+\textbf{end for}
+\\
+\textbf{Output:} Denoised image $\hat{\mathbf{x}}_{c}^{K_{2}}$.
+\\
+\hline
+\end{tabular}
+\vspace{-1mm}
+\label{a2}
+\end{table}
+
 \section{Experiments}
 We evaluate the proposed MC-WNNM method on synthetic and real color image denoising. We compare the proposed method with other state-of-the-art denoising methods including CBM3D \cite{cbm3d}, MLP \cite{mlp}, WNNM \cite{wnnm}, TNRD \cite{chen2015learning}, ``Noise Clinic'' (NC) \cite{noiseclinic,ncwebsite}, and the commercial software Neat Image (NI) \cite{neatimage}.
 
@@ -625,13 +620,13 @@ We evaluate the proposed MC-WNNM method on synthetic and real color image denois
 In synthetic experiments, the noise levels in R, G ,B channels are assumed to be known as $\sigma_{r}, \sigma_{g}, \sigma_{b}$. In the real cases, the noise levels in R, G, B channels can be estimated via noise estimation methods \cite{noiselevel,Chen2015ICCV}. In this paper, we employ the method of \cite{Chen2015ICCV} for its state-of-the-art performance. For the CBM3D method \cite{cbm3d}, the input noise levels are the Root Mean Square (RMS) as 
 \vspace{-2mm}
 \begin{equation}
-\label{e22}
+\label{e21}
 \vspace{-2mm}
 \sigma = \sqrt{(\sigma_{r}^{2}+\sigma_{g}^{2}+\sigma_{b}^{2})/3}.
 \end{equation}
 For the methods of MLP \cite{mlp} and TNRD \cite{chen2015learning}, we retrain the models on grayscale images following their corresponding strategies at different noise levels from $\sigma=5$ to $\sigma=75$ with gap of $5$. The denoising on color images is performed by processing separately each channel with the model trained at the same (or nearest) noise levels. NC \cite{noiseclinic,ncwebsite} is a blind image denoising method, so we just submit the noisy images (synthetic or real) to \cite{ncwebsite} and perform denoising using the default parameters.\ NI \cite{neatimage} is a commercial software suitable for real image denoising, while the code of CC \cite{crosschannel2016} is not released (but its results on the 15 real noisy images in \cite{crosschannel2016} are available by requesting the authors). Hence, we only compare with CC and NI in real image denoising experiments, and do not compare with them in synthetic experiments. 
 
-In order to take fully comparison with the original WNNM method \cite{wnnmijcv}, we extended the WNNM method \cite{wnnmijcv} for color image denoising in three directions: 1) we apply the WNNM method \cite{wnnmijcv} on each channel separately with corresponding noise levels $\sigma_{r}, \sigma_{g}, \sigma_{b}$. We call this method ``WNNM0''; 2) we perform denoising on the joint vectors concatenated by corresponding patches in the R, G, B channels, where the input noise level $\sigma$ is computed by RMS (Eq.\ (\ref{e22})).\ We call this method ``WNNM1''; 3) we set the weighting matrix $\mathbf{W}$ in the proposed MC-WNNM model as $\mathbf{W}=\sigma^{-1}\mathbf{I}$. For fair comparison, we tune all these methods set the same parameters for ``WNNM2'' and the proposed MC-WNNM methods while achieving the best performance of ``WNNM2''. For fair comparison, we tune the methods of ``WNNM0'', ``WNNM1'', ``WNNM2'', and the proposed MC-WNNM to achieve corresponding best denoising performance (i.e., highest average PSNR results). 
+In order to take fully comparison with the original WNNM method \cite{wnnmijcv}, we extended the WNNM method \cite{wnnmijcv} for color image denoising in three directions: 1) we apply the WNNM method \cite{wnnmijcv} on each channel separately with corresponding noise levels $\sigma_{r}, \sigma_{g}, \sigma_{b}$. We call this method ``WNNM0''; 2) we perform denoising on the joint vectors concatenated by corresponding patches in the R, G, B channels, where the input noise level $\sigma$ is computed by RMS (Eq.\ (\ref{e21})).\ We call this method ``WNNM1''; 3) we set the weighting matrix $\mathbf{W}$ in the proposed MC-WNNM model as $\mathbf{W}=\sigma^{-1}\mathbf{I}$. For fair comparison, we tune all these methods set the same parameters for ``WNNM2'' and the proposed MC-WNNM methods while achieving the best performance of ``WNNM2''. For fair comparison, we tune the methods of ``WNNM0'', ``WNNM1'', ``WNNM2'', and the proposed MC-WNNM to achieve corresponding best denoising performance (i.e., highest average PSNR results). 
 
 \subsection{Experiments on Synthetic Noisy Images}
 In this section, we compare the proposed MC-WNNM method with other competing denoising methods \cite{cbm3d,mlp,chen2015learning,noiseclinic,neatimage} as well as the three extensions of the original WNNM method \cite{wnnmijcv} on the 24 high quality color images from the Kodak PhotoCD Dataset (\url{http://r0k.us/graphics/kodak/}), which are shown in Fig.\ \ref{f2}.\ The noisy images are generated by adding additive white Gaussian noise (AWGN) with known standard derivations $\sigma_{r}, \sigma_{g}, \sigma_{b}$ for the R, G, B channels, respectively. In this paper, the noise levels we add to each channel of the 24 color images are $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$, respectively. More experiments can be found in the supplementary files. For the methods of ``WNNM2'' and MC-WNNM, we set the patch size as $p = 6$, the number of non-local similar patches as $M = 70$, the window size for searching similar patches as $W = 20$, the updating parameter $\mu=1.001$, the number of iterations in Algorithm 1 as $K_{1} = 8$, the number of iterations in Algorithm 2 as $K_{2}=10$. For ``WNNM2'', the initial penalty parameter is set as $\rho_{0}=10$, while for the proposed MC-WNNM model, the penalty parameter is set as $\rho_{0}=3$.
@@ -972,7 +967,8 @@ CC \cite{crosschannel2016} (copied from \cite{crosschannel2016}), ``WNNM1'', ``W
 \label{tabb}
 \begin{center}
 \renewcommand\arraystretch{1}
-\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|}
+\scriptsize
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|}
 \hline
 Camera Settings  
 &
@@ -988,6 +984,8 @@ Camera Settings
 &
 \textbf{CC}
 &
+\textbf{WNNM0}
+&
 \textbf{WNNM1}
 &
 \textbf{WNNM2}
@@ -996,61 +994,61 @@ Camera Settings
 \\
 \hline
 \multirow{3}{*}{\small{Canon 5D Mark III}}  
-& 39.76 & 39.00 & 39.51 & 35.68 & 36.20 & 38.37 & 39.74 & 39.98 & \textbf{41.13}
+& 39.76 & 39.00 & 39.51 & 35.68 & 36.20 & 38.37 & 37.51 & 39.74 & 39.98 & \textbf{41.13}
 \\ 
-\cdashline{2-10} 
+\cline{2-11} 
 \multirow{3}{*}{ISO = 3200}   
- & 36.40 & 36.34 & 36.47 & 34.03 & 34.35 & 35.37 & 35.12 & 36.65 & \textbf{37.28}
+& 36.40 & 36.34 & 36.47 & 34.03 & 34.35 & 35.37 & 33.86 & 35.12 & 36.65 & \textbf{37.28}
 \\ 
-\cdashline{2-10}    
- & 36.37 & 36.33 & 36.45 & 32.63 & 33.10& 34.91 & 33.14 & 34.63 & \textbf{36.52}  
+\cline{2-11}    
+& 36.37 & 36.33 & 36.45 & 32.63 & 33.10 & 34.91 & 31.43 & 33.14 & 34.63 & \textbf{36.52}  
 \\
 \hline
 \multirow{3}{*}{Nikon D600} 
- & 34.18 & 34.70 & 34.79 & 31.78 & 32.28 & 34.98 & 35.08 & 35.08 & \textbf{35.53}
+& 34.18 & 34.70 & 34.79 & 31.78 & 32.28 & 34.98 & 33.46 & 35.08 & 35.08 & \textbf{35.53}
 \\ 
-\cdashline{2-10} 
+\cline{2-11} 
 \multirow{3}{*}{ISO = 3200}   
- & 35.07 & 36.20 & 36.37 & 35.16 & 35.34 & 35.95 & 36.42 & 36.84 & \textbf{37.02}
+& 35.07 & 36.20 & 36.37 & 35.16 & 35.34 & 35.95 & 36.09 & 36.42 & 36.84 & \textbf{37.02}
 \\ 
-\cdashline{2-10}    
- & 37.13 & 39.33 & 39.49 & 39.98 & 40.51 & \textbf{41.15} & 40.78 & 39.24 & 39.56
+\cline{2-11}    
+& 37.13 & 39.33 & 39.49 & 39.98 & 40.51 & \textbf{41.15} & 39.86 & 40.78 & 39.24 & 39.56
 \\
 \hline
 \multirow{3}{*}{Nikon D800} 
- & 36.81  & 37.95 & 38.11 & 34.84 & 35.09 & 37.99 & 38.28 & 38.61 & \textbf{39.26}
+& 36.81  & 37.95 & 38.11 & 34.84 & 35.09 & 37.99 & 36.35 & 38.28 & 38.61 & \textbf{39.26}
 \\ 
-\cdashline{2-10} 
+\cline{2-11} 
 \multirow{3}{*}{ISO = 1600}   
- & 37.76 & 40.23 & 40.52 & 38.42 & 38.65 & 40.36 & 41.24 & 40.81 & \textbf{41.43}
+& 37.76 & 40.23 & 40.52 & 38.42 & 38.65 & 40.36 & 39.99 & 41.24 & 40.81 & \textbf{41.43}
 \\ 
-\cdashline{2-10}    
- & 37.51 & 37.94 & 38.17 & 35.79 & 35.85 & 38.30 & 38.04 & 38.96 & \textbf{39.55}
+\cline{2-11}    
+& 37.51 & 37.94 & 38.17 & 35.79 & 35.85 & 38.30 & 37.15 & 38.04 & 38.96 & \textbf{39.55}
 \\
 \hline
 \multirow{3}{*}{Nikon D800} 
- & 35.05 & 37.55 & 37.69 & 38.36 & 38.56 & \textbf{39.01} & 39.93 & 37.97 & 38.91
+& 35.05 & 37.55 & 37.69 & 38.36 & 38.56 & \textbf{39.01} & 38.60 & 39.93 & 37.97 & 38.91
 \\ 
-\cdashline{2-10} 
+\cline{2-11} 
 \multirow{3}{*}{ISO = 3200}   
- & 34.07 & 35.91 & 35.90 & 35.53 & 35.76 & 36.75 & 37.32 & 37.30 & \textbf{37.41}
+& 34.07 & 35.91 & 35.90 & 35.53 & 35.76 & 36.75 & 36.04 & 37.32 & 37.30 & \textbf{37.41}
 \\ 
-\cdashline{2-10}    
- & 34.42 & 38.15 & 38.21 & 40.05 & 40.59 & 39.06 & \textbf{41.52} & 38.68 & 39.39
+\cline{2-11}    
+& 34.42 & 38.15 & 38.21 & 40.05 & 40.59 & 39.06 & 39.73 & \textbf{41.52} & 38.68 & 39.39
 \\ 
 \hline
 \multirow{3}{*}{Nikon D800} 
-& 31.13 & 32.69 & 32.81 & 34.08 & 34.25 & 34.61 & \textbf{35.20} & 34.57 & 34.80
+& 31.13 & 32.69 & 32.81 & 34.08 & 34.25 & 34.61 & 33.29 & \textbf{35.20} & 34.57 & 34.80
 \\ 
-\cdashline{2-10} 
+\cline{2-11} 
 \multirow{3}{*}{ISO = 6400}   
- & 31.22 & 32.33 & 32.33 & 32.13 & 32.38  & 33.21 & 33.61 & 33.43 & \textbf{33.95}
+& 31.22 & 32.33 & 32.33 & 32.13 & 32.38  & 33.21 & 31.16 & 33.61 & 33.43 & \textbf{33.95}
 \\ 
-\cdashline{2-10}    
- & 30.97 & 32.29 & 32.29 & 31.52 & 31.76 & 33.22 & 33.62 & \textbf{34.02} & 33.94
+\cline{2-11}    
+& 30.97 & 32.29 & 32.29 & 31.52 & 31.76 & 33.22 & 31.98 & 33.62 & \textbf{34.02} & 33.94
 \\
 \hline
-Average & 35.19 & 36.46 & 36.61 & 35.33 & 35.65 & 36.88 & 37.27 & 37.12 & \textbf{ 37.71}
+Average & 35.19 & 36.46 & 36.61 & 35.33 & 35.65 & 36.88 & 35.77 & 37.27 & 37.12 & \textbf{ 37.71}
 \\
 \hline
 \end{tabular}
