@@ -128,77 +128,55 @@ In this paper, we introduce a weighting matrix which add different weights to di
 \subfigure{
 \begin{minipage}[t]{0.25\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_kodim23}}
-{\footnotesize (a) kodim23}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_kodim08_1.png}}
+{\footnotesize (a) Clean Red Channel}
 \end{minipage}
 \begin{minipage}[t]{0.25\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_kodim23_1}}
-{\footnotesize (b) kodim23: Red Channel}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_Noisy_nSig402030_kodim08_1}}
+{\footnotesize (b) Noisy Red Channel}
 \end{minipage}
 \begin{minipage}[t]{0.25\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_kodim23_2}}
-{\footnotesize (c) kodim23: Green Channel}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_kodim08_2.png}}
+{\footnotesize (c) Clean Green Channel}
 \end{minipage}
 \begin{minipage}[t]{0.25\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_kodim23_3}}
-{\footnotesize (d) kodim23: Blue Channel}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.25\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_Noisy_nSig402030_kodim23.png}}
-{\footnotesize (e) Noisy }
-\end{minipage}
-\begin{minipage}[t]{0.25\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_Noisy_nSig402030_kodim23_1.png}}
-{\footnotesize (f) Noisy: Red Channel}
-\end{minipage}
-\begin{minipage}[t]{0.25\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_Noisy_nSig402030_kodim23_2.png}}
-{\footnotesize (g) Noisy: Green Channel}
-\end{minipage}
-\begin{minipage}[t]{0.25\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_Noisy_nSig402030_kodim23_3.png}}
-{\footnotesize (h) Noisy: Blue Channel}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_Noisy_nSig402030_kodim08_2.png}}
+{\footnotesize (d) Noisy Green Channel}
 \end{minipage}
 }\vspace{-4mm}
 \subfigure{
 \begin{minipage}[t]{0.25\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_WNNM_nSig402030_lambda1_kodim23.png}}
-{\footnotesize (i) WNNM}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_WNNMJ_nSig402030_lambda1_kodim08_1.png}}
+{\footnotesize (e) Concatenated WNNM on Red }
 \end{minipage}
 \begin{minipage}[t]{0.25\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_WNNM_nSig402030_lambda1_kodim23_1.png}}
-{\footnotesize (j) WNNM: Red Channel}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_CWNNM_ADMM_nSig402030_kodim08_1.png}}
+{\footnotesize (f) MC-WNNM on Red }
 \end{minipage}
 \begin{minipage}[t]{0.25\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_WNNM_nSig402030_lambda1_kodim23_2.png}}
-{\footnotesize (k) WNNM: Green Channel}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_WNNMJ_nSig402030_lambda1_kodim08_2.png}}
+{\footnotesize (g) Concatenated WNNM on Green}
 \end{minipage}
 \begin{minipage}[t]{0.25\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/resize_br_WNNM_nSig402030_lambda1_kodim23_3.png}}
-{\footnotesize (l) WNNM: Blue Channel}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_CWNNM_ADMM_nSig402030_kodim08_2.png}}
+{\footnotesize (h) MC-WNNM on Green}
 \end{minipage}
 }\vspace{-1mm}
-\caption{The image ``kodim23'' of the Kodak PhotoCD dataset, its degraded version, and the image recovered by WNNM. The R, G, B channels are also listed here for image quality comparison.}
+\caption{The Red and Green channels of the image ``kodim08'' from the Kodak PhotoCD dataset, its synthetic noisy version, and the images recovered by the concatenated WNNM and the proposed MC-WNNMW methods.}
 \label{fa}
 \vspace{-2mm}
 \end{figure*}
 
 The color image denoising problem is to recover the clean image $\mathbf{x}_{c}$ from its noisy version $\mathbf{y}_{c}=\mathbf{x}_{c}+\mathbf{n}_{c}$, where $c=\{r, g, b\}$ is the index of R, G, B channels and $\mathbf{n}_{c}$ is the noise in $c$-th channel. Given a noisy color image $\mathbf{y}_{c}$, each local patch of size $p\times p \times 3$ is extracted and stretched to a patch vector $\mathbf{y}=[\mathbf{y}_{r}^{\top}\ \mathbf{y}_{g}^{\top}\ \mathbf{y}_{b}^{\top}]^{\top}\in\mathbb{R}^{3p^{2}}$, where $\mathbf{y}_{r}, \mathbf{y}_{g}, \mathbf{y}_{b}\in\mathbb{R}^{p^{2}}$ are corresponding patches in R, G, B, channels. For each local patch $\mathbf{y}$, we search the $M$ most similar patches to it (including $\mathbf{y}$ itself) by Euclidean distance in a $W\times W$ local region around it. We stack the $M$ similar patches column by column to form a noisy patch matrix $\mathbf{Y}=\mathbf{X}+\mathbf{N}\in\mathbb{R}^{3p^{2}\times M}$, where $\mathbf{X}$ and $\mathbf{N}$ the corresponding clean and noise patch matrices.
 
-According to \cite{Leungtip}, the noise in standard RGB (sRGB) space, though could be modeled as additive white Gaussian (AWGN), are with different variances for different channels. Therefore, it is problematic to directly apply denoising methods to the joint vectors concatenated by corresponding patches of the R, G, B channels. To validate this point, in Fig.\ \ref{fa}, we show the clean image ``kodim23' taken from the Kodak PhotoCD dataset, its degraded version generated by adding synthetic additive white Gaussian noise (AWGN) to each channel of ``kodim23'', and the denoised image by applying WNNM \cite{wnnm} on the joint vectors concatenated from R, G, B channels of the degraded image. The standard derivations of AWGN added to the R, G, B channels are $\sigma_{r}=40$, $\sigma_{g}=20$, $\sigma_{b}=30$, respectively. The input standard derivation of the noise for the concatenated WNNM method is set as the Root Mean Square (RMS) of those in each channel, i.e., $\sigma=\sqrt{(\sigma_{r}^{2}+\sigma_{g}^{2}+\sigma_{b}^{2})/3}=31.1$. From Fig.\ \ref{fa}, one can see that the concatenated WNNM method treating each channel equally would remain some noise in the R and B channel, while over-smoothing the G channel of the degraded image. Hence, if the patches of different channels are treated adaptively in the concatenated vectors, the degraded color images would be recovered with better visual qualities.
+According to \cite{Leungtip}, the noise in standard RGB (sRGB) space, though could be modeled as additive white Gaussian (AWGN), are with different variances for different channels. Therefore, it is problematic to directly apply denoising methods to the joint vectors concatenated by corresponding patches of the R, G, B channels. To validate this point, in Fig.\ \ref{fa}, we show the clean image ``kodim23'' taken from the Kodak PhotoCD dataset, its degraded version generated by adding synthetic additive white Gaussian noise (AWGN) to each channel of ``kodim23'', and the denoised image by applying WNNM \cite{wnnm} on the joint vectors concatenated from R, G, B channels of the degraded image. The standard derivations of AWGN added to the R, G, B channels are $\sigma_{r}=40$, $\sigma_{g}=20$, $\sigma_{b}=30$, respectively. The input standard derivation of the noise for the concatenated WNNM method is set as the Root Mean Square (RMS) of those in each channel, i.e., $\sigma=\sqrt{(\sigma_{r}^{2}+\sigma_{g}^{2}+\sigma_{b}^{2})/3}=31.1$. From Fig.\ \ref{fa}, one can see that the concatenated WNNM method treating each channel equally would remain some noise in the R and B channel, while over-smoothing the G channel of the degraded image. Hence, if the patches of different channels are treated adaptively in the concatenated vectors, the degraded color images would be recovered with better visual qualities.
 
 In order to process each channel differently while still exploiting the joint structures of the color images, in this paper, we introduce a weighting matrix $\mathbf{W}$ to the concatenated WNNM method. The weights $\bm{w}$ for the singular values of $\mathbf{X}$, then the proposed multi-channel WNNM (MC-WNNM) model is
 \vspace{-1mm}
@@ -629,97 +607,9 @@ For the methods of MLP \cite{mlp} and TNRD \cite{chen2015learning}, we retrain t
 In order to take fully comparison with the original WNNM method \cite{wnnmijcv}, we extended the WNNM method \cite{wnnmijcv} for color image denoising in three directions: 1) we apply the WNNM method \cite{wnnmijcv} on each channel separately with corresponding noise levels $\sigma_{r}, \sigma_{g}, \sigma_{b}$. We call this method ``WNNM0''; 2) we perform denoising on the joint vectors concatenated by corresponding patches in the R, G, B channels, where the input noise level $\sigma$ is computed by RMS (Eq.\ (\ref{e21})).\ We call this method ``WNNM1''; 3) we set the weighting matrix $\mathbf{W}$ in the proposed MC-WNNM model as $\mathbf{W}=\sigma^{-1}\mathbf{I}$. For fair comparison, we tune all these methods set the same parameters for ``WNNM2'' and the proposed MC-WNNM methods while achieving the best performance of ``WNNM2''. For fair comparison, we tune the methods of ``WNNM0'', ``WNNM1'', ``WNNM2'', and the proposed MC-WNNM to achieve corresponding best denoising performance (i.e., highest average PSNR results). 
 
 \subsection{Experiments on Synthetic Noisy Images}
-In this section, we compare the proposed MC-WNNM method with other competing denoising methods \cite{cbm3d,mlp,chen2015learning,noiseclinic,neatimage} as well as the three extensions of the original WNNM method \cite{wnnmijcv} on the 24 high quality color images from the Kodak PhotoCD Dataset (\url{http://r0k.us/graphics/kodak/}), which are shown in Fig.\ \ref{f2}.\ The noisy images are generated by adding additive white Gaussian noise (AWGN) with known standard derivations $\sigma_{r}, \sigma_{g}, \sigma_{b}$ for the R, G, B channels, respectively. In this paper, the noise levels we add to each channel of the 24 color images are $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$, respectively. More experiments can be found in the supplementary files. For the methods of ``WNNM2'' and MC-WNNM, we set the patch size as $p = 6$, the number of non-local similar patches as $M = 70$, the window size for searching similar patches as $W = 20$, the updating parameter $\mu=1.001$, the number of iterations in Algorithm 1 as $K_{1} = 8$, the number of iterations in Algorithm 2 as $K_{2}=10$. For ``WNNM2'', the initial penalty parameter is set as $\rho_{0}=10$, while for the proposed MC-WNNM model, the penalty parameter is set as $\rho_{0}=3$.
+In this section, we compare the proposed MC-WNNM method with other competing denoising methods \cite{cbm3d,mlp,chen2015learning,noiseclinic,neatimage} as well as the three extensions of the original WNNM method \cite{wnnmijcv} on the 24 high quality color images from the Kodak PhotoCD Dataset (\url{http://r0k.us/graphics/kodak/}).\ The noisy images are generated by adding additive white Gaussian noise (AWGN) with known standard derivations $\sigma_{r}, \sigma_{g}, \sigma_{b}$ for the R, G, B channels, respectively. In this paper, the noise levels we add to each channel of the 24 color images are $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$, respectively. More experiments can be found in the supplementary files. For the methods of ``WNNM2'' and MC-WNNM, we set the patch size as $p = 6$, the number of non-local similar patches as $M = 70$, the window size for searching similar patches as $W = 20$, the updating parameter $\mu=1.001$, the number of iterations in Algorithm 1 as $K_{1} = 8$, the number of iterations in Algorithm 2 as $K_{2}=10$. For ``WNNM2'', the initial penalty parameter is set as $\rho_{0}=10$, while for the proposed MC-WNNM model, the penalty parameter is set as $\rho_{0}=3$.
 
-The PSNR results are listed in Table \ref{taba} of the compared methods including CBM3D \cite{cbm3d}, MLP \cite{mlp}, TNRD \cite{chen2015learning}, NI \cite{neatimage}, NC \cite{noiseclinic,ncwebsite}, ``WNNM0'' \cite{wnnmijcv}, ``WNNM1'', ``WNNM2'' and the proposed MC-WNNM methods.\ The best PSNR results are highlighted in bold.\ One can see that on all the 24 images, our method achieves the highest PSNR values over the competing methods.\ On average PSNR, our proposed method achieves 0.48dB improvements over the ``WNNM0'' method and outperforms the ``WNNM2'' by 1.09dB.\ Fig.\ \ref{f3} shows a scene denoised by the compared methods.\ We can see that the methods of CBM3D and NC would remain some noise on the recovered images. The methods of MLP, TNRD, and ``WNNM0'', which process separately the channels of color images, would over-smooth  the images and generate false colors or artifacts. The method ``WNNM1'', which process jointly the channels of color images, would not generate false colors, but still over-smooth the image. The ``WNNM2'', which is the WNNM model solved by ADMM algorithm, would remain some noise on the image.\ By employing the proposed MC-WNNM model, our method preserves the structures (e.g., textures in windows and grass) better across the R, G, B channels and generate less artifacts than other denoising methods, leading to visually pleasant outputs.\ More visual comparisons can be found in the supplementary files.
-
-\begin{figure}
-\centering
-\subfigure{
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim01.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim02.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim03.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim04.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim05.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim06.png}
-\end{minipage}
-}\vspace{-3mm}
-\subfigure{
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim07.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim08.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim09.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim10.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim11.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim12.png}
-\end{minipage}
-}\vspace{-3mm}
-\subfigure{
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim13.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim14.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim15.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim16.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim17.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim18.png}
-\end{minipage}
-}\vspace{-3mm}
-\subfigure{
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim19.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim20.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim21.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim22.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim23.png}
-\end{minipage}
-\begin{minipage}{0.075\textwidth}
-\includegraphics[width=1\textwidth]{24images/resize_kodim24.png}
-\end{minipage}
-}\vspace{1mm}
-\caption{The 24 high quality color images from the Kodak PhotoCD Dataset.}
-\label{f2}
-\vspace{-2mm}
-\end{figure}
-
+The PSNR results are listed in Table \ref{taba} of the compared methods including CBM3D \cite{cbm3d}, MLP \cite{mlp}, TNRD \cite{chen2015learning}, NI \cite{neatimage}, NC \cite{noiseclinic,ncwebsite}, ``WNNM0'' \cite{wnnmijcv}, ``WNNM1'', ``WNNM2'' and the proposed MC-WNNM methods.\ The best PSNR results are highlighted in bold.\ One can see that on all the 24 images, our method achieves the highest PSNR values over the competing methods.\ On average PSNR, our proposed method achieves 0.48dB improvements over the ``WNNM0'' method and outperforms the ``WNNM2'' by 1.09dB.\ For space limitation, we leave the visual comparison of the synthetic noisy images denoised by the compared methods in the supplementary files.
 
 \begin{table*}
 \caption{PSNR(dB) results of different denoising algorithms on 24 natural images.}
@@ -834,67 +724,6 @@ Image\#
 \vspace{-3mm}
 \end{table*}
 
-\begin{figure*}\vspace{1mm}
-\centering
-\subfigure{
-\begin{minipage}[t]{0.195\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_Noisy_nSig402030_kodim21.png}}
-{\footnotesize (a) Noisy kodim21: 18.28dB }
-\end{minipage}
-\begin{minipage}[t]{0.195\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_CBM3D_nSig402030_kodim21.png}}
-{\footnotesize (b) CBM3D \cite{cbm3d}: 26.54dB}
-\end{minipage}
-\begin{minipage}[t]{0.195\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_MLP_nSig402030_kodim21.png}}
-{\footnotesize (c) MLP \cite{mlp}: 27.53dB}
-\end{minipage}
-\begin{minipage}[t]{0.195\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_TNRD_nSig402030_kodim21.png}}
-{\footnotesize (d) TNRD \cite{chen2015learning}: 27.60dB }
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.195\textwidth}
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_NC_nSig402030_kodim21.png}}
-{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 26.48dB  } 
-\end{minipage}
-}\vspace{-3mm}
-\subfigure{
-\begin{minipage}[t]{0.195\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNMCW_nSig402030_kodim21.png}}
-{\footnotesize (f) WNNM0: 27.80dB  }
-\end{minipage}
-\begin{minipage}[t]{0.195\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNMJ_nSig402030_kodim21.png}}
-{\footnotesize (g) WNNM1: 27.75dB  }
-\end{minipage}
-\begin{minipage}[t]{0.195\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png}}
-{\footnotesize (h) WNNM2: 27.12dB }
-\end{minipage}
-\begin{minipage}[t]{0.195\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png}}
-{\footnotesize (i) MC-WNNM: \textbf{28.34}dB}
-\end{minipage}
-\begin{minipage}[t]{0.195\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_kodim21.png}}
-{\footnotesize (j) Clean kodim21}
-\end{minipage}
-}\vspace{-0.5mm}
-\caption{Denoised images of different methods on the image ``kodim21'' degraded by AWGN with different standard derivations of $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f3}
-\vspace{-3mm}
-\end{figure*}
-
 \begin{figure}
 \centering
 \subfigure{
@@ -955,9 +784,79 @@ Image\#
 
 \subsection{Experiments on Real Noisy Images}
 
-In this section, we compare the proposed MC-WNNM method with other competing methods on the 15 real noisy images (Fig.\ \ref{f4}). We do not compare with the ``WNNM0'' method due to limited space and its inferior performance. The noisy images were collected under controlled indoor environment.\ Each scene was shot 500 times under the same camera and camera setting.\ The mean image of the 500 shots is roughly taken as the ``ground truth", with which the PSNR can be computed. Since the image size is very large (about $7000\times5000$) and the 11 scenes share repetitive contents, the authors of \cite{crosschannel2016} cropped 15 smaller images (of size $512\times512$) to perform experiments. For each real noisy image, the noise levels in R, G, B channels are estimated by \cite{Chen2015ICCV}. Since the noise levels are small in real noisy images, for the method of MLP \cite{mlp} and TNRD \cite{chen2015learning}, we apply the trained models of corresponding methods and choose the best denoising results (highest average PSNR values). Both methods achieves best results when setting the noise levels of the trained models from $\sigma=10$.  
+We evaluate the proposed method on two real noisy image datasets, where the images were captured under indoor or outdoor lighting conditions by different types of cameras and camera settings. 
 
-We perform quantitative comparison on the 15 cropped images used in \cite{crosschannel2016}. The PSNR results are listed in Table \ref{tabb} of the compared methods including CBM3D \cite{cbm3d}, MLP \cite{mlp}, TNRD \cite{chen2015learning}, NC \cite{noiseclinic,ncwebsite}, NI \cite{neatimage},
+The first dataset is provided in \cite{ncwebsite}, which includes 20 real noisy images collected under uncontrolled outdoor environment.\ Since there is no ``ground truth" of the noisy images, the objective measures such as PSNR cannot be computed on this dataset. 
+
+The second dataset is provided in \cite{crosschannel2016}, which includes noisy images of 11 static scenes. The noisy images were collected under controlled indoor environment.\ Each scene was shot 500 times under the same camera and camera setting.\ The mean image of the 500 shots is roughly taken as the ``ground truth", with which the PSNR can be computed. Since the image size is very large (about $7000\times5000$) and the 11 scenes share repetitive contents, the authors of \cite{crosschannel2016} cropped 15 smaller images (of size $512\times512$, Fig.\ \ref{f4}) to perform experiments. We perform quantitative comparison on the 15 cropped images used in \cite{crosschannel2016}. For each real noisy image, the noise levels in R, G, B channels are estimated by \cite{Chen2015ICCV}. Since the noise levels are small in real noisy images, for the method of MLP \cite{mlp} and TNRD \cite{chen2015learning}, we apply the trained models of corresponding methods and choose the best denoising results (highest average PSNR values). Both methods achieves best results when setting the noise levels of the trained models from $\sigma=10$. 
+
+\subsubsection{Results on Dataset \cite{ncwebsite}}
+Since there is no ``ground truth" for the real noisy images in  dataset \cite{ncwebsite}, we only compare the visual quality of the denoised images by different methods. (Note that method CC \cite{crosschannel2016} is not compared since its code is not available.) Fig.\ \ref{fig6} shows the denoised images of ``Dog". It can be seen that CBM3D and WNNM tend to over-smooth much the image while remaining some noise caused color artifacts.\ MLP and TNRD are likely to remain many noise-caused color artifacts across the whole image. These results demonstrate that the methods designed with Gaussian noise model are not effective for real noise removal.\ Though NC and NI methods are specifically developed for real noisy images, their performance on noise removal is not very satisfactory.\ In comparison, our proposed method recovers much better the structures and textures (such as the eye area) than the other competing methods.\ More visual comparisons on this dataset \cite{ncwebsite} can be found in the supplementary file.
+
+\begin{figure*}
+\centering
+\subfigure{
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_Noisy_dog.png}}
+{\footnotesize (a) Noisy \cite{ncwebsite}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_BM3D_dog.png}}
+{\footnotesize (b) CBM3D \cite{bm3d,cbm3d}  }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_MLP_dog.png}}
+{\footnotesize (c) MLP \cite{mlp}  }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_TRD_dog.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}}
+\end{minipage}
+\subfigure{
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_NI_dog.png}}
+{\footnotesize (e) NI \cite{neatimage}  }
+\end{minipage}
+}\vspace{-3mm}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_NC_dog.png}}
+{\footnotesize (f) NC \cite{noiseclinic,ncwebsite}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_WNNM_dog.png}}
+{\footnotesize (g) WNNM0 \cite{wnnm}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_WNNM_dog.png}}
+{\footnotesize (h) WNNM0 \cite{wnnm}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_WNNM_dog.png}}
+{\footnotesize (i) WNNM0 \cite{wnnm}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_Guided_dog.png}}
+{\footnotesize (j) Ours  }
+\end{minipage}
+}
+\vspace{-2mm}
+\caption{Denoised images of the real noisy image ``Dog" \cite{ncwebsite} by different methods. The images are better to be zoomed in on screen.}
+\label{fig6}
+\end{figure*}
+
+
+\subsubsection{Results on Dataset \cite{crosschannel2016}}
+As described in section 4.2, there is a mean image for each noisy image used in dataset \cite{crosschannel2016}, and those mean images can be roughly taken as ``ground truth" images for quantitative evaluation of denoising algorithms. The PSNR results are listed in Table \ref{tabb} of the compared methods including CBM3D \cite{cbm3d}, MLP \cite{mlp}, TNRD \cite{chen2015learning}, NC \cite{noiseclinic,ncwebsite}, NI \cite{neatimage},
 CC \cite{crosschannel2016} (copied from \cite{crosschannel2016}), ``WNNM1'', ``WNNM2'', and the proposed MC-WNNM method.\ The highest PSNR results are highlighted in bold.\ On average PSNR, the proposed MC-WNNM method achieves 0.44dB improvements over the ``WNNM1'' method and outperforms the state-of-the-art denoising method CC \cite{crosschannel2016} by 0.83dB. On 10 out of the whole 15 images, the proposed MC-WNNM method achieves the highest PSNR values.\ Both CC and ``WNNM1'' achieves highest PSNR results on 2 of 15 images.\ It should be noted that in the CC method, a specific model is trained for each camera and camera setting, while our method uses the same model for all cases.\ Fig.\ \ref{f5} shows the denoised images of a scene captured by Canon 5D Mark 3 at ISO = 3200.\ We can see that CBM3D, NC, NI and CC would either remain noise or generate artifacts, while TNRD, ``WNNM1'', and ``WNNM2'' over-smooth much the image.\ By using the proposed MC-WNNM model achieves better visual quality results than other methods.\ More visual comparisons can be found in the supplementary files.
 
 
@@ -1061,54 +960,54 @@ Average & 35.19 & 36.46 & 36.61 & 35.33 & 35.65 & 36.88 & 35.77 & 37.27 & 37.12 
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_Noisy_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_Noisy_5dmark3_iso3200_1.png}}
 {\footnotesize (a) Noisy kodim07: 37.00dB }
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_CBM3D_CC15_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_CBM3D_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (b) CBM3D \cite{cbm3d}: 39.76dB}
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_TRD_CC15_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_TRD_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (c)  TNRD \cite{chen2015learning}: 39.51dB}
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_NI_CC15_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_NI_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (d) NI \cite{neatimage}: 35.68dB }
 \end{minipage}
 \centering
 \begin{minipage}[t]{0.195\textwidth}
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_NC_CC15_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_NC_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 36.20dB  } 
 \end{minipage}
 }\vspace{-3mm}
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_CC_CC15_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_CC_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (f) CC \cite{crosschannel2016}: 38.37dB  }
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_WNNMJ_CC15_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_WNNMJ_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (g) WNNM1: 39.74dB  }
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_WNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_WNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (h) WNNM2: 39.98dB }
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_CWNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_CWNNM_ADMM_NL_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (i) MC-WNNM: \textbf{41.13}dB}
 \end{minipage}
 \begin{minipage}[t]{0.195\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_5dmark3_iso3200_1.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_5dmark3_iso3200_1.png}}
 {\footnotesize (j) Mean Image}
 \end{minipage}
 }\vspace{-0.5mm}

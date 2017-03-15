@@ -44,521 +44,157 @@ First line of institution2 address\\
 }
 \maketitle
 %\thispagestyle{empty}
-%%%%%%%%% ABSTRACT
-\begin{abstract}
-In this paper, we propose the patch group based prior, which is an extension of pixel based and patch based priors widely used in image denoising task. We define a patch group a set of non-local similar patches after removing the average patch of this patch group. The defined patch group can be viewed as variations of the original similar patches around their average patch. We find the patch group variations have comprehensive structures and propose to learn the statistical structures via modeified Gaussian Mixture Model. Then the eigenvectors of the covariance matrices of the components of GMM form a set of adaptive dictionaries. We adaptively select the dictionary from the dictionary set and perform image denoising under a weighted group sparse coding framework. Experiments on 20 widely used natural images and the 200 test images in BSDS500 dataset demonstrate the patcg group based prior is much better than patch based prior in modelling natural image prior. Our proposed denoising algorithm achieves better performance than the-state-of-the-art algorithms including BM3D and recently proposed WNNM. What's more, our method is much more efficient than most of the competing denoising algorithms except BM3D. For example, our method only takes about 10 seconds processing a gray scale image of size $256\times256$. Noted that BM3D uses parallelization and is implemented with compiled C++ mex-function, our method is implemented only in Matlab. Our method can be faster if we use similar strategies in BM3D.
-\end{abstract}
-%%%%%%%%% BODY TEXT
-\section{Introduction}
-Natural image denoising is a fundamental problem in image processing and computer vision. In general, image denoising is to recovery the clean image $\bf{x}$, from the noisy observation 
-\begin{equation}
-\bf{y} = \bf{x} + n
-\end{equation}
-where $\mathbf{n}$ is assumed to be the additive Gaussian white noise with zero mean and variance $\sigma^{2}$. This problem is ill-posed and can have infinite solutions. In order to recover a proper image from the noisy observation, it is important to utilize prior knowledge of natural images\cite{levin2012patch}. In fact, numerous image priors have been proposed for designing image denoising methods. According to the basic elements to be processed, we divide the existing priors into two categories: pixel based prior and patch based prior. 
-\begin{figure}[t]\label{fig1}
-\begin{center}
-%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
-   \includegraphics[width=0.8\linewidth]{./img/patchgroup.eps}
-\end{center}
-   \caption{The patcg group, center, and variations. First Row: a patch group consisting 10 similar patches; Second Row: The average of the patch group (duplicated to 10 copies); Last Row: The variations (first row minus second row patch by patch).(The picture is of low quality and needs to be improved.)}
-\label{fig:long}
-\label{fig:onecol}
-\end{figure}
 
-The intuition in pixel based prior contains is that, in natural images, the pixel values in local area share smooth variations. The noise will destroy this rule by nearly uncorrelated corruptions. A natural denoising method is to average pixels by filtering techniques such as linear filtering and Gaussian filtering. But these filters will oversmooth the edge area. Then the methods of anisotropic diffusion\cite{PeronaMalik1990} and bilateral filtering\cite{Tomasi1998} have been proposed to smooth the flat area while preserve the edges in image denoising task. Another line of research intorduce a similar prior that clean images have smaller image gradients than their noisy one. The Total Variation minimization algorithm (also called ROF model)\cite{rudin1992nonlinear} is a representational work in this line. This prior is also powerful in transformed domain. In a work\cite{Idealspatial} of Donoho, a noisy signal can be denoised by soft thresholding its coefficients in the wavelet domain. It is proved that the denoised signal is as smooth as the original signal with high probability\cite{softthresholding}. Later, Chang \etal extended this idea by introducing adaptivity into wavelet thresholding\cite{bayesshrink}. The pixel based prior can also be learned from natural images. Portilla \etal have proposed the Gaussian Scale Mixture model\cite{blsgsm} which assumes that the representational coefficients of image pixels on wavelet domain satisfy a certain distribution. Despite the good performance of these methods, they also have their limitations. The pixel based prior only desribes local variational patterns and doesn't have the ability to describe comprehensive image structures in natural images. Hence, the pixel based methods can hardly perform as well as methods employing patch based prior in image denoising.
-
-The intuition in patch based prior comes from the fact that many image patches contain statistical structures. The image patches lie in a mannifold space in which the distribution of patches can be learned by appropriate models. Roth and Black model this distribution with student's t-distribution and learn filters through Markov Random Field (MRF) in their method called Fields of Experts (FoE)\cite{foe}. Since natural images are non-Gaussian\cite{gsm,weissfreeman}, Danial and Weiss model the distribution of patches with Gaussian Mixture Model (GMM)\cite{epll}. Elad and Aharon use KSVD\cite{ksvd} to learn dictionary adaptively from the images on hand with sparse coding framework. A further research line is fact of non-local self similarity in natural images. The method of Non-Local Means\cite{nlm} proposed by Budas \etal has demonstrated the power of internal similarity in image denoising. Along this line, the famous BM3D\cite{bm3d} performs denoising by collaboratively filters the coefficients of similar patches in transformed domain. Mairal\etal proposed the Learned Simultaniously Sparse Coding (LSSC)\cite{lssc} method to combine the learning ability of sparse coding and the collaborating strategy of similar patches. Later, Dong \etal proposed the NCSR\cite{ncsr} which integrates non-local means into the sparse regularizer. With the increasing of noise level, the non-local means will be inaccurate, NCSR will drop significantly. Besides, sice NCSR needs to do k-means clustering in each iteration , this method is very slow. The recently proposed WNNM achieves better denoising performance by employing adaptive thresholding the sigular values of the matrix of similar patches. The number of patches is at least equal to the dimension of image patch. However, not all image structures can enjoy so many similar patches, WNNM will generate obvious artifacts in some images, as will be demonstrated in experiments. Note that these methods don't explicitely learn prior knowledge of non-local patches or patch group, though many of them the non-local similarity in natural images.
-
-Despite the overall succuss of patch based methods, they do have their limitations due to patch complexity\cite{levin2012patch} external information which can be learned priorly for directing denoising. It is natural to ask, can we combine the learning model such as GMM with the non-local self similarity into a unified framework? In this paper, we propose a completely new image prior based on non-local simiar patches or patch group in images. Given some non-local similar patches, or a patch group, we can obtain the DC components or average patch of these patches. After removing the average patch from the similar patches, we get the variations between the similar patches and the average patch. What we find is that, these variations are similar to each other and they do have structures, just like image patches. To the best knowledge of the authors, we are the first to propose this patch group based modeling for image denoising task. The Gaussian Mixture Model has been succesfully applied in modeling image patches. With a little modification, the GMM can be used to model the distribution of non-local simialr patch group variations. For the patch group variations in test images, a appropriate dictionary can be chosen through approximate MAP. Then the group sparse coding framework is naturally used for final denoising task. Through extensive experiments, we demonstrate the proposed method outperforms the state-of-the-art algorithms quantitatively and qualitatively. Further more, our method is much more efficient than the leading denoising algorithm WNNM.
-%-------------------------------------------------------------------------
-\section{Patch Group Based Prior Modeling}
-We first briefly review methods establised on patch based prior modelling including the learning based method EPLL\cite{epll}. Then we want to point out the limitations of patch based prior learning. Then we present our motivation and formulation of patch group based prior learning method.
-\subsection{From Patch to Patch Group}
-According to the domain in which patch based prior modeling, existing methods can be categoried into two types: transfored domain and spatial domain. The methods modeling in transformed domain (especially wavelet domain) filter the noise by thresholding the coefficients of patches on designed dictionary in transformed domain since Gaussian white noise distributed evenly in these domain. The representational methods are BayesShrink\cite{bayesshrink} and BM3D\cite{bm3d}. The methods in spatial domain remove noise by learning filters or dictionary in natural images or noisy images on hand. Corresponding methods in this type include FoE \cite{foe}, EPLL\cite{epll} (natural images) and KSVD\cite{ksvd}, LSSC\cite{lssc}, NCSR\cite{ncsr}, PLE\cite{ygsgmm}, and WNNM\cite{wnnm} (noisy image on hand). Note that the WNNM adaptively learns dictioanry from non-local similar patches through Singular Value Decomposition (SVD). Some of these methods, such as KSVD\cite{ksvd}, LSSC\cite{lssc}, and NCSR\cite{ncsr}, employ the thoery that patches can be sparse representationed by dictionary patches, which can be traced back to the work of Olshausen and Field\cite{olshausen1996emergence,olshausen1997sparse}. Besides, the sparse representation has also been applied into other research area such as pattern recognition\cite{src,srcvpr} and machine learning\cite{mairal2010online}.
-
-Despite the succuss of methods learning patch based prior from images\cite{foe,epll,ygsgmm,ksvd,lssc,ncsr,wnnm}, they also have their limitations. Firstly, since the optimal prior for natural images should capture the distribution of natural images, it is not clear that the patch based methods can the fully model the statistics of natural images\cite{weissfreeman,levin2012patch}. Secondly, the methods FoE\cite{foe}, KSVD\cite{ksvd}, EPLL\cite{epll} are limited to local image patches\cite{levin2012patch} and don't explicitely employ the non-local similarity in natural images. Their performance are inherent limited by their power of local modeling\cite{levin2012patch}. The other methods such as \cite{lssc,ncsr,wnnm} do make use of non-local self similarity in images and achieve better performance. However, they are limited from real applications by their efficiency. These methods need at least several minutes to process an image of size $256\times 256$. Besides, these methods will generate artifacts when the noise is high, as will be demonstrated in experimental section. Thirdly, the learning methods EPLL\cite{epll} needs a large number of parameters to describe the rich structures in natural image. It contains 200 Gaussian components for the Gaussian Mixture Model. With fewer components, its performance will decrease.
-
-Though modeling the statistics of natural images is extremely hard and there is no perfect prior\cite{levin2012patch}, we need explore and develop more approximate priors for natural images. Besides, developing better prior learning model can help us achieving better denoising performance. As mentioned in \cite{levin2012patch}, the priors can not only be applied to other computer vision tasks, but also deepen our understanding of natural images. Motivated by the limitation of patch based prior learning \cite{epll} and the excellant performance of methods employing non-local self similarity\cite{bm3d}, we propose to extend the patch based prior to a completely new image prior: patch group based prior. That is, we think it is useful to connect the patch based prior learning with the non-local self similarity in natural images. To the best of our knowledges, there is no similar research before and we are the first one to propose to learn patch group based prior from natural images. A plausibly similar work is the non-local spectral prior (NSP) model\cite{nsp}. However, this model mainly characterize the singular values of the matrix of non-local similar patches in natural images. Hence, this work \cite{nsp} is very different from us since it doesn't directly learn statistical structures of non-local patch groups in natural images.
-%-------------------------------------------------------------------------
-\subsection{Patch Group Prior Learning}
-Given a referenced image patch, we find $M$ non-local similar patches in the image. The similarity is measured by Euclidean distance and they are ordered according to the distance to the reference patch (the first one). In this paper, the patch group is denoted as $\{\mathbf{x}_{m}|m=1,...,M\}$ which are column vectors in $\mathbb{R}^{p}$. The average patch of this patch group, i.e., $\mathbf{\overline{x}} = \frac{1}{M}\sum_{m=1}^{M}\mathbf{x}_{m}$, is removed and we get the remaining residuals or variations of these similar patches around the average patch. The average patch is also the center or DC component of this patch group. The variations can be written as $\{\mathbf{\Delta{x}}_{m} = \mathbf{x}_{m} - \mathbf{\overline{x}}|m=1,...,M\}$. For simplicity, we still regard  $\{\mathbf{x}_{m}|m=1,...,M\}$ as the patch group variations. Figure 1 demonstrates an example of patch group, its average patch, and the patch group variations.
-
-The patch group based prior learning is an open quastions. This openness comes form two aspects. On one hand, what we can learn from patch group is open. This is because patch group contains more statistical structures, such as non-local similarity and patch group variations, than a single patch. The NSR model\cite{nsr} gives a trial in modeling the singular values of patch groups. In this paper, we focus on patch group variations defined above. On the other hand, how to learn patch group based prior is open. Since this is an new image prior never mentioned before, previous models may hardly demonstrate the fully power of patch group based prior. However, we can still reference and renew previous models with some modifications. Inspired by the strong learning ability of Gaussian Mixture Model (GMM) in patch based prior\cite{epll}, we attempt to extend this standard model for patch group based prior learning.
-
-In order to explicitly employ the patch group based prior, we use a grouping strategy on the variations from the same patch groups. That is, we let the variations in the same patch group belong to the same Gaussian component in GMM. Since removing the center doesn't change the corresponding Euclidean distance between patches, the variations maintain the similarity to the referenced one and belong to the same component with high possibilities. However, we can't guarantee that each variation in the same patch group definitely belong to the same component without any accident. So this constraint is essential and should be proposed explicitly. Which is equivalent to say that, the probability of the patch variations belong to two or more different Gaussian components is set to zero. The probability of a given patch group variations ${\mathbf{X}_{n}} \triangleq \{\mathbf{x}_{n,1},...,\mathbf{x}_{n,M}\}$ belonging to the $k$th component is
-\begin{equation}
-\mathrm{P}(\mathbf{X}_{n}) =  \sum_{k=1}^{K}\pi_{k}\mathcal{N}(\{\mathbf{x}_{n,1},...,\mathbf{x}_{n,M}\}|\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})
-\end{equation}
-In order to make the calculation tractable, we assume that the variations in the patch group are independent from each other. This assumption is also employed by K-SVD\cite{ksvd} and LSSC\cite{lssc}. Though this assumption is problematic, it is useful. Then, the above equation can be written as
-\begin{equation}
-\mathrm{P}(\mathbf{X}_{n})  = \sum_{k=1}^{K}\pi_{k}\prod_{m=1}^{M}\mathcal{N}(\mathbf{x}_{n,m}|\mathbf{\mu}_{k}.\mathbf{\Sigma}_{k})
-\end{equation}
-Let $N$ be the number of patch groups, then we extract $N\times M$ image patches from natural images. Since we constrain the patches in the same patch group to belong to the same component of the GMM. The objective likelihood function is a conditional probability function $\mathcal{L} = \prod_{n=1}^{N\times M}\mathrm{P}(\mathbf{X}_{n})$. Taking the log of $\mathcal{L}$, we get
-\begin{equation}\label{equ6}
-\begin{split}
-\log\mathcal{L} &= \log\prod_{n=1}^{N} \mathrm{P}(\mathbf{X}_{n})
-\\
-& = \sum_{n=1}^{N} \log(\sum_{k=1}^{K}\pi_{k}(\prod_{m=1}^{M}\mathcal{N}(\mathbf{x}_{n,m}|\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})))
-\end{split}
-\end{equation}
-Directly maximize the log-likelihood function is hard, we need to introduce the hidden variables $\{\Delta_{nk}|n=1,...,N;k=1,...,K\}$. $\Delta_{nk}=1$ if patch group variations $\mathbf{X}_{n}$ belongs to the $k$th component and $\Delta_{nk}=0$ otherwise. Hence, a practical method to find the maximum likelihood estimation of (4) is the Expectation-Maximization (EM)algorithm\cite{em}. Basing on the assumption that the variations in the same patch group belong to the same component, the hidden variables $\{\Delta_{nk}\}$ satisfy $\sum_{k=1}^{K}\Delta_{nk}=1$. Since we don't know the values of these hidden variables before, we can calculate the expected value of each hidden variable instead. Denote $\gamma_{nk}$ as $E(\Delta_{nk}|\mathbf{X}_{n},\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})$, we can get expected value of $\{\Delta_{nk}\}$ by Bates' Theorem:
-\\
-{\bf{Expectation Step (E-Step)}}: The posterior probability, or the responsibility of each hidden variable is 
-\begin{equation}
-\begin{split}
-\gamma_{nk} & \triangleq E(\Delta_{nk}|\mathbf{X}_{n}) = P(\Delta_{nk}=1|\mathbf{X}_{n})
-\\
-&=\frac{P(\Delta_{nk}=1)P(\mathbf{X}_{n}|\Delta_{nk}=1)}{P(\mathbf{X}_{n})}
-\\
-&=\frac{\pi_{k}\prod_{m=1}^{M}\mathcal{N}(\mathbf{x}_{n,m}|\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})}{\sum_{l=1}^{K}\pi_{l}\prod_{m=1}^{M}\mathcal{N}(\mathbf{X}_{n,m}|\mathbf{\mu}_{l},\mathbf{\Sigma}_{l})}
-\end{split}
-\end{equation}
-Hence, the equation \ref{equ6} can be written as the final log-likelihood function
-\begin{equation}\label{equ7}
-\log\mathcal{L} = \sum_{n=1}^{N}\sum_{k=1}^{K}\gamma_{nk}\log(\pi_{k}(\prod_{m=1}^{M}\mathcal{N}(\mathbf{x}_{n,m}|\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})))
-\end{equation} 
-{\bf{Maximization Step (M-Step)}}: Taking the derivatives of the log-likelihood function (6) on $\{\mathbf{\mu}_{k},\mathbf{\Sigma}_{k}\}$ respectively and set the derivative fuctions to zero, we can get that
-\begin{equation}
-\mathbf{\mu}_{k} = \frac{\sum_{n=1}^{N}\gamma_{nk}\sum_{m=1}^{M}\mathbf{x}_{n,m}}{\sum_{n=1}^{N}\gamma_{nk}}
-\end{equation}
-and
-\begin{equation}
-\mathbf{\Sigma}_{k} = \frac{\sum_{n=1}^{N}\gamma_{nk}\sum_{m=1}^{M}(\mathbf{x}_{n,m}-\mathbf{\mu}_{k})(\mathbf{x}_{n,m}-\mathbf{\mu}_{k})^{T}}{\sum_{n=1}^{N}\gamma_{nk}}.
-\end{equation}
-Similar to the calculations of $\{\pi_{k}\}$ in \cite{Bishop}, we can get that
-\begin{equation}
-\pi_{k} = \frac{\sum_{n=1}^{N}\gamma_{nk}}{N}.
-\end{equation}
-The equations of (5), (7), (8), and (9) consist an iterative scheme for achieving the solution of the maximum likelihood estimation problem. In the E-Step, the posterior probabilities is updated by equation (5) with current parameters, i.e., mixture weights, means, and covariance matrices. In the M-Step, these parameters will be updated according to updated posterior probabilities. Noted that $\sum_{m=1}^{M}x_{n,m}=0$ for each $n\in \{1,...,N\}$, the mean of each Gaussian component is $\mathbf{0}$ vector in $\mathbb{R}^{p}$. This is different from patch based GMM and we can save a lot of computational cost in both learning and denoising stages. The parameters in (7), (8), and (9) will be updated when alternating between the E-step and the M-step and this update is guaranteed to increase the value of the log likelihood function (4)\cite{Bishop}. Besides, the incremental scope will decrease and converge to zero. Hence, the EM algorithm will converged when the increasing of the log lokelihood fuction (4) is below to a preset threshold.
-
-Now we consider the computational complexity of our proposed patch group based prior learning model with GMM. The computational cost of our patch group based GMM comes from two aspects. One is the searching for the non-local similar patches or patch groups. The other is the training of patch group based GMM. In the searching of similar patches, we restrict the searching in a window of $W\times W$ pixels, the number of patch groupes in each image depends on the size of images. For each image, the number of patch groups is proportionate to the size of image $N\times N$. Assume that the size of image patch is $p\times p$, the complexity for searching similar patch groups is $O(p^{2}W^{2}N^{2})$. In the stage of training patch group based GMM, there are $N^{2}$ patch groups, each of which contains $M$ patch variations. So we have $MN^{2}$ patches. In the M-step, we only need to calculate the covariance matrices since the means of each component is zero vector. The complexity of the covariance matrices is $O(p^{4}MN^{2})$. In the E-step, the complexity is $O(p^{3}MN^{2})$. Assmuing the number of iterations is $K$. The overall complexity of the training step is $O(p^{4}MN^{2}K)+O(p^{2}W^{2}N^{2})$.
-
-There are several advantages of our proposed patch group based GMM over patch based GMM. Most importantly, our proposed model learn the non-local self similarity in natural images and hence contains more statistical information than patch based model. So our model can demonstrate more powerful ability in low level vision tasks. Besides, since similar variations in each patch group are collaboratively clustered into the same Gaussian components, our model would be much more stable than the original patch based GMM which deal with the patches individually. Thirdly, as have mentioned above, the means of our proposed model is always zero while the patch based GMM \cite{epll} are set to zero means. So our patch group based model would be more accurate to a certain degree than the patch based GMM proposed in \cite{epll}. Last, since different patch groups can share similar variations. The number of components in our patch group based GMM is much less than that of patch based GMM. In EPLL\cite{epll}, Danial and Weiss use 200 components to achieve current denoising performance. However, 33 components in our proposed GMM are enough to achieve better performance than patch based GMM model\cite{epll}, as will be demonstrated in experimental section.
-
-Under fixed training dataset, the time for learning depends on the size of image patch and the number of Gaussian components. The GMM is learned on the Kodak PhotoCD dataset (\url{http://r0k.us/graphics/kodak/}), which is consisted of 24 high quality images. In the method EPLL\cite{epll}, the eigenvectors of covariance matrices of GMM can be viewed as dictioanry and basis for image patches. Though this method doesn't directly make use of this dictionary, the structures learned by GMM is impressive. In our patch group based modeling, we constrain the variations in each patch group belong to the same components and similar patch group variations will be clustered into the same components with high possibilities. Hence, the eigenvectors of the covariance matrices should also capture some structures in natural images. What these eigenvectors capture is the variational structure within similar patch groups in natural images. It also contains statistical structures in images and Figure 2 is an example of the eigenvectors of 4 different corariance matrices of GMM. 
-\begin{figure}[t]
-\begin{center}
-%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
-   \includegraphics[width=0.8\linewidth]{img/4d.eps}
-\end{center}
-\caption{The eigenvectors of 4 corariance matrices of the learned GMM. Note the similarity of structures to patch based prior (Top) and the special structures of our proposed patch group based prior (Down).}
-\end{figure}
-In each Gaussian component, the patch group variations in it can be linearly represented by the eigenvectors of the covariance matrix of this component\cite{epll}. Surprisingly, the eigenvectors have clear and rich structures and can be viewed as dictionaries, which are very similar to the dictionaries learned directly from image patches\cite{epll}.
-%-------------------------------------------------------------------------
-\section{Image Denoising by Patch Group Priors}
-\subsection{Proposed Denoising Model}
-Given a noisy image $\mathbf{y} = \mathbf{x} + \mathbf{n}$, image denoising is to remove the noise $\mathbf{n}$ and recover the clean image $\mathbf{x}$, where $\mathbf{n}$ is additive Gaussian white noise with zero mean and variance $\sigma^{2}$. The denoising is performed on image patches. For each image patch of size $p\times p$, we vectorize it to a $p^{2}\times 1$ vector and call it reference patch and search similar patches in a window of size $W\times W$ around it. Then we select $M$ most similar patches to form a patch group. Assuming there are overall $N$ patch groups in the noisy image. We calculate the DC component or average patch for each patch group and then remove the DC component from each patch in this group. The remainings can be viewed as variations of these similar patches in this patch group around the DC component. Since the noise is Gaussian white, we can regard the DC component of the nosiy patch group as the DC component of corresponding patch group from the latent clean image. From this viewpoint, the DC component can be seen as a type of non-local mean of this patch group. The noise only remains in the patch group variations. The variations are also similar to the reference one. If the $M$ similar patches in the same patch group are strcitly identical, then the remainings are all patches of zero vectors. If the variations are very small, i.e., the largest standard variation of the remaining variations is smaller than a preset threshold (such as 0.002), then the variations of this patch group are viewed as smooth variations. We perform denoising with our proposed patch group based prior. We will show that most information of this prior are very useful to our denoising task. 
-
-To facilitate our description, we denote the noisy patch group variations as $\mathbf{Y}_{n} = \{\mathbf{y}_{n,1},...,\mathbf{y}_{n,M}\}$. Then we adaptively select the most suitable component for this patch group variations. The selection can be done via approximately Maximum A-Posterior (MAP). Specifically, for the $k$th Gaussian component, the probability that the given patch group variations $\mathbf{Y}_{n}$ belongs to it is
-\begin{equation}
-\begin{split}
-\mathrm{P}(k|\mathbf{Y}_{n}) &= \frac{\mathcal{N}(\{\mathbf{y}_{n,1},...,\mathbf{y}_{n,M}\}|\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})}{\sum_{k=1}^{K}\mathcal{N}(\{\mathbf{y}_{n,1},...,\mathbf{y}_{n,M}\}|\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})}
-\\
-&=\frac{\prod_{m=1}^{M}\mathcal{N}(\mathbf{y}_{n,m}|\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})}{\sum_{k=1}^{K}\prod_{m=1}^{M}\mathcal{N}(\mathbf{y}_{n,i}|\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})},
-\end{split}
-\end{equation}
-where the second equation assumes that the patch group variations were independent from each other. Taking $\log$ likelihood of given patch group variations is trivial:
-\begin{equation}
-\log\mathrm{P}(k|\mathbf{Y}_{n}) = \sum_{m=1}^{M}\log\mathcal{N}(\mathbf{y}_{n,m}|\mathbf{\mu}_{k},\mathbf{\Sigma}_{k})-\log{C_{n}}
-\end{equation}
-where $C_{n}$ is the denominator in Equation 12. It is the same for all Gaussian components and hence can be ignored. Then the component with highest approximate MAP is selected and the eigenvectors of covariance matrix of this component is used as the dictionary $\mathbf{D}$ for this patch group variations. A natural choice of our denoising model is the simple group sparse coding framework:
-\begin{equation}
-\min_{\mathbf{A}}{\|\mathbf{Y}-\mathbf{DA}\|_{F}^{2}+\mathrm{\lambda}\|\mathbf{A}\|_{2,1}},
-\end{equation}
-where $\|\mathbf{A}\|_{2,1} = \sum_{i=1}^{p^{2}}\sqrt{\sum_{j=1}^{M}\mathbf{A}_{i,j}^{2}}$ denote the $\ell_{2,1}$ norm\cite{l21norm} of matrix $\mathbf{A}\in\mathbb{R}^{p^{2}\times M}$. Noted that the eigenvectors should have different importance. Just like the rule in PCA, the larger the eigenvalue is, the more important the corresponding eigenvector is, and the less the corresponding sparse coding coefficients should be shrunk. Hence, in real denoising task, we use the following weighted group sparse coding framework:
-\begin{equation}
-\min_{\mathbf{A}}{\|\mathbf{Y}-\mathbf{DA}\|_{F}^{2}+\|\mathbf{W}\odot \mathbf{A}\|_{2,1}}.
-\end{equation}
-We use the variance of noise $\sigma^{2}$ to normalize the data fidelity term $\|\mathbf{Y}-\mathbf{DA}\|_{F}^{2}$ and incorporate it into the weighting matrix $\mathbf{W}\in\mathbb{R}^{p^{2}\times M}$. The entry of $i$th row and $j$th column of the weighting matrix is defined as
-\begin{equation}
-\mathbf{W}_{ij} = c*2\sqrt{2}\sigma^{2}/(\Lambda_{i}+\varepsilon),
-\end{equation}
-where $\Lambda$ is the corresponding eigenvalues of the covariance matrix of the selected component and $\Lambda_{i}$ is the$i$th entry of $\Lambda$. Noted that the Equation (14) is similar to the adaptive threshold proposed in the BayesShrink method\cite{bayesshrink}. Since the columns of the dictionary $D$ consist a orthonormal basis in the space of $\in\mathbb{R}^{p^{2}\times p^{2}}$, the group sparse coding framework has close-form solution\cite{fastgsc,lrr} and the entry of $i$th row and $j$th column of the solution $\mathbf{A}$ is 
-\begin{displaymath}
-\scriptsize
-\hat{\mathbf{A}}_{i,j} = \left\{ \begin{array}{ll}
-\frac{\|[\mathbf{D^{T}Y}]_{i,j}\|_{2}-\mathbf{W}_{ij}}{\|[\mathbf{D^{T}Y}]_{i,j}\|_{2}}[\mathbf{D^{T}Y}]_{i,j},&\textrm{if $\|[\mathbf{D^{T}Y}]_{i,j}\|_{2}>\mathbf{W}_{ij}$};\\
-0, & \textrm{otherwise}.
-\end{array} \right.
-\end{displaymath}
-\subsection{Proposed Denoising Algorithm}
-In previous subsection, the recovered patch group variations are $\hat{\mathbf{Y}} = \mathbf{D}\hat{\mathbf{A}}$. Then the reconstructed image can be obtained by aggregating from the recovered patch groups. In fact, the removal noise often contains structural information in latent clean image\cite{nlm} and hence we need perform the above denoising procedure for several iterations. After each iteration, we use iterative regularizaton strategy\cite{osher2005iterative} to add back the filtered noise:
-\begin{equation}
-\mathbf{y}^{(k)}=\hat{\mathbf{x}}^{(k-1)}+\delta(\mathbf{y}-\hat{\mathbf{y}}^{(k-1)})
-\end{equation}
-Then the standard variation is changed and we need to estimate it from the current image via
-\begin{equation}
-\sigma_{k} = \eta*\sqrt{\sigma_{n}^{2}-\|\mathbf{y}-\mathbf{y}^{(k-1)}\|_{2}^{2}}
-\end{equation}
-where $\eta$ is a parameter controlling the estimation of standard variance of the noise. We summary our patch group based denoising algorithm in Algorithm 1.
-\begin{table}\label{a1}
-\begin{tabular}{l}
-\hline
-\textbf{Algorithm 1}: Denoising by Patch Group based Prior
-\\
-\hline
-\textbf{Input:} Noisy image $\mathbf{y}$, Trained GMM
-\\
-1. Initialization: $\hat{\mathbf{x}}^{(0)}=\mathbf{y},\mathbf{y}^{(0)}=\mathbf{y}$;
-\\
-\textbf{for} k = 1:K \textbf{do}
-\\
-2. Iterative Regularization via (15);
-\\
-3. Estimating the standard variation of noise via (16);
-\\
-4. Find Patch Group Variations $\{\mathbf{Y}_{n}|n=1,...,N\}$: 
-\\
-\quad\quad \textbf{for} each patch $\mathbf{y}_{n}$ in $\hat{\mathbf{y}}^{(k)}$ \textbf{do}
-\\
-\quad\quad\quad Find similar patch group and remove the DC
-\\
-\quad\quad\quad component of the patch group;% $\overline{\mathbf{y}}_{n}$;
-\\
-\quad\quad\textbf{end for}
-\\
-5. Dictionary Selection: 
-\\
-\quad\quad Choose the most proper dictionary $\mathbf{D}$ by (11);
-\\
-6. Denoising by Group Sparse Coding (13);
-\\
-7. Get the estimated variations $\hat{\mathbf{Y}}_{n}=\mathbf{D}\hat{\mathbf{A}}_{n}$ and add
-\\
-\quad the DC components to get final patch groups;
-\\
-\textbf{end for}
-\\
-8. Aggregatition $\{\hat{\mathbf{Y}}_{n}|n=1,...,N\}$ to form the 
-\\
-\quad restored image $\hat{\mathbf{x}}^{(k)}$;
-\\
-\textbf{end for}
-\\
-\textbf{Output:} The restored image $\hat{\mathbf{x}}^{(K)}$.\\
-\hline
-\end{tabular}
-\end{table}
-\subsection{Compare with Patch Based Non-local Methods}
-We compare our proposed method with several competing patch based methods\cite{bm3d,lssc,ncsr,wnnm}. These methods all find non-local similar patches in noisy images when performing denoising task. However, they are fundamentally different from our proposed method. The BM3D find similar patches and perform denoising by collaboratively thresholding their coefficients on preset basis in wavelet domain. But we adaptively choose the dictionary learned from natural images. Even though LSSC also employs dictionary learning from natural images, it learns dictionary through sparse coding framework proposed in KSVD and updates the dictionary from the noisy image itself. This is different from our method. We learns the dictionary by clustering patch groups via GMM and the dictionaries are totally learned from natural images. The NCSR also performs dictionary learning by clustering, but it cluster image patches, not patch groups. Besides, NCSR uses non-local similar patches to calculate the non-local means. While we use patch groups both for dictionary learning and denoising. The recent WNNM finds similar patches and performs denoising by adaptive thresholding the singular values of the similar patches. We learn patch group based prior from natural images and this learning can save us a lot of time when performing image denoising task.
-%-------------------------------------------------------------------------
-\section{Experiments}
-In this section, we compare our proposed method with several state-of-the-art methods, such as EPLL\cite{epll}, BM3D\cite{bm3d}, LSSC\cite{lssc}, NCSR\cite{ncsr}, and WNNM\cite{wnnm}. To compare our patch group based prior with patch based prior more equally, we combine the patch based prior learning via GMM with weighted group sparse coding framework proposed in last section and refer it as the \textsl{Baseline} method. The learning is also performed on Kodak PhotoCD dataset. For each reference patch, we find $M$ similar patches. Then DC component of each patch is removed. Then the reference patch is used to choose dictionary for this patch group. The denoising settings are the similar to our proposed patch group based prior learning method. The parameters for the \textsl{Baseline} method are tune to best performance for fair. In the experimens, we demonstrate the effectiveness and efficiency of our proposed image patch group prior on image denoising tasks.
-\subsection{Implementation Details}
-Our proposed method contains two stages, one is the learning stage for patch group based prior modeling, the other is the denoising stage. In the learning stage, there are four parameters (the patch size $p$, the window size $W$, the number of similar patches in a patch group $M$, and the maximum number of iterations $K$ in training GMM). We set the patch size as $p = 6$ for $0 < \sigma \le 20$, $p = 7$ for $20 < \sigma \le 30$, $p = 8$ for $30 < \sigma \le 50$, and $p=9$ for $50 < \sigma \le 100$. The size of searching window is $W = 31$. The number of similar patches in a patch group is $M = 10$. These settings are the same for the denoising stage. The maximum number of iterations is $K =100 $ for GMM. In the denoising stage, there are another four parameters. The number of iterations is set as 4 for all different noise levels. The iterative regularization parameter $\delta$. The $\eta$ is used to estimate the standard variance of noise and the $c$ used in (20). In order to improve the efficiency of our proposed method, we largely reduce the computational cost while also weaken a little the denoising performance. First of all, in the training and testing stage, we select reference patches every three pixels. This largely reduces the number of patch group we deal with. Secondly, we don't search similar patches in the whole image, but around the reference patch with a square box of size 31 by 31 pixels. We choose 10 similar patches for each reference patch. Besides, we only use 4 iterations in denoising and select dictionary 2 times (the first and middle iterations) during the iterations. 
-\subsection{Results and Discussions}
-We compare our method with BM3D, EPLL, LSSC, NCSR, WNNM, and Baseline Method on 20 commonly used natural images. We also compare the performance of these methods on 200 images from the test set of Berkeley Segmentation Data Set (BSDS500)\cite{bsds}. We don't use the training dataset since the method EPLL is trained from the patches of the 300 training images. The results for these 200 images can be found in the supplementary matirials. To generate noisy images, we add to the test images additive white Gaussian noises with zero mean and variance $\sigma^{2}$.
-
-\textbf{PSNR:}
-In Table 1, we demonstrate the results on PSNR on four different levels of noise at $\sigma = 30$, $\sigma = 40$, $\sigma = 50$, and $\sigma = 75$. The results for other noise levels can be found in the supplementary material. From the results, we have several observations. Firstly, our proposed method achieves comparable and mostly better performance than the baseline method, BM3D, LSSC, EPLL\cite{epll}, and NCSR but a little inferior than WNNM. The average PSNR of our method on diffrent levels of noise are higher than the \textsl{Baseline} method at 0.15 to 0.3dB. This shows the strong ability of patch group based prior in directing denoising task. Noted that we aims at both effective and efficiency in designing our method, the gap with WNNM can be narrowed or even eliminated if we don't consider the efficiency of our proposed method.
-\\
-\textbf{Image Quality:}
-We compare the image quality of our method with the \textsl{Baseline} method and EPLL\cite{epll}, BM3D\cite{bm3d}, LSSC\cite{lssc}, WNNM\cite{wnnm}, as shown in Figure 3 and Figure 4. More results can be found in supplementary matrial. The results demonstrate that our method achieves better image quality and generate less artifacts than all these methods. The methods BM3D and EPLL are likely to generate artifacts. The WNNM is likely to generate artifacts when the noise is high, an example is the clear artifacts around the elbow in image \textsl{Cameraman}. However, our method can suppress these artifacts better. More details can be found in highlighted windows. In image \textsl{Airplane}, our method recoveries more clear the numbers than all other methods. The WNNM, EPLL, and the Baseline method will generate clear artifacts in the white area. Besides, BM3D and WNNM generate clear artifacts in left edge. While our method preserve better these areas. In image \textsl{Cameraman}, we recovery more clear the hair cock of the man and the texture of the camera. Hence, our method demonstrates better image quality image denoising even though our PSNR is a little inferior than WNNM. This is reasonable since mean squared error (MSE) may not decide the final image quality, which is pointed out in \cite{ssim}.
-\\
-\textbf{Speed:}
-We also compare the average time of our method with these competing methods on the 20 images. There are 7 images of size $256\times256$ while the other 13 images are of size $512\times512$. So we also compare the standard variation of the running time. All these methods are run on a machine with Intel(R) Core(TM) i7-4770K CPU at 3.50GHz and a 12.0 GB RAM. From the results are listed in Table 2, we have several observations. First of all, the time increases with the size of test images. The time for $512\times512$ image is about 4-fold the time for $256\times256$. Secondly, BM3D is the most efficient method and only needs less than 1 second to process an image of $256\times256$. Our proposed method is slower than BM3D while faster than other methods. For an image of size $256\times256$, our method needs about 10 seconds. Note that BM3D is implemented with compiled C++ mex-function while our method is written in Matlab. Our method can be more efficient by strategies used in BM3D. The other methods need more time and hence can hardly be applied to real applications. The time of EPLL is about 4-fold of the time of our method. The NCSR needs train adaptive dictionary by k-means clustering, hence it is very slow and needs more time when compared to other methods. The WNNM\cite{wnnm} needs to perform SVD for each non-local similar patches and hence also suffers huge computational cost. These two methods need at least 10 times more when compared with our method. Lastly, the time for denosing will increase with the increase of noise. As shown in Table 2, the higher the standard variance of noise, the more time these methods need to denoise the images.
-\begin{table*}[t]\label{tab1}
-\caption{PSNR(dB) results of different denoising algorithms on 20 natural images}
-\begin{center}
-\renewcommand\arraystretch{1.0}
-\scriptsize
-\begin{tabular}{|c||c|c|c|c|c|c|c||c|c|c|c|c|c|c|}
-\hline
-&\multicolumn{7}{c||}{ $\sigma = 30$}&\multicolumn{7}{c|}{ $\sigma = 40$}
-\\
-\hline
-\hline
-Images&\textbf{Baseline}&\textbf{BM3D}&\textbf{LSSC}&\textbf{EPLL}&\textbf{NCSR}&\textbf{WNNM}&\textbf{Ours}&
-\textbf{Baseline}&\textbf{BM3D}&\textbf{LSSC}&\textbf{EPLL}&\textbf{NCSR}&\textbf{WNNM}&\textbf{Ours} 
-\\
-\hline
-Airfield&26.46& 26.41 & 26.68 & 26.52  &  26.36  & 26.67   & 26.44    &25.32 & 25.10 &  25.51  & 25.36 & 25.07 & 25.48 & 25.28  
-\\
-\hline
-Airplane&30.70&  30.71  & 30.62  &  30.68  &  30.70 & 30.97  &  30.80   &29.32 & 29.20 & 29.21  & 29.28 & 29.28 & 29.58&29.43
-\\
-\hline
- Baboon&24.57 & 24.57   & 24.78  & 24.70   & 24.63  & 24.85 & 24.58   & 23.23 &  23.11 &  23.51  & 23.35 & 23.28 & 23.58&23.35   
-\\
-\hline 
- Barbara & 28.11& 29.81  & 29.60 & 27.64 & 29.62 & 30.31 & 29.34    & 26.46&  27.99 & 28.17 & 26.06 & 28.20 &28.76 & 27.95
-\\
-\hline
- Boat & 28.93& 29.12  & 29.06  & 28.97 & 28.94 & 29.24 &  29.06   &27.66 &  27.74& 27.77  &  27.72 & 27.65 &27.96  & 27.81    
-\\
-\hline
- C. Man& 28.41 & 28.64 & 28.63 & 28.40  & 28.58 & 28.80 & 28.52    & 27.18 &  27.18& 27.34  & 27.10 &27.12  &27.47 & 27.32
-\\
-\hline
- Carhouse &28.69& 28.78 & 28.79   & 28.70    & 28.72 & 28.94 & 28.79  & 27.36 &  27.38 &  27.49 & 27.38 & 27.40 & 27.58 &27.51
-\\
-\hline
- Couple& 28.64 & 28.87  & 28.76  & 28.69 & 28.57 & 28.98 & 28.84   & 27.29 &  27.48 & 27.41 &  27.34  & 27.24 & 27.62  & 27.54    
-\\
-\hline
- Elaine&30.26 & 30.45 & 30.54 & 30.26   &  30.26  & 30.46  & 30.40   &29.45 &29.52 & 29.55 & 29.46 & 29.59 & 29.60 & 29.65   
-\\
-\hline
- Hat & 29.28& 29.37 & 29.22  & 29.22   &  29.16  & 29.44   &  29.35   &27.74  & 27.74 & 27.60 &  27.73  &  27.66 & 27.85&27.92   
-\\
-\hline
- Hill &28.87 & 29.16 & 29.09 & 28.94 & 28.97 & 29.25 & 29.09    &27.80 & 27.99 & 28.00 & 27.86 & 27.83 & 28.12 & 28.06  
-\\
-\hline
- House& 31.63 & 32.09 & 32.40  & 31.48  & 32.07 & 32.52 & 32.24    &30.31&   30.65  & 31.10   & 30.20   & 30.80  & 31.31 &31.02    
-\\
-\hline
- Lake &28.43  & 28.34 & 28.36  & 28.41   & 28.31   &  28.59 &28.37   &27.18 &   26.98  & 27.13 &  27.19  & 26.99 &27.34 & 27.14  
-\\
-\hline
- Leaves&27.80 & 27.81 & 27.65& 27.36 & 28.14 & 28.60 &27.98     & 26.15& 25.69 & 26.04 & 25.80 & 26.24 & 26.95 & 26.28  
-\\
-\hline
- Lena&31.09& 31.26 & 31.18  & 30.98 &  31.06& 31.43  &  31.28     &29.80 & 29.86& 29.91 & 29.69 & 29.92 & 30.11 &30.11   
-\\
-\hline
- Man& 28.82& 28.86 & 28.87 & 28.87 & 28.78 & 29.00 & 28.86     &27.65&   27.65  & 27.64 & 27.68 & 27.54 &27.80 & 27.72     
-\\
-\hline
- Monarch& 28.55& 28.36 & 28.20 & 28.50 & 28.46 & 28.91  &  28.47   &27.14 &   26.72  & 26.87 &  27.05  & 26.85 & 27.47 &27.02    
-\\
-\hline
- Paint&28.52 & 28.29 & 28.29 & 28.45  &  28.10  & 28.58 &28.41   & 27.02 &  26.69 &  26.77 &  27.00  & 26.50 & 27.10 & 26.93 
-\\
-\hline
- Peppers &31.15& 31.26 & 31.17 & 31.10 & 31.11  & 31.38  & 31.27   &29.99 &   29.97  & 30.00  &  29.93 &  30.07 & 30.18 & 30.19    
-\\
-\hline
- Zelda& 30.43 & 30.45 & 30.27  & 30.44  &  30.16  & 30.48  &30.45    &29.15& 29.10  &  28.91 &  29.18  & 28.94 & 29.12 &29.25   
-\\
-\hline
- \textbf{Average} & 28.97 &  29.13 & 29.11  &  28.92 & 29.03  & 29.37 & 29.13   &27.66 &  27.69   & 27.80 &  27.62  & 27.71 & 28.05 &27.87     
-\\
-\hline
-\hline
-&\multicolumn{7}{c||}{ $\sigma = 50$}&\multicolumn{7}{c|}{ $\sigma = 75$}
-\\
-\hline
-\hline
-Images&\textbf{Baseline}&\textbf{BM3D}&\textbf{LSSC}&\textbf{EPLL}&\textbf{NCSR}&\textbf{WNNM}&\textbf{Ours}&
-\textbf{Baseline}&\textbf{BM3D}&\textbf{LSSC}&\textbf{EPLL}&\textbf{NCSR}&\textbf{WNNM}&\textbf{Ours} 
-\\
-\hline
- Airfield & 24.46& 24.20 & 24.58 & 24.46  &24.18 & 24.51 & 24.42   &22.88  & 22.71 & 22.85 & 22.85 & 22.57 &22.94 &22.89 
-\\
-\hline
- Airplane &28.22& 28.24 & 28.15 & 28.19 & 28.18 &  28.55& 28.39     &26.11& 26.40 & 26.16 & 26.14  & 26.10 &  26.68& 26.40
-\\
-\hline
- Baboon & 22.29& 22.35  & 22.60 & 22.35 & 22.43  & 22.73&22.46     &20.82 &  21.11&  21.18  & 20.85  & 21.03  & 21.36& 21.10
-\\
-\hline
- Barbara &25.17 & 27.23  & 27.03  & 24.83  & 26.99 &  27.79& 26.80     &23.02& 25.12  & 25.01  & 22.94   &  24.72& 25.81 &  24.85   
-\\
-\hline
-  Boat & 26.68& 26.78 & 26.77  & 26.74  & 26.67 & 26.97  &  26.84    & 24.94 & 25.12 & 25.03 & 25.01 &  24.87&  25.29  &  25.21         
-\\
-\hline
- C. Man  & 26.21 & 26.12 & 26.35   & 26.10 & 26.15 & 26.42 & 26.45   &24.36& 24.33 & 24.41 &  24.29  & 24.22 &  24.55 &  24.62     
-\\
-\hline
- Carhouse &26.38 & 26.53 & 26.48  &  26.39   & 26.41 & 26.67 &26.54    &24.62 &  24.89 & 24.85  &  24.65  & 24.53  &25.04 &24.87
-\\
-\hline
- Couple &26.24 & 26.46 & 26.35  & 26.30 & 26.19 &  26.65 & 26.51   &24.46& 24.70 & 24.51 & 24.51 & 24.33 & 24.85  &  24.74   
-\\
-\hline
- Elaine &28.75 &  28.94 & 28.75 & 28.77   & 28.85 & 28.97 &28.94     &27.34&   27.41  & 27.27 & 27.38  &  27.16 &27.53&27.49   
-\\
-\hline
- Hat & 26.60 &  26.77 & 26.41 & 26.62  & 26.51 & 26.78 &26.77     &24.63 &   24.77  & 24.31  & 24.65   &  24.48 &24.77 & 24.81
-\\
-\hline
- Hill  & 26.98  & 27.19 & 27.14  & 27.04 & 26.99   &27.34 &27.23     &25.53& 25.68 & 25.57 & 25.60 &  25.40 & 25.88  & 25.77           
-\\
-\hline
- House & 29.17 & 29.69 & 29.99  & 29.12  & 29.62  & 30.32 &29.94      &26.91& 27.51 & 27.75  &  27.09 &  27.22 & 28.25 & 27.81    
-\\
-\hline
- Lake & 26.22  &  26.13  & 26.15  & 26.24  &  26.02  & 26.41&26.19      &24.46 & 24.49 & 24.25 & 24.50 & 24.26 &24.66 &24.51   
-\\
-\hline
- Leaves &24.83  & 24.68 & 24.78   & 24.55  & 24.96 & 25.47 &25.01     &22.27 & 22.49  & 22.17 & 22.12 &  22.60 & 23.06 & 22.61
-\\
-\hline
- Lena &28.77 & 29.05 & 28.95 & 28.68 & 28.90 &  29.25  & 29.12     &26.90 & 27.26 & 27.22 &  26.88 & 27.00 & 27.54 &  27.40   
-\\
-\hline
- Man  &26.77 & 26.81 & 26.72    & 26.79 & 26.67 &  26.94 &  26.85    &25.22& 25.32 & 25.10  & 25.26  & 25.10 &  25.42& 25.38      
-\\
-\hline
- Monarch &26.01 & 25.82 & 25.88 & 25.94 & 25.76 & 26.31 & 25.99    &23.96& 23.91 & 23.66  &  23.88   &  23.67& 24.31 & 24.01   
-\\
-\hline
- Paint &25.87 & 25.67 & 25.59 & 25.87 & 25.36 &25.98 & 25.82      &23.87 &  23.80 & 23.52 &  23.88 & 23.44 &24.07 & 23.93  
-\\
-\hline
- Peppers &29.04 & 29.12 & 29.06 & 28.98 & 29.07 & 29.34 & 29.25      &27.12& 27.28 & 27.14 &  27.15 & 26.96 &  27.55  &  27.43
-\\
-\hline
- Zelda & 28.18 & 28.25 & 27.90 & 28.22 & 27.97 & 28.21 & 28.27      &26.53  &  26.60 & 26.09 &  26.55  & 26.21  & 26.44 & 26.57
-\\
-\hline
- \textbf{Average} & 26.64 &  26.80 &  26.78 &  26.61  & 26.69  & 27.08 & 26.89     &24.80 &  25.04 & 24.90  &  24.81 & 24.79 & 25.30 & 25.12     
-\\
-\hline
-\end{tabular}
-\end{center}
-\end{table*}
-\begin{table*}[t]\label{tab1}
-\caption{Average time and corresponding standard variations (seconds) of  different algorithms on images of size $256\times 256$ and $512\times 512$.}
-\begin{center}
-\renewcommand\arraystretch{1}
-\scriptsize
-\begin{tabular}{|c||c|c|c|c|c|c|c|}
-\hline
-&\multicolumn{7}{c|}{ $256 \times 256$}
-\\
-\hline
-\hline
-$\sigma$&\textbf{Baseline} &\textbf{BM3D}&\textbf{LSSC}&\textbf{EPLL}&\textbf{NCSR}&\textbf{WNNM}&\textbf{Ours} 
-\\
-\hline
-  10 &$11.05\pm0.06$  & $0.67\pm 0.09$  &   $  \pm $  & $38.47\pm0.10 $   & $126.43\pm3.84$   & $84.34\pm1.42$   &   $9.13\pm0.02$  
-\\
-\hline
-  20 &$10.74\pm0.15$ &  $0.70\pm0.09$  & $  \pm $   & $38.47\pm0.13$   &  $156.14\pm5.26$  &  $84.70\pm1.71$  &  $9.23\pm 0.07$             
-\\
-\hline 
- 30 &$10.85\pm0.25$   &  $0.70 \pm 0.09$  &  $  \pm $  & $38.55\pm0.09$  &  $149.31\pm4.19$  &  $155.75\pm0.94$  &  $9.77\pm0.04$            
-\\
-\hline
- 40&$10.88\pm0.21$   &  $0.67\pm0.11$  &  $  \pm $  &  $38.51\pm0.08$  &  $346.91\pm18.65$  &  $157.35\pm1.48$  & $12.33\pm0.09$            
-\\
-\hline
- 50&$10.85\pm0.05$   &  $0.87\pm0.04$  &  $  \pm $  &  $40.21\pm1.82 $  &  $326.93\pm9.64$  & $119.47\pm4.65$   &  $12.22\pm0.07$     
-\\
-\hline
- 75 &$11.15\pm0.27$   & $0.89\pm0.03$ &  $  \pm $  &   $40.91\pm1.33$ &  $258.04\pm11.80$  & $ 179.30\pm5.08$   &   $13.30\pm0.05$  
-\\
-\hline
- 100 &$10.90\pm0.19$  &  $0.90\pm0.03$  &  $  \pm $  &$42.80\pm 1.93$  & $252.74\pm8.50$   &  $191.32\pm 1.47$  &  $13.33\pm0.04$     
-\\
-\hline
-\hline
-&\multicolumn{7}{c|}{ $512 \times 512$}
-\\
-\hline
-\hline
-$\sigma$&\textbf{Baseline} &\textbf{BM3D}&\textbf{LSSC}&\textbf{EPLL}&\textbf{NCSR}&\textbf{WNNM}&\textbf{Ours} 
-\\
-\hline
-  10&$45.43\pm0.28$  &$3.16\pm0.12$ & $  \pm $  &  $160.93\pm2.81$  & $624.83\pm40.24$   &  $352.34\pm3.87$  &  $38.02\pm0.07$   
-\\
-\hline
-20&$44.55\pm0.41$ &$3.32\pm0.11$ & $  \pm $  &  $159.80\pm0.37$  & $751.09\pm42.89$   &  $351.09\pm3.14$  &  $38.33\pm0.14$   
-\\
-\hline 
- 30 &$45.07\pm0.99$ &$3.32\pm0.09$ & $  \pm $  &  $160.21\pm0.18$  & $709.90\pm31.62$   &  $650.54\pm7.23$  &  $41.55\pm0.18$  
-\\
-\hline
- 40&$45.10\pm0.47$  & $3.18\pm0.18$ & $  \pm $  &  $160.23\pm0.17$  & $1620.74\pm104.59$   &  $652.49\pm10.49$  &  $50.30\pm0.26$   
-\\
-\hline
- 50&$44.53\pm0.35$  & $3.85\pm0.09$ & $  \pm $  &  $161.36\pm3.08$  & $1492.78\pm65.87 $   &  $476.50\pm12.34$  &  $50.29\pm0.30$    
-\\
-\hline
- 75&$44.75\pm0.78$  & $3.91\pm0.05$ & $  \pm $  &  $165.66\pm2.62 $  & $1156.82\pm66.37$   &  $784.92\pm18.32$  &  $56.76\pm0.14$  
-\\
-\hline
- 100&$45.18\pm1.09$  & $3.94\pm0.04$ & $  \pm $  &  $177.51\pm7.16$  & $1100.00\pm26.64$   &  $824.56\pm34.41$  &  $56.77\pm0.20$    
-\\
-\hline
-\end{tabular}
-\end{center}
-\end{table*}
-\begin{figure*}
+\begin{figure}
 \centering
 \subfigure{
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_airplane.png}
-{\scriptsize  (a) Ground Truth}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim01.png}
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_airplane_50.png}
-{\scriptsize (b) Noisy image(PSNR:14.16dB)}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim02.png}
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_EPLL_50_airplane.png}
-{\scriptsize (c) EPLL(PSNR:28.19dB)}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim03.png}
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_GMM200_50_airplane.png}
-{\scriptsize (d) Baseline(PSNR:28.22dB)}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim04.png}
 \end{minipage}
-}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim05.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim06.png}
+\end{minipage}
+}\vspace{-3mm}
 \subfigure{
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_BM3D_50_airplane.png}
-{\scriptsize (e) BM3D(PSNR:28.24dB)}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim07.png}
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_LSSC_50_airplane.png}
-{\scriptsize (f) LSSC(PSNR: 28.15dB)}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim08.png}
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_WNNM_50_airplane.png}
-{\scriptsize (g) WNNM(PSNR:28.55dB)}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim09.png}
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_our_50_airplane.png}
-{\scriptsize (h) Ours(PSNR:28.39dB)}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim10.png}
 \end{minipage}
-}
-\caption{Compare of image quality on \textsl{Airplane} by different methods (the standard variation of noise is $\sigma=50$).}
-\end{figure*}
-\begin{figure*}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim11.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim12.png}
+\end{minipage}
+}\vspace{-3mm}
+\subfigure{
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim13.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim14.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim15.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim16.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim17.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim18.png}
+\end{minipage}
+}\vspace{-3mm}
+\subfigure{
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim19.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim20.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim21.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim22.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim23.png}
+\end{minipage}
+\begin{minipage}{0.075\textwidth}
+\includegraphics[width=1\textwidth]{24images/resize_kodim24.png}
+\end{minipage}
+}\vspace{1mm}
+\caption{The 24 high quality color images from the Kodak PhotoCD Dataset.}
+\label{f2}
+\vspace{-2mm}
+\end{figure}
+
+Fig.\ \ref{f3} shows a scene denoised by the compared methods.\ We can see that the methods of CBM3D and NC would remain some noise on the recovered images. The methods of MLP, TNRD, and ``WNNM0'', which process separately the channels of color images, would over-smooth  the images and generate false colors or artifacts. The method ``WNNM1'', which process jointly the channels of color images, would not generate false colors, but still over-smooth the image. The ``WNNM2'', which is the WNNM model solved by ADMM algorithm, would remain some noise on the image.\ By employing the proposed MC-WNNM model, our method preserves the structures (e.g., textures in windows and grass) better across the R, G, B channels and generate less artifacts than other denoising methods, leading to visually pleasant outputs.\
+
+
+\begin{figure*}\vspace{1mm}
 \centering
 \subfigure{
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_cameraman.png}
-{\scriptsize  (a) Ground Truth}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_Noisy_nSig402030_kodim21.png}}
+{\footnotesize (a) Noisy kodim21: 18.28dB }
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_cameraman_75.png}
-{\scriptsize (b) Noisy image(PSNR:10.60dB)}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_CBM3D_nSig402030_kodim21.png}}
+{\footnotesize (b) CBM3D \cite{cbm3d}: 26.54dB}
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_EPLL_75_cameraman.png}
-{\scriptsize (c) EPLL(PSNR:24.29dB)}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_MLP_nSig402030_kodim21.png}}
+{\footnotesize (c) MLP \cite{mlp}: 27.53dB}
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_GMM200_75_cameraman.png}
-{\scriptsize (d) Baseline(PSNR:24.36dB)}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_TNRD_nSig402030_kodim21.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}: 27.60dB }
 \end{minipage}
-}
+\centering
+\begin{minipage}[t]{0.195\textwidth}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_NC_nSig402030_kodim21.png}}
+{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 26.48dB  } 
+\end{minipage}
+}\vspace{-3mm}
 \subfigure{
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_BM3D_75_cameraman.png}
-{\scriptsize (e) BM3D(PSNR:24.33dB)}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNMCW_nSig402030_kodim21.png}}
+{\footnotesize (f) WNNM0: 27.80dB  }
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_LSSC_75_cameraman.png}
-{\scriptsize (f) LSSC(PSNR: 24.41dB)}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNMJ_nSig402030_kodim21.png}}
+{\footnotesize (g) WNNM1: 27.75dB  }
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_WNNM_75_cameraman.png}
-{\scriptsize (g) WNNM(PSNR:24.55dB)}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png}}
+{\footnotesize (h) WNNM2: 27.12dB }
 \end{minipage}
-\begin{minipage}[t]{0.244\textwidth}
-\includegraphics[width=1\textwidth]{img/br_PGV_75_cameraman.png}
-{\scriptsize (h) Ours(PSNR:24.62dB)}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png}}
+{\footnotesize (i) MC-WNNM: \textbf{28.34}dB}
 \end{minipage}
-}
-\caption{ Compare of image quality on \textsl{Cameraman} by different methods (the standard variation of noise is $\sigma=75$).}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparea/resize_br_kodim21.png}}
+{\footnotesize (j) Clean kodim21}
+\end{minipage}
+}\vspace{-0.5mm}
+\caption{Denoised images of different methods on the image ``kodim21'' degraded by AWGN with different standard derivations of $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
+\label{f3}
+\vspace{-3mm}
 \end{figure*}
-\section{Conclusion and Future Work}
-In this work, we propose a patch group based prior and learn this prior from natural images through patch group based GMM. This prior is a natural extension of pixel based prior and patch based prior used before. We use this prior in image denoising task under the group sparse coding framework. Through experiments on 20 widely used images for denoising and the 200 test images in BSDS dataset\cite{bsds}, we demonstrate that our method is comparable and often outperform the state-of-the-art methods quantitatively and qualitatively. Since different patch groups can share similar patch group variations, the patch group based GMM needs much less components than that of patch based in GMM\cite{epll} while achieves better denoising performance. Since this prior exists extensively in natural images, we can also use this prior for other image processing tasks. 
 
 
 \bibliographystyle{ieee}
