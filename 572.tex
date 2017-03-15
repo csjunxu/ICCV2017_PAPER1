@@ -313,7 +313,7 @@ The multi-channel WNNM is applied to the noisy patch matrix $\mathbf{Y}_{j}$ of 
 \\
 3.\quad Search non-local similar patches $\mathbf{Y}_{j}$;
 \\
-4.\quad Applying the MC-WNNM model (\ref{e10}) to $\mathbf{Y}_{j}$ and
+4.\quad Apply the MC-WNNM model (\ref{e10}) to $\mathbf{Y}_{j}$ and
 \\
 \quad \quad 
 obtain the estimated $\mathbf{X}_{j}$;
@@ -384,7 +384,7 @@ where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the pe
 +
 \frac{\rho_{k}}{2}\|\mathbf{X} - \mathbf{Z}_{k} + \rho_{k}^{-1}\mathbf{A}_{k}||_{F}^{2}
 \end{equation}
-This is a least squares regression problem with closed-form solution:
+This is a standard least squares regression problem with closed-form solution:
 \vspace{-1mm}
 \begin{equation}
 \label{e14}
@@ -527,7 +527,7 @@ $
 \\
 \hline
 \end{tabular}
-\vspace{-3mm}
+\vspace{-2mm}
 \label{a2}
 \end{table}
 
@@ -626,10 +626,10 @@ We evaluate the proposed MC-WNNM method on synthetic and real color image denois
 
 \subsection{Implementation Details}
 In synthetic experiments, the noise levels in R, G ,B channels are assumed to be known as $\sigma_{r}, \sigma_{g}, \sigma_{b}$. In the real cases, the noise levels in R, G, B channels can be estimated via noise estimation methods \cite{noiselevel,Chen2015ICCV}. In this paper, we employ the method of \cite{Chen2015ICCV} for its state-of-the-art performance. For the CBM3D method \cite{cbm3d}, the input noise levels are the Root Mean Square (RMS) as 
-\vspace{-3mm}
+\vspace{-2mm}
 \begin{equation}
 \label{e22}
-\vspace{-3mm}
+\vspace{-2mm}
 \sigma = \sqrt{(\sigma_{r}^{2}+\sigma_{g}^{2}+\sigma_{b}^{2})/3}.
 \end{equation}
 For the methods of MLP \cite{mlp} and TNRD \cite{chen2015learning}, we retrain the models on grayscale images following their corresponding strategies at different noise levels from $\sigma=5$ to $\sigma=75$ with gap of $5$. The denoising on color images is performed by processing separately each channel with the model trained at the the same (or nearest) noise levels. NC \cite{noiseclinic,ncwebsite} is a blind image denoising method, so we just submit the noisy images (synthetic or real) to \cite{ncwebsite} and perform denoising using the default parameters.\ NI \cite{neatimage} is a commercial software suitable for real image denoising, while the code of CC \cite{crosschannel2016} is not released (but its results on the 15 real noisy images in \cite{crosschannel2016} are available by requesting the authors). Hence, we only compare with CC and NI in real image denoising experiments, and do not compare with them in synthetic experiments. 
@@ -722,7 +722,7 @@ The PSNR results are listed in Table \ref{taba} of the compared methods includin
 \begin{minipage}{0.075\textwidth}
 \includegraphics[width=1\textwidth]{24images/resize_kodim24.png}
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{1mm}
 \caption{The 24 high quality color images from the Kodak PhotoCD Dataset.}
 \label{f2}
 \vspace{-2mm}
