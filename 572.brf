@@ -43,7 +43,7 @@
 \backcite {neatimage}{{2}{2.2}{subsection.2.2}}
 \backcite {bm3d}{{2}{2.2}{subsection.2.2}}
 \backcite {wnnm}{{2}{2.2}{subsection.2.2}}
-\backcite {karaimer_brown_ECCV_2016}{{2}{3.1}{figure.1}}
+\backcite {Leungtip}{{2}{3.1}{figure.1}}
 \backcite {wnnm}{{2}{3.1}{figure.1}}
 \backcite {wnnmijcv}{{3}{3.3}{equation.3.10}}
 \backcite {wnnmijcv}{{4}{3.4}{subsection.3.4}}
@@ -105,7 +105,6 @@
 \backcite {noiseclinic}{{7}{3(a)}{subfigure.3.1}}
 \backcite {ncwebsite}{{7}{3(a)}{subfigure.3.1}}
 \backcite {crosschannel2016}{{7}{4}{figure.4}}
-\backcite {nearcor}{{7}{5}{section.5}}
 \backcite {crosschannel2016}{{8}{2}{table.2}}
 \backcite {cbm3d}{{8}{5(a)}{subfigure.5.1}}
 \backcite {chen2015learning}{{8}{5(a)}{subfigure.5.1}}
@@ -114,3 +113,4 @@
 \backcite {ncwebsite}{{8}{5(a)}{subfigure.5.1}}
 \backcite {crosschannel2016}{{8}{5(b)}{subfigure.5.2}}
 \backcite {crosschannel2016}{{8}{5}{figure.5}}
+\backcite {nearcor}{{8}{5}{section.5}}
