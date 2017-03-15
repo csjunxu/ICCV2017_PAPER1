@@ -279,7 +279,7 @@ By introducing an augmented variable $\mathbf{Z}$, the MC-WNNM model is reformul
 \quad
 \mathbf{X}=\mathbf{Z}.
 \end{equation}
-Since the objective function is separable across the two variables, the problem (\ref{e10}) can be solved under alternating direction method of multipliers (ADMM) framework. We can derive its augmented Lagrangian function:
+Since the objective function is separable across the two variables, the problem (\ref{e10}) can be solved under the alternating direction method of multipliers (ADMM) framework. We can derive its augmented Lagrangian function:
 \vspace{-1mm}
 \begin{equation}
 \label{e11}
@@ -301,7 +301,7 @@ Since the objective function is separable across the two variables, the problem 
 \|\mathbf{X}-\mathbf{Z}\|_{F}^{2},
 \end{split}
 \end{equation}
-where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the penalty parameter. We initialize the matrix variables $\mathbf{X}_{0}$, $\mathbf{Z}_{0}$, and $\mathbf{A}_{0}$ to be zero matrix of suitable size. By taking derivative of the Lagrangian function $\mathcal{L}$ with respect to the variables $\mathbf{X}$ and $\mathbf{Z}$ and setting the derivative function to be zero, we can alternatively update the ADMM algorithm iteratively as follows:
+where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the penalty parameter. We initialize the matrix variables $\mathbf{X}_{0}$, $\mathbf{Z}_{0}$, and $\mathbf{A}_{0}$ to be zero matrix of suitable size and $\rho_{0}>0$ to be a suitable value. Denote by ($\mathbf{X}_{k}, \mathbf{Z}_{k}$) and $\mathbf{A}_{k}$ the optimization variables and Lagrange multiplier at iteration $k$ ($k=0,1,2,...$), respectively. By taking derivative of the Lagrangian function $\mathcal{L}$ with respect to the variables $\mathbf{X}$ and $\mathbf{Z}$ and setting the derivative function to be zero, we can alternatively update the ADMM algorithm iteratively as follows:
 \\
 (1) \textbf{Update $\mathbf{X}$ while fixing $\mathbf{Z}$ and $\mathbf{A}$}:
 \vspace{-1mm}
