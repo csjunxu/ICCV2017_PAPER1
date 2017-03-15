@@ -46,6 +46,7 @@
 \backcite {Leungtip}{{2}{3.1}{figure.1}}
 \backcite {wnnm}{{2}{3.1}{figure.1}}
 \backcite {wnnmijcv}{{3}{3.1}{equation.3.4}}
+\backcite {wnnmijcv}{{3}{3.1}{equation.3.4}}
 \backcite {wnnmijcv}{{4}{3.3}{subsection.3.3}}
 \backcite {wnnmijcv}{{4}{3.3}{subsection.3.3}}
 \backcite {wnnmijcv}{{4}{3.3}{equation.3.14}}
@@ -74,8 +75,8 @@
 \backcite {wnnmijcv}{{5}{4.1}{equation.4.21}}
 \backcite {wnnmijcv}{{5}{4.1}{equation.4.21}}
 \backcite {mlp}{{5}{4.2}{subsection.4.2}}
-\backcite {chen2015learning}{{5}{4.2}{subsection.4.2}}
 \backcite {crosschannel2016}{{6}{2}{figure.2}}
+\backcite {chen2015learning}{{6}{4.2}{subsection.4.2}}
 \backcite {cbm3d}{{6}{4.2}{subsection.4.2}}
 \backcite {noiseclinic}{{6}{4.2}{subsection.4.2}}
 \backcite {neatimage}{{6}{4.2}{subsection.4.2}}
