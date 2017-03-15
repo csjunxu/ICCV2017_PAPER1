@@ -24,6 +24,15 @@
 \newtheorem{conj}[theorem]{Conjecture}
 
 
+\usepackage{lipsum}
+% ADD THE FOLLOWING COUPLE LINES INTO YOUR PREAMBLE
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{1.3pt plus 0.3ex}
+}
+
 % Include other packages here, before hyperref.
 
 % If you comment hyperref and then uncomment it, you should delete
