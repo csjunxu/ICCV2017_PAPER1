@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  15 MAR 2017 13:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  16 MAR 2017 11:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./test.tex
-(./test.tex
+**./572_sp.tex
+(./572_sp.tex
 LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 79 languages loaded.
 (c:/Software/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -156,48 +156,103 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(c:/Software/texlive/2015/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+(c:/Software/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip48
+\bibsep=\skip49
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count105
 )
 (c:/Software/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip48
-\subfigcapskip=\skip49
+\subfigtopskip=\skip50
+\subfigcapskip=\skip51
 \subfigcaptopadj=\dimen119
-\subfigbottomskip=\skip50
+\subfigbottomskip=\skip52
 \subfigcapmargin=\dimen120
-\subfiglabelskip=\skip51
-\c@subfigure=\count105
-\c@lofdepth=\count106
-\c@subtable=\count107
-\c@lotdepth=\count108
+\subfiglabelskip=\skip53
+\c@subfigure=\count106
+\c@lofdepth=\count107
+\c@subtable=\count108
+\c@lotdepth=\count109
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 (c:/Software/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip52
-\subfig@bottom=\skip53
+\subfig@top=\skip54
+\subfig@bottom=\skip55
 )
-(c:/Software/texlive/2015/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count109
-\output=\toks20
-\linenoprevgraf=\count110
-\linenumbersep=\dimen121
-\linenumberwidth=\dimen122
-\c@linenumber=\count111
-\c@pagewiselinenumber=\count112
-\c@LN@truepage=\count113
-\c@internallinenumber=\count114
-\c@internallinenumbers=\count115
-\quotelinenumbersep=\dimen123
-\bframerule=\dimen124
-\bframesep=\dimen125
-\bframebox=\box30
-LaTeX Info: Redefining \\ on input line 3056.
+(c:/Software/texlive/2015/texmf-dist/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
 )
+(c:/Software/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen121
+)
+(c:/Software/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(c:/Software/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+(c:/Software/texlive/2015/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+\symboldugrf@m=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(c:/Software/texlive/2015/texmf-dist/tex/latex/arydshln/arydshln.sty
+Package: arydshln 2004/08/31 v1.71 
+\dashlinedash=\dimen122
+\dashlinegap=\dimen123
+\adl@box=\box30
+\adl@height=\dimen124
+\adl@heightsave=\dimen125
+\adl@depth=\dimen126
+\adl@depthsave=\dimen127
+\adl@finaldepth=\dimen128
+\adl@columns=\count110
+\adl@ncol=\count111
+\adl@currentcolumn=\count112
+\adl@currentcolumnsave=\count113
+\adl@totalheight=\count114
+\adl@totalheightsave=\count115
+\adl@dash=\count116
+\adl@gap=\count117
+\adl@cla=\count118
+\adl@clb=\count119
+\adl@everyvbox=\toks20
+\adl@LTpagetotal=\dimen129
+)
+(c:/Software/texlive/2015/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup11
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+(c:/Software/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip56
+\thm@postskip=\skip57
+\thm@headsep=\skip58
+\dth@everypar=\toks26
+)
+\c@theorem=\count120
+
 (c:/Software/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -255,14 +310,14 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (c:/Software/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen126
-\Hy@linkcounter=\count116
-\Hy@pagecounter=\count117
+\@linkdim=\dimen130
+\Hy@linkcounter=\count121
+\Hy@pagecounter=\count122
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count118
+\Hy@SavedSpaceFactor=\count123
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -289,12 +344,17 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count119
+\c@Hy@tempcnt=\count124
+
+(c:/Software/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen127
-\Fld@menulength=\count120
-\Field@Width=\dimen128
-\Fld@charsize=\dimen129
+\XeTeXLinkMargin=\dimen131
+\Fld@menulength=\count125
+\Field@Width=\dimen132
+\Fld@charsize=\dimen133
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -304,62 +364,53 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count121
-\c@Item=\count122
-\c@Hfootnote=\count123
+\Hy@abspage=\count126
+\c@Item=\count127
+\c@Hfootnote=\count128
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count124
-\c@bookmark@seq@number=\count125
-\Hy@SectionHShift=\skip54
+\Fld@listcount=\count129
+\c@bookmark@seq@number=\count130
+\Hy@SectionHShift=\skip59
 )
-(./test.aux)
-\openout1 = `test.aux'.
+(./572_sp.aux)
+\openout1 = `572_sp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 42.
  (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-ABD: EveryShipout initializing macros
-(c:/Software/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
-
-(c:/Software/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 142.
-)
+) ABD: EveryShipout initializing macros
 (c:/Software/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen130
+\scratchcounter=\count131
+\scratchdimen=\dimen134
 \scratchbox=\box31
-\nofMPsegments=\count127
-\nofMParguments=\count128
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen131
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
-\everyMPtoPDFconversion=\toks22
+\nofMPsegments=\count132
+\nofMParguments=\count133
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count134
+\MPscratchDim=\dimen135
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
+\everyMPtoPDFconversion=\toks28
 ) (c:/Software/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -377,7 +428,8 @@ e
 ))
 \AtBeginShipoutBox=\box32
 Package atbegshi Info: Package `everyshi' patched.
-Package hyperref Info: Link coloring ON on input line 25.
+Package backref Info: ** backref set up for natbib ** on input line 42.
+Package hyperref Info: Link coloring ON on input line 42.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -385,334 +437,424 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (c:/Software/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count132
+\c@section@level=\count137
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+LaTeX Info: Redefining \nameref on input line 42.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<24images/resize_kodim01.png, id=4, 231.86626pt x 154.5775pt>
+LaTeX Font Info:    Try loading font information for U+lasy on input line 65.
+
+(c:/Software/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 67.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
+
+Underfull \hbox (badness 3168) in paragraph at lines 139--214
+[]\OT1/ptm/m/n/10 2. Sec-ondly, we proof that the se-quence of La-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--214
+\OT1/ptm/m/n/10 grangian func-tion $\OMS/cmsy/m/n/10 fL\OT1/cmr/m/n/10 (\OT1/cm
+r/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr
+/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$ \OT1/p
+tm/m/n/10 is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--214
+\OT1/ptm/m/n/10 also up-per bounded. Since the global op-ti-mal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--214
+\OT1/ptm/m/n/10 so-lu-tion of $\OT1/cmr/bx/n/10 X$ \OT1/ptm/m/n/10 and $\OT1/cm
+r/bx/n/10 Z$ \OT1/ptm/m/n/10 in cor-re-spond-ing sub-prob-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--214
+\OT1/ptm/m/n/10 lems, we al-ways have $\OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/
+cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/c
+mr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--214
+\OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/
+cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\
+OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :$ \OT1/ptm/m/n/10 Based on the up-dat-ing rul
+e
+ []
+
+
+Underfull \hbox (badness 2435) in paragraph at lines 139--214
+\OT1/ptm/m/n/10 that $\OT1/cmr/bx/n/10 A[] \OT1/cmr/m/n/10 = \OT1/cmr/bx/n/10 A
+[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^Z[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[
+] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n/10 Z[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 , 
+we have
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 139--214
+\OT1/ptm/m/n/10 the se-quence $\OMS/cmsy/m/n/10 fk\OT1/cmr/bx/n/10 A[]\OMS/cmsy
+/m/n/10 g$ \OT1/ptm/m/n/10 is up-per bounded, the se-quence
+ []
+
+
+Underfull \hbox (badness 2343) in paragraph at lines 139--214
+\OMS/cmsy/m/n/10 fk\OT1/cmr/bx/n/10 A[] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n/10 A
+[]\OMS/cmsy/m/n/10 k[]g$ \OT1/ptm/m/n/10 is also up-per bounded. De-note
+ []
+
+
+Underfull \hbox (badness 2894) in paragraph at lines 139--214
+\OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/
+cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\
+OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OM
+L/cmm/m/it/10 ; \OT1/cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML
+/cmm/m/it/10 ; ^^Z[]\OT1/cmr/m/n/10 ) +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--214
+\OMS/cmsy/m/n/10 L\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 X[]\OML/cmm/m/it/10 ; \OT1/
+cmr/bx/n/10 Z[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 ; ^^Z[]\
+OT1/cmr/m/n/10 ) + [] [][] []\OML/cmm/m/it/10 :$ \OT1/ptm/m/n/10 The last
+ []
+
+
+Underfull \hbox (badness 7888) in paragraph at lines 139--214
+\OT1/ptm/m/n/10 in-equal-ity holds since $\OML/cmm/m/it/10 ^^V \OT1/cmr/m/n/10 
++ 1 \OML/cmm/m/it/10 < \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^V$\OT1/ptm/m/n/10 . 
+Since
+ []
+
+
+Underfull \hbox (badness 5908) in paragraph at lines 215--263
+\OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OT1/cmr/bx/n/10 Z[]\OMS/cmsy/m/n/10 g$ 
+\OT1/ptm/m/n/10 are up-per bounded. Since $\OMS/cmsy/m/n/10 k\OT1/cmr/bx/n/10 W
+\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 Y \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Underfull \hbox (badness 3547) in paragraph at lines 312--358
+[]\OT1/ptm/m/n/10 5. Then (3) can be proofed by check-ing that
+ []
+
+<24images/resize_kodim01.png, id=5, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim01.png Graphic file (type png)
 
 <use 24images/resize_kodim01.png>
-Package pdftex.def Info: 24images/resize_kodim01.png used on input line 69.
+Package pdftex.def Info: 24images/resize_kodim01.png used on input line 381.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim02.png, id=5, 231.86626pt x 154.5775pt>
+<24images/resize_kodim02.png, id=6, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim02.png Graphic file (type png)
 
 <use 24images/resize_kodim02.png>
-Package pdftex.def Info: 24images/resize_kodim02.png used on input line 69.
+Package pdftex.def Info: 24images/resize_kodim02.png used on input line 381.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim03.png, id=6, 231.86626pt x 154.5775pt>
+<24images/resize_kodim03.png, id=7, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim03.png Graphic file (type png)
 
 <use 24images/resize_kodim03.png>
-Package pdftex.def Info: 24images/resize_kodim03.png used on input line 69.
+Package pdftex.def Info: 24images/resize_kodim03.png used on input line 381.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim04.png, id=7, 231.86626pt x 154.5775pt>
+<24images/resize_kodim04.png, id=8, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim04.png Graphic file (type png)
 
 <use 24images/resize_kodim04.png>
-Package pdftex.def Info: 24images/resize_kodim04.png used on input line 69.
+Package pdftex.def Info: 24images/resize_kodim04.png used on input line 381.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim05.png, id=8, 231.86626pt x 154.5775pt>
+<24images/resize_kodim05.png, id=9, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim05.png Graphic file (type png)
 
 <use 24images/resize_kodim05.png>
-Package pdftex.def Info: 24images/resize_kodim05.png used on input line 69.
+Package pdftex.def Info: 24images/resize_kodim05.png used on input line 381.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim06.png, id=9, 231.86626pt x 154.5775pt>
+<24images/resize_kodim06.png, id=10, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim06.png Graphic file (type png)
 
 <use 24images/resize_kodim06.png>
-Package pdftex.def Info: 24images/resize_kodim06.png used on input line 69.
+Package pdftex.def Info: 24images/resize_kodim06.png used on input line 381.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim07.png, id=10, 231.86626pt x 154.5775pt>
+<24images/resize_kodim07.png, id=11, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim07.png Graphic file (type png)
 
 <use 24images/resize_kodim07.png>
-Package pdftex.def Info: 24images/resize_kodim07.png used on input line 89.
+Package pdftex.def Info: 24images/resize_kodim07.png used on input line 401.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim08.png, id=11, 231.86626pt x 154.5775pt>
+<24images/resize_kodim08.png, id=12, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim08.png Graphic file (type png)
 
 <use 24images/resize_kodim08.png>
-Package pdftex.def Info: 24images/resize_kodim08.png used on input line 89.
+Package pdftex.def Info: 24images/resize_kodim08.png used on input line 401.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim09.png, id=12, 231.86626pt x 154.5775pt>
+<24images/resize_kodim09.png, id=13, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim09.png Graphic file (type png)
 
 <use 24images/resize_kodim09.png>
-Package pdftex.def Info: 24images/resize_kodim09.png used on input line 89.
+Package pdftex.def Info: 24images/resize_kodim09.png used on input line 401.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim10.png, id=13, 231.86626pt x 154.5775pt>
+<24images/resize_kodim10.png, id=14, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim10.png Graphic file (type png)
 
 <use 24images/resize_kodim10.png>
-Package pdftex.def Info: 24images/resize_kodim10.png used on input line 89.
+Package pdftex.def Info: 24images/resize_kodim10.png used on input line 401.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim11.png, id=14, 231.86626pt x 154.5775pt>
+<24images/resize_kodim11.png, id=15, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim11.png Graphic file (type png)
 
 <use 24images/resize_kodim11.png>
-Package pdftex.def Info: 24images/resize_kodim11.png used on input line 89.
+Package pdftex.def Info: 24images/resize_kodim11.png used on input line 401.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim12.png, id=15, 231.86626pt x 154.5775pt>
+<24images/resize_kodim12.png, id=16, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim12.png Graphic file (type png)
 
 <use 24images/resize_kodim12.png>
-Package pdftex.def Info: 24images/resize_kodim12.png used on input line 89.
+Package pdftex.def Info: 24images/resize_kodim12.png used on input line 401.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim13.png, id=16, 231.86626pt x 154.5775pt>
+<24images/resize_kodim13.png, id=17, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim13.png Graphic file (type png)
 
 <use 24images/resize_kodim13.png>
-Package pdftex.def Info: 24images/resize_kodim13.png used on input line 109.
+Package pdftex.def Info: 24images/resize_kodim13.png used on input line 421.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim14.png, id=17, 231.86626pt x 154.5775pt>
+<24images/resize_kodim14.png, id=18, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim14.png Graphic file (type png)
 
 <use 24images/resize_kodim14.png>
-Package pdftex.def Info: 24images/resize_kodim14.png used on input line 109.
+Package pdftex.def Info: 24images/resize_kodim14.png used on input line 421.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim15.png, id=18, 231.86626pt x 154.5775pt>
+<24images/resize_kodim15.png, id=19, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim15.png Graphic file (type png)
 
 <use 24images/resize_kodim15.png>
-Package pdftex.def Info: 24images/resize_kodim15.png used on input line 109.
+Package pdftex.def Info: 24images/resize_kodim15.png used on input line 421.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim16.png, id=19, 231.86626pt x 154.5775pt>
+<24images/resize_kodim16.png, id=20, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim16.png Graphic file (type png)
 
 <use 24images/resize_kodim16.png>
-Package pdftex.def Info: 24images/resize_kodim16.png used on input line 109.
+Package pdftex.def Info: 24images/resize_kodim16.png used on input line 421.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim17.png, id=20, 231.86626pt x 154.5775pt>
+<24images/resize_kodim17.png, id=21, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim17.png Graphic file (type png)
 
 <use 24images/resize_kodim17.png>
-Package pdftex.def Info: 24images/resize_kodim17.png used on input line 109.
+Package pdftex.def Info: 24images/resize_kodim17.png used on input line 421.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim18.png, id=21, 231.86626pt x 154.5775pt>
+<24images/resize_kodim18.png, id=22, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim18.png Graphic file (type png)
 
 <use 24images/resize_kodim18.png>
-Package pdftex.def Info: 24images/resize_kodim18.png used on input line 109.
+Package pdftex.def Info: 24images/resize_kodim18.png used on input line 421.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim19.png, id=22, 231.86626pt x 154.5775pt>
+<24images/resize_kodim19.png, id=23, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim19.png Graphic file (type png)
 
 <use 24images/resize_kodim19.png>
-Package pdftex.def Info: 24images/resize_kodim19.png used on input line 129.
+Package pdftex.def Info: 24images/resize_kodim19.png used on input line 441.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim20.png, id=23, 231.86626pt x 154.5775pt>
+<24images/resize_kodim20.png, id=24, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim20.png Graphic file (type png)
 
 <use 24images/resize_kodim20.png>
-Package pdftex.def Info: 24images/resize_kodim20.png used on input line 129.
+Package pdftex.def Info: 24images/resize_kodim20.png used on input line 441.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim21.png, id=24, 231.86626pt x 154.5775pt>
+<24images/resize_kodim21.png, id=25, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim21.png Graphic file (type png)
 
 <use 24images/resize_kodim21.png>
-Package pdftex.def Info: 24images/resize_kodim21.png used on input line 129.
+Package pdftex.def Info: 24images/resize_kodim21.png used on input line 441.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim22.png, id=25, 231.86626pt x 154.5775pt>
+<24images/resize_kodim22.png, id=26, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim22.png Graphic file (type png)
 
 <use 24images/resize_kodim22.png>
-Package pdftex.def Info: 24images/resize_kodim22.png used on input line 129.
+Package pdftex.def Info: 24images/resize_kodim22.png used on input line 441.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim23.png, id=26, 231.86626pt x 154.5775pt>
+<24images/resize_kodim23.png, id=27, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim23.png Graphic file (type png)
 
 <use 24images/resize_kodim23.png>
-Package pdftex.def Info: 24images/resize_kodim23.png used on input line 129.
+Package pdftex.def Info: 24images/resize_kodim23.png used on input line 441.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-<24images/resize_kodim24.png, id=27, 231.86626pt x 154.5775pt>
+<24images/resize_kodim24.png, id=28, 231.86626pt x 154.5775pt>
 File: 24images/resize_kodim24.png Graphic file (type png)
 
 <use 24images/resize_kodim24.png>
-Package pdftex.def Info: 24images/resize_kodim24.png used on input line 129.
+Package pdftex.def Info: 24images/resize_kodim24.png used on input line 441.
 (pdftex.def)             Requested size: 37.2627pt x 24.8414pt.
 
-Overfull \hbox (3.94023pt too wide) in paragraph at lines 69--130
+Overfull \hbox (3.94023pt too wide) in paragraph at lines 381--442
  [][] 
  []
 
 
-Overfull \hbox (3.94023pt too wide) in paragraph at lines 69--130
+Overfull \hbox (3.94023pt too wide) in paragraph at lines 381--442
  [][] 
  []
 
 
-Overfull \hbox (3.94023pt too wide) in paragraph at lines 69--130
+Overfull \hbox (3.94023pt too wide) in paragraph at lines 381--442
  [][] 
  []
 
 
-Overfull \hbox (3.94023pt too wide) in paragraph at lines 69--130
+Overfull \hbox (3.94023pt too wide) in paragraph at lines 381--442
  [][] 
  []
 
-
-<comparea/resize_br_Noisy_nSig402030_kodim21.png, id=29, 309.155pt x 205.76875p
-t>
-File: comparea/resize_br_Noisy_nSig402030_kodim21.png Graphic file (type png)
- <use comparea/resize_br_Noisy_nSig402030_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_Noisy_nSig402030_kodim21.png used o
-n input line 166.
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-
-<comparea/resize_br_CBM3D_nSig402030_kodim21.png, id=30, 309.155pt x 205.76875p
-t>
-File: comparea/resize_br_CBM3D_nSig402030_kodim21.png Graphic file (type png)
- <use comparea/resize_br_CBM3D_nSig402030_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_CBM3D_nSig402030_kodim21.png used o
-n input line 166.
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 166.
-
-
-LaTeX Warning: Citation `cbm3d' on page 1 undefined on input line 166.
-
-
-<comparea/resize_br_MLP_nSig402030_kodim21.png, id=31, 309.155pt x 205.76875pt>
-File: comparea/resize_br_MLP_nSig402030_kodim21.png Graphic file (type png)
-<use comparea/resize_br_MLP_nSig402030_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_MLP_nSig402030_kodim21.png used on 
-input line 166.
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-
-
-LaTeX Warning: Citation `mlp' on page 1 undefined on input line 166.
-
-
-<comparea/resize_br_TNRD_nSig402030_kodim21.png, id=32, 309.155pt x 205.76875pt
->
-File: comparea/resize_br_TNRD_nSig402030_kodim21.png Graphic file (type png)
- <use comparea/resize_br_TNRD_nSig402030_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_TNRD_nSig402030_kodim21.png used on
- input line 166.
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-
-
-LaTeX Warning: Citation `chen2015learning' on page 1 undefined on input line 16
-6.
-
-
-<comparea/resize_br_NC_nSig402030_kodim21.png, id=33, 309.155pt x 205.76875pt>
-File: comparea/resize_br_NC_nSig402030_kodim21.png Graphic file (type png)
-
-<use comparea/resize_br_NC_nSig402030_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_NC_nSig402030_kodim21.png used on i
-nput line 166.
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-
-
-LaTeX Warning: Citation `noiseclinic' on page 1 undefined on input line 166.
-
-
-LaTeX Warning: Citation `ncwebsite' on page 1 undefined on input line 166.
-
-
-<comparea/resize_br_WNNMCW_nSig402030_kodim21.png, id=34, 309.155pt x 205.76875
-pt>
-File: comparea/resize_br_WNNMCW_nSig402030_kodim21.png Graphic file (type png)
- <use comparea/resize_br_WNNMCW_nSig402030_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_WNNMCW_nSig402030_kodim21.png used 
-on input line 193.
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-
-<comparea/resize_br_WNNMJ_nSig402030_kodim21.png, id=35, 309.155pt x 205.76875p
-t>
-File: comparea/resize_br_WNNMJ_nSig402030_kodim21.png Graphic file (type png)
- <use comparea/resize_br_WNNMJ_nSig402030_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_WNNMJ_nSig402030_kodim21.png used o
-n input line 193.
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-
-<comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png, id=36, 309.155pt x 205.76
-875pt>
-File: comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png Graphic file (type pn
-g)
- <use comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png us
-ed on input line 193.
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-
-<comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png, id=37, 309.155pt x 205.7
-6875pt>
-File: comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png Graphic file (type p
-ng)
- <use comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png u
-sed on input line 193.
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-
-<comparea/resize_br_kodim21.png, id=38, 309.155pt x 205.76875pt>
-File: comparea/resize_br_kodim21.png Graphic file (type png)
-
-<use comparea/resize_br_kodim21.png>
-Package pdftex.def Info: comparea/resize_br_kodim21.png used on input line 193.
-
-(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
-
-Overfull \hbox (2.59673pt too wide) in paragraph at lines 166--194
- [][] 
- []
-
-
-Overfull \hbox (2.59673pt too wide) in paragraph at lines 166--194
- [][] 
- []
-
-No file test.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 203.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 203.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 203.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 448.
 
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 ) [1{c:/Software/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
+]
+<comparea/resize_br_Noisy_nSig402030_kodim21.png, id=67, 309.155pt x 205.76875p
+t>
+File: comparea/resize_br_Noisy_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_Noisy_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_Noisy_nSig402030_kodim21.png used o
+n input line 478.
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+
+<comparea/resize_br_CBM3D_nSig402030_kodim21.png, id=68, 309.155pt x 205.76875p
+t>
+File: comparea/resize_br_CBM3D_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_CBM3D_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_CBM3D_nSig402030_kodim21.png used o
+n input line 478.
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+
+<comparea/resize_br_MLP_nSig402030_kodim21.png, id=70, 309.155pt x 205.76875pt>
+File: comparea/resize_br_MLP_nSig402030_kodim21.png Graphic file (type png)
+<use comparea/resize_br_MLP_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_MLP_nSig402030_kodim21.png used on 
+input line 478.
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+
+<comparea/resize_br_TNRD_nSig402030_kodim21.png, id=72, 309.155pt x 205.76875pt
+>
+File: comparea/resize_br_TNRD_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_TNRD_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_TNRD_nSig402030_kodim21.png used on
+ input line 478.
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+
+<comparea/resize_br_NC_nSig402030_kodim21.png, id=74, 309.155pt x 205.76875pt>
+File: comparea/resize_br_NC_nSig402030_kodim21.png Graphic file (type png)
+
+<use comparea/resize_br_NC_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_NC_nSig402030_kodim21.png used on i
+nput line 478.
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+
+<comparea/resize_br_WNNMCW_nSig402030_kodim21.png, id=77, 309.155pt x 205.76875
+pt>
+File: comparea/resize_br_WNNMCW_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_WNNMCW_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_WNNMCW_nSig402030_kodim21.png used 
+on input line 505.
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+
+<comparea/resize_br_WNNMJ_nSig402030_kodim21.png, id=78, 309.155pt x 205.76875p
+t>
+File: comparea/resize_br_WNNMJ_nSig402030_kodim21.png Graphic file (type png)
+ <use comparea/resize_br_WNNMJ_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_WNNMJ_nSig402030_kodim21.png used o
+n input line 505.
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+
+<comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png, id=79, 309.155pt x 205.76
+875pt>
+File: comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png Graphic file (type pn
+g)
+ <use comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_WNNM_ADMM_nSig402030_kodim21.png us
+ed on input line 505.
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+
+<comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png, id=80, 309.155pt x 205.7
+6875pt>
+File: comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png Graphic file (type p
+ng)
+ <use comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_CWNNM_ADMM_nSig402030_kodim21.png u
+sed on input line 505.
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 505.
+
+<comparea/resize_br_kodim21.png, id=81, 309.155pt x 205.76875pt>
+File: comparea/resize_br_kodim21.png Graphic file (type png)
+
+<use comparea/resize_br_kodim21.png>
+Package pdftex.def Info: comparea/resize_br_kodim21.png used on input line 505.
+
+(pdftex.def)             Requested size: 96.8906pt x 64.48781pt.
+
+Overfull \hbox (2.59673pt too wide) in paragraph at lines 478--506
+ [][] 
+ []
+
+
+Overfull \hbox (2.59673pt too wide) in paragraph at lines 478--506
+ [][] 
+ []
+
+(./572_sp.bbl (./572_sp.brf)
+\tf@brf=\write3
+\openout3 = `572_sp.brf'.
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 39.
+
+(c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+))
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 518.
+ [2
 
  <./24images/resize_kodim01.png (PNG copy)> <./24images/resize_kodim02.png (PNG
  copy)> <./24images/resize_kodim03.png (PNG copy)> <./24images/resize_kodim04.p
@@ -727,44 +869,66 @@ im17.png (PNG copy)> <./24images/resize_kodim18.png (PNG copy)> <./24images/res
 ize_kodim19.png (PNG copy)> <./24images/resize_kodim20.png (PNG copy)> <./24ima
 ges/resize_kodim21.png (PNG copy)> <./24images/resize_kodim22.png (PNG copy)> <
 ./24images/resize_kodim23.png (PNG copy)> <./24images/resize_kodim24.png (PNG c
-opy)>] [2 <./comparea/resize_br_Noisy_nSig402030_kodim21.png (PNG copy)> <./com
-parea/resize_br_CBM3D_nSig402030_kodim21.png (PNG copy)> <./comparea/resize_br_
-MLP_nSig402030_kodim21.png (PNG copy)> <./comparea/resize_br_TNRD_nSig402030_ko
-dim21.png (PNG copy)> <./comparea/resize_br_NC_nSig402030_kodim21.png (PNG copy
-)> <./comparea/resize_br_WNNMCW_nSig402030_kodim21.png (PNG copy)> <./comparea/
-resize_br_WNNMJ_nSig402030_kodim21.png (PNG copy)> <./comparea/resize_br_WNNM_A
-DMM_nSig402030_kodim21.png (PNG copy)> <./comparea/resize_br_CWNNM_ADMM_nSig402
-030_kodim21.png (PNG copy)> <./comparea/resize_br_kodim21.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 203.
- (./test.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 203.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 203.
+opy)>]
+[3 <./comparea/resize_br_Noisy_nSig402030_kodim21.png (PNG copy)> <./comparea/r
+esize_br_CBM3D_nSig402030_kodim21.png (PNG copy)> <./comparea/resize_br_MLP_nSi
+g402030_kodim21.png (PNG copy)> <./comparea/resize_br_TNRD_nSig402030_kodim21.p
+ng (PNG copy)> <./comparea/resize_br_NC_nSig402030_kodim21.png (PNG copy)> <./c
+omparea/resize_br_WNNMCW_nSig402030_kodim21.png (PNG copy)> <./comparea/resize_
+br_WNNMJ_nSig402030_kodim21.png (PNG copy)> <./comparea/resize_br_WNNM_ADMM_nSi
+g402030_kodim21.png (PNG copy)> <./comparea/resize_br_CWNNM_ADMM_nSig402030_kod
+im21.png (PNG copy)> <./comparea/resize_br_kodim21.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 518.
+
+(./572_sp.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 518.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 518.
 
 
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Warning: File `572_sp.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 203.
+Package rerunfilecheck Info: Checksums for `572_sp.brf':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  9BAEE9A055FD9740385A1393A533CFE3;282.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 518.
  ) 
 Here is how much of TeX's memory you used:
- 6986 strings out of 493091
- 104560 string characters out of 6134517
- 191994 words of memory out of 5000000
- 10321 multiletter control sequences out of 15000+600000
- 27962 words of font info for 67 fonts, out of 8000000 for 9000
+ 7690 strings out of 493091
+ 112931 string characters out of 6134517
+ 214772 words of memory out of 5000000
+ 10935 multiletter control sequences out of 15000+600000
+ 45694 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,10n,27p,845b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,11n,28p,847b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Software
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/Software/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/Software/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Software/tex
-live/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/2
-015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/
-fonts/type1/urw/times/utmr8a.pfb>
-Output written on test.pdf (2 pages, 2542538 bytes).
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Software
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Software
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Software/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/Software/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Software/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/Software/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Software/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><c:/Softwa
+re/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/S
+oftware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/So
+ftware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Soft
+ware/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Softwa
+re/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Software
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Software
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/Software/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Software/t
+exlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Software/texlive/
+2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Software/texlive/2015/t
+exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-d
+ist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts
+/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on 572_sp.pdf (3 pages, 2693563 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
+ 189 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
  171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
