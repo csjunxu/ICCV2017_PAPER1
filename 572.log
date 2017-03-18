@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  17 MAR 2017 17:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  18 MAR 2017 22:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -985,10 +985,6 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1087.
 
 Package rerunfilecheck Info: File `572.brf' has not changed.
 (rerunfilecheck)             Checksum: 9D279505BB6E644D8473C067E6437BD1;5296.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1087.
  ) 
 Here is how much of TeX's memory you used:

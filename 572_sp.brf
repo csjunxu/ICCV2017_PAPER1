@@ -1,6 +1,11 @@
-\backcite {wnnmijcv}{{1}{1}{equation.1.3}}
-\backcite {cbm3d}{{3}{2(a)}{subfigure.2.1}}
-\backcite {mlp}{{3}{2(a)}{subfigure.2.1}}
-\backcite {chen2015learning}{{3}{2(a)}{subfigure.2.1}}
-\backcite {noiseclinic}{{3}{2(a)}{subfigure.2.1}}
-\backcite {ncwebsite}{{3}{2(a)}{subfigure.2.1}}
+\backcite {ncwebsite}{{1}{3}{Item.3}}
+\backcite {crosschannel2016}{{1}{4}{Item.4}}
+\backcite {eckart1936approximation}{{1}{1}{equation.1.1}}
+\backcite {wnnmijcv}{{1}{1}{equation.1.1}}
+\backcite {cbm3d}{{3}{1(a)}{subfigure.1.1}}
+\backcite {mlp}{{3}{1(a)}{subfigure.1.1}}
+\backcite {chen2015learning}{{3}{1(a)}{subfigure.1.1}}
+\backcite {ncwebsite}{{3}{1(a)}{subfigure.1.1}}
+\backcite {noiseclinic}{{3}{1(a)}{subfigure.1.1}}
+\backcite {ncwebsite}{{3}{3}{section.3}}
+\backcite {crosschannel2016}{{3}{4}{section.4}}
