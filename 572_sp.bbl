@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{ncwebsite}
 M.~Lebrun, M.~Colom, and J.~M. Morel.
@@ -48,5 +48,23 @@ Y.~Chen, W.~Yu, and T.~Pock.
 M.~Lebrun, M.~Colom, and J.-M. Morel.
 \newblock Multiscale image blind denoising.
 \newblock {\em IEEE Transactions on Image Processing}, 24(10):3149--3161, 2015.
+
+\bibitem{bm3d}
+K.~Dabov, A.~Foi, V.~Katkovnik, and K.~Egiazarian.
+\newblock Image denoising by sparse 3-{D} transform-domain collaborative
+  filtering.
+\newblock {\em IEEE Transactions on Image Processing}, 16(8):2080--2095, 2007.
+
+\bibitem{wnnm}
+S.~Gu, L.~Zhang, W.~Zuo, and X.~Feng.
+\newblock Weighted nuclear norm minimization with application to image
+  denoising.
+\newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 2862--2869, 2014.
+
+\bibitem{neatimage}
+Neatlab ABSoft.
+\newblock Neat {I}mage.
+\newblock \url{https://ni.neatvideo.com/home}.
 
 \end{thebibliography}
