@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  22 MAR 2017 21:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  22 MAR 2017 21:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2172,6 +2172,10 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1713.
 
 Package rerunfilecheck Info: File `572_sp.brf' has not changed.
 (rerunfilecheck)             Checksum: AA267428C7CBED9B5AA9D817F402BDE5;6412.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  15383 strings out of 493091
