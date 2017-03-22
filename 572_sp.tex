@@ -1299,66 +1299,132 @@ Image\#
 
 In this section, we give more comparisons of the state-of-the-art denoising methods on the dataset \cite{ncwebsite}.\ The real noisy images in dataset \cite{ncwebsite} have no ``ground truth" images and hence we only compare the visual quality of the denoised images by different methods.\ As can be seen from Figures \ref{fig1}-\ref{fig4}, our proposed method performs better than the competing methods.
 
+
 %------------------------------------------------------------------------------------
 \begin{figure}
 \centering
 \subfigure{
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_noisy.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_frog.png}}
 {\footnotesize (a) Noisy \cite{ncwebsite}   }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_cbm3d.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_frog.png}}
 {\footnotesize (b) CBM3D \cite{cbm3d}  }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_mlp.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_MLP_frog.png}}
 {\footnotesize (c) MLP \cite{mlp}  }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_tnrd.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TNRD_frog.png}}
 {\footnotesize (d) TNRD \cite{chen2015learning}}
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_ni.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_frog.png}}
 {\footnotesize (e) NI \cite{neatimage}  }
 \end{minipage}
 }\vspace{-3mm}
 \subfigure{
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_nc.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_frog.png}}
 {\footnotesize (f) NC \cite{noiseclinic,ncwebsite}   }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_wnnm.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMcw_frog.png}}
 {\footnotesize (g) WNNM-1 \cite{wnnm}   }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_wnnm.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_frog.png}}
 {\footnotesize (h) WNNM-2 \cite{wnnm}   }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_wnnm.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_frog.png}}
 {\footnotesize (i) WNNM-3 \cite{wnnm}   }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_frog_ours.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_frog.png}}
 {\footnotesize (j) MC-WNNM  }
 \end{minipage}
 }
 \vspace{-2mm}
 \caption{Denoised images of the real noisy image ``Frog'' \cite{ncwebsite} by different methods.\ The images are better to be zoomed in on screen.}
 \label{f3}
+\vspace{-2mm}
+\end{figure}
+
+
+%------------------------------------------------------------------------------------
+\begin{figure}
+\centering
+\subfigure{
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_chinesegirl.png}}
+{\footnotesize (a) Noisy \cite{ncwebsite}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_chinesegirl.png}}
+{\footnotesize (b) CBM3D \cite{cbm3d}  }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_MLP_chinesegirl.png}}
+{\footnotesize (c) MLP \cite{mlp}  }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TNRD_chinesegirl.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}}
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_chinesegirl.png}}
+{\footnotesize (e) NI \cite{neatimage}  }
+\end{minipage}
+}\vspace{-3mm}
+\subfigure{
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_chinesegirl.png}}
+{\footnotesize (f) NC \cite{noiseclinic,ncwebsite}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMcw_chinesegirl.png}}
+{\footnotesize (g) WNNM-1 \cite{wnnm}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_chinesegirl.png}}
+{\footnotesize (h) WNNM-2 \cite{wnnm}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_chinesegirl.png}}
+{\footnotesize (i) WNNM-3 \cite{wnnm}   }
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_chinesegirl.png}}
+{\footnotesize (j) MC-WNNM  }
+\end{minipage}
+}
+\vspace{-2mm}
+\caption{Denoised images of the real noisy image ``Gril'' \cite{ncwebsite} by different methods.\ The images are better to be zoomed in on screen.}
+\label{f3}
+\vspace{-2mm}
 \end{figure}
 
 
@@ -1373,7 +1439,7 @@ In this section, we give more comparisons of the state-of-the-art denoising meth
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_BM3D_circuit.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_circuit.png}}
 {\footnotesize (b) CBM3D \cite{cbm3d}  }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
@@ -1383,7 +1449,7 @@ In this section, we give more comparisons of the state-of-the-art denoising meth
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_circuit.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TNRD_circuit.png}}
 {\footnotesize (d) TNRD \cite{chen2015learning}}
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
@@ -1400,95 +1466,30 @@ In this section, we give more comparisons of the state-of-the-art denoising meth
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_circuit.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMcw_circuit.png}}
 {\footnotesize (g) WNNM-1 \cite{wnnm}   }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_circuit.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_circuit.png}}
 {\footnotesize (h) WNNM-2 \cite{wnnm}   }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_circuit.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_circuit.png}}
 {\footnotesize (i) WNNM-3 \cite{wnnm}   }
 \end{minipage}
 \begin{minipage}[t]{0.2\textwidth}
 \centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Guided_circuit.png}}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_circuit.png}}
 {\footnotesize (j) MC-WNNM  }
 \end{minipage}
 }
 \vspace{-2mm}
 \caption{Denoised images of the real noisy image ``Circuit'' \cite{ncwebsite} by different methods.\ The images are better to be zoomed in on screen.}
 \label{f3}
-\end{figure}
-
-
-%------------------------------------------------------------------------------------
-\begin{figure}
-\centering
-\subfigure{
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_woman.png}}
-{\footnotesize (a) Noisy \cite{ncwebsite}   }
-\end{minipage}
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_BM3D_woman.png}}
-{\footnotesize (b) CBM3D \cite{cbm3d}  }
-\end{minipage}
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_MLP_woman.png}}
-{\footnotesize (c) MLP \cite{mlp}  }
-\end{minipage}
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_woman.png}}
-{\footnotesize (d) TNRD \cite{chen2015learning}}
-\end{minipage}
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_woman.png}}
-{\footnotesize (e) NI \cite{neatimage}  }
-\end{minipage}
-}\vspace{-3mm}
-\subfigure{
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_woman.png}}
-{\footnotesize (f) NC \cite{noiseclinic,ncwebsite}   }
-\end{minipage}
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_woman.png}}
-{\footnotesize (g) WNNM-1 \cite{wnnm}   }
-\end{minipage}
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_woman.png}}
-{\footnotesize (h) WNNM-2 \cite{wnnm}   }
-\end{minipage}
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_woman.png}}
-{\footnotesize (i) WNNM-3 \cite{wnnm}   }
-\end{minipage}
-\begin{minipage}[t]{0.2\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Guided_woman.png}}
-{\footnotesize (j) MC-WNNM  }
-\end{minipage}
-}
-\vspace{-2mm}
-\caption{Denoised images of the real noisy image ``Woman'' \cite{ncwebsite} by different methods.\ The images are better to be zoomed in on screen.}
-\label{f3}
 \vspace{-2mm}
 \end{figure}
-
-
 
 
 
