@@ -194,19 +194,19 @@ we have
 \|_{F}^{2}.
 \end{align}
 Since the sequence 
-$\{\|
+$\{
 \bm{A}_{k}\}$
 is upper bounded, the sequence 
-$\{\|
+$\{
 \bm{A}_{k+1}
 -
 \bm{A}_{k}
-\|_{F}\}$ is also upper bounded. Denote by $a$ the upper bound of 
-$\{\|
+\}$ is also upper bounded. Denote by $a$ the upper bound of 
+$\{
 \bm{A}_{k+1}
 -
 \bm{A}_{k}
-\|_{F}\}$, 
+\}$, 
 we have 
 \begin{align}
 \mathcal{L}(\bm{X}_{k+1},\bm{Z}_{k+1},\bm{A}_{k+1},\rho_{k+1})
@@ -230,7 +230,7 @@ a\sum_{k=0}^{\infty}\frac{\mu+1}{2\mu^{k}\rho_{0}}
 \end{align}
 The last inequality holds since $\mu>1$ and $\mu+1<2\mu$. Therefore, we have $\sum_{k=0}^{\infty}\frac{1}{\mu^{k-1}}<\infty$ and the sequence of Lagrangian function 
 $\{\mathcal{L}(\bm{X}_{k+1},\bm{Z}_{k+1},\bm{A}_{k+1},\rho_{k+1})\}$
-is upper bound.
+is upper bounded.
 
 3. Thirdly, we prove that the sequences of 
 $\{\bm{X}_{k}\}$ and $\{\bm{Z}_{k}\}$ are upper bounded. Since 
@@ -317,6 +317,7 @@ and the equation (a) is proved.
 &
 \le
 \lim_{k \to \infty} 
+(
 \|
 (\bm{W}^{\top}\bm{W}
 +
@@ -333,6 +334,7 @@ and the equation (a) is proved.
 \rho_{k}^{-1}\|
 \bm{A}_{k}-\bm{A}_{k-1}
 \|_{F}
+)
 \\
 &
 =
@@ -367,6 +369,7 @@ and hence the equation (b) is proved.
 &
 \le
 \lim_{k \to \infty} 
+(
 \|
 \bm{\Sigma}_{k-1}-\mathcal{S}_{\bm{w}/\rho_{k-1}}(\bm{\Sigma}_{k-1})
 \|_{F}
@@ -383,10 +386,12 @@ and hence the equation (b) is proved.
 -
 \bm{A}_{k}
 \|_{F}
+)
 \\
 &
 \le
 \lim_{k \to \infty} 
+(
 \rho_{k-1}^{-1}
 \|
 \bm{w}
@@ -404,6 +409,7 @@ and hence the equation (b) is proved.
 -
 \bm{A}_{k}
 \|_{F}
+)
 \\
 &
 =
@@ -771,71 +777,67 @@ In this section, we give more comparisons of the state-of-the-art denoising meth
 
 In this section, we provide more comparisons of the proposed method with the state-of-the-art denoising methods on the 15 cropped real noisy images used in \cite{crosschannel2016}.\ In this dataset, each scene was shot 500 times under the same camera and camera setting.\ The mean image of the 500 shots is roughly taken as the ``ground truth", with which the PSNR can be computed.\ As can be seen from Figures \ref{f11}-\ref{f14}, in most cases, our proposed method achieves better performance than the the competing methods.\ This validates the effectiveness of the proposed MC-WNNM method for real noisy image denoising.
 
-\clearpage
+
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-3mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_Noisy_nSig402030_kodim01.png}}
 {\footnotesize (a) Noisy kodim01: 18.44dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig402030_kodim01.png}}
-{\footnotesize (b) CBM3D \cite{cbm3d}: 25.24dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig402030_kodim01.png}}
-{\footnotesize (c) MLP \cite{mlp}: 25.70dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig402030_kodim01.png}}
-{\footnotesize (d) TNRD \cite{chen2015learning}: 25.74dB }
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig402030_kodim01.png}}
-{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 24.90dB  } 
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMCW_nSig402030_kodim01.png}}
-{\footnotesize (f) WNNM-1: 26.01dB  }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig402030_kodim01.png}}
-{\footnotesize (g) WNNM-2: 25.95dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig402030_kodim01.png}}
-{\footnotesize (h) WNNM-3: 25.58dB }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig402030_kodim01.png}}
-{\footnotesize (i) MC-WNNM: \textbf{26.66}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_kodim01.png}}
-{\footnotesize (j) Original kodim01}
+{\footnotesize (b) Original kodim01}
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig402030_kodim01.png}}
+{\footnotesize (c) CBM3D \cite{cbm3d}: 25.24dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig402030_kodim01.png}}
+{\footnotesize (d) MLP \cite{mlp}: 25.70dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig402030_kodim01.png}}
+{\footnotesize (e) TNRD \cite{chen2015learning}: 25.74dB }
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig402030_kodim01.png}}
+{\footnotesize (f) NC \cite{noiseclinic,ncwebsite}: 24.90dB  } 
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMCW_nSig402030_kodim01.png}}
+{\footnotesize (g) WNNM-1: 26.01dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig402030_kodim01.png}}
+{\footnotesize (h) WNNM-2: 25.95dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig402030_kodim01.png}}
+{\footnotesize (i) WNNM-3: 25.58dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig402030_kodim01.png}}
+{\footnotesize (j) MC-WNNM: \textbf{26.66}dB}
 \end{minipage}
 }
-\vspace{-1mm}
 \caption{Denoised images of different methods on the image ``kodim01'' degraded by AWGN with different standard deviations of $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
 \label{f1}
 \end{figure}
@@ -844,67 +846,63 @@ In this section, we provide more comparisons of the proposed method with the sta
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-3mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_Noisy_nSig402030_kodim03.png}}
 {\footnotesize (a) Noisy kodim03: 18.56dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig402030_kodim03.png}}
-{\footnotesize (b) CBM3D \cite{cbm3d}: 28.81dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig402030_kodim03.png}}
-{\footnotesize (c) MLP \cite{mlp}: 31.19dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig402030_kodim03.png}}
-{\footnotesize (d) TNRD \cite{chen2015learning}: 31.49dB }
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig402030_kodim03.png}}
-{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 28.58dB  } 
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMCW_nSig402030_kodim03.png}}
-{\footnotesize (f) WNNM-1: 31.58dB  }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig402030_kodim03.png}}
-{\footnotesize (g) WNNM-2: 31.61dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig402030_kodim03.png}}
-{\footnotesize (h) WNNM-3: 31.20dB }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig402030_kodim03.png}}
-{\footnotesize (i) MC-WNNM: \textbf{32.25}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_kodim03.png}}
-{\footnotesize (j) Original kodim03}
+{\footnotesize (b) Original kodim03}
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig402030_kodim03.png}}
+{\footnotesize (c) CBM3D \cite{cbm3d}: 28.81dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig402030_kodim03.png}}
+{\footnotesize (d) MLP \cite{mlp}: 31.19dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig402030_kodim03.png}}
+{\footnotesize (e) TNRD \cite{chen2015learning}: 31.49dB }
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig402030_kodim03.png}}
+{\footnotesize (f) NC \cite{noiseclinic,ncwebsite}: 28.58dB  } 
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMCW_nSig402030_kodim03.png}}
+{\footnotesize (g) WNNM-1: 31.58dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig402030_kodim03.png}}
+{\footnotesize (h) WNNM-2: 31.61dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig402030_kodim03.png}}
+{\footnotesize (i) WNNM-3: 31.20dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig402030_kodim03.png}}
+{\footnotesize (j) MC-WNNM: \textbf{32.25}dB}
 \end{minipage}
 }
-\vspace{-1mm}
 \caption{Denoised images of different methods on the image ``kodim03'' degraded by AWGN with different standard deviations of $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
 \label{f2}
 \end{figure}
@@ -912,66 +910,63 @@ In this section, we provide more comparisons of the proposed method with the sta
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-3mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_Noisy_nSig301050_kodim17.png}}
 {\footnotesize (a) Noisy kodim17: 18.33dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig301050_kodim17.png}}
-{\footnotesize (b) CBM3D \cite{cbm3d}: 25.12dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig301050_kodim17.png}}
-{\footnotesize (c) MLP \cite{mlp}: 30.26dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig301050_kodim17.png}}
-{\footnotesize (d) TNRD \cite{chen2015learning}: 30.24dB }
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig301050_kodim17.png}}
-{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 27.54dB  } 
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig301050_kodim17.png}}
-{\footnotesize (f) WNNM-1: 30.11dB  }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig301050_kodim17.png}}
-{\footnotesize (g) WNNM-2: 29.35dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig301050_kodim17.png}}
-{\footnotesize (h) WNNM-3: 28.43dB }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig301050_kodim17.png}}
-{\footnotesize (i) MC-WNNM: \textbf{31.08}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_kodim17.png}}
-{\footnotesize (j) Original kodim17}
+{\footnotesize (b) Original kodim17}
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig301050_kodim17.png}}
+{\footnotesize (c) CBM3D \cite{cbm3d}: 25.12dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig301050_kodim17.png}}
+{\footnotesize (d) MLP \cite{mlp}: 30.26dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig301050_kodim17.png}}
+{\footnotesize (e) TNRD \cite{chen2015learning}: 30.24dB }
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig301050_kodim17.png}}
+{\footnotesize (f) NC \cite{noiseclinic,ncwebsite}: 27.54dB  } 
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig301050_kodim17.png}}
+{\footnotesize (g) WNNM-1: 30.11dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig301050_kodim17.png}}
+{\footnotesize (h) WNNM-2: 29.35dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig301050_kodim17.png}}
+{\footnotesize (i) WNNM-3: 28.43dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig301050_kodim17.png}}
+{\footnotesize (j) MC-WNNM: \textbf{31.08}dB}
+\end{minipage}
+}
 \caption{Denoised images of different methods on the image ``kodim17'' degraded by AWGN with different standard deviations of $\sigma_{r}=30, \sigma_{g}=10, \sigma_{b}=50$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
 \label{f3}
 \end{figure}
@@ -979,66 +974,63 @@ In this section, we provide more comparisons of the proposed method with the sta
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-3mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_Noisy_nSig301050_kodim19.png}}
 {\footnotesize (a) Noisy kodim19: 17.92dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig301050_kodim19.png}}
-{\footnotesize (b) CBM3D \cite{cbm3d}: 24.63dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig301050_kodim19.png}}
-{\footnotesize (c) MLP \cite{mlp}: 29.40dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig301050_kodim19.png}}
-{\footnotesize (d) TNRD \cite{chen2015learning}: 29.39dB }
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig301050_kodim19.png}}
-{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 27.41dB  } 
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig301050_kodim19.png}}
-{\footnotesize (f) WNNM-1: 29.78dB  }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig301050_kodim19.png}}
-{\footnotesize (g) WNNM-2: 28.87dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig301050_kodim19.png}}
-{\footnotesize (h) WNNM-3: 28.05dB }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig301050_kodim19.png}}
-{\footnotesize (i) MC-WNNM: \textbf{30.53}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_kodim19.png}}
-{\footnotesize (j) Original kodim19}
+{\footnotesize (b) Original kodim19}
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig301050_kodim19.png}}
+{\footnotesize (c) CBM3D \cite{cbm3d}: 24.63dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig301050_kodim19.png}}
+{\footnotesize (d) MLP \cite{mlp}: 29.40dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig301050_kodim19.png}}
+{\footnotesize (e) TNRD \cite{chen2015learning}: 29.39dB }
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig301050_kodim19.png}}
+{\footnotesize (f) NC \cite{noiseclinic,ncwebsite}: 27.41dB  } 
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig301050_kodim19.png}}
+{\footnotesize (g) WNNM-1: 29.78dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig301050_kodim19.png}}
+{\footnotesize (h) WNNM-2: 28.87dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig301050_kodim19.png}}
+{\footnotesize (i) WNNM-3: 28.05dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig301050_kodim19.png}}
+{\footnotesize (j) MC-WNNM: \textbf{30.53}dB}
+\end{minipage}
+}
 \caption{Denoised images of different methods on the image ``kodim19'' degraded by AWGN with different standard deviations of $\sigma_{r}=30, \sigma_{g}=10, \sigma_{b}=50$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
 \label{f4}
 \end{figure}
@@ -1048,66 +1040,63 @@ In this section, we provide more comparisons of the proposed method with the sta
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-3mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_Noisy_nSig53015_kodim09.png}}
 {\footnotesize (a) Noisy kodim09: 22.36dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig53015_kodim09.png}}
-{\footnotesize (b) CBM3D \cite{cbm3d}: 30.07dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig53015_kodim09.png}}
-{\footnotesize (c) MLP \cite{mlp}: 31.63dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig53015_kodim09.png}}
-{\footnotesize (d) TNRD \cite{chen2015learning}: 33.55dB }
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig53015_kodim09.png}}
-{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 31.54dB  } 
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig53015_kodim09.png}}
-{\footnotesize (f) WNNM-1: 33.19dB  }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig53015_kodim09.png}}
-{\footnotesize (g) WNNM-2: 33.20dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig53015_kodim09.png}}
-{\footnotesize (h) WNNM-3: 32.95dB }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig53015_kodim09.png}}
-{\footnotesize (i) MC-WNNM: \textbf{34.53}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_kodim09.png}}
-{\footnotesize (j) Original kodim09}
+{\footnotesize (b) Original kodim09}
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig53015_kodim09.png}}
+{\footnotesize (c) CBM3D \cite{cbm3d}: 30.07dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig53015_kodim09.png}}
+{\footnotesize (d) MLP \cite{mlp}: 31.63dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig53015_kodim09.png}}
+{\footnotesize (e) TNRD \cite{chen2015learning}: 33.55dB }
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig53015_kodim09.png}}
+{\footnotesize (f) NC \cite{noiseclinic,ncwebsite}: 31.54dB  } 
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig53015_kodim09.png}}
+{\footnotesize (g) WNNM-1: 33.19dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig53015_kodim09.png}}
+{\footnotesize (h) WNNM-2: 33.20dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig53015_kodim09.png}}
+{\footnotesize (i) WNNM-3: 32.95dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig53015_kodim09.png}}
+{\footnotesize (j) MC-WNNM: \textbf{34.53}dB}
+\end{minipage}
+}
 \caption{Denoised images of different methods on the image ``kodim09'' degraded by AWGN with different standard deviations of $\sigma_{r}=5, \sigma_{g}=30, \sigma_{b}=15$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
 \label{f5}
 \end{figure}
@@ -1118,66 +1107,63 @@ In this section, we provide more comparisons of the proposed method with the sta
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-3mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_Noisy_nSig53015_kodim15.png}}
 {\footnotesize (a) Noisy kodim15: 22.23dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig53015_kodim15.png}}
-{\footnotesize (b) CBM3D \cite{cbm3d}: 29.91dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig53015_kodim15.png}}
-{\footnotesize (c) MLP \cite{mlp}: 31.58dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig53015_kodim15.png}}
-{\footnotesize (d) TNRD \cite{chen2015learning}: 33.13dB }
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig53015_kodim15.png}}
-{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 31.17dB  } 
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig53015_kodim15.png}}
-{\footnotesize (f) WNNM-1: 33.22dB  }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig53015_kodim15.png}}
-{\footnotesize (g) WNNM-2: 32.34dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig53015_kodim15.png}}
-{\footnotesize (h) WNNM-3: 32.36dB }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig53015_kodim15.png}}
-{\footnotesize (i) MC-WNNM: \textbf{34.27}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_kodim15.png}}
-{\footnotesize (j) Original kodim15}
+{\footnotesize (b) Original kodim15}
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig53015_kodim15.png}}
+{\footnotesize (c) CBM3D \cite{cbm3d}: 29.91dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig53015_kodim15.png}}
+{\footnotesize (d) MLP \cite{mlp}: 31.58dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig53015_kodim15.png}}
+{\footnotesize (e) TNRD \cite{chen2015learning}: 33.13dB }
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig53015_kodim15.png}}
+{\footnotesize (f) NC \cite{noiseclinic,ncwebsite}: 31.17dB  } 
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig53015_kodim15.png}}
+{\footnotesize (g) WNNM-1: 33.22dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig53015_kodim15.png}}
+{\footnotesize (h) WNNM-2: 32.34dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig53015_kodim15.png}}
+{\footnotesize (i) WNNM-3: 32.36dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig53015_kodim15.png}}
+{\footnotesize (j) MC-WNNM: \textbf{34.27}dB}
+\end{minipage}
+}
 \caption{Denoised images of different methods on the image ``kodim15'' degraded by AWGN with different standard deviations of $\sigma_{r}=5, \sigma_{g}=30, \sigma_{b}=15$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
 \label{f6}
 \end{figure}
@@ -1194,6 +1180,8 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_frog.png}}
 {\footnotesize (a) Noisy \cite{ncwebsite}   }
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_frog.png}}
@@ -1204,13 +1192,13 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_MLP_frog.png}}
 {\footnotesize (c) MLP \cite{mlp}  }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TNRD_frog.png}}
 {\footnotesize (d) TNRD \cite{chen2015learning}}
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_frog.png}}
@@ -1221,13 +1209,13 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_frog.png}}
 {\footnotesize (f) NC \cite{noiseclinic,ncwebsite}   }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMcw_frog.png}}
 {\footnotesize (g) WNNM-1 \cite{wnnm}   }
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_frog.png}}
@@ -1238,8 +1226,6 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_frog.png}}
 {\footnotesize (i) WNNM-3 \cite{wnnm}   }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_frog.png}}
@@ -1262,6 +1248,8 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_chinesegirl.png}}
 {\footnotesize (a) Noisy \cite{ncwebsite}   }
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_chinesegirl.png}}
@@ -1272,13 +1260,13 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_MLP_chinesegirl.png}}
 {\footnotesize (c) MLP \cite{mlp}  }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TNRD_chinesegirl.png}}
 {\footnotesize (d) TNRD \cite{chen2015learning}}
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_chinesegirl.png}}
@@ -1289,13 +1277,13 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_chinesegirl.png}}
 {\footnotesize (f) NC \cite{noiseclinic,ncwebsite}   }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMcw_chinesegirl.png}}
 {\footnotesize (g) WNNM-1 \cite{wnnm}   }
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_chinesegirl.png}}
@@ -1306,8 +1294,6 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_chinesegirl.png}}
 {\footnotesize (i) WNNM-3 \cite{wnnm}   }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_chinesegirl.png}}
@@ -1330,6 +1316,8 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_circuit.png}}
 {\footnotesize (a) Noisy \cite{ncwebsite}   }
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_circuit.png}}
@@ -1340,13 +1328,13 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_MLP_circuit.png}}
 {\footnotesize (c) MLP \cite{mlp}  }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TNRD_circuit.png}}
 {\footnotesize (d) TNRD \cite{chen2015learning}}
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_circuit.png}}
@@ -1357,13 +1345,13 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_circuit.png}}
 {\footnotesize (f) NC \cite{noiseclinic,ncwebsite}   }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMcw_circuit.png}}
 {\footnotesize (g) WNNM-1 \cite{wnnm}   }
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_circuit.png}}
@@ -1374,8 +1362,6 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_circuit.png}}
 {\footnotesize (i) WNNM-3 \cite{wnnm}   }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_circuit.png}}
@@ -1398,6 +1384,8 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_room.png}}
 {\footnotesize (a) Noisy \cite{ncwebsite}   }
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_room.png}}
@@ -1408,13 +1396,13 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_MLP_room.png}}
 {\footnotesize (c) MLP \cite{mlp}  }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TNRD_room.png}}
 {\footnotesize (d) TNRD \cite{chen2015learning}}
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_room.png}}
@@ -1425,13 +1413,13 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_room.png}}
 {\footnotesize (f) NC \cite{noiseclinic,ncwebsite}   }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMcw_room.png}}
 {\footnotesize (g) WNNM-1 \cite{wnnm}   }
 \end{minipage}
+}\vspace{-4mm}
+\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_room.png}}
@@ -1442,8 +1430,6 @@ In this section, we provide more comparisons of the proposed method with the sta
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_room.png}}
 {\footnotesize (i) WNNM-3 \cite{wnnm}   }
 \end{minipage}
-}\vspace{-4mm}
-\subfigure{
 \begin{minipage}[t]{0.3\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_room.png}}
@@ -1460,65 +1446,62 @@ In this section, we provide more comparisons of the proposed method with the sta
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-2mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_d600_iso3200_2.png}}
 {\footnotesize (a) Noisy  \cite{crosschannel2016}: 33.77dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_CC15_d600_iso3200_2.png}}
-{\footnotesize (b) CBM3D \cite{bm3d,cbm3d}: 35.07dB}
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_CC15_d600_iso3200_2.png}}
-{\footnotesize (c) TNRD \cite{chen2015learning}: 36.37dB  } 
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_CC15_d600_iso3200_2.png}}
-{\footnotesize (d) NI \cite{neatimage}: 35.16dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_CC15_d600_iso3200_2.png}}
-{\footnotesize (e) NC \cite{ncwebsite,noiseclinic}: 35.34dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CC_d600_iso3200_2.png}}
-{\footnotesize (f) CC \cite{crosschannel2016}: 35.95dB }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_CC15_d600_iso3200_2.png}}
-{\footnotesize (g) WNNM-2 \cite{wnnm}: 36.42dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_NL_CC15_d600_iso3200_2.png}}
-{\footnotesize (h) WNNM-3 \cite{wnnm}: 36.84dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d600_iso3200_2.png}}
-{\footnotesize (i) MC-WNNM: \textbf{37.02}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_d600_iso3200_2.png}}
-{\footnotesize (j) Mean Image \cite{crosschannel2016}}
+{\footnotesize (b) Mean Image \cite{crosschannel2016}}
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_CC15_d600_iso3200_2.png}}
+{\footnotesize (c) CBM3D \cite{bm3d,cbm3d}: 35.07dB}
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_CC15_d600_iso3200_2.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}: 36.37dB  } 
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_CC15_d600_iso3200_2.png}}
+{\footnotesize (e) NI \cite{neatimage}: 35.16dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_CC15_d600_iso3200_2.png}}
+{\footnotesize (f) NC \cite{ncwebsite,noiseclinic}: 35.34dB  }
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CC_d600_iso3200_2.png}}
+{\footnotesize (g) CC \cite{crosschannel2016}: 35.95dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_CC15_d600_iso3200_2.png}}
+{\footnotesize (h) WNNM-2 \cite{wnnm}: 36.42dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_NL_CC15_d600_iso3200_2.png}}
+{\footnotesize (i) WNNM-3 \cite{wnnm}: 36.84dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d600_iso3200_2.png}}
+{\footnotesize (j) MC-WNNM: \textbf{37.02}dB}
+\end{minipage}
+}
 \caption{Denoised images of a region cropped from the real noisy image ``Nikon D600 ISO 3200 2" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
 \label{f11}
 \end{figure}
@@ -1529,65 +1512,62 @@ In this section, we provide more comparisons of the proposed method with the sta
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-2mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_d800_iso1600_2.png}}
 {\footnotesize (a) Noisy  \cite{crosschannel2016}: 35.71dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_CC15_d800_iso1600_2.png}}
-{\footnotesize (b) CBM3D \cite{bm3d,cbm3d}: 37.76dB}
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_CC15_d800_iso1600_2.png}}
-{\footnotesize (c) TNRD \cite{chen2015learning}: 40.52dB  } 
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_CC15_d800_iso1600_2.png}}
-{\footnotesize (d) NI \cite{neatimage}: 38.42dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_CC15_d800_iso1600_2.png}}
-{\footnotesize (e) NC \cite{ncwebsite,noiseclinic}: 38.65dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CC_d800_iso1600_2.png}}
-{\footnotesize (f) CC \cite{crosschannel2016}: 40.36dB }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_CC15_d800_iso1600_2.png}}
-{\footnotesize (g) WNNM-2 \cite{wnnm}: 41.24dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso1600_2.png}}
-{\footnotesize (h) WNNM-3 \cite{wnnm}: 40.81dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso1600_2.png}}
-{\footnotesize (i) MC-WNNM: \textbf{41.43}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_d800_iso1600_2.png}}
-{\footnotesize (j) Mean Image \cite{crosschannel2016}}
+{\footnotesize (b) Mean Image \cite{crosschannel2016}}
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_CC15_d800_iso1600_2.png}}
+{\footnotesize (c) CBM3D \cite{bm3d,cbm3d}: 37.76dB}
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_CC15_d800_iso1600_2.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}: 40.52dB  } 
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_CC15_d800_iso1600_2.png}}
+{\footnotesize (e) NI \cite{neatimage}: 38.42dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_CC15_d800_iso1600_2.png}}
+{\footnotesize (f) NC \cite{ncwebsite,noiseclinic}: 38.65dB  }
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CC_d800_iso1600_2.png}}
+{\footnotesize (g) CC \cite{crosschannel2016}: 40.36dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_CC15_d800_iso1600_2.png}}
+{\footnotesize (h) WNNM-2 \cite{wnnm}: 41.24dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso1600_2.png}}
+{\footnotesize (i) WNNM-3 \cite{wnnm}: 40.81dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso1600_2.png}}
+{\footnotesize (j) MC-WNNM: \textbf{41.43}dB}
+\end{minipage}
+}
 \caption{Denoised images of a region cropped from the real noisy image ``Nikon D800 ISO 1600 2" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
 \label{f12}
 \end{figure}
@@ -1596,65 +1576,62 @@ In this section, we provide more comparisons of the proposed method with the sta
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-2mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_d800_iso3200_2.png}}
 {\footnotesize (a) Noisy  \cite{crosschannel2016}: 32.89dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_CC15_d800_iso3200_2.png}}
-{\footnotesize (b) CBM3D \cite{bm3d,cbm3d}: 34.07dB}
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_CC15_d800_iso3200_2.png}}
-{\footnotesize (c) TNRD \cite{chen2015learning}: 35.90dB  } 
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_CC15_d800_iso3200_2.png}}
-{\footnotesize (d) NI \cite{neatimage}: 35.53dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_CC15_d800_iso3200_2.png}}
-{\footnotesize (e) NC \cite{ncwebsite,noiseclinic}: 35.76dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CC_d800_iso3200_2.png}}
-{\footnotesize (f) CC \cite{crosschannel2016}: 36.75dB }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_CC15_d800_iso3200_2.png}}
-{\footnotesize (g) WNNM-2 \cite{wnnm}: 37.32dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso3200_2.png}}
-{\footnotesize (h) WNNM-3 \cite{wnnm}: 37.30dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso3200_2.png}}
-{\footnotesize (i) MC-WNNM: \textbf{37.41}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_d800_iso3200_2.png}}
-{\footnotesize (j) Mean Image \cite{crosschannel2016}}
+{\footnotesize (b) Mean Image \cite{crosschannel2016}}
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_CC15_d800_iso3200_2.png}}
+{\footnotesize (c) CBM3D \cite{bm3d,cbm3d}: 34.07dB}
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_CC15_d800_iso3200_2.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}: 35.90dB  } 
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_CC15_d800_iso3200_2.png}}
+{\footnotesize (e) NI \cite{neatimage}: 35.53dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_CC15_d800_iso3200_2.png}}
+{\footnotesize (f) NC \cite{ncwebsite,noiseclinic}: 35.76dB  }
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CC_d800_iso3200_2.png}}
+{\footnotesize (g) CC \cite{crosschannel2016}: 36.75dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_CC15_d800_iso3200_2.png}}
+{\footnotesize (h) WNNM-2 \cite{wnnm}: 37.32dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso3200_2.png}}
+{\footnotesize (i) WNNM-3 \cite{wnnm}: 37.30dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso3200_2.png}}
+{\footnotesize (j) MC-WNNM: \textbf{37.41}dB}
+\end{minipage}
+}
 \caption{Denoised images of a region cropped from the real noisy image ``Nikon D800 ISO 3200 2" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
 \label{f13}
 \end{figure}
@@ -1663,66 +1640,62 @@ In this section, we provide more comparisons of the proposed method with the sta
 %------------------------------------------------------------------------------------
 \begin{figure}[!htbp]
 \centering
-\vspace{-2mm}
 \subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_Noisy_d800_iso6400_2.png}}
 {\footnotesize (a) Noisy  \cite{crosschannel2016}: 29.97dB }
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_CC15_d800_iso6400_2.png}}
-{\footnotesize (b) CBM3D \cite{bm3d,cbm3d}: 31.22dB}
-\end{minipage}
-\centering
-\begin{minipage}[t]{0.3\textwidth}
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_CC15_d800_iso6400_2.png}}
-{\footnotesize (c) TNRD \cite{chen2015learning}: 32.33dB  } 
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_CC15_d800_iso6400_2.png}}
-{\footnotesize (d) NI \cite{neatimage}: 32.13dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_CC15_d800_iso6400_2.png}}
-{\footnotesize (e) NC \cite{ncwebsite,noiseclinic}: 32.38dB  }
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CC_d800_iso6400_2.png}}
-{\footnotesize (f) CC \cite{crosschannel2016}: 33.21dB }
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_CC15_d800_iso6400_2.png}}
-{\footnotesize (g) WNNM-2 \cite{wnnm}: 33.61dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso6400_2.png}}
-{\footnotesize (h) WNNM-3 \cite{wnnm}: 33.43dB}
-\end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
-\centering
-\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso6400_2.png}}
-{\footnotesize (i) MC-WNNM: \textbf{33.95}dB}
-\end{minipage}
-}\vspace{-4mm}
-\subfigure{
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.25\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_d800_iso6400_2.png}}
-{\footnotesize (j) Mean Image \cite{crosschannel2016}}
+{\footnotesize (b) Mean Image \cite{crosschannel2016}}
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CBM3D_CC15_d800_iso6400_2.png}}
+{\footnotesize (c) CBM3D \cite{bm3d,cbm3d}: 31.22dB}
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_TRD_CC15_d800_iso6400_2.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}: 32.33dB  } 
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NI_CC15_d800_iso6400_2.png}}
+{\footnotesize (e) NI \cite{neatimage}: 32.13dB  }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_NC_CC15_d800_iso6400_2.png}}
+{\footnotesize (f) NC \cite{ncwebsite,noiseclinic}: 32.38dB  }
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CC_d800_iso6400_2.png}}
+{\footnotesize (g) CC \cite{crosschannel2016}: 33.21dB }
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNMJ_CC15_d800_iso6400_2.png}}
+{\footnotesize (h) WNNM-2 \cite{wnnm}: 33.61dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso6400_2.png}}
+{\footnotesize (i) WNNM-3 \cite{wnnm}: 33.43dB}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso6400_2.png}}
+{\footnotesize (j) MC-WNNM: \textbf{33.95}dB}
 \end{minipage}
 }
-\vspace{-1mm}
 \caption{Denoised images of a region cropped from the real noisy image ``Nikon D800 ISO 6400 2" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
 \label{f14}
 \end{figure}
