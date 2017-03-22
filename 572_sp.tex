@@ -578,19 +578,19 @@ Image\#
 20 & 26.43 & 31.16 & 31.27 & 26.43 & 26.92 & 31.25 & 30.43 & 29.41 & \textbf{31.55}
 \\
 \hline
-21 & 24.24 & 28.26 & 28.27 & 26.66 & 27.18 & 28.22 & 27.45 &  & \textbf{29.29}
+21 & 24.24 & 28.26 & 28.27 & 26.66 & 27.18 & 28.22 & 27.45 & 26.40 & \textbf{29.29}
 \\
 \hline
-22 & 24.51 & 29.03 & 29.06 & 26.83 & 27.64 & 29.02 & 27.81 &  & \textbf{29.57}
+22 & 24.51 & 29.03 & 29.06 & 26.83 & 27.64 & 29.02 & 27.81 & 27.18 & \textbf{29.57}
 \\
 \hline
-23 & 25.55 & 32.87 & 32.75 & 27.60 & 23.75 & 32.58 & 31.46 &  & \textbf{32.34}
+23 & 25.55 & 32.87 & 32.75 & 27.60 & 23.75 & 32.58 & 31.46 & 30.50 & \textbf{32.34}
 \\
 \hline
-24 & 23.85 & 27.06 & 27.13 & 25.86 & 27.05 & 27.50 & 26.63 &  & \textbf{28.32}
+24 & 23.85 & 27.06 & 27.13 & 25.86 & 27.05 & 27.50 & 26.63 & 25.55 & \textbf{28.32}
 \\
 \hline
-\textbf{Average} & 24.57 & 29.27 & 29.28 & 26.69 & 26.61 & 29.36 & 28.43 &  & \textbf{30.09}
+\textbf{Average} & 24.57 & 29.27 & 29.28 & 26.69 & 26.61 & 29.36 & 28.43 & 27.52 & \textbf{30.09}
 \\
 \hline
 \end{tabular}
@@ -977,6 +977,129 @@ Image\#
 \end{figure}
 
 
+%------------------------------------------------------------------------------------
+\begin{figure}\vspace{1mm}
+\centering
+\subfigure{
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_Noisy_nSig53015_kodim15.png}}
+{\footnotesize (a) Noisy kodim15: 22.23dB }
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig53015_kodim15.png}}
+{\footnotesize (b) CBM3D \cite{cbm3d}: 29.91dB}
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig53015_kodim15.png}}
+{\footnotesize (c) MLP \cite{mlp}: 31.58dB}
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig53015_kodim15.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}: 33.13dB }
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.195\textwidth}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig53015_kodim15.png}}
+{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 31.17dB  } 
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig53015_kodim15.png}}
+{\footnotesize (f) WNNM-1: 33.22dB  }
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig53015_kodim15.png}}
+{\footnotesize (g) WNNM-2: 32.34dB  }
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig53015_kodim15.png}}
+{\footnotesize (h) WNNM-3: 32.36dB }
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig53015_kodim15.png}}
+{\footnotesize (i) MC-WNNM: \textbf{34.27}dB}
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_kodim15.png}}
+{\footnotesize (j) Clean kodim15}
+\end{minipage}
+}
+\caption{Denoised images of different methods on the image ``kodim15'' degraded by AWGN with different standard deviations of $\sigma_{r}=5, \sigma_{g}=30, \sigma_{b}=15$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
+\label{f1}
+\vspace{2mm}
+\end{figure}
+
+%------------------------------------------------------------------------------------
+\begin{figure}\vspace{1mm}
+\centering
+\subfigure{
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_Noisy_nSig301050_kodim17.png}}
+{\footnotesize (a) Noisy kodim17: 18.33dB }
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CBM3D_nSig301050_kodim17.png}}
+{\footnotesize (b) CBM3D \cite{cbm3d}: 28.73dB}
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_MLP_nSig301050_kodim17.png}}
+{\footnotesize (c) MLP \cite{mlp}: 29.85dB}
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_TNRD_nSig301050_kodim17.png}}
+{\footnotesize (d) TNRD \cite{chen2015learning}: 30.87dB }
+\end{minipage}
+\centering
+\begin{minipage}[t]{0.195\textwidth}
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_NC_nSig301050_kodim17.png}}
+{\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 30.16dB  } 
+\end{minipage}
+}\vspace{-2mm}
+\subfigure{
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMcw_nSig301050_kodim17.png}}
+{\footnotesize (f) WNNM-1: 30.45dB  }
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNMJ_nSig301050_kodim17.png}}
+{\footnotesize (g) WNNM-2: 30.14dB  }
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_WNNM_ADMM_nSig301050_kodim17.png}}
+{\footnotesize (h) WNNM-3: 30.21dB }
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_CWNNM_ADMM_nSig301050_kodim17.png}}
+{\footnotesize (i) MC-WNNM: \textbf{32.10}dB}
+\end{minipage}
+\begin{minipage}[t]{0.195\textwidth}
+\centering
+\raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{24images/resize_br_kodim17.png}}
+{\footnotesize (j) Clean kodim17}
+\end{minipage}
+}
+\caption{Denoised images of different methods on the image ``kodim17'' degraded by AWGN with different standard deviations of $\sigma_{r}=5, \sigma_{g}=30, \sigma_{b}=15$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
+\label{f1}
+\vspace{2mm}
+\end{figure}
 
 \clearpage
 \section{More visual comparisons of denoised images by different methods on the real noisy images of the dataset \cite{ncwebsite}}
