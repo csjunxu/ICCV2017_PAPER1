@@ -18,6 +18,7 @@
 \usepackage{arydshln}
 \usepackage{latexsym}
 \usepackage{comment}
+\usepackage{float}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
@@ -364,15 +365,16 @@ where $\mathbf{U}_{k-1}\mathbf{\Sigma}_{k-1}\mathbf{V}_{k-1}^{\top}$ is the SVD 
 
 
 
+\vspace{5mm}
 \section{More denoising results on the 24 high quality images from the Kodak PhotoCD dataset}
 
-In the main paper, we have given the PSNR results of the competing methods on the 24 high quality images from the Kodak PhotoCD dataset when the standard deviations  of the additive white Gaussian noise (AWGN) are $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ for R, G, B channels, respectively. Here we provide more denoising results on this dataset. In Tables \ref{tab1}-\ref{tab2}, we give more PSNR results on these images when the noise standard deviations are $\sigma_{r}=5, \sigma_{g}=30, \sigma_{b}=15$ in Table \ref{t1} and $\sigma_{r}=30, \sigma_{g}=10, \sigma_{b}=50$ in Table \ref{t2}, respectively. In Figures \ref{f1}-\ref{f6}, we give the visual comparisons of the denoised images by different methods.
+In the main paper, we have given the PSNR results of the competing methods on the 24 high quality images from the Kodak PhotoCD dataset when the standard deviations  of the additive white Gaussian noise (AWGN) are $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ for R, G, B channels, respectively. Here we provide more denoising results on this dataset. In Tables \ref{t1}-\ref{t2}, we give more PSNR results on these images when the noise standard deviations are $\sigma_{r}=5, \sigma_{g}=30, \sigma_{b}=15$ in Table \ref{t1} and $\sigma_{r}=30, \sigma_{g}=10, \sigma_{b}=50$ in Table \ref{t2}, respectively. In Figures \ref{f1}-\ref{f9}, we give the visual comparisons of the denoised images by different methods.
 
-\begin{table}
-\vspace{-1mm}
+
+\vspace{5mm}
+\begin{table}[!htbp]
 \caption{PSNR(dB) results of different denoising methods on 24 natural images.}
 \label{t1}
-\label{taba}
 \begin{center}
 \renewcommand\arraystretch{1.0}
 \footnotesize
@@ -480,14 +482,11 @@ Image\#
 \hline
 \end{tabular}
 \end{center}
-\vspace{-1mm}
 \end{table}
 
 \begin{table}
-\vspace{-1mm}
 \caption{PSNR(dB) results of different denoising methods on 24 natural images.}
 \label{t2}
-\label{taba}
 \begin{center}
 \renewcommand\arraystretch{1.0}
 \footnotesize
@@ -595,12 +594,10 @@ Image\#
 \hline
 \end{tabular}
 \end{center}
-\vspace{-1mm}
 \end{table}
 
-
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -658,12 +655,11 @@ Image\#
 }
 \caption{Denoised images of different methods on the image ``kodim01'' degraded by AWGN with different standard deviations of $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
 \label{f1}
-\vspace{2mm}
 \end{figure}
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -720,15 +716,14 @@ Image\#
 \end{minipage}
 }
 \caption{Denoised images of different methods on the image ``kodim03'' degraded by AWGN with different standard deviations of $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f1}
-\vspace{2mm}
+\label{f2}
 \end{figure}
 
 
 
 \begin{comment}
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -785,13 +780,12 @@ Image\#
 \end{minipage}
 }
 \caption{Denoised images of different methods on the image ``kodim05'' degraded by AWGN with different standard deviations of $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f1}
-\vspace{2mm}
+\label{f3}
 \end{figure}
 \end{comment}
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -848,13 +842,12 @@ Image\#
 \end{minipage}
 }
 \caption{Denoised images of different methods on the image ``kodim07'' degraded by AWGN with different standard deviations of $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f1}
-\vspace{2mm}
+\label{f3}
 \end{figure}
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -911,13 +904,12 @@ Image\#
 \end{minipage}
 }
 \caption{Denoised images of different methods on the image ``kodim09'' degraded by AWGN with different standard deviations of $\sigma_{r}=5, \sigma_{g}=30, \sigma_{b}=15$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f1}
-\vspace{2mm}
+\label{f4}
 \end{figure}
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -974,13 +966,12 @@ Image\#
 \end{minipage}
 }
 \caption{Denoised images of different methods on the image ``kodim11'' degraded by AWGN with different standard deviations of $\sigma_{r}=5, \sigma_{g}=30, \sigma_{b}=15$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f1}
-\vspace{2mm}
+\label{f5}
 \end{figure}
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1037,12 +1028,11 @@ Image\#
 \end{minipage}
 }
 \caption{Denoised images of different methods on the image ``kodim15'' degraded by AWGN with different standard deviations of $\sigma_{r}=5, \sigma_{g}=30, \sigma_{b}=15$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f1}
-\vspace{2mm}
+\label{f6}
 \end{figure}
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1099,12 +1089,11 @@ Image\#
 \end{minipage}
 }
 \caption{Denoised images of different methods on the image ``kodim17'' degraded by AWGN with different standard deviations of $\sigma_{r}=30, \sigma_{g}=10, \sigma_{b}=50$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f1}
-\vspace{2mm}
+\label{f7}
 \end{figure}
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1161,8 +1150,7 @@ Image\#
 \end{minipage}
 }
 \caption{Denoised images of different methods on the image ``kodim19'' degraded by AWGN with different standard deviations of $\sigma_{r}=30, \sigma_{g}=10, \sigma_{b}=50$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f1}
-\vspace{2mm}
+\label{f8}
 \end{figure}
 
 
@@ -1171,7 +1159,7 @@ Image\#
 
 \begin{comment}
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1229,12 +1217,13 @@ Image\#
 }
 \caption{Denoised images of different methods on the image ``kodim21'' degraded by AWGN with different standard deviations of $\sigma_{r}=30, \sigma_{g}=10, \sigma_{b}=50$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
 \label{f1}
-\vspace{2mm}
 \end{figure}
 \end{comment}
 
+
+
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{1mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1291,17 +1280,19 @@ Image\#
 \end{minipage}
 }
 \caption{Denoised images of different methods on the image ``kodim23'' degraded by AWGN with different standard deviations of $\sigma_{r}=30, \sigma_{g}=10, \sigma_{b}=50$ on R, G, B channels, respectively. The images are better to be zoomed in on screen.}
-\label{f1}
-\vspace{2mm}
+\label{f9}
 \end{figure}
 
+
+
+\clearpage
 \section{More visual comparisons of denoised images by different methods on the real noisy images of the dataset \cite{ncwebsite}}
 
-In this section, we give more comparisons of the state-of-the-art denoising methods on the dataset \cite{ncwebsite}.\ The real noisy images in dataset \cite{ncwebsite} have no ``ground truth" images and hence we only compare the visual quality of the denoised images by different methods.\ As can be seen from Figures \ref{fig1}-\ref{fig4}, our proposed method performs better than the competing methods.
+In this section, we give more comparisons of the state-of-the-art denoising methods on the dataset \cite{ncwebsite}.\ The real noisy images in dataset \cite{ncwebsite} have no ``ground truth'' images and hence we only compare the visual quality of the denoised images by different methods.\ As can be seen from Figures \ref{f10}-\ref{f12}, the proposed MC-WNNM method performs better than the competing methods.
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.2\textwidth}
@@ -1359,13 +1350,13 @@ In this section, we give more comparisons of the state-of-the-art denoising meth
 }
 \vspace{-2mm}
 \caption{Denoised images of the real noisy image ``Frog'' \cite{ncwebsite} by different methods.\ The images are better to be zoomed in on screen.}
-\label{f3}
-\vspace{-2mm}
+\label{f10}
+\vspace{3mm}
 \end{figure}
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.2\textwidth}
@@ -1423,13 +1414,13 @@ In this section, we give more comparisons of the state-of-the-art denoising meth
 }
 \vspace{-2mm}
 \caption{Denoised images of the real noisy image ``Gril'' \cite{ncwebsite} by different methods.\ The images are better to be zoomed in on screen.}
-\label{f3}
+\label{f11}
 \vspace{-2mm}
 \end{figure}
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.2\textwidth}
@@ -1487,8 +1478,7 @@ In this section, we give more comparisons of the state-of-the-art denoising meth
 }
 \vspace{-2mm}
 \caption{Denoised images of the real noisy image ``Circuit'' \cite{ncwebsite} by different methods.\ The images are better to be zoomed in on screen.}
-\label{f3}
-\vspace{-2mm}
+\label{f12}
 \end{figure}
 
 
@@ -1498,11 +1488,11 @@ In this section, we give more comparisons of the state-of-the-art denoising meth
 
 \section{More visual comparisons of denoised images by different methods on the real noisy images of the dataset \cite{crosschannel2016}}
 
-In this section, we provide more comparisons of the proposed method with the state-of-the-art denoising methods on the 15 cropped real noisy images used in \cite{crosschannel2016}.\ In this dataset, each scene was shot 500 times under the same camera and camera setting.\ The mean image of the 500 shots is roughly taken as the ``ground truth", with which the PSNR can be computed.\ As can be seen from Figures \ref{fig5}-\ref{fig9}, in most cases, our proposed method achieves better performance than the the competing methods.\ This validates the effectiveness of our proposed external prior guided internal prior learning framework for real noisy image denoising.
+In this section, we provide more comparisons of the proposed method with the state-of-the-art denoising methods on the 15 cropped real noisy images used in \cite{crosschannel2016}.\ In this dataset, each scene was shot 500 times under the same camera and camera setting.\ The mean image of the 500 shots is roughly taken as the ``ground truth", with which the PSNR can be computed.\ As can be seen from Figures \ref{f13}-\ref{f16}, in most cases, our proposed method achieves better performance than the the competing methods.\ This validates the effectiveness of the proposed MC-WNNM method for real noisy image denoising.
 
 \begin{comment}
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{3mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1559,12 +1549,12 @@ In this section, we provide more comparisons of the proposed method with the sta
 \end{minipage}
 }
 \caption{Denoised images of a region cropped from the real noisy image ``Canon 5D Mark 3 ISO 3200 2" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
-\label{fig5}
+\label{f13}
 \end{figure}
 \end{comment}
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{3mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1621,14 +1611,14 @@ In this section, we provide more comparisons of the proposed method with the sta
 \end{minipage}
 }
 \caption{Denoised images of a region cropped from the real noisy image ``Nikon D600 ISO 3200 2" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
-\label{fig5}
+\label{f13}
 \end{figure}
 
 
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{3mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1685,12 +1675,12 @@ In this section, we provide more comparisons of the proposed method with the sta
 \end{minipage}
 }
 \caption{Denoised images of a region cropped from the real noisy image ``Nikon D800 ISO 1600 2" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
-\label{fig5}
+\label{f14}
 \end{figure}
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{3mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1747,12 +1737,12 @@ In this section, we provide more comparisons of the proposed method with the sta
 \end{minipage}
 }
 \caption{Denoised images of a region cropped from the real noisy image ``Nikon D800 ISO 3200 2" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
-\label{fig5}
+\label{f15}
 \end{figure}
 
 
 %------------------------------------------------------------------------------------
-\begin{figure}\vspace{3mm}
+\begin{figure}[!htbp]
 \centering
 \subfigure{
 \begin{minipage}[t]{0.195\textwidth}
@@ -1809,10 +1799,8 @@ In this section, we provide more comparisons of the proposed method with the sta
 \end{minipage}
 }
 \caption{Denoised images of a region cropped from the real noisy image ``Nikon D800 ISO 6400 2" \cite{crosschannel2016} by different methods. The images are better to be zoomed in on screen.}
-\label{fig5}
+\label{f16}
 \end{figure}
-
-
 
 
 
