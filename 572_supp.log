@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  22 MAR 2017 22:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  31 MAR 2017 15:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -797,21 +797,21 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 458.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 456.
  [2] [3]
 <24images/resize_br_Noisy_nSig402030_kodim01.png, id=97, 205.76875pt x 205.7687
 5pt>
 File: 24images/resize_br_Noisy_nSig402030_kodim01.png Graphic file (type png)
  <use 24images/resize_br_Noisy_nSig402030_kodim01.png>
 Package pdftex.def Info: 24images/resize_br_Noisy_nSig402030_kodim01.png used o
-n input line 806.
+n input line 804.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_kodim01.png, id=98, 205.76875pt x 205.76875pt>
 File: 24images/resize_br_kodim01.png Graphic file (type png)
 
 <use 24images/resize_br_kodim01.png>
-Package pdftex.def Info: 24images/resize_br_kodim01.png used on input line 806.
+Package pdftex.def Info: 24images/resize_br_kodim01.png used on input line 804.
 
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
@@ -820,7 +820,7 @@ Package pdftex.def Info: 24images/resize_br_kodim01.png used on input line 806.
 File: 24images/resize_br_CBM3D_nSig402030_kodim01.png Graphic file (type png)
  <use 24images/resize_br_CBM3D_nSig402030_kodim01.png>
 Package pdftex.def Info: 24images/resize_br_CBM3D_nSig402030_kodim01.png used o
-n input line 829.
+n input line 827.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_MLP_nSig402030_kodim01.png, id=101, 205.76875pt x 205.76875
@@ -828,7 +828,7 @@ pt>
 File: 24images/resize_br_MLP_nSig402030_kodim01.png Graphic file (type png)
  <use 24images/resize_br_MLP_nSig402030_kodim01.png>
 Package pdftex.def Info: 24images/resize_br_MLP_nSig402030_kodim01.png used on 
-input line 829.
+input line 827.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_TNRD_nSig402030_kodim01.png, id=103, 205.76875pt x 205.7687
@@ -836,7 +836,7 @@ input line 829.
 File: 24images/resize_br_TNRD_nSig402030_kodim01.png Graphic file (type png)
  <use 24images/resize_br_TNRD_nSig402030_kodim01.png>
 Package pdftex.def Info: 24images/resize_br_TNRD_nSig402030_kodim01.png used on
- input line 829.
+ input line 827.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_NC_nSig402030_kodim01.png, id=105, 205.76875pt x 205.76875p
@@ -844,7 +844,7 @@ t>
 File: 24images/resize_br_NC_nSig402030_kodim01.png Graphic file (type png)
  <use 24images/resize_br_NC_nSig402030_kodim01.png>
 Package pdftex.def Info: 24images/resize_br_NC_nSig402030_kodim01.png used on i
-nput line 829.
+nput line 827.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMCW_nSig402030_kodim01.png, id=108, 205.76875pt x 205.76
@@ -852,7 +852,7 @@ nput line 829.
 File: 24images/resize_br_WNNMCW_nSig402030_kodim01.png Graphic file (type png)
  <use 24images/resize_br_WNNMCW_nSig402030_kodim01.png>
 Package pdftex.def Info: 24images/resize_br_WNNMCW_nSig402030_kodim01.png used 
-on input line 851.
+on input line 849.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMJ_nSig402030_kodim01.png, id=109, 205.76875pt x 205.768
@@ -860,7 +860,7 @@ on input line 851.
 File: 24images/resize_br_WNNMJ_nSig402030_kodim01.png Graphic file (type png)
  <use 24images/resize_br_WNNMJ_nSig402030_kodim01.png>
 Package pdftex.def Info: 24images/resize_br_WNNMJ_nSig402030_kodim01.png used o
-n input line 851.
+n input line 849.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNM_ADMM_nSig402030_kodim01.png, id=110, 205.76875pt x 205
@@ -869,7 +869,7 @@ File: 24images/resize_br_WNNM_ADMM_nSig402030_kodim01.png Graphic file (type pn
 g)
  <use 24images/resize_br_WNNM_ADMM_nSig402030_kodim01.png>
 Package pdftex.def Info: 24images/resize_br_WNNM_ADMM_nSig402030_kodim01.png us
-ed on input line 851.
+ed on input line 849.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_CWNNM_ADMM_nSig402030_kodim01.png, id=111, 205.76875pt x 20
@@ -878,15 +878,15 @@ File: 24images/resize_br_CWNNM_ADMM_nSig402030_kodim01.png Graphic file (type p
 ng)
  <use 24images/resize_br_CWNNM_ADMM_nSig402030_kodim01.png>
 Package pdftex.def Info: 24images/resize_br_CWNNM_ADMM_nSig402030_kodim01.png u
-sed on input line 851.
+sed on input line 849.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 806--852
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 804--850
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 806--852
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 804--850
  [][] 
  []
 
@@ -896,14 +896,14 @@ Overfull \hbox (12.49995pt too wide) in paragraph at lines 806--852
 File: 24images/resize_br_Noisy_nSig402030_kodim03.png Graphic file (type png)
  <use 24images/resize_br_Noisy_nSig402030_kodim03.png>
 Package pdftex.def Info: 24images/resize_br_Noisy_nSig402030_kodim03.png used o
-n input line 871.
+n input line 869.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_kodim03.png, id=113, 205.76875pt x 205.76875pt>
 File: 24images/resize_br_kodim03.png Graphic file (type png)
 
 <use 24images/resize_br_kodim03.png>
-Package pdftex.def Info: 24images/resize_br_kodim03.png used on input line 871.
+Package pdftex.def Info: 24images/resize_br_kodim03.png used on input line 869.
 
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
@@ -912,7 +912,7 @@ Package pdftex.def Info: 24images/resize_br_kodim03.png used on input line 871.
 File: 24images/resize_br_CBM3D_nSig402030_kodim03.png Graphic file (type png)
  <use 24images/resize_br_CBM3D_nSig402030_kodim03.png>
 Package pdftex.def Info: 24images/resize_br_CBM3D_nSig402030_kodim03.png used o
-n input line 894.
+n input line 892.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_MLP_nSig402030_kodim03.png, id=116, 205.76875pt x 205.76875
@@ -920,7 +920,7 @@ pt>
 File: 24images/resize_br_MLP_nSig402030_kodim03.png Graphic file (type png)
  <use 24images/resize_br_MLP_nSig402030_kodim03.png>
 Package pdftex.def Info: 24images/resize_br_MLP_nSig402030_kodim03.png used on 
-input line 894.
+input line 892.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_TNRD_nSig402030_kodim03.png, id=118, 205.76875pt x 205.7687
@@ -928,7 +928,7 @@ input line 894.
 File: 24images/resize_br_TNRD_nSig402030_kodim03.png Graphic file (type png)
  <use 24images/resize_br_TNRD_nSig402030_kodim03.png>
 Package pdftex.def Info: 24images/resize_br_TNRD_nSig402030_kodim03.png used on
- input line 894.
+ input line 892.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_NC_nSig402030_kodim03.png, id=120, 205.76875pt x 205.76875p
@@ -936,7 +936,7 @@ t>
 File: 24images/resize_br_NC_nSig402030_kodim03.png Graphic file (type png)
  <use 24images/resize_br_NC_nSig402030_kodim03.png>
 Package pdftex.def Info: 24images/resize_br_NC_nSig402030_kodim03.png used on i
-nput line 894.
+nput line 892.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMCW_nSig402030_kodim03.png, id=123, 205.76875pt x 205.76
@@ -944,7 +944,7 @@ nput line 894.
 File: 24images/resize_br_WNNMCW_nSig402030_kodim03.png Graphic file (type png)
  <use 24images/resize_br_WNNMCW_nSig402030_kodim03.png>
 Package pdftex.def Info: 24images/resize_br_WNNMCW_nSig402030_kodim03.png used 
-on input line 916.
+on input line 914.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMJ_nSig402030_kodim03.png, id=124, 205.76875pt x 205.768
@@ -952,7 +952,7 @@ on input line 916.
 File: 24images/resize_br_WNNMJ_nSig402030_kodim03.png Graphic file (type png)
  <use 24images/resize_br_WNNMJ_nSig402030_kodim03.png>
 Package pdftex.def Info: 24images/resize_br_WNNMJ_nSig402030_kodim03.png used o
-n input line 916.
+n input line 914.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNM_ADMM_nSig402030_kodim03.png, id=125, 205.76875pt x 205
@@ -961,7 +961,7 @@ File: 24images/resize_br_WNNM_ADMM_nSig402030_kodim03.png Graphic file (type pn
 g)
  <use 24images/resize_br_WNNM_ADMM_nSig402030_kodim03.png>
 Package pdftex.def Info: 24images/resize_br_WNNM_ADMM_nSig402030_kodim03.png us
-ed on input line 916.
+ed on input line 914.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_CWNNM_ADMM_nSig402030_kodim03.png, id=126, 205.76875pt x 20
@@ -970,15 +970,15 @@ File: 24images/resize_br_CWNNM_ADMM_nSig402030_kodim03.png Graphic file (type p
 ng)
  <use 24images/resize_br_CWNNM_ADMM_nSig402030_kodim03.png>
 Package pdftex.def Info: 24images/resize_br_CWNNM_ADMM_nSig402030_kodim03.png u
-sed on input line 916.
+sed on input line 914.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 871--917
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 869--915
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 871--917
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 869--915
  [][] 
  []
 
@@ -988,14 +988,14 @@ Overfull \hbox (12.49995pt too wide) in paragraph at lines 871--917
 File: 24images/resize_br_Noisy_nSig301050_kodim17.png Graphic file (type png)
  <use 24images/resize_br_Noisy_nSig301050_kodim17.png>
 Package pdftex.def Info: 24images/resize_br_Noisy_nSig301050_kodim17.png used o
-n input line 935.
+n input line 933.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_kodim17.png, id=128, 205.76875pt x 205.76875pt>
 File: 24images/resize_br_kodim17.png Graphic file (type png)
 
 <use 24images/resize_br_kodim17.png>
-Package pdftex.def Info: 24images/resize_br_kodim17.png used on input line 935.
+Package pdftex.def Info: 24images/resize_br_kodim17.png used on input line 933.
 
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
@@ -1004,7 +1004,7 @@ Package pdftex.def Info: 24images/resize_br_kodim17.png used on input line 935.
 File: 24images/resize_br_CBM3D_nSig301050_kodim17.png Graphic file (type png)
  <use 24images/resize_br_CBM3D_nSig301050_kodim17.png>
 Package pdftex.def Info: 24images/resize_br_CBM3D_nSig301050_kodim17.png used o
-n input line 958.
+n input line 956.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_MLP_nSig301050_kodim17.png, id=131, 205.76875pt x 205.76875
@@ -1012,7 +1012,7 @@ pt>
 File: 24images/resize_br_MLP_nSig301050_kodim17.png Graphic file (type png)
  <use 24images/resize_br_MLP_nSig301050_kodim17.png>
 Package pdftex.def Info: 24images/resize_br_MLP_nSig301050_kodim17.png used on 
-input line 958.
+input line 956.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_TNRD_nSig301050_kodim17.png, id=133, 205.76875pt x 205.7687
@@ -1020,7 +1020,7 @@ input line 958.
 File: 24images/resize_br_TNRD_nSig301050_kodim17.png Graphic file (type png)
  <use 24images/resize_br_TNRD_nSig301050_kodim17.png>
 Package pdftex.def Info: 24images/resize_br_TNRD_nSig301050_kodim17.png used on
- input line 958.
+ input line 956.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_NC_nSig301050_kodim17.png, id=135, 205.76875pt x 205.76875p
@@ -1028,7 +1028,7 @@ t>
 File: 24images/resize_br_NC_nSig301050_kodim17.png Graphic file (type png)
  <use 24images/resize_br_NC_nSig301050_kodim17.png>
 Package pdftex.def Info: 24images/resize_br_NC_nSig301050_kodim17.png used on i
-nput line 958.
+nput line 956.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMcw_nSig301050_kodim17.png, id=138, 205.76875pt x 205.76
@@ -1036,7 +1036,7 @@ nput line 958.
 File: 24images/resize_br_WNNMcw_nSig301050_kodim17.png Graphic file (type png)
  <use 24images/resize_br_WNNMcw_nSig301050_kodim17.png>
 Package pdftex.def Info: 24images/resize_br_WNNMcw_nSig301050_kodim17.png used 
-on input line 980.
+on input line 978.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMJ_nSig301050_kodim17.png, id=139, 205.76875pt x 205.768
@@ -1044,7 +1044,7 @@ on input line 980.
 File: 24images/resize_br_WNNMJ_nSig301050_kodim17.png Graphic file (type png)
  <use 24images/resize_br_WNNMJ_nSig301050_kodim17.png>
 Package pdftex.def Info: 24images/resize_br_WNNMJ_nSig301050_kodim17.png used o
-n input line 980.
+n input line 978.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNM_ADMM_nSig301050_kodim17.png, id=140, 205.76875pt x 205
@@ -1053,7 +1053,7 @@ File: 24images/resize_br_WNNM_ADMM_nSig301050_kodim17.png Graphic file (type pn
 g)
  <use 24images/resize_br_WNNM_ADMM_nSig301050_kodim17.png>
 Package pdftex.def Info: 24images/resize_br_WNNM_ADMM_nSig301050_kodim17.png us
-ed on input line 980.
+ed on input line 978.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_CWNNM_ADMM_nSig301050_kodim17.png, id=141, 205.76875pt x 20
@@ -1062,15 +1062,15 @@ File: 24images/resize_br_CWNNM_ADMM_nSig301050_kodim17.png Graphic file (type p
 ng)
  <use 24images/resize_br_CWNNM_ADMM_nSig301050_kodim17.png>
 Package pdftex.def Info: 24images/resize_br_CWNNM_ADMM_nSig301050_kodim17.png u
-sed on input line 980.
+sed on input line 978.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 935--981
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 933--979
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 935--981
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 933--979
  [][] 
  []
 
@@ -1080,14 +1080,14 @@ Overfull \hbox (12.49995pt too wide) in paragraph at lines 935--981
 File: 24images/resize_br_Noisy_nSig301050_kodim19.png Graphic file (type png)
  <use 24images/resize_br_Noisy_nSig301050_kodim19.png>
 Package pdftex.def Info: 24images/resize_br_Noisy_nSig301050_kodim19.png used o
-n input line 999.
+n input line 997.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_kodim19.png, id=143, 205.76875pt x 205.76875pt>
 File: 24images/resize_br_kodim19.png Graphic file (type png)
 
 <use 24images/resize_br_kodim19.png>
-Package pdftex.def Info: 24images/resize_br_kodim19.png used on input line 999.
+Package pdftex.def Info: 24images/resize_br_kodim19.png used on input line 997.
 
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
@@ -1096,7 +1096,7 @@ Package pdftex.def Info: 24images/resize_br_kodim19.png used on input line 999.
 File: 24images/resize_br_CBM3D_nSig301050_kodim19.png Graphic file (type png)
  <use 24images/resize_br_CBM3D_nSig301050_kodim19.png>
 Package pdftex.def Info: 24images/resize_br_CBM3D_nSig301050_kodim19.png used o
-n input line 1022.
+n input line 1020.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_MLP_nSig301050_kodim19.png, id=146, 205.76875pt x 205.76875
@@ -1104,7 +1104,7 @@ pt>
 File: 24images/resize_br_MLP_nSig301050_kodim19.png Graphic file (type png)
  <use 24images/resize_br_MLP_nSig301050_kodim19.png>
 Package pdftex.def Info: 24images/resize_br_MLP_nSig301050_kodim19.png used on 
-input line 1022.
+input line 1020.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_TNRD_nSig301050_kodim19.png, id=148, 205.76875pt x 205.7687
@@ -1112,7 +1112,7 @@ input line 1022.
 File: 24images/resize_br_TNRD_nSig301050_kodim19.png Graphic file (type png)
  <use 24images/resize_br_TNRD_nSig301050_kodim19.png>
 Package pdftex.def Info: 24images/resize_br_TNRD_nSig301050_kodim19.png used on
- input line 1022.
+ input line 1020.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_NC_nSig301050_kodim19.png, id=150, 205.76875pt x 205.76875p
@@ -1120,7 +1120,7 @@ t>
 File: 24images/resize_br_NC_nSig301050_kodim19.png Graphic file (type png)
  <use 24images/resize_br_NC_nSig301050_kodim19.png>
 Package pdftex.def Info: 24images/resize_br_NC_nSig301050_kodim19.png used on i
-nput line 1022.
+nput line 1020.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMcw_nSig301050_kodim19.png, id=153, 205.76875pt x 205.76
@@ -1128,7 +1128,7 @@ nput line 1022.
 File: 24images/resize_br_WNNMcw_nSig301050_kodim19.png Graphic file (type png)
  <use 24images/resize_br_WNNMcw_nSig301050_kodim19.png>
 Package pdftex.def Info: 24images/resize_br_WNNMcw_nSig301050_kodim19.png used 
-on input line 1044.
+on input line 1042.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMJ_nSig301050_kodim19.png, id=154, 205.76875pt x 205.768
@@ -1136,7 +1136,7 @@ on input line 1044.
 File: 24images/resize_br_WNNMJ_nSig301050_kodim19.png Graphic file (type png)
  <use 24images/resize_br_WNNMJ_nSig301050_kodim19.png>
 Package pdftex.def Info: 24images/resize_br_WNNMJ_nSig301050_kodim19.png used o
-n input line 1044.
+n input line 1042.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNM_ADMM_nSig301050_kodim19.png, id=155, 205.76875pt x 205
@@ -1145,7 +1145,7 @@ File: 24images/resize_br_WNNM_ADMM_nSig301050_kodim19.png Graphic file (type pn
 g)
  <use 24images/resize_br_WNNM_ADMM_nSig301050_kodim19.png>
 Package pdftex.def Info: 24images/resize_br_WNNM_ADMM_nSig301050_kodim19.png us
-ed on input line 1044.
+ed on input line 1042.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_CWNNM_ADMM_nSig301050_kodim19.png, id=156, 205.76875pt x 20
@@ -1154,15 +1154,15 @@ File: 24images/resize_br_CWNNM_ADMM_nSig301050_kodim19.png Graphic file (type p
 ng)
  <use 24images/resize_br_CWNNM_ADMM_nSig301050_kodim19.png>
 Package pdftex.def Info: 24images/resize_br_CWNNM_ADMM_nSig301050_kodim19.png u
-sed on input line 1044.
+sed on input line 1042.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 999--1045
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 997--1043
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 999--1045
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 997--1043
  [][] 
  []
 
@@ -1172,14 +1172,14 @@ Overfull \hbox (12.49995pt too wide) in paragraph at lines 999--1045
 File: 24images/resize_br_Noisy_nSig53015_kodim09.png Graphic file (type png)
  <use 24images/resize_br_Noisy_nSig53015_kodim09.png>
 Package pdftex.def Info: 24images/resize_br_Noisy_nSig53015_kodim09.png used on
- input line 1065.
+ input line 1063.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_kodim09.png, id=158, 205.76875pt x 205.76875pt>
 File: 24images/resize_br_kodim09.png Graphic file (type png)
 
 <use 24images/resize_br_kodim09.png>
-Package pdftex.def Info: 24images/resize_br_kodim09.png used on input line 1065
+Package pdftex.def Info: 24images/resize_br_kodim09.png used on input line 1063
 .
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
@@ -1188,7 +1188,7 @@ Package pdftex.def Info: 24images/resize_br_kodim09.png used on input line 1065
 File: 24images/resize_br_CBM3D_nSig53015_kodim09.png Graphic file (type png)
  <use 24images/resize_br_CBM3D_nSig53015_kodim09.png>
 Package pdftex.def Info: 24images/resize_br_CBM3D_nSig53015_kodim09.png used on
- input line 1088.
+ input line 1086.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_MLP_nSig53015_kodim09.png, id=161, 205.76875pt x 205.76875p
@@ -1196,7 +1196,7 @@ t>
 File: 24images/resize_br_MLP_nSig53015_kodim09.png Graphic file (type png)
  <use 24images/resize_br_MLP_nSig53015_kodim09.png>
 Package pdftex.def Info: 24images/resize_br_MLP_nSig53015_kodim09.png used on i
-nput line 1088.
+nput line 1086.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_TNRD_nSig53015_kodim09.png, id=163, 205.76875pt x 205.76875
@@ -1204,7 +1204,7 @@ pt>
 File: 24images/resize_br_TNRD_nSig53015_kodim09.png Graphic file (type png)
  <use 24images/resize_br_TNRD_nSig53015_kodim09.png>
 Package pdftex.def Info: 24images/resize_br_TNRD_nSig53015_kodim09.png used on 
-input line 1088.
+input line 1086.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_NC_nSig53015_kodim09.png, id=165, 205.76875pt x 205.76875pt
@@ -1212,7 +1212,7 @@ input line 1088.
 File: 24images/resize_br_NC_nSig53015_kodim09.png Graphic file (type png)
  <use 24images/resize_br_NC_nSig53015_kodim09.png>
 Package pdftex.def Info: 24images/resize_br_NC_nSig53015_kodim09.png used on in
-put line 1088.
+put line 1086.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMcw_nSig53015_kodim09.png, id=168, 205.76875pt x 205.768
@@ -1220,7 +1220,7 @@ put line 1088.
 File: 24images/resize_br_WNNMcw_nSig53015_kodim09.png Graphic file (type png)
  <use 24images/resize_br_WNNMcw_nSig53015_kodim09.png>
 Package pdftex.def Info: 24images/resize_br_WNNMcw_nSig53015_kodim09.png used o
-n input line 1110.
+n input line 1108.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMJ_nSig53015_kodim09.png, id=169, 205.76875pt x 205.7687
@@ -1228,7 +1228,7 @@ n input line 1110.
 File: 24images/resize_br_WNNMJ_nSig53015_kodim09.png Graphic file (type png)
  <use 24images/resize_br_WNNMJ_nSig53015_kodim09.png>
 Package pdftex.def Info: 24images/resize_br_WNNMJ_nSig53015_kodim09.png used on
- input line 1110.
+ input line 1108.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNM_ADMM_nSig53015_kodim09.png, id=170, 205.76875pt x 205.
@@ -1237,7 +1237,7 @@ File: 24images/resize_br_WNNM_ADMM_nSig53015_kodim09.png Graphic file (type png
 )
  <use 24images/resize_br_WNNM_ADMM_nSig53015_kodim09.png>
 Package pdftex.def Info: 24images/resize_br_WNNM_ADMM_nSig53015_kodim09.png use
-d on input line 1110.
+d on input line 1108.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_CWNNM_ADMM_nSig53015_kodim09.png, id=171, 205.76875pt x 205
@@ -1246,15 +1246,15 @@ File: 24images/resize_br_CWNNM_ADMM_nSig53015_kodim09.png Graphic file (type pn
 g)
  <use 24images/resize_br_CWNNM_ADMM_nSig53015_kodim09.png>
 Package pdftex.def Info: 24images/resize_br_CWNNM_ADMM_nSig53015_kodim09.png us
-ed on input line 1110.
+ed on input line 1108.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1065--1111
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1063--1109
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1065--1111
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1063--1109
  [][] 
  []
 
@@ -1264,14 +1264,14 @@ Overfull \hbox (12.49995pt too wide) in paragraph at lines 1065--1111
 File: 24images/resize_br_Noisy_nSig53015_kodim15.png Graphic file (type png)
  <use 24images/resize_br_Noisy_nSig53015_kodim15.png>
 Package pdftex.def Info: 24images/resize_br_Noisy_nSig53015_kodim15.png used on
- input line 1132.
+ input line 1130.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_kodim15.png, id=173, 205.76875pt x 205.76875pt>
 File: 24images/resize_br_kodim15.png Graphic file (type png)
 
 <use 24images/resize_br_kodim15.png>
-Package pdftex.def Info: 24images/resize_br_kodim15.png used on input line 1132
+Package pdftex.def Info: 24images/resize_br_kodim15.png used on input line 1130
 .
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
@@ -1280,7 +1280,7 @@ Package pdftex.def Info: 24images/resize_br_kodim15.png used on input line 1132
 File: 24images/resize_br_CBM3D_nSig53015_kodim15.png Graphic file (type png)
  <use 24images/resize_br_CBM3D_nSig53015_kodim15.png>
 Package pdftex.def Info: 24images/resize_br_CBM3D_nSig53015_kodim15.png used on
- input line 1155.
+ input line 1153.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_MLP_nSig53015_kodim15.png, id=176, 205.76875pt x 205.76875p
@@ -1288,7 +1288,7 @@ t>
 File: 24images/resize_br_MLP_nSig53015_kodim15.png Graphic file (type png)
  <use 24images/resize_br_MLP_nSig53015_kodim15.png>
 Package pdftex.def Info: 24images/resize_br_MLP_nSig53015_kodim15.png used on i
-nput line 1155.
+nput line 1153.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_TNRD_nSig53015_kodim15.png, id=178, 205.76875pt x 205.76875
@@ -1296,7 +1296,7 @@ pt>
 File: 24images/resize_br_TNRD_nSig53015_kodim15.png Graphic file (type png)
  <use 24images/resize_br_TNRD_nSig53015_kodim15.png>
 Package pdftex.def Info: 24images/resize_br_TNRD_nSig53015_kodim15.png used on 
-input line 1155.
+input line 1153.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_NC_nSig53015_kodim15.png, id=180, 205.76875pt x 205.76875pt
@@ -1304,7 +1304,7 @@ input line 1155.
 File: 24images/resize_br_NC_nSig53015_kodim15.png Graphic file (type png)
  <use 24images/resize_br_NC_nSig53015_kodim15.png>
 Package pdftex.def Info: 24images/resize_br_NC_nSig53015_kodim15.png used on in
-put line 1155.
+put line 1153.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMcw_nSig53015_kodim15.png, id=183, 205.76875pt x 205.768
@@ -1312,7 +1312,7 @@ put line 1155.
 File: 24images/resize_br_WNNMcw_nSig53015_kodim15.png Graphic file (type png)
  <use 24images/resize_br_WNNMcw_nSig53015_kodim15.png>
 Package pdftex.def Info: 24images/resize_br_WNNMcw_nSig53015_kodim15.png used o
-n input line 1177.
+n input line 1175.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNMJ_nSig53015_kodim15.png, id=184, 205.76875pt x 205.7687
@@ -1320,7 +1320,7 @@ n input line 1177.
 File: 24images/resize_br_WNNMJ_nSig53015_kodim15.png Graphic file (type png)
  <use 24images/resize_br_WNNMJ_nSig53015_kodim15.png>
 Package pdftex.def Info: 24images/resize_br_WNNMJ_nSig53015_kodim15.png used on
- input line 1177.
+ input line 1175.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_WNNM_ADMM_nSig53015_kodim15.png, id=185, 205.76875pt x 205.
@@ -1329,7 +1329,7 @@ File: 24images/resize_br_WNNM_ADMM_nSig53015_kodim15.png Graphic file (type png
 )
  <use 24images/resize_br_WNNM_ADMM_nSig53015_kodim15.png>
 Package pdftex.def Info: 24images/resize_br_WNNM_ADMM_nSig53015_kodim15.png use
-d on input line 1177.
+d on input line 1175.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <24images/resize_br_CWNNM_ADMM_nSig53015_kodim15.png, id=186, 205.76875pt x 205
@@ -1338,15 +1338,15 @@ File: 24images/resize_br_CWNNM_ADMM_nSig53015_kodim15.png Graphic file (type pn
 g)
  <use 24images/resize_br_CWNNM_ADMM_nSig53015_kodim15.png>
 Package pdftex.def Info: 24images/resize_br_CWNNM_ADMM_nSig53015_kodim15.png us
-ed on input line 1177.
+ed on input line 1175.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1132--1178
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1130--1176
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1132--1178
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1130--1176
  [][] 
  []
 
@@ -1355,7 +1355,7 @@ File: imagessupp/resize_br_Noisy_frog.png Graphic file (type png)
 
 <use imagessupp/resize_br_Noisy_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_Noisy_frog.png used on input line
- 1194.
+ 1192.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_CBM3D_frog.png, id=189, 225.84375pt x 225.84375pt>
@@ -1363,7 +1363,7 @@ File: imagessupp/resize_br_CBM3D_frog.png Graphic file (type png)
 
 <use imagessupp/resize_br_CBM3D_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_CBM3D_frog.png used on input line
- 1211.
+ 1209.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_MLP_frog.png, id=191, 225.84375pt x 225.84375pt>
@@ -1371,7 +1371,7 @@ File: imagessupp/resize_br_MLP_frog.png Graphic file (type png)
 
 <use imagessupp/resize_br_MLP_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_MLP_frog.png used on input line 1
-211.
+209.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_TNRD_frog.png, id=193, 225.84375pt x 225.84375pt>
@@ -1379,7 +1379,7 @@ File: imagessupp/resize_br_TNRD_frog.png Graphic file (type png)
 
 <use imagessupp/resize_br_TNRD_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_TNRD_frog.png used on input line 
-1211.
+1209.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_NI_frog.png, id=195, 225.84375pt x 225.84375pt>
@@ -1387,7 +1387,7 @@ File: imagessupp/resize_br_NI_frog.png Graphic file (type png)
 
 <use imagessupp/resize_br_NI_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_NI_frog.png used on input line 12
-28.
+26.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_NC_frog.png, id=197, 225.84375pt x 225.84375pt>
@@ -1395,7 +1395,7 @@ File: imagessupp/resize_br_NC_frog.png Graphic file (type png)
 
 <use imagessupp/resize_br_NC_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_NC_frog.png used on input line 12
-28.
+26.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_WNNMcw_frog.png, id=200, 225.84375pt x 225.84375pt>
@@ -1403,7 +1403,7 @@ File: imagessupp/resize_br_WNNMcw_frog.png Graphic file (type png)
 
 <use imagessupp/resize_br_WNNMcw_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMcw_frog.png used on input lin
-e 1228.
+e 1226.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_WNNMJ_frog.png, id=202, 225.84375pt x 225.84375pt>
@@ -1411,7 +1411,7 @@ File: imagessupp/resize_br_WNNMJ_frog.png Graphic file (type png)
 
 <use imagessupp/resize_br_WNNMJ_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMJ_frog.png used on input line
- 1245.
+ 1243.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_WNNM_ADMM_frog.png, id=204, 225.84375pt x 225.84375pt>
@@ -1419,7 +1419,7 @@ File: imagessupp/resize_br_WNNM_ADMM_frog.png Graphic file (type png)
 
 <use imagessupp/resize_br_WNNM_ADMM_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNM_ADMM_frog.png used on input 
-line 1245.
+line 1243.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_CWNNM_ADMM_NL_frog.png, id=206, 225.84375pt x 225.84375pt
@@ -1427,21 +1427,21 @@ line 1245.
 File: imagessupp/resize_br_CWNNM_ADMM_NL_frog.png Graphic file (type png)
  <use imagessupp/resize_br_CWNNM_ADMM_NL_frog.png>
 Package pdftex.def Info: imagessupp/resize_br_CWNNM_ADMM_NL_frog.png used on in
-put line 1245.
+put line 1243.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_Noisy_chinesegirl.png, id=209, 225.84375pt x 225.84375pt>
 File: imagessupp/resize_br_Noisy_chinesegirl.png Graphic file (type png)
 <use imagessupp/resize_br_Noisy_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_Noisy_chinesegirl.png used on inp
-ut line 1262.
+ut line 1260.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_CBM3D_chinesegirl.png, id=211, 225.84375pt x 225.84375pt>
 File: imagessupp/resize_br_CBM3D_chinesegirl.png Graphic file (type png)
 <use imagessupp/resize_br_CBM3D_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_CBM3D_chinesegirl.png used on inp
-ut line 1279.
+ut line 1277.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_MLP_chinesegirl.png, id=213, 225.84375pt x 225.84375pt>
@@ -1449,7 +1449,7 @@ File: imagessupp/resize_br_MLP_chinesegirl.png Graphic file (type png)
 
 <use imagessupp/resize_br_MLP_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_MLP_chinesegirl.png used on input
- line 1279.
+ line 1277.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_TNRD_chinesegirl.png, id=215, 225.84375pt x 225.84375pt>
@@ -1457,7 +1457,7 @@ File: imagessupp/resize_br_TNRD_chinesegirl.png Graphic file (type png)
 
 <use imagessupp/resize_br_TNRD_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_TNRD_chinesegirl.png used on inpu
-t line 1279.
+t line 1277.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_NI_chinesegirl.png, id=217, 225.84375pt x 225.84375pt>
@@ -1465,7 +1465,7 @@ File: imagessupp/resize_br_NI_chinesegirl.png Graphic file (type png)
 
 <use imagessupp/resize_br_NI_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_NI_chinesegirl.png used on input 
-line 1296.
+line 1294.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_NC_chinesegirl.png, id=219, 225.84375pt x 225.84375pt>
@@ -1473,7 +1473,7 @@ File: imagessupp/resize_br_NC_chinesegirl.png Graphic file (type png)
 
 <use imagessupp/resize_br_NC_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_NC_chinesegirl.png used on input 
-line 1296.
+line 1294.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_WNNMcw_chinesegirl.png, id=222, 225.84375pt x 225.84375pt
@@ -1481,14 +1481,14 @@ line 1296.
 File: imagessupp/resize_br_WNNMcw_chinesegirl.png Graphic file (type png)
  <use imagessupp/resize_br_WNNMcw_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMcw_chinesegirl.png used on in
-put line 1296.
+put line 1294.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_WNNMJ_chinesegirl.png, id=224, 225.84375pt x 225.84375pt>
 File: imagessupp/resize_br_WNNMJ_chinesegirl.png Graphic file (type png)
 <use imagessupp/resize_br_WNNMJ_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMJ_chinesegirl.png used on inp
-ut line 1313.
+ut line 1311.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_WNNM_ADMM_chinesegirl.png, id=226, 225.84375pt x 225.8437
@@ -1496,7 +1496,7 @@ ut line 1313.
 File: imagessupp/resize_br_WNNM_ADMM_chinesegirl.png Graphic file (type png)
  <use imagessupp/resize_br_WNNM_ADMM_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNM_ADMM_chinesegirl.png used on
- input line 1313.
+ input line 1311.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_CWNNM_ADMM_NL_chinesegirl.png, id=228, 225.84375pt x 225.
@@ -1505,7 +1505,7 @@ File: imagessupp/resize_br_CWNNM_ADMM_NL_chinesegirl.png Graphic file (type png
 )
  <use imagessupp/resize_br_CWNNM_ADMM_NL_chinesegirl.png>
 Package pdftex.def Info: imagessupp/resize_br_CWNNM_ADMM_NL_chinesegirl.png use
-d on input line 1313.
+d on input line 1311.
 (pdftex.def)             Requested size: 149.05838pt x 149.06766pt.
 
 <imagessupp/resize_br_Noisy_circuit.png, id=231, 212.795pt x 212.795pt>
@@ -1513,7 +1513,7 @@ File: imagessupp/resize_br_Noisy_circuit.png Graphic file (type png)
 
 <use imagessupp/resize_br_Noisy_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_Noisy_circuit.png used on input l
-ine 1330.
+ine 1328.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_CBM3D_circuit.png, id=233, 212.795pt x 212.795pt>
@@ -1521,7 +1521,7 @@ File: imagessupp/resize_br_CBM3D_circuit.png Graphic file (type png)
 
 <use imagessupp/resize_br_CBM3D_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_CBM3D_circuit.png used on input l
-ine 1347.
+ine 1345.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_MLP_circuit.png, id=235, 212.795pt x 212.795pt>
@@ -1529,7 +1529,7 @@ File: imagessupp/resize_br_MLP_circuit.png Graphic file (type png)
 
 <use imagessupp/resize_br_MLP_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_MLP_circuit.png used on input lin
-e 1347.
+e 1345.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_TNRD_circuit.png, id=237, 212.795pt x 212.795pt>
@@ -1537,7 +1537,7 @@ File: imagessupp/resize_br_TNRD_circuit.png Graphic file (type png)
 
 <use imagessupp/resize_br_TNRD_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_TNRD_circuit.png used on input li
-ne 1347.
+ne 1345.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_NI_circuit.png, id=239, 212.795pt x 212.795pt>
@@ -1545,7 +1545,7 @@ File: imagessupp/resize_br_NI_circuit.png Graphic file (type png)
 
 <use imagessupp/resize_br_NI_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_NI_circuit.png used on input line
- 1364.
+ 1362.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_NC_circuit.png, id=241, 212.795pt x 212.795pt>
@@ -1553,7 +1553,7 @@ File: imagessupp/resize_br_NC_circuit.png Graphic file (type png)
 
 <use imagessupp/resize_br_NC_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_NC_circuit.png used on input line
- 1364.
+ 1362.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_WNNMcw_circuit.png, id=244, 212.795pt x 212.795pt>
@@ -1561,7 +1561,7 @@ File: imagessupp/resize_br_WNNMcw_circuit.png Graphic file (type png)
 
 <use imagessupp/resize_br_WNNMcw_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMcw_circuit.png used on input 
-line 1364.
+line 1362.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_WNNMJ_circuit.png, id=246, 212.795pt x 212.795pt>
@@ -1569,7 +1569,7 @@ File: imagessupp/resize_br_WNNMJ_circuit.png Graphic file (type png)
 
 <use imagessupp/resize_br_WNNMJ_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMJ_circuit.png used on input l
-ine 1381.
+ine 1379.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_WNNM_ADMM_circuit.png, id=248, 212.795pt x 212.795pt>
@@ -1577,14 +1577,14 @@ File: imagessupp/resize_br_WNNM_ADMM_circuit.png Graphic file (type png)
 
 <use imagessupp/resize_br_WNNM_ADMM_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNM_ADMM_circuit.png used on inp
-ut line 1381.
+ut line 1379.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_CWNNM_ADMM_NL_circuit.png, id=250, 212.795pt x 212.795pt>
 File: imagessupp/resize_br_CWNNM_ADMM_NL_circuit.png Graphic file (type png)
 <use imagessupp/resize_br_CWNNM_ADMM_NL_circuit.png>
 Package pdftex.def Info: imagessupp/resize_br_CWNNM_ADMM_NL_circuit.png used on
- input line 1381.
+ input line 1379.
 (pdftex.def)             Requested size: 149.05838pt x 149.06587pt.
 
 <imagessupp/resize_br_Noisy_room.png, id=253, 240.9pt x 240.9pt>
@@ -1592,7 +1592,7 @@ File: imagessupp/resize_br_Noisy_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_Noisy_room.png>
 Package pdftex.def Info: imagessupp/resize_br_Noisy_room.png used on input line
- 1398.
+ 1396.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_CBM3D_room.png, id=255, 240.9pt x 240.9pt>
@@ -1600,7 +1600,7 @@ File: imagessupp/resize_br_CBM3D_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_CBM3D_room.png>
 Package pdftex.def Info: imagessupp/resize_br_CBM3D_room.png used on input line
- 1415.
+ 1413.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_MLP_room.png, id=257, 240.9pt x 240.9pt>
@@ -1608,7 +1608,7 @@ File: imagessupp/resize_br_MLP_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_MLP_room.png>
 Package pdftex.def Info: imagessupp/resize_br_MLP_room.png used on input line 1
-415.
+413.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_TNRD_room.png, id=259, 240.9pt x 240.9pt>
@@ -1616,7 +1616,7 @@ File: imagessupp/resize_br_TNRD_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_TNRD_room.png>
 Package pdftex.def Info: imagessupp/resize_br_TNRD_room.png used on input line 
-1415.
+1413.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_NI_room.png, id=261, 240.9pt x 240.9pt>
@@ -1624,7 +1624,7 @@ File: imagessupp/resize_br_NI_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_NI_room.png>
 Package pdftex.def Info: imagessupp/resize_br_NI_room.png used on input line 14
-32.
+30.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_NC_room.png, id=263, 240.9pt x 240.9pt>
@@ -1632,7 +1632,7 @@ File: imagessupp/resize_br_NC_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_NC_room.png>
 Package pdftex.def Info: imagessupp/resize_br_NC_room.png used on input line 14
-32.
+30.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_WNNMcw_room.png, id=266, 240.9pt x 240.9pt>
@@ -1640,7 +1640,7 @@ File: imagessupp/resize_br_WNNMcw_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_WNNMcw_room.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMcw_room.png used on input lin
-e 1432.
+e 1430.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_WNNMJ_room.png, id=268, 240.9pt x 240.9pt>
@@ -1648,7 +1648,7 @@ File: imagessupp/resize_br_WNNMJ_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_WNNMJ_room.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMJ_room.png used on input line
- 1449.
+ 1447.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_WNNM_ADMM_room.png, id=270, 240.9pt x 240.9pt>
@@ -1656,7 +1656,7 @@ File: imagessupp/resize_br_WNNM_ADMM_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_WNNM_ADMM_room.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNM_ADMM_room.png used on input 
-line 1449.
+line 1447.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_CWNNM_ADMM_NL_room.png, id=272, 240.9pt x 240.9pt>
@@ -1664,7 +1664,7 @@ File: imagessupp/resize_br_CWNNM_ADMM_NL_room.png Graphic file (type png)
 
 <use imagessupp/resize_br_CWNNM_ADMM_NL_room.png>
 Package pdftex.def Info: imagessupp/resize_br_CWNNM_ADMM_NL_room.png used on in
-put line 1449.
+put line 1447.
 (pdftex.def)             Requested size: 149.05838pt x 149.06238pt.
 
 <imagessupp/resize_br_Noisy_d600_iso3200_2.png, id=275, 205.76875pt x 205.76875
@@ -1672,7 +1672,7 @@ pt>
 File: imagessupp/resize_br_Noisy_d600_iso3200_2.png Graphic file (type png)
  <use imagessupp/resize_br_Noisy_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_Noisy_d600_iso3200_2.png used on 
-input line 1471.
+input line 1469.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_d600_iso3200_2.png, id=277, 205.76875pt x 205.76875pt>
@@ -1680,7 +1680,7 @@ File: imagessupp/resize_br_d600_iso3200_2.png Graphic file (type png)
 
 <use imagessupp/resize_br_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_d600_iso3200_2.png used on input 
-line 1471.
+line 1469.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CBM3D_CC15_d600_iso3200_2.png, id=279, 205.76875pt x 205.
@@ -1689,7 +1689,7 @@ File: imagessupp/resize_br_CBM3D_CC15_d600_iso3200_2.png Graphic file (type png
 )
  <use imagessupp/resize_br_CBM3D_CC15_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CBM3D_CC15_d600_iso3200_2.png use
-d on input line 1493.
+d on input line 1491.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_TRD_CC15_d600_iso3200_2.png, id=282, 205.76875pt x 205.76
@@ -1697,7 +1697,7 @@ d on input line 1493.
 File: imagessupp/resize_br_TRD_CC15_d600_iso3200_2.png Graphic file (type png)
  <use imagessupp/resize_br_TRD_CC15_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_TRD_CC15_d600_iso3200_2.png used 
-on input line 1493.
+on input line 1491.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_NI_CC15_d600_iso3200_2.png, id=284, 205.76875pt x 205.768
@@ -1705,7 +1705,7 @@ on input line 1493.
 File: imagessupp/resize_br_NI_CC15_d600_iso3200_2.png Graphic file (type png)
  <use imagessupp/resize_br_NI_CC15_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_NI_CC15_d600_iso3200_2.png used o
-n input line 1493.
+n input line 1491.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_NC_CC15_d600_iso3200_2.png, id=286, 205.76875pt x 205.768
@@ -1713,14 +1713,14 @@ n input line 1493.
 File: imagessupp/resize_br_NC_CC15_d600_iso3200_2.png Graphic file (type png)
  <use imagessupp/resize_br_NC_CC15_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_NC_CC15_d600_iso3200_2.png used o
-n input line 1493.
+n input line 1491.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CC_d600_iso3200_2.png, id=289, 205.76875pt x 205.76875pt>
 File: imagessupp/resize_br_CC_d600_iso3200_2.png Graphic file (type png)
 <use imagessupp/resize_br_CC_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CC_d600_iso3200_2.png used on inp
-ut line 1515.
+ut line 1513.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_WNNMJ_CC15_d600_iso3200_2.png, id=291, 205.76875pt x 205.
@@ -1729,7 +1729,7 @@ File: imagessupp/resize_br_WNNMJ_CC15_d600_iso3200_2.png Graphic file (type png
 )
  <use imagessupp/resize_br_WNNMJ_CC15_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMJ_CC15_d600_iso3200_2.png use
-d on input line 1515.
+d on input line 1513.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_WNNM_ADMM_NL_CC15_d600_iso3200_2.png, id=293, 205.76875pt
@@ -1739,7 +1739,7 @@ ype png)
 
 <use imagessupp/resize_br_WNNM_ADMM_NL_CC15_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNM_ADMM_NL_CC15_d600_iso3200_2.
-png used on input line 1515.
+png used on input line 1513.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d600_iso3200_2.png, id=295, 205.76875p
@@ -1749,15 +1749,15 @@ type png)
 
 <use imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d600_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d600_iso3200_2
-.png used on input line 1515.
+.png used on input line 1513.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1471--1516
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1469--1514
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1471--1516
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1469--1514
  [][] 
  []
 
@@ -1767,7 +1767,7 @@ pt>
 File: imagessupp/resize_br_Noisy_d800_iso1600_2.png Graphic file (type png)
  <use imagessupp/resize_br_Noisy_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_Noisy_d800_iso1600_2.png used on 
-input line 1537.
+input line 1535.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_d800_iso1600_2.png, id=300, 205.76875pt x 205.76875pt>
@@ -1775,7 +1775,7 @@ File: imagessupp/resize_br_d800_iso1600_2.png Graphic file (type png)
 
 <use imagessupp/resize_br_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_d800_iso1600_2.png used on input 
-line 1537.
+line 1535.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CBM3D_CC15_d800_iso1600_2.png, id=302, 205.76875pt x 205.
@@ -1784,7 +1784,7 @@ File: imagessupp/resize_br_CBM3D_CC15_d800_iso1600_2.png Graphic file (type png
 )
  <use imagessupp/resize_br_CBM3D_CC15_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CBM3D_CC15_d800_iso1600_2.png use
-d on input line 1559.
+d on input line 1557.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_TRD_CC15_d800_iso1600_2.png, id=305, 205.76875pt x 205.76
@@ -1792,7 +1792,7 @@ d on input line 1559.
 File: imagessupp/resize_br_TRD_CC15_d800_iso1600_2.png Graphic file (type png)
  <use imagessupp/resize_br_TRD_CC15_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_TRD_CC15_d800_iso1600_2.png used 
-on input line 1559.
+on input line 1557.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_NI_CC15_d800_iso1600_2.png, id=307, 205.76875pt x 205.768
@@ -1800,7 +1800,7 @@ on input line 1559.
 File: imagessupp/resize_br_NI_CC15_d800_iso1600_2.png Graphic file (type png)
  <use imagessupp/resize_br_NI_CC15_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_NI_CC15_d800_iso1600_2.png used o
-n input line 1559.
+n input line 1557.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_NC_CC15_d800_iso1600_2.png, id=309, 205.76875pt x 205.768
@@ -1808,14 +1808,14 @@ n input line 1559.
 File: imagessupp/resize_br_NC_CC15_d800_iso1600_2.png Graphic file (type png)
  <use imagessupp/resize_br_NC_CC15_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_NC_CC15_d800_iso1600_2.png used o
-n input line 1559.
+n input line 1557.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CC_d800_iso1600_2.png, id=312, 205.76875pt x 205.76875pt>
 File: imagessupp/resize_br_CC_d800_iso1600_2.png Graphic file (type png)
 <use imagessupp/resize_br_CC_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CC_d800_iso1600_2.png used on inp
-ut line 1581.
+ut line 1579.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_WNNMJ_CC15_d800_iso1600_2.png, id=314, 205.76875pt x 205.
@@ -1824,7 +1824,7 @@ File: imagessupp/resize_br_WNNMJ_CC15_d800_iso1600_2.png Graphic file (type png
 )
  <use imagessupp/resize_br_WNNMJ_CC15_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMJ_CC15_d800_iso1600_2.png use
-d on input line 1581.
+d on input line 1579.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso1600_2.png, id=316, 205.76875pt
@@ -1834,7 +1834,7 @@ ype png)
 
 <use imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso1600_2.
-png used on input line 1581.
+png used on input line 1579.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso1600_2.png, id=318, 205.76875p
@@ -1844,15 +1844,15 @@ type png)
 
 <use imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso1600_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso1600_2
-.png used on input line 1581.
+.png used on input line 1579.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1537--1582
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1535--1580
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1537--1582
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1535--1580
  [][] 
  []
 
@@ -1862,7 +1862,7 @@ pt>
 File: imagessupp/resize_br_Noisy_d800_iso3200_2.png Graphic file (type png)
  <use imagessupp/resize_br_Noisy_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_Noisy_d800_iso3200_2.png used on 
-input line 1601.
+input line 1599.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_d800_iso3200_2.png, id=323, 205.76875pt x 205.76875pt>
@@ -1870,7 +1870,7 @@ File: imagessupp/resize_br_d800_iso3200_2.png Graphic file (type png)
 
 <use imagessupp/resize_br_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_d800_iso3200_2.png used on input 
-line 1601.
+line 1599.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CBM3D_CC15_d800_iso3200_2.png, id=325, 205.76875pt x 205.
@@ -1879,7 +1879,7 @@ File: imagessupp/resize_br_CBM3D_CC15_d800_iso3200_2.png Graphic file (type png
 )
  <use imagessupp/resize_br_CBM3D_CC15_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CBM3D_CC15_d800_iso3200_2.png use
-d on input line 1623.
+d on input line 1621.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_TRD_CC15_d800_iso3200_2.png, id=328, 205.76875pt x 205.76
@@ -1887,7 +1887,7 @@ d on input line 1623.
 File: imagessupp/resize_br_TRD_CC15_d800_iso3200_2.png Graphic file (type png)
  <use imagessupp/resize_br_TRD_CC15_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_TRD_CC15_d800_iso3200_2.png used 
-on input line 1623.
+on input line 1621.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_NI_CC15_d800_iso3200_2.png, id=330, 205.76875pt x 205.768
@@ -1895,7 +1895,7 @@ on input line 1623.
 File: imagessupp/resize_br_NI_CC15_d800_iso3200_2.png Graphic file (type png)
  <use imagessupp/resize_br_NI_CC15_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_NI_CC15_d800_iso3200_2.png used o
-n input line 1623.
+n input line 1621.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_NC_CC15_d800_iso3200_2.png, id=332, 205.76875pt x 205.768
@@ -1903,14 +1903,14 @@ n input line 1623.
 File: imagessupp/resize_br_NC_CC15_d800_iso3200_2.png Graphic file (type png)
  <use imagessupp/resize_br_NC_CC15_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_NC_CC15_d800_iso3200_2.png used o
-n input line 1623.
+n input line 1621.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CC_d800_iso3200_2.png, id=335, 205.76875pt x 205.76875pt>
 File: imagessupp/resize_br_CC_d800_iso3200_2.png Graphic file (type png)
 <use imagessupp/resize_br_CC_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CC_d800_iso3200_2.png used on inp
-ut line 1645.
+ut line 1643.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_WNNMJ_CC15_d800_iso3200_2.png, id=337, 205.76875pt x 205.
@@ -1919,7 +1919,7 @@ File: imagessupp/resize_br_WNNMJ_CC15_d800_iso3200_2.png Graphic file (type png
 )
  <use imagessupp/resize_br_WNNMJ_CC15_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMJ_CC15_d800_iso3200_2.png use
-d on input line 1645.
+d on input line 1643.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso3200_2.png, id=339, 205.76875pt
@@ -1929,7 +1929,7 @@ ype png)
 
 <use imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso3200_2.
-png used on input line 1645.
+png used on input line 1643.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso3200_2.png, id=341, 205.76875p
@@ -1939,15 +1939,15 @@ type png)
 
 <use imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso3200_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso3200_2
-.png used on input line 1645.
+.png used on input line 1643.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1601--1646
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1599--1644
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1601--1646
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1599--1644
  [][] 
  []
 
@@ -1957,7 +1957,7 @@ pt>
 File: imagessupp/resize_br_Noisy_d800_iso6400_2.png Graphic file (type png)
  <use imagessupp/resize_br_Noisy_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_Noisy_d800_iso6400_2.png used on 
-input line 1665.
+input line 1663.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_d800_iso6400_2.png, id=346, 205.76875pt x 205.76875pt>
@@ -1965,7 +1965,7 @@ File: imagessupp/resize_br_d800_iso6400_2.png Graphic file (type png)
 
 <use imagessupp/resize_br_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_d800_iso6400_2.png used on input 
-line 1665.
+line 1663.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CBM3D_CC15_d800_iso6400_2.png, id=348, 205.76875pt x 205.
@@ -1974,7 +1974,7 @@ File: imagessupp/resize_br_CBM3D_CC15_d800_iso6400_2.png Graphic file (type png
 )
  <use imagessupp/resize_br_CBM3D_CC15_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CBM3D_CC15_d800_iso6400_2.png use
-d on input line 1687.
+d on input line 1685.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_TRD_CC15_d800_iso6400_2.png, id=351, 205.76875pt x 205.76
@@ -1982,7 +1982,7 @@ d on input line 1687.
 File: imagessupp/resize_br_TRD_CC15_d800_iso6400_2.png Graphic file (type png)
  <use imagessupp/resize_br_TRD_CC15_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_TRD_CC15_d800_iso6400_2.png used 
-on input line 1687.
+on input line 1685.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_NI_CC15_d800_iso6400_2.png, id=353, 205.76875pt x 205.768
@@ -1990,7 +1990,7 @@ on input line 1687.
 File: imagessupp/resize_br_NI_CC15_d800_iso6400_2.png Graphic file (type png)
  <use imagessupp/resize_br_NI_CC15_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_NI_CC15_d800_iso6400_2.png used o
-n input line 1687.
+n input line 1685.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_NC_CC15_d800_iso6400_2.png, id=355, 205.76875pt x 205.768
@@ -1998,14 +1998,14 @@ n input line 1687.
 File: imagessupp/resize_br_NC_CC15_d800_iso6400_2.png Graphic file (type png)
  <use imagessupp/resize_br_NC_CC15_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_NC_CC15_d800_iso6400_2.png used o
-n input line 1687.
+n input line 1685.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CC_d800_iso6400_2.png, id=358, 205.76875pt x 205.76875pt>
 File: imagessupp/resize_br_CC_d800_iso6400_2.png Graphic file (type png)
 <use imagessupp/resize_br_CC_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CC_d800_iso6400_2.png used on inp
-ut line 1709.
+ut line 1707.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_WNNMJ_CC15_d800_iso6400_2.png, id=360, 205.76875pt x 205.
@@ -2014,7 +2014,7 @@ File: imagessupp/resize_br_WNNMJ_CC15_d800_iso6400_2.png Graphic file (type png
 )
  <use imagessupp/resize_br_WNNMJ_CC15_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNMJ_CC15_d800_iso6400_2.png use
-d on input line 1709.
+d on input line 1707.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso6400_2.png, id=362, 205.76875pt
@@ -2024,7 +2024,7 @@ ype png)
 
 <use imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_WNNM_ADMM_NL_CC15_d800_iso6400_2.
-png used on input line 1709.
+png used on input line 1707.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
 <imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso6400_2.png, id=364, 205.76875p
@@ -2034,15 +2034,15 @@ type png)
 
 <use imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso6400_2.png>
 Package pdftex.def Info: imagessupp/resize_br_CWNNM_ADMM_NL_CC15_d800_iso6400_2
-.png used on input line 1709.
+.png used on input line 1707.
 (pdftex.def)             Requested size: 124.21405pt x 124.2126pt.
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1665--1710
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1663--1708
  [][] 
  []
 
 
-Overfull \hbox (12.49995pt too wide) in paragraph at lines 1665--1710
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 1663--1708
  [][] 
  []
 
@@ -2162,15 +2162,15 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 8.
 (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ))
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1724.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1722.
  [19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1724.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1722.
 
 (./572_supp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1724.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1724.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1722.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1722.
 
 Package rerunfilecheck Info: File `572_supp.brf' has not changed.
 (rerunfilecheck)             Checksum: AA267428C7CBED9B5AA9D817F402BDE5;6412.
@@ -2178,7 +2178,7 @@ Package rerunfilecheck Info: File `572_supp.brf' has not changed.
 Here is how much of TeX's memory you used:
  15383 strings out of 493091
  281912 string characters out of 6134517
- 386642 words of memory out of 5000000
+ 386688 words of memory out of 5000000
  18394 multiletter control sequences out of 15000+600000
  45694 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2209,7 +2209,7 @@ f-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Software/texlive/2015/texmf-dist
 /fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on 572_supp.pdf (19 pages, 9343811 bytes).
+Output written on 572_supp.pdf (19 pages, 9343913 bytes).
 PDF statistics:
  714 PDF objects out of 1000 (max. 8388607)
  514 compressed objects within 6 object streams

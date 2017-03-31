@@ -363,11 +363,11 @@ and hence the equation (b) is proved.
 =
 \lim_{k \to \infty} 
 \|
-\bm{X}_{k}+\rho_{k}^{-1}\bm{A}_{k-1}-\bm{Z}_{k}
+\bm{X}_{k}+\rho_{k-1}^{-1}\bm{A}_{k-1}-\bm{Z}_{k}
 +
 \bm{X}_{k+1}-\bm{X}_{k}
-+
-\rho_{k}^{-1}
+-
+\rho_{k-1}^{-1}
 \bm{A}_{k-1}
 +
 \rho_{k}^{-1}
@@ -389,13 +389,12 @@ and hence the equation (b) is proved.
 \bm{X}_{k+1}-\bm{X}_{k}
 \|_{F}
 +
-\rho_{k}^{-1}
 \|
-\bm{A}_{k-1}
+\rho_{k-1}^{-1}\bm{A}_{k-1}
 +
-\bm{A}_{k+1}
+\rho_{k}^{-1}\bm{A}_{k+1}
 -
-\bm{A}_{k}
+\rho_{k}^{-1}\bm{A}_{k}
 \|_{F}
 )
 \\
@@ -412,13 +411,12 @@ and hence the equation (b) is proved.
 \bm{X}_{k+1}-\bm{X}_{k}
 \|_{F}
 +
-\rho_{k}^{-1}
 \|
-\bm{A}_{k-1}
+\rho_{k-1}^{-1}\bm{A}_{k-1}
 +
-\bm{A}_{k+1}
+\rho_{k}^{-1}\bm{A}_{k+1}
 -
-\bm{A}_{k}
+\rho_{k}^{-1}\bm{A}_{k}
 \|_{F}
 )
 \\
@@ -427,7 +425,7 @@ and hence the equation (b) is proved.
 0
 ,
 \end{align}
-where $\bm{U}_{k-1}\bm{\Sigma}_{k-1}\bm{V}_{k-1}^{\top}$ is the SVD of the matrix $\bm{X}_{k}+\rho_{k-1}\bm{A}_{k-1}$
+where $\bm{U}_{k-1}\bm{\Sigma}_{k-1}\bm{V}_{k-1}^{\top}$ is the SVD of the matrix $\bm{X}_{k}+\rho_{k-1}^{-1}\bm{A}_{k-1}$
 .
 \end{proof}
 

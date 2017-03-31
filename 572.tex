@@ -528,7 +528,7 @@ $
 \|_{F}
 \le
 \lim_{k \to \infty} 
-\|
+(\|
 (\mathbf{W}^{\top}\mathbf{W}
 +
 \frac{\rho_{k}}{2}
@@ -543,7 +543,7 @@ $
 +
 \rho_{k}^{-1}\|
 \mathbf{A}_{k}-\mathbf{A}_{k-1}
-\|_{F}
+\|_{F})
 =
 0
 $
@@ -552,7 +552,7 @@ $
 \lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|
 \le
 \lim_{k \to \infty} 
-\|
+(\|
 \mathbf{\Sigma}_{k-1}-\mathcal{S}_{\bm{w}/\rho_{k-1}}(\mathbf{\Sigma}_{k-1})
 \|_{F}
 +
@@ -560,14 +560,13 @@ $
 \mathbf{X}_{k+1}-\mathbf{X}_{k}
 \|_{F}
 +
-\rho_{k}^{-1}
 \|
-\mathbf{A}_{k-1}
+\rho_{k-1}^{-1}\mathbf{A}_{k-1}
 +
-\mathbf{A}_{k+1}
+\rho_{k}^{-1}\mathbf{A}_{k+1}
 -
-\mathbf{A}_{k}
-\|_{F}
+\rho_{k}^{-1}\mathbf{A}_{k}
+\|_{F})
 =
 0,
 $
