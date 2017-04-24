@@ -143,7 +143,7 @@ Then we have
 =
 \sqrt{\sum_{i}w_{i}^{2}}.
 \end{align}
-The inequality in the second last step can be proved as follows: given the diagonal matrix $\bm{\Sigma}_{k}$, we define $\bm{\Sigma}_{k}^{ii}$ as the $i$-th element of $\bm{\Sigma}_{k}^{ii}$. If $\bm{\Sigma}_{k}^{ii}\ge\frac{w_{i}}{\rho_{k}}$, we have $\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\bm{\Sigma}_{k}^{ii})=\bm{\Sigma}_{k}^{ii}-\frac{w_{i}}{\rho_{k}}$. If $\bm{\Sigma}_{k}^{ii}<\frac{w_{i}}{\rho_{k}}$, we have $\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\bm{\Sigma}_{k}^{ii})=0$. Overall, we have $|\bm{\Sigma}_{k}^{ii}-\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\bm{\Sigma}_{k}^{ii})|\le\frac{w_{i}}{\rho_{k}}$ and hence the inequality holds. Hence, the sequence $\{\bm{A}_{k}\}$ is upper bounded.
+The inequality in the second last step can be proved as follows: given the diagonal matrix $\bm{\Sigma}_{k}$, we define $\bm{\Sigma}_{k}^{ii}$ as the $i$-th element of $\bm{\Sigma}_{k}$. If $\bm{\Sigma}_{k}^{ii}\ge\frac{w_{i}}{\rho_{k}}$, we have $\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\bm{\Sigma}_{k}^{ii})=\bm{\Sigma}_{k}^{ii}-\frac{w_{i}}{\rho_{k}}$. If $\bm{\Sigma}_{k}^{ii}<\frac{w_{i}}{\rho_{k}}$, we have $\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\bm{\Sigma}_{k}^{ii})=0$. Overall, we have $|\bm{\Sigma}_{k}^{ii}-\mathcal{S}_{\frac{w_{i}}{\rho_{k}}}(\bm{\Sigma}_{k}^{ii})|\le\frac{w_{i}}{\rho_{k}}$ and hence the inequality holds. Hence, the sequence $\{\bm{A}_{k}\}$ is upper bounded.
 
 2.\ Secondly, we prove that the sequence of Lagrangian function $\{\mathcal{L}(\bm{X}_{k+1},\bm{Z}_{k+1},\bm{A}_{k},\rho_{k})\}$ is also upper bounded. Since we have the globally optimal solution of $\bm{X}$ and $\bm{Z}$ in their corresponding subproblems, we always have 
 \begin{align}
@@ -254,11 +254,11 @@ $\{\bm{X}_{k}\}$ and $\{\bm{Z}_{k}\}$ are upper bounded. Since
 \mathcal{L}(\bm{X}_{k},\bm{Z}_{k},\bm{A}_{k-1},\rho_{k-1})
 -
 \langle
-\bm{A}_{k},
+\bm{A}_{k-1},
 \bm{X}_{k}-\bm{Z}_{k}
 \rangle
 -
-\frac{\rho_{k}}{2}
+\frac{\rho_{k-1}}{2}
 \|
 \bm{X}_{k}-\bm{Z}_{k}
 \|_{F}^{2}
@@ -267,7 +267,7 @@ $\{\bm{X}_{k}\}$ and $\{\bm{Z}_{k}\}$ are upper bounded. Since
 =
 \mathcal{L}(\bm{X}_{k},\bm{Z}_{k},\bm{A}_{k-1},\rho_{k-1})
 +
-\frac{1}{2\rho_{k}}
+\frac{1}{2\rho_{k-1}}
 (
 \|
 \bm{A}_{k-1}
@@ -321,7 +321,7 @@ and the equation (a) is proved.
 \frac{1}{2}
 \bm{A}_{k})
 -
-\rho_{k}^{-1}
+\rho_{k-1}^{-1}
 (\bm{A}_{k}-\bm{A}_{k-1})
 \|_{F}
 \\
@@ -342,7 +342,7 @@ and the equation (a) is proved.
 \bm{A}_{k})
 \|_{F}
 +
-\rho_{k}^{-1}\|
+\rho_{k-1}^{-1}\|
 \bm{A}_{k}-\bm{A}_{k-1}
 \|_{F}
 )
