@@ -22,10 +22,12 @@
 % Pages are numbered in submission mode, and unnumbered in camera-ready
 %\ificcvfinal\pagestyle{empty}\fi
 \setcounter{page}{4321}
-\begin{document}
+\begin{document} 
 
 %%%%%%%%% TITLE
-\title{\LaTeX\ Author Guidelines for ICCV Proceedings}
+\title{Multi-channel Weighted Nuclear Norm Minimization 
+\\
+for Real Color Image Denoising}
 
 \author{First Author\\
 Institution1\\
@@ -49,15 +51,7 @@ First line of institution2 address\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-   The ABSTRACT is to be in fully-justified italicized text, at the top
-   of the left-hand column, below the author and affiliation
-   information. Use the word ``Abstract'' as the title, in 12-point
-   Times, boldface type, centered relative to the column, initially
-   capitalized. The abstract is to be in 10-point, single-spaced type.
-   Leave two blank lines after the Abstract, then begin the main text.
-   Look at previous ICCV abstracts to get a feel for style and length.
-	 Please note that the title can be up to 512 characters in length.
-	 The maximum size of the abstract is 4000 characters.
+Most of the existing denoising algorithms are developed for grayscale images, while it is not a trivial work to extend them for color image denoising because the noise statistics in R, G, B channels can be very different for real noisy images.\ In this paper, we propose a multi-channel (MC) optimization model for real color image denoising under the weighted nuclear norm minimization (WNNM) framework.\ We concatenate the RGB patches to make use of the channel redundancy, and introduce a weight matrix to balance the data fidelity of the three channels in consideration of their different noise statistics.\ The proposed MC-WNNM model does not have an analytical solution.\ We reformulate it into a linear equality-constrained problem and solve it with the alternating direction method of multipliers.\ Each alternative updating step has closed-form solution and the convergence can be guaranteed.\ Extensive experiments on both synthetic and real noisy image datasets demonstrate the superiority of the proposed MC-WNNM over state-of-the-art denoising methods. 
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
