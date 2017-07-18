@@ -68,7 +68,7 @@
 \title{Multi-channel Weighted Nuclear Norm Minimization 
 \\
 for Real Color Image Denoising}
-
+\vspace{-4mm}
 \xpatchcmd{\author}{\relax#1\relax}{\relax\detokenize{#1}\relax}{}{}
 \author[1]{Jun Xu}
 \author[\empty]{Lei Zhang\textsuperscript{1,}\thanks{This work is supported by HK RGC GRF grant (PolyU 5313/13E) and China NSFC grant (no. 61672446).}}
@@ -78,18 +78,22 @@ for Real Color Image Denoising}
 \affil[2]{School of Mathematics and Statistics, Xidian University, Xi'an, China 
 \authorcr{\tt \small{\{csjunxu,cslzhang,csdzhang\}@comp.polyu.edu.hk,xcfeng@mail.xidian.edu.cn}}
 }
+\vspace{-4mm}
 
 \maketitle
+\vspace{-4mm}
 %\thispagestyle{empty}
 
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-Most of the existing denoising algorithms are developed for grayscale images, while it is not a trivial work to extend them for color image denoising because the noise statistics in R, G, B channels can be very different for real noisy images.\ In this paper, we propose a multi-channel (MC) optimization model for real color image denoising under the weighted nuclear norm minimization (WNNM) framework.\ We concatenate the RGB patches to make use of the channel redundancy, and introduce a weight matrix to balance the data fidelity of the three channels in consideration of their different noise statistics.\ The proposed MC-WNNM model does not have an analytical solution.\ We reformulate it into a linear equality-constrained problem and solve it with the alternating direction method of multipliers.\ Each alternative updating step has closed-form solution and the convergence can be guaranteed.\ Extensive experiments on both synthetic and real noisy image datasets demonstrate the superiority of the proposed MC-WNNM over state-of-the-art denoising methods. 
+????Most of the existing denoising algorithms are developed for grayscale images, while it is not a trivial work to extend them for color image denoising because the noise statistics in R, G, B channels can be very different for real noisy images.\ In this paper, we propose a multi-channel (MC) optimization model for real color image denoising under the weighted nuclear norm minimization (WNNM) framework.\ We concatenate the RGB patches to make use of the channel redundancy, and introduce a weight matrix to balance the data fidelity of the three channels in consideration of their different noise statistics.\ The proposed MC-WNNM model does not have an analytical solution.\ We reformulate it into a linear equality-constrained problem and solve it with the alternating direction method of multipliers.\ Each alternative updating step has closed-form solution and the convergence can be guaranteed.\ Extensive experiments on both synthetic and real noisy image datasets demonstrate the superiority of the proposed MC-WNNM over state-of-the-art denoising methods. 
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
+\vspace{-1mm}
 \section{Introduction}
+\vspace{-1mm}
 
 Image denoising is a classical yet fundamental problem for image quality enhancement in computer vision and photography systems.\ Most of existing denoising algorithms are designed for grayscale images, aiming to recover the clean image $\mathbf{x}$ from its noisy observation $\mathbf{y}=\mathbf{x}+\mathbf{n}$, where $\mathbf{n}$ is generally assumed to be additive white Gaussian noise (AWGN).\ State-of-the-art image denoising methods include sparse representation \cite{bm3d}, dictionary learning \cite{ksvd}, low-rank approximation \cite{wnnm}, non-local self-similarity (NSS) \cite{nlm} based methods, and the combination of those techniques \cite{ksvd,bm3d,lssc,epll,ncsr,pgpd,wnnm}.\ Recently, some discriminative denoising methods have also been developed by learning discriminative priors from pairs of clean and noisy images \cite{mlp,csf,chen2015learning}. 
 
@@ -99,24 +103,28 @@ Though joint denoising of RGB channels is a more promising way for color image d
 
 This paper presents a new color image denoising algorithm.\ Considering that the weighted nuclear norm minimization (WNNM) method \cite{wnnm,wnnmijcv}, which exploits the image NSS property via low rank regularization, has achieved excellent denoising performance on grayscale images, we propose to extend WNNM to real color image denoising.\ More specifically, we propose a multi-channel WNNM (MC-WNNM) model, which concatenates the patches from RGB channels for rank minimization but introduces a weight matrix to adjust the contributions of the three channels based on their noise levels.\ The proposed MC-WNNM model no longer has closed-form solutions as in the original WNNM model \cite{wnnmijcv}.\ We reformulate it into a linear equality-constrained problem with two variables, and solve the relaxed problem under the alternating direction method of multipliers \cite{admm} framework.\ Each variable can be updated with closed-form solutions, and the convergence analysis is given to guarantee a rational termination of the proposed algorithm.
 
-
+\vspace{-1mm}
 \section{Related Work}
+\vspace{-1mm}
 
+\vspace{-1mm}
 \subsection{Weighted Nuclear Norm Minimization}
+\vspace{-1mm}
+
 As a generalization to the nuclear norm minimization (NNM) model \cite{cai2010singular}, the weighted nuclear norm minimization (WNNM) model \cite{wnnm,wnnmijcv} is described as 
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{equation}
 \label{e1}
-\vspace{-2mm}
+\vspace{-3mm}
 \min_{\mathbf{X}}\|\mathbf{Y}-\mathbf{X}\|_{F}^{2}
 +
 \|\mathbf{X}\|_{\bm{w},*},
 \end{equation}
 where $\|\mathbf{X}\|_{\bm{w},*}=\sum_{i}w_{i}\sigma_{i}(\mathbf{X})$ is the weighted nuclear norm of matrix $\mathbf{X}$, $\bm{w}=[w_{1},...,w_{n}]^{\top}$ ($w_{i}\ge 0$) is the weight vector, and $\sigma_{i}(\mathbf{X})$ is the $i$th singular value of matrix $\mathbf{X}$.\ According to the Corollary 1 of \cite{wnnmijcv}, if the weights are non-decreasing, the problem (\ref{e1}) has closed-form solution:
-\vspace{-2mm}  
+\vspace{-3mm}  
 \begin{equation}
 \label{e2}
-\vspace{-2mm}
+\vspace{-3mm}
 \mathbf{\hat{X}}
 =
 \mathbf{U}
@@ -126,10 +134,10 @@ where $\|\mathbf{X}\|_{\bm{w},*}=\sum_{i}w_{i}\sigma_{i}(\mathbf{X})$ is the wei
 \end{equation}
 where $\mathbf{Y}=\mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\top}$ is the singular value decomposition (SVD) \cite{eckart1936approximation} of $\mathbf{Y}$ and 
 $\mathcal{S}_{\bm{w}/2}(\bullet)$ is the generalized soft-thresholding operator with weight vector $\bm{w}$:
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{equation}
 \label{e3}
-\vspace{-2mm}
+\vspace{-3mm}
 \mathcal{S}_{\bm{w}/2}
 (\mathbf{\Sigma}_{ii})
 =
@@ -138,19 +146,22 @@ $\mathcal{S}_{\bm{w}/2}(\bullet)$ is the generalized soft-thresholding operator 
 
 WNNM has demonstrated highly competitive denoising performance on grayscale images.\ However, if we directly extend it to color image denoising by concatenating the patches from RGB channels, denoising artifacts may happen (please refer to Fig.\ \ref{f1} and the section of experimental results).\ In this paper, we propose a multi-channel WNNM (MC-WNNM) model for color image denoising, which preserves the power of WNNM and is able to address the noise differences among different channels.
 
+\vspace{-1mm}
 \subsection{Real Color Image Denoising}
+\vspace{-1mm}
 
-During the last decade, a few methods have been proposed for real color image denoising.\ Among them, the CBM3D method \cite{cbm3d} is a representative one, which first transforms the RGB image into a luminance-chrominance space (e.g., YCbCr) and then applies the benchmark BM3D method \cite{bm3d} to each channel separately.\ The non-local similar patches are grouped by the luminance channel.\ In \cite{Liu2008}, Liu et al. proposed the ``Noise Level Function'' to estimate and remove the noise for each channel in natural images.\ However, processing each channel separately would often achieve inferior performance to processing the color channels jointly \cite{mairal2008sparse}.\ Therefore, the methods \cite{noiseclinic,ncwebsite,Zhu_2016_CVPR} perform real color image denoising by concatenating the patches of RGB channels into a long vector.\ However, the concatenation treats each channel equally and ignores the different noise statistics among these channels.\ The method in \cite{crosschannel2016} models the cross-channel noise in real noisy images as a multivariate Gaussian and the noise is removed by the Bayesian non-local means filter \cite{kervrann2007bayesian}.\ The commercial software Neat Image \cite{neatimage} estimates the noise parameters from a flat region of the given noisy image and filters the noise accordingly.\ The methods in \cite{crosschannel2016,neatimage} ignore the non-local self-similarity of natural images \cite{bm3d,wnnm}. 
+During the last decade, a few methods have been proposed for real color image denoising.\ Among them, the CBM3D method \cite{cbm3d} is a representative one, which first transforms the RGB image into a luminance-chrominance space (e.g., YCbCr) and then applies the benchmark BM3D method \cite{bm3d} to each channel separately.\ The non-local similar patches are grouped by the luminance channel.\ In \cite{Liu2008}, Liu et al.\ proposed the ``Noise Level Function'' to estimate and remove the noise for each channel in natural images.\ However, processing each channel separately would often achieve inferior performance to processing the color channels jointly \cite{mairal2008sparse}.\ Therefore, the methods \cite{noiseclinic,ncwebsite,Zhu_2016_CVPR} perform real color image denoising by concatenating the patches of RGB channels into a long vector.\ However, the concatenation treats each channel equally and ignores the different noise statistics among these channels.\ The method in \cite{crosschannel2016} models the cross-channel noise in real noisy images as a multivariate Gaussian and the noise is removed by the Bayesian non-local means filter \cite{kervrann2007bayesian}.\ The commercial software Neat Image \cite{neatimage} estimates the noise parameters from a flat region of the given noisy image and filters the noise accordingly.\ The methods in \cite{crosschannel2016,neatimage} ignore the non-local self-similarity of natural images \cite{bm3d,wnnm}. 
 
 In this paper, we present an effective multi-channel image denoising algorithm, which utilizes the strong low-rank prior of image non-local similar patches, and introduces a weight matrix to balance the multi-channels based on their different noise levels.
 
 
 \vspace{-1mm}
 \section{\parbox[t]{10cm}{The Proposed Color Image Denoising Algo-\\rithm}}
+\vspace{-1mm}
 
 \subsection{\parbox[t]{10cm}{The Multi-channel Weighted Nuclear Norm \\Minimization Model}}
 \begin{figure*}
-\vspace{-3mm}
+\vspace{-5mm}
 \centering
 \subfigure{
 \begin{minipage}[t]{0.25\textwidth}
@@ -195,10 +206,10 @@ In this paper, we present an effective multi-channel image denoising algorithm, 
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_CWNNM_ADMM_nSig402030_kodim08_2.png}}
 {\footnotesize (h) Denoised Green by MC-WNNM }
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{-1.5mm}
 \caption{The Red and Green channels of the image ``kodim08'' from the Kodak PhotoCD Dataset, its synthetic noisy version, and the images recovered by the concatenated WNNM and the proposed MC-WNNM methods.}
 \label{f1}
-\vspace{-4mm}
+\vspace{-5mm}
 \end{figure*}
 
 The color image denoising problem is to recover the clean image $\mathbf{x}_{c}$ from its noisy version $\mathbf{y}_{c}=\mathbf{x}_{c}+\mathbf{n}_{c}$, where $c=\{r, g, b\}$ is the index of R, G, B channels and $\mathbf{n}_{c}$ is the noise in the $c$ channel.\ Patch based image denoising \cite{foe,ksvd,bm3d,lssc,epll,ncsr,mlp,csf,wnnm,pgpd,chen2015learning} has achieved a great success in the last decade.\ Given a noisy color image $\mathbf{y}_{c}$, each local patch of size $p\times p \times 3$ is extracted and stretched to a patch vector, denoted by $\mathbf{y}=[\mathbf{y}_{r}^{\top}\ \mathbf{y}_{g}^{\top}\ \mathbf{y}_{b}^{\top}]^{\top}\in\mathbb{R}^{3p^{2}}$, where $\mathbf{y}_{r}, \mathbf{y}_{g}, \mathbf{y}_{b}\in\mathbb{R}^{p^{2}}$ are the corresponding patches in R, G, B channels.\ For each local patch $\mathbf{y}$, we search the $M$ most similar patches to it (including $\mathbf{y}$ itself) by Euclidean distance in a relatively large local window around it.\ By stacking the $M$ similar patches column by column, we form a noisy patch matrix $\mathbf{Y}=\mathbf{X}+\mathbf{N}\in\mathbb{R}^{3p^{2}\times M}$, where $\mathbf{X}$ and $\mathbf{N}$ are the corresponding clean and noise patch matrices.
@@ -206,7 +217,7 @@ The color image denoising problem is to recover the clean image $\mathbf{x}_{c}$
 The noise in standard RGB (sRGB) space could be approximately modeled as additive white Gaussian (AWGN), but noise in different channels has different variances \cite{Liu2008,Leungtip,crosschannel2016}.\ Therefore, it is problematic to directly apply some grayscale denoising methods to the concatenated vectors $\mathbf{y}$ or matrices $\mathbf{Y}$.\ To better illustrate this point, in Fig.\ \ref{f1}, we show a clean image ``kodim08'' (only the R and G channels are shown due to limit of space), its noisy version generated by adding AWGN to each channel, and the denoised image by applying WNNM \cite{wnnmijcv} to the concatenated  patch matrix $\mathbf{Y}$.\ The standard deviations of AWGN added to the R, G, B channels are $\sigma_{r}=40$, $\sigma_{g}=20$, $\sigma_{b}=30$, respectively.\ To make WNNM applicable to color image denoising, we set the noise standard deviation as the average deviation of the whole noisy image, i.e., $\sigma=\sqrt{(\sigma_{r}^{2}+\sigma_{g}^{2}+\sigma_{b}^{2})/3}\approx31.1$.\ From Fig.\ \ref{f1}, one can see that the concatenated WNNM remains some noise in the R channel while over-smoothing the G channel.\ This is because it processes R and G channels equally without considering their differences in noise corruption.
 
 Clearly, a more effective color image denoising algorithm should consider the different noise strength in color channels.\ To this end, we introduce a weight matrix $\mathbf{W}$ to balance the noise in the RGB channels, and present the following multi-channel WNNM (MC-WNNM) model:
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{equation}
 \label{e4}
 \vspace{-3mm}
@@ -214,17 +225,17 @@ Clearly, a more effective color image denoising algorithm should consider the di
 + 
 \|\mathbf{X}\|_{\bm{w},*}.
 \end{equation}
-We follow the method in \cite{wnnmijcv} to set the weight vector $\bm{w}$ on nuclear norm as $w_{i}^{k+1}=\frac{C}{|\sigma_{i}(\mathbf{X}_{k})|+\epsilon }$, where $\epsilon>0$ is a small number to avoid zero numerator and $\sigma_{i}(\mathbf{X}_{k})$ is the $i$th singular value of the estimated data matrix $\mathbf{X}$ at the $k$th iteration.\ Note that if $\sigma_{r}=\sigma_{g}=\sigma_{b}$, the proposed MC-WNNM model will be reduced to the concatenated WNNM model.\ With an appropriate setting of the weight matrix $\mathbf{W}$ and a good optimization algorithm, the proposed MC-WNNM model will lead to much better color image denoising results.\ As shown in Figs.\ \ref{f1}(f) and \ref{f1}(h), MC-WNNM removes clearly the noise in the R channel while preserving textures effectively in the G channel. 
+We follow the method in \cite{wnnmijcv} to set the weight vector $\bm{w}$ on nuclear norm as $w_{i}^{k+1}=C/(|\sigma_{i}(\mathbf{X}_{k})|+\epsilon)$, where $\epsilon>0$ is a small number to avoid zero numerator and $\sigma_{i}(\mathbf{X}_{k})$ is the $i$th singular value of the estimated data matrix $\mathbf{X}$ at the $k$th iteration.\ Note that if $\sigma_{r}=\sigma_{g}=\sigma_{b}$, the proposed MC-WNNM model will be reduced to the concatenated WNNM model.\ With an appropriate setting of the weight matrix $\mathbf{W}$ and a good optimization algorithm, the proposed MC-WNNM model will lead to much better color image denoising results.\ As shown in Figs.\ \ref{f1}(f) and \ref{f1}(h), MC-WNNM removes clearly the noise in the R channel while preserving textures effectively in the G channel. 
 
-
-
+\vspace{-1mm}
 \subsection{The Setting of Weight Matrix $\mathbf{W}$}
+\vspace{-1mm}
 
 Let's denote the noisy patch matrix by $\mathbf{Y}=[\mathbf{Y}_{r}^{\top}\ \mathbf{Y}_{g}^{\top}\ \mathbf{Y}_{b}^{\top}]^{\top}$, where $\mathbf{Y}_{r}, \mathbf{Y}_{g}, \mathbf{Y}_{b}$ are sub-matrices of similar patches in R, G, B channels, respectively.\ The corresponding clean matrix is $\mathbf{X}=[\mathbf{X}_{r}^{\top}\ \mathbf{X}_{g}^{\top}\ \mathbf{X}_{b}^{\top}]^{\top}$, where $\mathbf{X}_{r}, \mathbf{X}_{g}, \mathbf{X}_{b}$ are similarly defined.\ The weight matrix $\mathbf{W}$ can be determined under the \emph{maximum a-posterior} (MAP) estimation framework:
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{equation}
 \label{e5}
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{split}
 \hat{\mathbf{X}} 
 &=
@@ -240,9 +251,13 @@ statistics of noise.\ According to \cite{Leungtip}, we assume that the noise is 
 \vspace{-3mm}
 \begin{equation}
 \label{e6}
-P(\mathbf{Y}|\mathbf{X}) 
+\vspace{-3mm}
+\hspace{-3mm}
+P(\mathbf{Y}|\mathbf{X})
 = 
+\hspace{-4mm}
 \prod_{c\in\{r, g, b\}}
+\hspace{-4mm}
 (2\pi\sigma_{c}^{2})^{-\frac{3p^{2}}{2}}
 \exp(-\frac{1}{2\sigma_{c}^{2}}\|\mathbf{Y}_{c}-\mathbf{X}_{c}\|_{F}^{2}).
 \end{equation}
@@ -348,10 +363,10 @@ where $\mathbf{A}$ is the augmented Lagrangian multiplier and $\rho>0$ is the pe
 \frac{\rho_{k}}{2}\|\mathbf{X} - \mathbf{Z}_{k} + \rho_{k}^{-1}\mathbf{A}_{k}||_{F}^{2}.
 \end{equation}
 This is a standard least squares regression problem with closed-form solution:
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{equation}
 \label{e13}
-\vspace{-2mm}
+\vspace{-4mm}
 \mathbf{X}_{k+1}
 =
 (\mathbf{W}^{\top}\mathbf{W}+\frac{\rho_{k}}{2}\mathbf{I})^{-1}
@@ -359,7 +374,7 @@ This is a standard least squares regression problem with closed-form solution:
 \end{equation}
 \\
 (2) \textbf{Update $\mathbf{Z}$ while fixing $\mathbf{X}$ and $\mathbf{A}$}:
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{equation}
 \label{e14}
 \mathbf{Z}_{k+1}
@@ -387,10 +402,10 @@ $\hat{\mathbf{\Sigma}}_{k}=
 \end{array} \right)
 \in\mathbb{R}^{3p^{2}\times M}$
 and $(\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{M})$ is the solution to the following convex optimization problem:
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{equation}
 \label{e15}
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{split}
 \min_{\hat{\sigma}_{1},\hat{\sigma}_{2},...,\hat{\sigma}_{M}}
 &
@@ -640,8 +655,6 @@ obtain the estimated $\mathbf{X}_{j}$;
 In Algorithm 1 for solving the MC-WNNM model via ADMM, the cost for updating $\bm{X}$ is $\mathcal{O}(\max(p^{4}M, M^{3}))$, while the cost for updating $\bm{Z}$ is $\mathcal{O}(p^{4}M+M^{3})$.\ The costs for updating $\bm{A}$ and $\rho$ can be ignored when compared to the updating of $\bm{X}$ and $\bm{Z}$.\ So the overall complexity is $\mathcal{O}((p^{4}M+M^{3})K_{1})$, where $K_{1}$ is the number of iterations.\ In Algorithm 2 for image denoising, we need further consider the number of image patches $N$ extracted from the input noisy image and the number of itertations $K_{2}$ and ignore the cost for searching similar patches.\ The overall cost is $\mathcal{O}((p^{4}M+M^{3})K_{1}K_{2}N)$.
 
 
-
-\vspace{-2mm}
 \section{Experiments}
 
 We evaluate the proposed MC-WNNM method on synthetic and real noisy color images.\ We compare the proposed method with state-of-the-art denoising methods, including CBM3D \cite{cbm3d}, MLP \cite{mlp}, WNNM \cite{wnnm}, TNRD \cite{chen2015learning}, ``Noise Clinic'' (NC) \cite{noiseclinic,ncwebsite}, CC \cite{crosschannel2016}, and the commercial software Neat Image (NI) \cite{neatimage}.
@@ -678,7 +691,7 @@ We first compare MC-WNNM with the competing denoising methods \cite{cbm3d,mlp,ch
 The PSNR results by competing methods are listed in Table \ref{t1}, while the best PSNR result for each image is highlighted in bold.\ One can see that on all the 24 images, our method achieves the highest PSNR values among the competing methods.\ On average, MC-WNNM achieves 0.47dB, 0.48dB and 1.09dB improvements over WNNM-1, WNNM-2 and WNNM-3, respectively.\ For space limitation, we leave the visual comparisons of the synthetic noisy image denoising results in the supplementary file.
 
 \begin{table*}
-\vspace{-5mm}
+\vspace{-3mm}
 \caption{PSNR(dB) results of different denoising methods on 24 natural images.}
 \label{t1}
 \label{taba}
@@ -792,7 +805,7 @@ Image\#
 \hline
 \end{tabular}
 \end{center}
-\vspace{-6mm}
+\vspace{-3mm}
 \end{table*}
 
 \begin{figure}
@@ -850,7 +863,7 @@ Image\#
 }\vspace{-1mm}
 \caption{The 15 cropped real noisy images used in \cite{crosschannel2016}.}
 \label{f2}
-\vspace{-5mm}
+\vspace{-4mm}
 \end{figure}
 
 \vspace{-1mm}
@@ -901,7 +914,7 @@ Fig.\ \ref{f3} shows the denoised images of ``Dog'' by the competing methods.\ I
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_NI_dog.png}}
 {\footnotesize (e) NI \cite{neatimage}  }
 \end{minipage}
-}\vspace{-4mm}
+}\vspace{-3.5mm}
 \subfigure{
 \begin{minipage}[t]{0.19\textwidth}
 \centering
@@ -941,13 +954,13 @@ Fig.\ \ref{f3} shows the denoised images of ``Dog'' by the competing methods.\ I
 
 \quad As described at the beginning of Section 4.3, there is a mean image for each noisy image in dataset \cite{crosschannel2016}, and those mean images can be roughly taken as ``ground truth'' for quantitative evaluation of denoising algorithms.
 
-The results on PSNR and computational time by competing methods (including CC \cite{crosschannel2016} whose results are copied from \cite{crosschannel2016}) are listed in Table \ref{t2}.\ For methods MLP \cite{mlp} and TNRD \cite{chen2015learning}, both of them achieve the best results when setting the noise level of the trained models at $\sigma=10$.\ The highest PSNR results are highlighted in bold.\ On average, MC-WNNM achieves 1.94dB, 0.44dB, 0.59dB improvements over the three WNNM methods, and significantly outperforms other competing method, including CC \cite{crosschannel2016}.\ On 10 out of the 15 images, the proposed MC-WNNM achieves the highest PSNR values, while WNNM-2 achieves the highest PSNR results on 3 of 15 images.\ It should be noted that in the CC method \cite{crosschannel2016}, a specific model is trained for each camera and camera setting, while the other methods uses the same model for all cases. 
+The results on PSNR and averaged computational time by competing methods (including CC \cite{crosschannel2016} whose results are copied from \cite{crosschannel2016}) are listed in Table \ref{t2}.\ For methods MLP \cite{mlp} and TNRD \cite{chen2015learning}, both of them achieve the best results when setting the noise level of the trained models at $\sigma=10$.\ The highest PSNR results are highlighted in bold.\ On average, MC-WNNM achieves 1.94dB, 0.44dB, 0.59dB improvements over the three WNNM methods, and significantly outperforms other competing method, including CC \cite{crosschannel2016}.\ On 10 out of the 15 images, the proposed MC-WNNM achieves the highest PSNR values, while WNNM-2 achieves the highest PSNR results on 3 of 15 images.\ It should be noted that in the CC method \cite{crosschannel2016}, a specific model is trained for each camera and camera setting, while the other methods uses the same model for all cases. 
 
 Fig.\ \ref{f4} shows the denoised images of a scene captured by Canon 5D Mark 3 at ISO = 3200.\ (The result of WNNM-1 is not shown here due to the limit of space.)\ We can see that CBM3D, NI, NC and CC will either remain noise or generate color artifacts, while TNRD, WNNM-2 and WNNM-3 over-smooth the image.\ In addition, due to treating each channel equally, both the denoised images (Fig.\ \ref{f4}(g) and Fig.\ \ref{f4}(h)) by WNNM-2 and WNNM-3 have chromatic aberration compared to the mean image (Fig.\ \ref{f4}(j)).\ MC-WNNM results in much better visual quality than other methods.\ More visual comparisons can be found in the supplementary file.
 
 \begin{table*}
-\vspace{-4mm}
-\caption{PSNR(dB) results and computational time of different methods on 15 cropped real noisy images used in \cite{crosschannel2016}.}
+\vspace{-2mm}
+\caption{PSNR(dB) results and averaged computational time of different methods on 15 cropped real noisy images used in \cite{crosschannel2016}.}
 \label{t2}
 \label{tabb}
 \begin{center}
@@ -981,74 +994,75 @@ Camera Settings
 \\
 \hline
 \multirow{3}{*}{\small{Canon 5D}} %Mark III 
-& 39.76 & 39.00 & 39.51 &  & 35.68 & 36.20 & 38.37 & 37.51 & 39.74 & 39.98 & \textbf{41.13}
+& 39.76 & 39.00 & 39.51 & 37.26 & 35.68 & 36.20 & 38.37 & 37.51 & 39.74 & 39.98 & \textbf{41.13}
 \\ 
 \cline{2-12} 
 \multirow{3}{*}{ISO = 3200}   
-& 36.40 & 36.34 & 36.47 &  & 34.03 & 34.35 & 35.37 & 33.86 & 35.12 & 36.65 & \textbf{37.28}
+& 36.40 & 36.34 & 36.47 & 34.13 & 34.03 & 34.35 & 35.37 & 33.86 & 35.12 & 36.65 & \textbf{37.28}
 \\ 
 \cline{2-12}    
-& 36.37 & 36.33 & 36.45 &  & 32.63 & 33.10 & 34.91 & 31.43 & 33.14 & 34.63 & \textbf{36.52}  
+& 36.37 & 36.33 & 36.45 & 34.09 & 32.63 & 33.10 & 34.91 & 31.43 & 33.14 & 34.63 & \textbf{36.52}  
 \\
 \hline
 \multirow{3}{*}{Nikon D600} 
-& 34.18 & 34.70 & 34.79 &  & 31.78 & 32.28 & 34.98 & 33.46 & 35.08 & 35.08 & \textbf{35.53}
+& 34.18 & 34.70 & 34.79 & 33.62 & 31.78 & 32.28 & 34.98 & 33.46 & 35.08 & 35.08 & \textbf{35.53}
 \\ 
 \cline{2-12} 
 \multirow{3}{*}{ISO = 3200}   
-& 35.07 & 36.20 & 36.37 &  & 35.16 & 35.34 & 35.95 & 36.09 & 36.42 & 36.84 & \textbf{37.02}
+& 35.07 & 36.20 & 36.37 & 34.48 & 35.16 & 35.34 & 35.95 & 36.09 & 36.42 & 36.84 & \textbf{37.02}
 \\ 
 \cline{2-12}    
-& 37.13 & 39.33 & 39.49 &  & 39.98 & 40.51 & \textbf{41.15} & 39.86 & 40.78 & 39.24 & 39.56
+& 37.13 & 39.33 & 39.49 & 35.41 & 39.98 & 40.51 & \textbf{41.15} & 39.86 & 40.78 & 39.24 & 39.56
 \\
 \hline
 \multirow{3}{*}{Nikon D800} 
-& 36.81  & 37.95 & 38.11 &  & 34.84 & 35.09 & 37.99 & 36.35 & 38.28 & 38.61 & \textbf{39.26}
+& 36.81  & 37.95 & 38.11 & 35.79 & 34.84 & 35.09 & 37.99 & 36.35 & 38.28 & 38.61 & \textbf{39.26}
 \\ 
 \cline{2-12} 
 \multirow{3}{*}{ISO = 1600}   
-& 37.76 & 40.23 & 40.52 &  & 38.42 & 38.65 & 40.36 & 39.99 & 41.24 & 40.81 & \textbf{41.43}
+& 37.76 & 40.23 & 40.52 & 36.08 & 38.42 & 38.65 & 40.36 & 39.99 & 41.24 & 40.81 & \textbf{41.43}
 \\ 
 \cline{2-12}    
-& 37.51 & 37.94 & 38.17 &  & 35.79 & 35.85 & 38.30 & 37.15 & 38.04 & 38.96 & \textbf{39.55}
+& 37.51 & 37.94 & 38.17 & 35.48 & 35.79 & 35.85 & 38.30 & 37.15 & 38.04 & 38.96 & \textbf{39.55}
 \\
 \hline
 \multirow{3}{*}{Nikon D800} 
-& 35.05 & 37.55 & 37.69 &  & 38.36 & 38.56 & 39.01 & 38.60 & \textbf{39.93} & 37.97 & 38.91
+& 35.05 & 37.55 & 37.69 & 34.08 & 38.36 & 38.56 & 39.01 & 38.60 & \textbf{39.93} & 37.97 & 38.91
 \\ 
 \cline{2-12} 
 \multirow{3}{*}{ISO = 3200}   
-& 34.07 & 35.91 & 35.90 &  & 35.53 & 35.76 & 36.75 & 36.04 & 37.32 & 37.30 & \textbf{37.41}
+& 34.07 & 35.91 & 35.90 & 33.70 & 35.53 & 35.76 & 36.75 & 36.04 & 37.32 & 37.30 & \textbf{37.41}
 \\ 
 \cline{2-12}    
-& 34.42 & 38.15 & 38.21 &  & 40.05 & 40.59 & 39.06 & 39.73 & \textbf{41.52} & 38.68 & 39.39
+& 34.42 & 38.15 & 38.21 & 33.31 & 40.05 & 40.59 & 39.06 & 39.73 & \textbf{41.52} & 38.68 & 39.39
 \\ 
 \hline
 \multirow{3}{*}{Nikon D800} 
-& 31.13 & 32.69 & 32.81 &  & 34.08 & 34.25 & 34.61 & 33.29 & \textbf{35.20} & 34.57 & 34.80
+& 31.13 & 32.69 & 32.81 & 29.83 & 34.08 & 34.25 & 34.61 & 33.29 & \textbf{35.20} & 34.57 & 34.80
 \\ 
 \cline{2-12} 
 \multirow{3}{*}{ISO = 6400}   
-& 31.22 & 32.33 & 32.33 &  & 32.13 & 32.38  & 33.21 & 31.16 & 33.61 & 33.43 & \textbf{33.95}
+& 31.22 & 32.33 & 32.33 & 30.55 & 32.13 & 32.38  & 33.21 & 31.16 & 33.61 & 33.43 & \textbf{33.95}
 \\ 
 \cline{2-12}    
-& 30.97 & 32.29 & 32.29 &  & 31.52 & 31.76 & 33.22 & 31.98 & 33.62 & \textbf{34.02} & 33.94
+& 30.97 & 32.29 & 32.29 & 30.09 & 31.52 & 31.76 & 33.22 & 31.98 & 33.62 & \textbf{34.02} & 33.94
 \\
 \hline
 \textbf{Average} 
 & 35.19 & 36.46 & 36.61 & 33.86 & 35.33 & 35.65 & 36.88 & 35.77 & 37.27 & 37.12 & \textbf{ 37.71}
 \\
 \hline
-\textbf{Speed} 
-&  &  &  &  &  &  &  &  &  &  &
+\textbf{Time} 
+&  &  &  & 180.3 &  &  &  &  &  &  &
 \\
 \hline
 \end{tabular}
 \end{center}
-\vspace{-6mm}
+\vspace{-3mm}
 \end{table*}
 
-\begin{figure*}\vspace{-0.5mm}
+\begin{figure*}
+\vspace{-0mm}
 \centering
 \subfigure{
 \begin{minipage}[t]{0.19\textwidth}
@@ -1076,7 +1090,7 @@ Camera Settings
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_NC_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 36.20dB  } 
 \end{minipage}
-}\vspace{-4mm}
+}\vspace{-3.5mm}
 \subfigure{
 \begin{minipage}[t]{0.19\textwidth}
 \centering
@@ -1103,9 +1117,9 @@ Camera Settings
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_5dmark3_iso3200_1.png}}
 {\footnotesize (j) Mean Image}
 \end{minipage}
-}\vspace{-1mm}
+}\vspace{-1.5mm}
 \caption{Denoised images of a region cropped from the real noisy image ``Canon 5D Mark 3 ISO 3200 1" \cite{crosschannel2016} by different methods.\ The estimated noise levels of RGB channels are (R), (G), and (B), respectively.\ The images are better to be zoomed in on screen.}
-\vspace{-5mm}
+\vspace{-2mm}
 \label{f4}
 \end{figure*}
 
@@ -1118,6 +1132,7 @@ The real noisy color images have different noise statistics among the R, G, B ch
 The proposed MC-WNNM model can be extended in at least two directions.\ Firstly, it is worthy to investigate new weight matrix beyond the diagonal form, such as the correlation form \cite{nearcor}, to further improve the color image denoising performance.\ Secondly, the proposed MC-WNNM model can be extended for hyperspectral image analysis, which may contain hundreds of bands with complex noise statistics. We will investigate these problems in the future research.
 
 
+\clearpage
 {
 \small
 \bibliographystyle{unsrt}
