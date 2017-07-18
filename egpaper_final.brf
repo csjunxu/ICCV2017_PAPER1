@@ -7,7 +7,7 @@
 \backcite {lssc}{{1}{1}{section.1}}
 \backcite {pgpd}{{1}{1}{section.1}}
 \backcite {mlp}{{1}{1}{section.1}}
-\backcite {chen2015learning}{{1}{1}{section.1}}
+\backcite {dncnn}{{1}{1}{section.1}}
 \backcite {foe}{{1}{1}{section.1}}
 \backcite {cbm3d}{{1}{1}{section.1}}
 \backcite {cbm3d}{{1}{1}{section.1}}
@@ -61,6 +61,7 @@
 \backcite {mlp}{{5}{4}{section.4}}
 \backcite {wnnm}{{5}{4}{section.4}}
 \backcite {chen2015learning}{{5}{4}{section.4}}
+\backcite {dncnn}{{5}{4}{section.4}}
 \backcite {noiseclinic}{{5}{4}{section.4}}
 \backcite {ncwebsite}{{5}{4}{section.4}}
 \backcite {crosschannel2016}{{5}{4}{section.4}}
@@ -75,6 +76,7 @@
 \backcite {crosschannel2016}{{6}{2}{figure.2}}
 \backcite {mlp}{{6}{4.2}{subsection.4.2}}
 \backcite {chen2015learning}{{6}{4.2}{subsection.4.2}}
+\backcite {dncnn}{{6}{4.2}{subsection.4.2}}
 \backcite {cbm3d}{{6}{4.2}{subsection.4.2}}
 \backcite {noiseclinic}{{6}{4.2}{subsection.4.2}}
 \backcite {neatimage}{{6}{4.2}{subsection.4.2}}

@@ -42,7 +42,7 @@
 % egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
 % run, let it finish, and you should be clear).
 \usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
-\renewcommand{\huge}{\fontsize{8.8pt}{\baselineskip}\selectfont}
+\renewcommand{\huge}{\fontsize{8.77pt}{\baselineskip}\selectfont}
 \renewcommand{\Huge}{\fontsize{8pt}{\baselineskip}\selectfont}
 
 % Include other packages here, before hyperref.
@@ -87,15 +87,15 @@ for Real Color Image Denoising}
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-????Most of the existing denoising algorithms are developed for grayscale images, while it is not a trivial work to extend them for color image denoising because the noise statistics in R, G, B channels can be very different for real noisy images.\ In this paper, we propose a multi-channel (MC) optimization model for real color image denoising under the weighted nuclear norm minimization (WNNM) framework.\ We concatenate the RGB patches to make use of the channel redundancy, and introduce a weight matrix to balance the data fidelity of the three channels in consideration of their different noise statistics.\ The proposed MC-WNNM model does not have an analytical solution.\ We reformulate it into a linear equality-constrained problem and solve it with the alternating direction method of multipliers.\ Each alternative updating step has closed-form solution and the convergence can be guaranteed.\ Extensive experiments on both synthetic and real noisy image datasets demonstrate the superiority of the proposed MC-WNNM over state-of-the-art denoising methods. 
+Though there exist many color deniosing algorithms, most of the existing denoising algorithms are developed for grayscale images.\ It is not trivial to extend them for color image denoising since the noise statistics in R, G, B channels can be very different for real noisy images.\ In this paper, we propose a multi-channel (MC) optimization model for real color image denoising under the weighted nuclear norm minimization (WNNM) framework.\ We concatenate the RGB patches to make use of the channel redundancy, and introduce a weight matrix to balance the data fidelity of the three channels in consideration of their different noise statistics.\ The proposed MC-WNNM model does not have an analytical solution.\ We reformulate it into a linear equality-constrained problem and solve it via alternating direction method of multipliers.\ Each alternative updating step has closed-form solution and the convergence can be guaranteed.\ Experiments on both synthetic and real noisy image datasets demonstrate the superiority of the proposed MC-WNNM over state-of-the-art denoising methods. 
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
-\vspace{-1mm}
+\vspace{-3mm}
 \section{Introduction}
-\vspace{-1mm}
+\vspace{-2mm}
 
-Image denoising is a classical yet fundamental problem for image quality enhancement in computer vision and photography systems.\ Most of existing denoising algorithms are designed for grayscale images, aiming to recover the clean image $\mathbf{x}$ from its noisy observation $\mathbf{y}=\mathbf{x}+\mathbf{n}$, where $\mathbf{n}$ is generally assumed to be additive white Gaussian noise (AWGN).\ State-of-the-art image denoising methods include sparse representation \cite{bm3d}, dictionary learning \cite{ksvd}, low-rank approximation \cite{wnnm}, non-local self-similarity (NSS) \cite{nlm} based methods, and the combination of those techniques \cite{ksvd,bm3d,lssc,epll,ncsr,pgpd,wnnm}.\ Recently, some discriminative denoising methods have also been developed by learning discriminative priors from pairs of clean and noisy images \cite{mlp,csf,chen2015learning}. 
+Image denoising is a classical yet fundamental problem for image quality enhancement in computer vision and photography systems.\ Most of existing denoising algorithms are designed for grayscale images, aiming to recover the clean image $\mathbf{x}$ from its noisy observation $\mathbf{y}=\mathbf{x}+\mathbf{n}$, where $\mathbf{n}$ is generally assumed to be additive white Gaussian noise (AWGN).\ State-of-the-art image denoising methods include sparse representation \cite{bm3d}, dictionary learning \cite{ksvd}, low-rank approximation \cite{wnnm}, non-local self-similarity (NSS) \cite{nlm} based methods, and the combination of those techniques \cite{ksvd,bm3d,lssc,epll,ncsr,pgpd,wnnm}.\ Recently, some discriminative denoising methods have also been developed by learning discriminative priors from pairs of clean and noisy images \cite{mlp,csf,chen2015learning,dncnn}. 
 
 When the input is a noisy RGB color image, there are mainly three strategies for color image denoising.\ (1) The first strategy is to apply the grayscale image denoising algorithm to each channel.\ However, such a straightforward solution will not exploit the spectral correlation among RGB channels, and the denoising performance may not be very satisfying.\ (2) The second strategy is to transform the RGB image into a less correlated color space, such as YCbCr, and perform denoising in each channel of the transformed space \cite{foe,cbm3d}.\ One representative work along this line is the CBM3D algorithm \cite{cbm3d}.\ However, the color transform will complicate the noise distribution, and the correlation among color channels is not fully exploited.\ (3) The third strategy is to perform joint denoising on the RGB channels simultaneously for better use of the spectral correlation.\ For example, the patches from RGB channels are concatenated as a long vector for processing \cite{mairal2008sparse,Zhu_2016_CVPR}. 
 
@@ -215,7 +215,7 @@ In this paper, we present an effective multi-channel image denoising algorithm, 
 \vspace{-4mm}
 \end{figure*}
 
-The color image denoising problem is to recover the clean image $\mathbf{x}_{c}$ from its noisy version $\mathbf{y}_{c}=\mathbf{x}_{c}+\mathbf{n}_{c}$, where $c=\{r, g, b\}$ is the index of R, G, B channels and $\mathbf{n}_{c}$ is the noise in the $c$ channel.\ Patch based image denoising \cite{foe,ksvd,bm3d,lssc,epll,ncsr,mlp,csf,wnnm,pgpd,chen2015learning} has achieved a great success in the last decade.\ Given a noisy color image $\mathbf{y}_{c}$, each local patch of size $p\times p \times 3$ is extracted and stretched to a patch vector, denoted by $\mathbf{y}=[\mathbf{y}_{r}^{\top}\ \mathbf{y}_{g}^{\top}\ \mathbf{y}_{b}^{\top}]^{\top}\in\mathbb{R}^{3p^{2}}$, where $\mathbf{y}_{r}, \mathbf{y}_{g}, \mathbf{y}_{b}\in\mathbb{R}^{p^{2}}$ are the corresponding patches in R, G, B channels.\ For each local patch $\mathbf{y}$, we search the $M$ most similar patches to it (including $\mathbf{y}$ itself) by Euclidean distance in a relatively large local window around it.\ By stacking the $M$ similar patches column by column, we form a noisy patch matrix $\mathbf{Y}=\mathbf{X}+\mathbf{N}\in\mathbb{R}^{3p^{2}\times M}$, where $\mathbf{X}$ and $\mathbf{N}$ are the corresponding clean and noise patch matrices.
+The color image denoising problem is to recover the clean image $\mathbf{x}_{c}$ from its noisy version $\mathbf{y}_{c}=\mathbf{x}_{c}+\mathbf{n}_{c}$, where $c=\{r, g, b\}$ is the index of R, G, B channels and $\mathbf{n}_{c}$ is the noise in the $c$ channel.\ Patch based image denoising \cite{foe,ksvd,bm3d,lssc,epll,ncsr,mlp,csf,wnnm,pgpd,chen2015learning,dncnn} has achieved a great success in the last decade.\ Given a noisy color image $\mathbf{y}_{c}$, each local patch of size $p\times p \times 3$ is extracted and stretched to a patch vector, denoted by $\mathbf{y}=[\mathbf{y}_{r}^{\top}\ \mathbf{y}_{g}^{\top}\ \mathbf{y}_{b}^{\top}]^{\top}\in\mathbb{R}^{3p^{2}}$, where $\mathbf{y}_{r}, \mathbf{y}_{g}, \mathbf{y}_{b}\in\mathbb{R}^{p^{2}}$ are the corresponding patches in R, G, B channels.\ For each local patch $\mathbf{y}$, we search the $M$ most similar patches to it (including $\mathbf{y}$ itself) by Euclidean distance in a relatively large local window around it.\ By stacking the $M$ similar patches column by column, we form a noisy patch matrix $\mathbf{Y}=\mathbf{X}+\mathbf{N}\in\mathbb{R}^{3p^{2}\times M}$, where $\mathbf{X}$ and $\mathbf{N}$ are the corresponding clean and noise patch matrices.
 
 The noise in standard RGB (sRGB) space could be approximately modeled as additive white Gaussian (AWGN), but noise in different channels has different variances \cite{Liu2008,Leungtip,crosschannel2016}.\ Therefore, it is problematic to directly apply some grayscale denoising methods to the concatenated vectors $\mathbf{y}$ or matrices $\mathbf{Y}$.\ To better illustrate this point, in Fig.\ \ref{f1}, we show a clean image ``kodim08'' (only the R and G channels are shown due to limit of space), its noisy version generated by adding AWGN to each channel, and the denoised image by applying WNNM \cite{wnnmijcv} to the concatenated  patch matrix $\mathbf{Y}$.\ The standard deviations of AWGN added to the R, G, B channels are $\sigma_{r}=40$, $\sigma_{g}=20$, $\sigma_{b}=30$, respectively.\ To make WNNM applicable to color image denoising, we set the noise standard deviation as the average deviation of the whole noisy image, i.e., $\sigma=\sqrt{(\sigma_{r}^{2}+\sigma_{g}^{2}+\sigma_{b}^{2})/3}\approx31.1$.\ From Fig.\ \ref{f1}, one can see that the concatenated WNNM remains some noise in the R channel while over-smoothing the G channel.\ This is because it processes R and G channels equally without considering their differences in noise corruption.
 
@@ -462,16 +462,18 @@ The above alternative updating steps are repeated until the convergence conditio
 \hline
 \textbf{Input:} Matrices $\mathbf{Y}$ and $\mathbf{W}$, $\mu>1$, $\text{Tol}>0$, $K_{1}$;
 \\
-\textbf{Initialization:} $\mathbf{X}_{0}=\mathbf{Z}_{0}=\mathbf{A}_{0}=\mathbf{0}$, $\rho_{0}>0$, \text{T} = \text{False},
+\textbf{Initialization:} $\mathbf{X}_{0}=\mathbf{Z}_{0}=\mathbf{A}_{0}=\mathbf{0}$, $\rho_{0}>0$,
 \\
-\quad \quad \quad \quad \quad \quad $k=0$; 
+\quad \quad \quad \quad \quad \quad \ \text{T} = \text{False}, $k=0$; 
 \\
 \textbf{While} (\text{T} == \text{false}) \textbf{do}
 \\
 1. Update $\mathbf{X}_{k+1}$ as 
 \\
 $\mathbf{X}_{k+1}
+\hspace{-1mm}
 =
+\hspace{-1mm}
 (\mathbf{W}^{\top}\mathbf{W}+\frac{\rho_{k}}{2}\mathbf{I})^{-1}
 (\mathbf{W}^{\top}\mathbf{W}\mathbf{Y} + \frac{\rho_{k}}{2}\mathbf{Z}_{k} -\frac{1}{2}\mathbf{A}_{k})
 $
@@ -665,7 +667,7 @@ In Algorithm 1 for solving the MC-WNNM model via ADMM, the cost for updating $\b
 \section{Experiments}
 \vspace{-1mm}
 
-We evaluate the proposed MC-WNNM method on synthetic and real noisy color images.\ We compare the proposed method with state-of-the-art denoising methods, including CBM3D \cite{cbm3d}, MLP \cite{mlp}, WNNM \cite{wnnm}, TNRD \cite{chen2015learning}, ``Noise Clinic'' (NC) \cite{noiseclinic,ncwebsite}, CC \cite{crosschannel2016}, and the commercial software Neat Image (NI) \cite{neatimage}. The Matlab source code of our MC-WNNM algorithm can be downloaded at \url{http://www4.comp.polyu.edu.
+We evaluate the proposed MC-WNNM method on synthetic and real noisy color images.\ We compare the proposed method with state-of-the-art denoising methods, including CBM3D \cite{cbm3d}, MLP \cite{mlp}, WNNM \cite{wnnm}, TNRD \cite{chen2015learning}, DnCNN \cite{dncnn} ``Noise Clinic'' (NC) \cite{noiseclinic,ncwebsite}, CC \cite{crosschannel2016}, and the commercial software Neat Image (NI) \cite{neatimage}. The Matlab source code of our MC-WNNM algorithm can be downloaded at \url{http://www4.comp.polyu.edu.
 hk/˜cslzhang/code/MCWNNM.zip}.
 
 \vspace{-1mm}
@@ -697,7 +699,7 @@ For fair comparison, we tune the parameters of WNNM-1, WNNM-2, WNNM-3 and MC-WNN
 \subsection{Experiments on Synthetic Noisy Color Images}
 \vspace{-1mm}
 
-We first compare MC-WNNM with the competing denoising methods \cite{cbm3d,mlp,chen2015learning,noiseclinic,neatimage} on the 24 high quality color images from the Kodak PhotoCD Dataset (\url{http://r0k.us/graphics/kodak/}).\ The noisy images are generated by adding AWGN to each of the R, G, B channels, respectively.\ In the main paper, we report the results by setting $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$.\ More results with other noise settings can be found in the supplementary file.\ For WNNM-3 and MC-WNNM, the initial penalty parameter is set as $\rho_{0}=10$ and $\rho_{0}=3$, respectively.\ The number of iterations in Algorithm 2 is set as $K_{2}=8$. 
+We first compare MC-WNNM with the competing denoising methods \cite{cbm3d,mlp,chen2015learning,dncnn,noiseclinic,neatimage} on the 24 high quality color images from the Kodak PhotoCD Dataset (\url{http://r0k.us/graphics/kodak/}).\ The noisy images are generated by adding AWGN to each of the R, G, B channels, respectively.\ In the main paper, we report the results by setting $\sigma_{r}=40, \sigma_{g}=20, \sigma_{b}=30$.\ More results with other noise settings can be found in the supplementary file.\ For WNNM-3 and MC-WNNM, the initial penalty parameter is set as $\rho_{0}=10$ and $\rho_{0}=3$, respectively.\ The number of iterations in Algorithm 2 is set as $K_{2}=8$. 
 
 The PSNR results by competing methods are listed in Table \ref{t1}, while the best PSNR result for each image is highlighted in bold.\ One can see that on all the 24 images, our method achieves the highest PSNR values among the competing methods.\ On average, MC-WNNM achieves 0.47dB, 0.48dB and 1.09dB improvements over WNNM-1, WNNM-2 and WNNM-3, respectively.\ For space limitation, we leave the visual comparisons of the synthetic noisy image denoising results in the supplementary file.
 
@@ -1136,13 +1138,13 @@ Camera Settings
 \end{minipage}
 }\vspace{-1.5mm}
 \caption{Denoised images of a region cropped from the real noisy image ``Canon 5D Mark 3 ISO 3200 1" \cite{crosschannel2016} by different methods.\ The estimated noise levels of R, G, and B channels are 1.6, 1.5, and 1.6, respectively.\ The images are better to be zoomed in on screen.}
-\vspace{-0mm}
+\vspace{-3mm}
 \label{f4}
 \end{figure*}
 
-\vspace{1mm}
+\vspace{0mm}
 \section{Conclusion}
-\vspace{1mm}
+\vspace{-0mm}
 
 The real noisy color images have different noise statistics among the R, G, B channels due to digital camera pipelines in CCD or CMOS sensors.\ This makes the real color image denoising problem more challenging than grayscale image denoising.\ In this paper, we proposed a novel multi-channel (MC) denoising model to effectively exploit the redundancy across color channels while differentiating their different noise statistics.\ Specifically, we introduced a weight matrix to the data term in the RGB channel concatenated weighted nuclear norm minimization (WNNM) model, and the resulting MC-WNNM model can process adaptively the different noise in RGB channels.\ We solved the MC-WNNM model via an ADMM algorithm.\ Extensive experiments on synthetic and real datasets demonstrated that the proposed MC-WNNM method outperforms significantly the other competing denoising methods.
 

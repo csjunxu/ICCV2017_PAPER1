@@ -69,6 +69,12 @@ Y.~Chen, W.~Yu, and T.~Pock.
 \newblock {\em IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, pages 5261--5269, 2015.
 
+\bibitem{dncnn}
+K.~Zhang, W.~Zuo, Y.~Chen, D.~Meng, and L.~Zhang.
+\newblock Beyond a gaussian denoiser: Residual learning of deep cnn for image
+  denoising.
+\newblock {\em IEEE Transactions on Image Processing}, 2017.
+
 \bibitem{foe}
 S.~Roth and M.~J. Black.
 \newblock Fields of experts.
