@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  24 JUL 2017 17:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  24 JUL 2017 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,7 +700,7 @@ File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \c@bookmark@seq@number=\count163
 \Hy@SectionHShift=\skip67
 )
-(./MCWNNM.aux)
+No file MCWNNM.aux.
 \openout1 = `MCWNNM.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
@@ -718,9 +718,10 @@ LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 65.
- (c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(c:/Software/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) ABD: EveryShipout initializing macros
+)
+ABD: EveryShipout initializing macros
 (c:/Software/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count164
@@ -845,4 +846,549 @@ Package natbib Warning: Citation `wnnm' on page 1 undefined on input line 98.
 Package natbib Warning: Citation `mlp' on page 1 undefined on input line 98.
 
 
-Package natbib Warning: Citation `csf' on page 1 undefined on inp
+Package natbib Warning: Citation `csf' on page 1 undefined on input line 98.
+
+
+Package natbib Warning: Citation `chen2015learning' on page 1 undefined on inpu
+t line 98.
+
+
+Package natbib Warning: Citation `dncnn' on page 1 undefined on input line 98.
+
+
+Package natbib Warning: Citation `foe' on page 1 undefined on input line 100.
+
+
+Package natbib Warning: Citation `cbm3d' on page 1 undefined on input line 100.
+
+
+
+Package natbib Warning: Citation `cbm3d' on page 1 undefined on input line 100.
+
+
+
+Package natbib Warning: Citation `mairal2008sparse' on page 1 undefined on inpu
+t line 100.
+
+
+Package natbib Warning: Citation `Zhu_2016_CVPR' on page 1 undefined on input l
+ine 100.
+
+
+Package natbib Warning: Citation `Liu2008' on page 1 undefined on input line 10
+2.
+
+
+Package natbib Warning: Citation `Leungtip' on page 1 undefined on input line 1
+02.
+
+
+Package natbib Warning: Citation `crosschannel2016' on page 1 undefined on inpu
+t line 102.
+
+
+Package natbib Warning: Citation `crosschannel2016' on page 1 undefined on inpu
+t line 102.
+
+
+Package natbib Warning: Citation `karaimer_brown_ECCV_2016' on page 1 undefined
+ on input line 102.
+
+
+Package natbib Warning: Citation `mairal2008sparse' on page 1 undefined on inpu
+t line 102.
+
+
+Package natbib Warning: Citation `wnnm' on page 1 undefined on input line 104.
+
+
+Package natbib Warning: Citation `wnnmijcv' on page 1 undefined on input line 1
+04.
+
+
+Package natbib Warning: Citation `wnnmijcv' on page 1 undefined on input line 1
+04.
+
+
+Package natbib Warning: Citation `admm' on page 1 undefined on input line 104.
+
+
+Underfull \vbox (badness 2735) has occurred while \output is active []
+
+ [1{c:/Software/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+Package natbib Warning: Citation `cai2010singular' on page 2 undefined on input
+ line 112.
+
+
+Package natbib Warning: Citation `wnnm' on page 2 undefined on input line 112.
+
+
+Package natbib Warning: Citation `wnnmijcv' on page 2 undefined on input line 1
+12.
+
+
+Package natbib Warning: Citation `wnnmijcv' on page 2 undefined on input line 1
+21.
+
+
+LaTeX Warning: Reference `e1' on page 2 undefined on input line 121.
+
+
+Package natbib Warning: Citation `eckart1936approximation' on page 2 undefined 
+on input line 133.
+
+
+LaTeX Warning: Reference `f1' on page 2 undefined on input line 145.
+
+
+Package natbib Warning: Citation `cbm3d' on page 2 undefined on input line 151.
+
+
+
+Package natbib Warning: Citation `bm3d' on page 2 undefined on input line 151.
+
+
+Package natbib Warning: Citation `Liu2008' on page 2 undefined on input line 15
+1.
+
+
+Package natbib Warning: Citation `mairal2008sparse' on page 2 undefined on inpu
+t line 151.
+
+
+Package natbib Warning: Citation `noiseclinic' on page 2 undefined on input lin
+e 151.
+
+
+Package natbib Warning: Citation `ncwebsite' on page 2 undefined on input line 
+151.
+
+
+Package natbib Warning: Citation `Zhu_2016_CVPR' on page 2 undefined on input l
+ine 151.
+
+
+Package natbib Warning: Citation `crosschannel2016' on page 2 undefined on inpu
+t line 151.
+
+
+Package natbib Warning: Citation `kervrann2007bayesian' on page 2 undefined on 
+input line 151.
+
+
+Package natbib Warning: Citation `neatimage' on page 2 undefined on input line 
+151.
+
+
+Package natbib Warning: Citation `crosschannel2016' on page 2 undefined on inpu
+t line 151.
+
+
+Package natbib Warning: Citation `neatimage' on page 2 undefined on input line 
+151.
+
+
+Package natbib Warning: Citation `bm3d' on page 2 undefined on input line 151.
+
+
+Package natbib Warning: Citation `wnnm' on page 2 undefined on input line 151.
+
+
+Overfull \hbox (58.67165pt too wide) in paragraph at lines 157--157
+[] \OT1/ptm/b/n/12 . [] 
+ []
+
+
+Overfull \hbox (65.54163pt too wide) in paragraph at lines 159--159
+[] \elvbf . [] 
+ []
+
+<example/br_kodim08_1.png, id=19, 401.5pt x 385.44pt>
+File: example/br_kodim08_1.png Graphic file (type png)
+
+<use example/br_kodim08_1.png>
+Package pdftex.def Info: example/br_kodim08_1.png used on input line 186.
+(pdftex.def)             Requested size: 124.21405pt x 119.24402pt.
+
+<example/br_Noisy_nSig402030_kodim08_1.png, id=20, 401.5pt x 385.44pt>
+File: example/br_Noisy_nSig402030_kodim08_1.png Graphic file (type png)
+
+<use example/br_Noisy_nSig402030_kodim08_1.png>
+Package pdftex.def Info: example/br_Noisy_nSig402030_kodim08_1.png used on inpu
+t line 186.
+(pdftex.def)             Requested size: 124.21405pt x 119.24402pt.
+
+<example/br_kodim08_2.png, id=21, 401.5pt x 385.44pt>
+File: example/br_kodim08_2.png Graphic file (type png)
+
+<use example/br_kodim08_2.png>
+Package pdftex.def Info: example/br_kodim08_2.png used on input line 186.
+(pdftex.def)             Requested size: 124.21405pt x 119.24402pt.
+
+<example/br_Noisy_nSig402030_kodim08_2.png, id=22, 401.5pt x 385.44pt>
+File: example/br_Noisy_nSig402030_kodim08_2.png Graphic file (type png)
+
+<use example/br_Noisy_nSig402030_kodim08_2.png>
+Package pdftex.def Info: example/br_Noisy_nSig402030_kodim08_2.png used on inpu
+t line 186.
+(pdftex.def)             Requested size: 124.21405pt x 119.24402pt.
+
+<example/br_WNNMJ_nSig402030_lambda1_kodim08_1.png, id=23, 401.5pt x 385.44pt>
+File: example/br_WNNMJ_nSig402030_lambda1_kodim08_1.png Graphic file (type png)
+
+
+<use example/br_WNNMJ_nSig402030_lambda1_kodim08_1.png>
+Package pdftex.def Info: example/br_WNNMJ_nSig402030_lambda1_kodim08_1.png used
+ on input line 208.
+(pdftex.def)             Requested size: 124.21405pt x 119.24402pt.
+
+<example/br_CWNNM_ADMM_nSig402030_kodim08_1.png, id=24, 401.5pt x 385.44pt>
+File: example/br_CWNNM_ADMM_nSig402030_kodim08_1.png Graphic file (type png)
+
+<use example/br_CWNNM_ADMM_nSig402030_kodim08_1.png>
+Package pdftex.def Info: example/br_CWNNM_ADMM_nSig402030_kodim08_1.png used on
+ input line 208.
+(pdftex.def)             Requested size: 124.21405pt x 119.24402pt.
+
+<example/br_WNNMJ_nSig402030_lambda1_kodim08_2.png, id=25, 401.5pt x 385.44pt>
+File: example/br_WNNMJ_nSig402030_lambda1_kodim08_2.png Graphic file (type png)
+
+
+<use example/br_WNNMJ_nSig402030_lambda1_kodim08_2.png>
+Package pdftex.def Info: example/br_WNNMJ_nSig402030_lambda1_kodim08_2.png used
+ on input line 208.
+(pdftex.def)             Requested size: 124.21405pt x 119.24402pt.
+
+<example/br_CWNNM_ADMM_nSig402030_kodim08_2.png, id=26, 401.5pt x 385.44pt>
+File: example/br_CWNNM_ADMM_nSig402030_kodim08_2.png Graphic file (type png)
+
+<use example/br_CWNNM_ADMM_nSig402030_kodim08_2.png>
+Package pdftex.def Info: example/br_CWNNM_ADMM_nSig402030_kodim08_2.png used on
+ input line 208.
+(pdftex.def)             Requested size: 124.21405pt x 119.24402pt.
+
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 186--209
+ [][] 
+ []
+
+
+Overfull \hbox (12.49995pt too wide) in paragraph at lines 186--209
+ [][] 
+ []
+
+
+Package natbib Warning: Citation `foe' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `ksvd' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `bm3d' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `lssc' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `epll' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `ncsr' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `mlp' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `csf' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `wnnm' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `pgpd' on page 2 undefined on input line 214.
+
+
+Package natbib Warning: Citation `chen2015learning' on page 2 undefined on inpu
+t line 214.
+
+
+Package natbib Warning: Citation `dncnn' on page 2 undefined on input line 214.
+
+
+
+Package natbib Warning: Citation `Liu2008' on page 2 undefined on input line 21
+6.
+
+
+Package natbib Warning: Citation `Leungtip' on page 2 undefined on input line 2
+16.
+
+
+Package natbib Warning: Citation `crosschannel2016' on page 2 undefined on inpu
+t line 216.
+
+
+LaTeX Warning: Reference `f1' on page 2 undefined on input line 216.
+
+
+Package natbib Warning: Citation `wnnmijcv' on page 2 undefined on input line 2
+16.
+
+
+LaTeX Warning: Reference `f1' on page 2 undefined on input line 216.
+
+[2]
+
+Package natbib Warning: Citation `wnnmijcv' on page 3 undefined on input line 2
+27.
+
+
+LaTeX Warning: Reference `f1' on page 3 undefined on input line 227.
+
+
+LaTeX Warning: Reference `f1' on page 3 undefined on input line 227.
+
+
+Underfull \hbox (badness 5260) in paragraph at lines 233--235
+[]\OT1/ptm/m/n/10 Let's de-note the noisy patch ma-trix by $\OT1/cmr/bx/n/10 Y 
+\OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package natbib Warning: Citation `Leungtip' on page 3 undefined on input line 2
+49.
+
+
+LaTeX Warning: Reference `e7' on page 3 undefined on input line 273.
+
+
+LaTeX Warning: Reference `e6' on page 3 undefined on input line 273.
+
+
+LaTeX Warning: Reference `e5' on page 3 undefined on input line 273.
+
+[3 <./example/br_kodim08_1.png (PNG copy)> <./example/br_Noisy_nSig402030_kodim
+08_1.png (PNG copy)> <./example/br_kodim08_2.png (PNG copy)> <./example/br_Nois
+y_nSig402030_kodim08_2.png (PNG copy)> <./example/br_WNNMJ_nSig402030_lambda1_k
+odim08_1.png (PNG copy)> <./example/br_CWNNM_ADMM_nSig402030_kodim08_1.png (PNG
+ copy)> <./example/br_WNNMJ_nSig402030_lambda1_kodim08_2.png (PNG copy)> <./exa
+mple/br_CWNNM_ADMM_nSig402030_kodim08_2.png (PNG copy)>]
+
+Package natbib Warning: Citation `wnnmijcv' on page 4 undefined on input line 3
+13.
+
+
+Package natbib Warning: Citation `courant1943' on page 4 undefined on input lin
+e 315.
+
+
+Package natbib Warning: Citation `Eckstein1992' on page 4 undefined on input li
+ne 315.
+
+
+LaTeX Warning: Reference `e10' on page 4 undefined on input line 328.
+
+
+Package natbib Warning: Citation `admm' on page 4 undefined on input line 328.
+
+
+Overfull \hbox (1.88905pt too wide) detected at line 363
+[]\OT1/cmr/bx/n/10 X[] \OT1/cmr/m/n/10 = [] [] \OMS/cmsy/m/n/10 k\OT1/cmr/bx/n/
+10 W\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 Y \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n/10 X
+\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n/10 + []\OMS/cmsy/m/n/10 k\OT
+1/cmr/bx/n/10 X \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n/10 Z[] \OT1/cmr/m/n/10 + \OM
+L/cmm/m/it/10 ^^Z[]\OT1/cmr/bx/n/10 A[]\OMS/cmsy/m/n/10 jj[]\OML/cmm/m/it/10 :
+ []
+
+
+Package natbib Warning: Citation `wnnmijcv' on page 4 undefined on input line 3
+86.
+
+
+Package natbib Warning: Citation `wnnmijcv' on page 4 undefined on input line 4
+22.
+
+
+Package natbib Warning: Citation `wnnmijcv' on page 4 undefined on input line 4
+34.
+
+
+LaTeX Warning: Reference `th1' on page 4 undefined on input line 450.
+
+
+LaTeX Warning: Reference `e17' on page 4 undefined on input line 532.
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 532--606
+\OT1/cmr/bx/n/10 X[]\OMS/cmsy/m/n/10 k[] ^^T [][]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n
+/10 k\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 W[]W \OT1/cmr/m/n/10 + []\OT1/cmr/bx/n/1
+0 I\OT1/cmr/m/n/10 )[](\OT1/cmr/bx/n/10 W[]WY \OMS/cmsy/m/n/10 ^^@
+ []
+
+[4]
+
+LaTeX Warning: Reference `e10' on page 5 undefined on input line 635.
+
+
+Package natbib Warning: Citation `cbm3d' on page 5 undefined on input line 666.
+
+
+
+Package natbib Warning: Citation `mlp' on page 5 undefined on input line 666.
+
+
+Package natbib Warning: Citation `wnnm' on page 5 undefined on input line 666.
+
+
+Package natbib Warning: Citation `chen2015learning' on page 5 undefined on inpu
+t line 666.
+
+
+Package natbib Warning: Citation `dncnn' on page 5 undefined on input line 666.
+
+
+
+Package natbib Warning: Citation `noiseclinic' on page 5 undefined on input lin
+e 666.
+
+
+Package natbib Warning: Citation `ncwebsite' on page 5 undefined on input line 
+666.
+
+
+Package natbib Warning: Citation `crosschannel2016' on page 5 undefined on inpu
+t line 666.
+
+
+Package natbib Warning: Citation `neatimage' on page 5 undefined on input line 
+666.
+
+
+Package natbib Warning: Citation `noiselevel' on page 5 undefined on input line
+ 673.
+
+
+Package natbib Warning: Citation `Chen2015ICCV' on page 5 undefined on input li
+ne 673.
+
+
+Package natbib Warning: Citation `Chen2015ICCV' on page 5 undefined on input li
+ne 673.
+
+
+Package natbib Warning: Citation `cbm3d' on page 5 undefined on input line 676.
+
+
+
+Package natbib Warning: Citation `mlp' on page 5 undefined on input line 683.
+
+
+Package natbib Warning: Citation `chen2015learning' on page 5 undefined on inpu
+t line 683.
+
+
+Package natbib Warning: Citation `wnnmijcv' on page 5 undefined on input line 6
+86.
+
+
+LaTeX Warning: Reference `e21' on page 5 undefined on input line 688.
+
+[5]
+Underfull \hbox (badness 1527) in paragraph at lines 691--692
+[]\OT1/ptm/m/n/10 For a fair com-par-i-son, we tune the pa-ram-e-ters of
+ []
+
+
+Underfull \hbox (badness 2012) in paragraph at lines 691--692
+\OT1/ptm/m/n/10 WNNM-1, WNNM-2, WNNM-3 and MC-WNNM to
+ []
+
+
+<CC15images/resize_5dmark3_iso3200_1_real.png, id=94, 205.76875pt x 205.76875pt
+>
+File: CC15images/resize_5dmark3_iso3200_1_real.png Graphic file (type png)
+ <use CC15images/resize_5dmark3_iso3200_1_real.png>
+Package pdftex.def Info: CC15images/resize_5dmark3_iso3200_1_real.png used on i
+nput line 713.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_5dmark3_iso3200_2_real.png, id=95, 205.76875pt x 205.76875pt
+>
+File: CC15images/resize_5dmark3_iso3200_2_real.png Graphic file (type png)
+ <use CC15images/resize_5dmark3_iso3200_2_real.png>
+Package pdftex.def Info: CC15images/resize_5dmark3_iso3200_2_real.png used on i
+nput line 713.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_5dmark3_iso3200_3_real.png, id=96, 205.76875pt x 205.76875pt
+>
+File: CC15images/resize_5dmark3_iso3200_3_real.png Graphic file (type png)
+ <use CC15images/resize_5dmark3_iso3200_3_real.png>
+Package pdftex.def Info: CC15images/resize_5dmark3_iso3200_3_real.png used on i
+nput line 713.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_d600_iso3200_1_real.png, id=97, 205.76875pt x 205.76875pt>
+File: CC15images/resize_d600_iso3200_1_real.png Graphic file (type png)
+
+<use CC15images/resize_d600_iso3200_1_real.png>
+Package pdftex.def Info: CC15images/resize_d600_iso3200_1_real.png used on inpu
+t line 713.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_d600_iso3200_2_real.png, id=98, 205.76875pt x 205.76875pt>
+File: CC15images/resize_d600_iso3200_2_real.png Graphic file (type png)
+
+<use CC15images/resize_d600_iso3200_2_real.png>
+Package pdftex.def Info: CC15images/resize_d600_iso3200_2_real.png used on inpu
+t line 713.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_d600_iso3200_3_real.png, id=99, 205.76875pt x 205.76875pt>
+File: CC15images/resize_d600_iso3200_3_real.png Graphic file (type png)
+
+<use CC15images/resize_d600_iso3200_3_real.png>
+Package pdftex.def Info: CC15images/resize_d600_iso3200_3_real.png used on inpu
+t line 730.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_d800_iso1600_1_real.png, id=100, 205.76875pt x 205.76875pt>
+File: CC15images/resize_d800_iso1600_1_real.png Graphic file (type png)
+
+<use CC15images/resize_d800_iso1600_1_real.png>
+Package pdftex.def Info: CC15images/resize_d800_iso1600_1_real.png used on inpu
+t line 730.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_d800_iso1600_2_real.png, id=101, 205.76875pt x 205.76875pt>
+File: CC15images/resize_d800_iso1600_2_real.png Graphic file (type png)
+
+<use CC15images/resize_d800_iso1600_2_real.png>
+Package pdftex.def Info: CC15images/resize_d800_iso1600_2_real.png used on inpu
+t line 730.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_d800_iso1600_3_real.png, id=102, 205.76875pt x 205.76875pt>
+File: CC15images/resize_d800_iso1600_3_real.png Graphic file (type png)
+
+<use CC15images/resize_d800_iso1600_3_real.png>
+Package pdftex.def Info: CC15images/resize_d800_iso1600_3_real.png used on inpu
+t line 730.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_d800_iso3200_1_real.png, id=103, 205.76875pt x 205.76875pt>
+File: CC15images/resize_d800_iso3200_1_real.png Graphic file (type png)
+
+<use CC15images/resize_d800_iso3200_1_real.png>
+Package pdftex.def Info: CC15images/resize_d800_iso3200_1_real.png used on inpu
+t line 730.
+(pdftex.def)             Requested size: 39.7494pt x 39.74953pt.
+
+<CC15images/resize_d800_iso3200_2_real.png, id=104, 205.76
