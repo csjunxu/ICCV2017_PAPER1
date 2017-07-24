@@ -42,7 +42,7 @@
 % egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
 % run, let it finish, and you should be clear).
 \usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
-\renewcommand{\huge}{\fontsize{8.775pt}{\baselineskip}\selectfont}
+\renewcommand{\huge}{\fontsize{8.3pt}{\baselineskip}\selectfont}
 \renewcommand{\Huge}{\fontsize{8pt}{\baselineskip}\selectfont}
 
 % Include other packages here, before hyperref.
@@ -105,9 +105,7 @@ This paper presents a new color image denoising algorithm.\ Considering that the
 
 \vspace{-1mm}
 \section{Related Work}
-\vspace{-1mm}
 
-\vspace{-1mm}
 \subsection{Weighted Nuclear Norm Minimization}
 \vspace{-1mm}
 
@@ -157,11 +155,9 @@ In this paper, we present an effective multi-channel image denoising algorithm, 
 
 \vspace{-1mm}
 \section{\parbox[t]{10cm}{The Proposed Color Image Denoising Algo-\\rithm}}
-\vspace{-1mm}
 
-\vspace{-1mm}
 \subsection{\parbox[t]{10cm}{The Multi-channel Weighted Nuclear Norm \\Minimization Model}}
-\vspace{-1mm}
+\vspace{-0mm}
 
 \begin{figure*}
 \vspace{-5mm}
@@ -187,7 +183,7 @@ In this paper, we present an effective multi-channel image denoising algorithm, 
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_Noisy_nSig402030_kodim08_2.png}}
 {\footnotesize (d) Noisy Green Channel}
 \end{minipage}
-}\vspace{-3.5mm}
+}\vspace{-3mm}
 \subfigure{
 \begin{minipage}[t]{0.25\textwidth}
 \centering
@@ -209,10 +205,10 @@ In this paper, we present an effective multi-channel image denoising algorithm, 
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{example/br_CWNNM_ADMM_nSig402030_kodim08_2.png}}
 {\footnotesize (h) Denoised Green by MC-WNNM }
 \end{minipage}
-}\vspace{-1.5mm}
+}\vspace{-1mm}
 \caption{The Red and Green channels of the image ``kodim08'' from the Kodak PhotoCD Dataset, its synthetic noisy version, and the images recovered by the concatenated WNNM and the proposed MC-WNNM methods.}
 \label{f1}
-\vspace{-4mm}
+\vspace{-3mm}
 \end{figure*}
 
 The color image denoising problem is to recover the clean image $\mathbf{x}_{c}$ from its noisy version $\mathbf{y}_{c}=\mathbf{x}_{c}+\mathbf{n}_{c}$, where $c=\{r, g, b\}$ is the index of R, G, B channels and $\mathbf{n}_{c}$ is the noise in the $c$ channel.\ Patch based image denoising \cite{foe,ksvd,bm3d,lssc,epll,ncsr,mlp,csf,wnnm,pgpd,chen2015learning,dncnn} has achieved a great success in the last decade.\ Given a noisy color image $\mathbf{y}_{c}$, each local patch of size $p\times p \times 3$ is extracted and stretched to a patch vector, denoted by $\mathbf{y}=[\mathbf{y}_{r}^{\top}\ \mathbf{y}_{g}^{\top}\ \mathbf{y}_{b}^{\top}]^{\top}\in\mathbb{R}^{3p^{2}}$, where $\mathbf{y}_{r}, \mathbf{y}_{g}, \mathbf{y}_{b}\in\mathbb{R}^{p^{2}}$ are the corresponding patches in R, G, B channels.\ For each local patch $\mathbf{y}$, we search the $M$ most similar patches to it (including $\mathbf{y}$ itself) by Euclidean distance in a relatively large local window around it.\ By stacking the $M$ similar patches column by column, we form a noisy patch matrix $\mathbf{Y}=\mathbf{X}+\mathbf{N}\in\mathbb{R}^{3p^{2}\times M}$, where $\mathbf{X}$ and $\mathbf{N}$ are the corresponding clean and noise patch matrices.
@@ -520,7 +516,7 @@ $
 \begin{theorem}
 \label{th1}
 Assume that the weights in $\bm{w}$ are in a non-descending order, the sequences $\{\mathbf{X}_{k}\}$, $\{\mathbf{Z}_{k}\}$, and $\{\mathbf{A}_{k}\}$ generated in Algorithm 1 satisfy:
-\vspace{-4mm}
+\vspace{-3mm}
 \begin{align}
 &(a) \lim_{k \to \infty} \|\mathbf{X}_{k+1}-\mathbf{Z}_{k+1}\|_{F}=0;
 \\
@@ -529,7 +525,7 @@ Assume that the weights in $\bm{w}$ are in a non-descending order, the sequences
 &(c) \lim_{k \to \infty} \|\mathbf{Z}_{k+1}-\mathbf{Z}_{k}\|_{F}=0.
 \end{align}
 \end{theorem}
-\vspace{-6mm}
+\vspace{-5mm}
 \begin{proof}
 We give a sketch proof here and detailed proof of this theorem can be found in the supplementary file. 
 
@@ -694,6 +690,66 @@ In order to make a full and fair comparison with the original WNNM method \cite{
 
 For a fair comparison, we tune the parameters of WNNM-1, WNNM-2, WNNM-3 and MC-WNNM to achieve their best denoising performance.\ The detailed parameters are as follows: we set the patch size as $p = 6$, the number of non-local similar patches as $M = 70$, the window size for searching similar patches as $40\times40$.\ For WNNM-3 and MC-WNNM, the updating parameter is set as $\mu=1.001$.\ The number of iterations in Algorithm 1 is set as $K_{1} = 10$.\ The number of iterations $K_{2}$ in Algorithm 2 and the initial penalty parameter $\rho_{0}$ will be given in the following sub-sections.
 
+
+\begin{figure}
+\vspace{-3mm}
+\centering
+\subfigure{
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_5dmark3_iso3200_1_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_5dmark3_iso3200_2_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_5dmark3_iso3200_3_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d600_iso3200_1_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d600_iso3200_2_real.png}
+\end{minipage}
+}\vspace{-3mm}
+\subfigure{
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d600_iso3200_3_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso1600_1_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso1600_2_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso1600_3_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso3200_1_real.png}
+\end{minipage}
+}\vspace{-3mm}
+\subfigure{
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso3200_2_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso3200_3_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso6400_1_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso6400_2_real.png}
+\end{minipage}
+\begin{minipage}{0.08\textwidth}
+\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso6400_3_real.png}
+\end{minipage}
+}\vspace{-1mm}
+\caption{The 15 cropped real noisy images used in \cite{crosschannel2016}.}
+\label{f2}
+\vspace{-5mm}
+\end{figure}
+
 \vspace{-1mm}
 \subsection{Experiments on Synthetic Noisy Color Images}
 \vspace{-1mm}
@@ -705,6 +761,7 @@ The PSNR results by competing methods are listed in Table \ref{t1}, while the be
 \begin{table*}
 \vspace{-6mm}
 \caption{PSNR(dB) results of different denoising methods on 24 natural color images.}
+\vspace{0.5mm}
 \label{t1}
 \label{taba}
 \begin{center}
@@ -818,67 +875,8 @@ Image\#
 \hline
 \end{tabular}
 \end{center}
-\vspace{-2mm}
+\vspace{-1mm}
 \end{table*}
-
-\begin{figure}
-\vspace{-3mm}
-\centering
-\subfigure{
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_5dmark3_iso3200_1_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_5dmark3_iso3200_2_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_5dmark3_iso3200_3_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d600_iso3200_1_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d600_iso3200_2_real.png}
-\end{minipage}
-}\vspace{-3mm}
-\subfigure{
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d600_iso3200_3_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso1600_1_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso1600_2_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso1600_3_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso3200_1_real.png}
-\end{minipage}
-}\vspace{-3mm}
-\subfigure{
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso3200_2_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso3200_3_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso6400_1_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso6400_2_real.png}
-\end{minipage}
-\begin{minipage}{0.08\textwidth}
-\includegraphics[width=1\textwidth]{CC15images/resize_d800_iso6400_3_real.png}
-\end{minipage}
-}\vspace{-1.5mm}
-\caption{The 15 cropped real noisy images used in \cite{crosschannel2016}.}
-\label{f2}
-\vspace{-5mm}
-\end{figure}
 
 \vspace{-1mm}
 \subsection{Experiments on Real Noisy Color Images}
@@ -928,7 +926,7 @@ Fig.\ \ref{f3} shows the denoised images of ``Dog'' by the competing methods.\ I
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{compareb/resize_br_NI_dog.png}}
 {\footnotesize (e) NI \cite{neatimage}  }
 \end{minipage}
-}\vspace{-3.5mm}
+}\vspace{-3mm}
 \subfigure{
 \begin{minipage}[t]{0.19\textwidth}
 \centering
@@ -956,28 +954,15 @@ Fig.\ \ref{f3} shows the denoised images of ``Dog'' by the competing methods.\ I
 {\footnotesize (j) MC-WNNM  }
 \end{minipage}
 }
-\vspace{-1.5mm}
+\vspace{-1mm}
 \caption{Denoised images of the real noisy image ``Dog'' \cite{ncwebsite} by different methods.\ The estimated noise levels of R, G, and B channels are 16.7, 17.0, and 16.6, respectively.\ The images are better to be zoomed in on screen.}
 \label{f3}
-\vspace{-3.5mm}
+\vspace{-3mm}
 \end{figure*}
 
-\vspace{-2mm}
-\subsubsection{Results on Dataset \cite{crosschannel2016}}
-\vspace{-2mm}
-
-\quad As described at the beginning of Section 4.3, there is a mean image for each noisy image in dataset \cite{crosschannel2016}, and those mean images can be roughly taken as ``ground truth'' for quantitative evaluation of denoising algorithms.
-
-The results on PSNR and averaged computational time by competing methods (including CC \cite{crosschannel2016} whose results are copied from \cite{crosschannel2016}) are listed in Table \ref{t2}.\ For methods MLP \cite{mlp} and TNRD \cite{chen2015learning}, both of them achieve the best results when setting the noise level of the trained models at $\sigma=10$.\ The highest PSNR results are highlighted in bold.\ On average, MC-WNNM achieves 1.94dB, 0.44dB, 0.59dB improvements over the three WNNM methods, and significantly outperforms other competing method, including CC \cite{crosschannel2016}.\ On 10 out of the 15 images, the proposed MC-WNNM achieves the highest PSNR values, while WNNM-2 achieves the highest PSNR results on 3 of 15 images.\ It should be noted that in the CC method \cite{crosschannel2016}, a specific model is trained for each camera and camera setting, while the other methods uses the same model for all cases. 
-
-Fig.\ \ref{f4} shows the denoised images of a scene captured by Canon 5D Mark 3 at ISO = 3200.\ (The result of WNNM-1 is not shown here due to the limit of space.)\ We can see that CBM3D, NI, NC and CC will either remain noise or generate color artifacts, while TNRD, WNNM-2 and WNNM-3 over-smooth the image.\ In addition, due to treating each channel equally, both the denoised images (Fig.\ \ref{f4}(g) and Fig.\ \ref{f4}(h)) by WNNM-2 and WNNM-3 have chromatic aberration compared to the mean image (Fig.\ \ref{f4}(j)).\ MC-WNNM results in much better visual quality than other methods.\ More visual comparisons can be found in the supplementary file.
-
-\textbf{Comparison on speed}. We compare the average computational time (second) of different methods (except CC), which is shown in Table \ref{t2}. All experiments are run under the Matlab environment on a machine with 3.5GHz CPU and 32GB RAM. The fastest result is highlighted in bold. One can see that Neat Image (NI) is the fastest and costs about 0.9 second, while the proposed MC-WNNM needs 202.9 seconds. Noted that CBM3D, TNRD, and NC are implemented with compiled C++ mex-function and with parallelization, while WNNM, MLP, DnCNN, and the proposed MC-WNNM are implemented purely in Matlab.
-
-
 \begin{table*}
-\vspace{-0mm}
 \caption{PSNR(dB) results and averaged computational time (s) of different methods on 15 cropped real noisy images used in \cite{crosschannel2016}.}
+\vspace{0.5mm}
 \label{t2}
 \label{tabb}
 \begin{center}
@@ -1108,7 +1093,7 @@ Camera Settings
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_NC_CC15_5dmark3_iso3200_1.png}}
 {\footnotesize (e) NC \cite{noiseclinic,ncwebsite}: 36.20dB  } 
 \end{minipage}
-}\vspace{-3.5mm}
+}\vspace{-3mm}
 \subfigure{
 \begin{minipage}[t]{0.19\textwidth}
 \centering
@@ -1135,19 +1120,31 @@ Camera Settings
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{comparec/resize_br_5dmark3_iso3200_1.png}}
 {\footnotesize (j) Mean Image}
 \end{minipage}
-}\vspace{-1.5mm}
+}\vspace{-1mm}
 \caption{Denoised images of a region cropped from the real noisy image ``Canon 5D Mark 3 ISO 3200 1" \cite{crosschannel2016} by different methods.\ The estimated noise levels of R, G, and B channels are 1.6, 1.5, and 1.6, respectively.\ The images are better to be zoomed in on screen.}
-\vspace{-3mm}
+\vspace{-2mm}
 \label{f4}
 \end{figure*}
+\vspace{-2mm}
+\subsubsection{Results on Dataset \cite{crosschannel2016}}
+\vspace{-2mm}
+
+\quad As described at the beginning of Section 4.3, there is a mean image for each noisy image in dataset \cite{crosschannel2016}, and those mean images can be roughly taken as ``ground truth'' for quantitative evaluation of denoising algorithms.
+
+The results on PSNR and averaged computational time by competing methods (including CC \cite{crosschannel2016} whose results are copied from \cite{crosschannel2016}) are listed in Table \ref{t2}.\ For methods MLP \cite{mlp} and TNRD \cite{chen2015learning}, both of them achieve the best results when setting the noise level of the trained models at $\sigma=10$.\ The highest PSNR results are highlighted in bold.\ On average, MC-WNNM achieves 1.94dB, 0.44dB, 0.59dB improvements over the three WNNM methods, and significantly outperforms other competing method, including CC \cite{crosschannel2016}.\ On 10 out of the 15 images, the proposed MC-WNNM achieves the highest PSNR values, while WNNM-2 achieves the highest PSNR results on 3 of 15 images.\ It should be noted that in the CC method \cite{crosschannel2016}, a specific model is trained for each camera and camera setting, while the other methods uses the same model for all cases. 
+
+Fig.\ \ref{f4} shows the denoised images of a scene captured by Canon 5D Mark 3 at ISO = 3200.\ (The result of WNNM-1 is not shown here due to the limit of space.)\ We can see that CBM3D, NI, NC and CC will either remain noise or generate color artifacts, while TNRD, WNNM-2 and WNNM-3 over-smooth the image.\ In addition, due to treating each channel equally, both the denoised images (Fig.\ \ref{f4}(g) and Fig.\ \ref{f4}(h)) by WNNM-2 and WNNM-3 have chromatic aberration compared to the mean image (Fig.\ \ref{f4}(j)).\ MC-WNNM results in much better visual quality than other methods.\ More visual comparisons can be found in the supplementary file.
+
+\textbf{Comparison on speed}. We compare the average computational time (second) of different methods (except CC), which is shown in Table \ref{t2}. All experiments are run under the Matlab environment on a machine with 3.5GHz CPU and 32GB RAM. The fastest result is highlighted in bold. One can see that Neat Image (NI) is the fastest and costs about 0.9 second, while the proposed MC-WNNM needs 202.9 seconds. Noted that CBM3D, TNRD, and NC are implemented with compiled C++ mex-function and with parallelization, while WNNM, MLP, DnCNN, and the proposed MC-WNNM are implemented purely in Matlab.
+
 
 \vspace{0mm}
 \section{Conclusion}
 \vspace{-0mm}
 
-The real noisy color images have different noise statistics among the R, G, B channels due to digital camera pipelines in CCD or CMOS sensors.\ This makes the real color image denoising problem more challenging than grayscale image denoising.\ In this paper, we proposed a novel multi-channel (MC) denoising model to effectively exploit the redundancy across color channels while differentiating their different noise statistics.\ Specifically, we introduced a weight matrix to the data term in the RGB channel concatenated weighted nuclear norm minimization (WNNM) model, and the resulting MC-WNNM model can process adaptively the different noise in RGB channels.\ We solved the MC-WNNM model via an ADMM algorithm.\ Extensive experiments on synthetic and real datasets demonstrated that the proposed MC-WNNM method outperforms significantly the other competing denoising methods.
+The real noisy color images have different noise statistics across the R, G, B channels due to digital camera pipelines in CCD or CMOS sensors.\ This makes the real color image denoising problem more challenging than grayscale image denoising.\ In this paper, we proposed a novel multi-channel (MC) denoising model to effectively exploit the redundancy across color channels while differentiating their different noise statistics.\ Specifically, we introduced a weight matrix to the data term in the RGB channel concatenated weighted nuclear norm minimization (WNNM) model, and the resulting MC-WNNM model can process adaptively the different noise in RGB channels.\ We solved the MC-WNNM model via an ADMM algorithm.\ Extensive experiments on synthetic and real datasets demonstrated that the proposed MC-WNNM method outperforms significantly the other competing denoising methods.
 
-The proposed MC-WNNM model can be extended in at least two directions.\ Firstly, it is worthy to investigate new weight matrix beyond the diagonal form, such as the correlation form \cite{nearcor}, to further improve the color image denoising performance.\ Secondly, the proposed MC-WNNM model can be extended for hyperspectral image analysis, which may contain hundreds of bands with complex noise statistics. We will investigate these problems in the future research.
+The proposed MC-WNNM model can be extended in at least two directions.\ Firstly, it is worthy to investigate new weight matrix beyond the diagonal form, such as the correlation form \cite{nearcor}, to further improve the color image denoising performance.\ Secondly, the proposed MC-WNNM model can be extended for hyperspectral image analysis, which may contain hundreds of bands with complex noise statistics.
 
 {
 \huge
