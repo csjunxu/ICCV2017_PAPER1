@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  24 JUL 2017 16:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  24 JUL 2017 16:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1300,17 +1300,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1157.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1157.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1157.
 
+Package rerunfilecheck Info: File `MCWNNM.brf' has not changed.
+(rerunfilecheck)             Checksum: FFB92D39DB189ABCBE5137208277ABC8;5519.
 
-
-Package rerunfilecheck Warning: File `MCWNNM.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `MCWNNM.brf':
-(rerunfilecheck)             Before: 158E7CBC30EE64C540DE1508F1C4E099;5519
-(rerunfilecheck)             After:  FFB92D39DB189ABCBE5137208277ABC8;5519.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.85pt have occurred.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
