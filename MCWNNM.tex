@@ -612,7 +612,7 @@ where $\mathbf{U}_{k-1}\mathbf{\Sigma}_{k-1}\mathbf{V}_{k-1}^{\top}$ is the SVD 
 
 Given a noisy color image $\mathbf{y}_{c}$, suppose that we have extracted $N$ local patches $\{\mathbf{y}_{j}\}_{j=1}^{N}$ and their similar patches.\ $N$ noisy patch matrices $\{\mathbf{Y}_{j}\}_{j=1}^{N}$ can be formed to estimate the clean matrices $\{\mathbf{X}_{j}\}_{j=1}^{N}$.\ The patches in matrices $\{\mathbf{X}_{j}\}_{j=1}^{N}$ are aggregated to form the denoised  image $\hat{\mathbf{x}}_{c}$.\ To obtain better denoising results, we perform the above denoising procedures for several rounds.\ The proposed MC-WNNM based color image denoising algorithm is summarized in Algorithm 2.
 \begin{table}
-\vspace{1mm}
+\vspace{-0mm}
 \begin{tabular}{l}
 \hline
 \textbf{Algorithm 2}: Color Image Denoising by MC-WNNM
@@ -652,7 +652,7 @@ obtain the estimated $\mathbf{X}_{j}$;
 \end{table}
 
 
-\vspace{-3mm}
+\vspace{-1mm}
 \subsection{Complexity Analysis}
 \vspace{-1mm}
 %for solving the MC-WNNM model via ADMM
@@ -1118,7 +1118,7 @@ Camera Settings
 \begin{minipage}[t]{0.19\textwidth}
 \centering
 \raisebox{-0.15cm}{\includegraphics[width=1\textwidth]{imagessupp/resize_br_d800_iso6400_2.png}}
-{\footnotesize (j) Mean Image}
+{\footnotesize (j) Mean Image \cite{crosschannel2016}}
 \end{minipage}
 }\vspace{-1mm}
 \caption{Denoised images of a region cropped from the real noisy image ``Nikon D800 ISO 6400 2" \cite{crosschannel2016} by different methods.\ The estimated noise levels of R, G, and B channels are 2.4, 2.1, and 1.8, respectively.\ The images are better to be zoomed in on screen.}
@@ -1138,9 +1138,9 @@ Fig.\ \ref{f4} shows the denoised images of a scene captured by Nikon D800 ISO=6
 \textbf{Comparison on speed}. We compare the average computational time (second) of different methods (except CC), which is shown in Table \ref{t2}. All experiments are run under the Matlab environment on a machine with 3.5GHz CPU and 32GB RAM. The fastest result is highlighted in bold. One can see that Neat Image (NI) is the fastest and costs about 0.9 second, while the proposed MC-WNNM needs 202.9 seconds. Noted that CBM3D, TNRD, and NC are implemented with compiled C++ mex-function and with parallelization, while WNNM, MLP, DnCNN, and the proposed MC-WNNM are implemented purely in Matlab.
 
 
-\vspace{0mm}
+\vspace{-1mm}
 \section{Conclusion}
-\vspace{-0mm}
+\vspace{-1mm}
 
 The real noisy color images have different noise statistics across the R, G, B channels due to digital camera pipelines in CCD or CMOS sensors.\ This makes the real color image denoising problem more challenging than grayscale image denoising.\ In this paper, we proposed a novel multi-channel (MC) denoising model to effectively exploit the redundancy across color channels while differentiating their different noise statistics.\ Specifically, we introduced a weight matrix to the data term in the RGB channel concatenated weighted nuclear norm minimization (WNNM) model, and the resulting MC-WNNM model can process adaptively the different noise in RGB channels.\ We solved the MC-WNNM model via an ADMM algorithm.\ Extensive experiments on synthetic and real datasets demonstrated that the proposed MC-WNNM method outperforms significantly the other competing denoising methods.
 

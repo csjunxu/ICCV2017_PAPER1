@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  24 JUL 2017 16:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  24 JUL 2017 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1292,35 +1292,35 @@ LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <4.15> not available
 LaTeX Font Warning: Font shape `U/lasy/m/n' in size <4.15> not available
 (Font)              size <5> substituted on input line 157.
 
-[9])
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1157.
- [10
-
-]
+ [9]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1157.
  (./MCWNNM.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1157.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1157.
 
-Package rerunfilecheck Info: File `MCWNNM.brf' has not changed.
-(rerunfilecheck)             Checksum: 2CB56B770F7DBAB47DDE0FE2E5CAB40B;5464.
 
+
+Package rerunfilecheck Warning: File `MCWNNM.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `MCWNNM.brf':
+(rerunfilecheck)             Before: 158E7CBC30EE64C540DE1508F1C4E099;5519
+(rerunfilecheck)             After:  FFB92D39DB189ABCBE5137208277ABC8;5519.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.85pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 15203 strings out of 493091
- 262956 string characters out of 6134517
+ 15202 strings out of 493091
+ 262949 string characters out of 6134517
  460073 words of memory out of 5000000
  18337 multiletter control sequences out of 15000+600000
  49966 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,17n,42p,10449b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,17n,42p,10449b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Software/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Software
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Software/
@@ -1344,10 +1344,10 @@ exlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Software/texlive/
 2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Software/texlive/2015/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Software/texlive/2015/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on MCWNNM.pdf (10 pages, 4237231 bytes).
+Output written on MCWNNM.pdf (9 pages, 4236973 bytes).
 PDF statistics:
- 520 PDF objects out of 1000 (max. 8388607)
- 436 compressed objects within 5 object streams
- 99 named destinations out of 1000 (max. 500000)
+ 517 PDF objects out of 1000 (max. 8388607)
+ 434 compressed objects within 5 object streams
+ 98 named destinations out of 1000 (max. 500000)
  216 words of extra memory for PDF output out of 10000 (max. 10000000)
 
