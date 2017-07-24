@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  24 JUL 2017 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.12)  24 JUL 2017 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2157,14 +2157,11 @@ Package rerunfilecheck Info: File `MCWNNM_supp.brf' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.6125pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  15584 strings out of 493091
  284468 string characters out of 6134517
- 486814 words of memory out of 5000000
+ 486902 words of memory out of 5000000
  18592 multiletter control sequences out of 15000+600000
  47507 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
